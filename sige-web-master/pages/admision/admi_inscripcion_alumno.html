@@ -1,0 +1,72 @@
+<script type="text/javascript" src="js/admision/admi_inscripcion_alumno.js"></script>
+<div class="panel panel-flat">
+<div class="panel-body">
+<form action="api/matrVacante/MatrVacanteGrabar" id="inscripcion_vacante-frm">
+	<input type="hidden" id="id" name="id" />
+	<!-- <input type="hidden" id="id_inf" name="id_inf" /> -->
+	<input type="hidden" id="est" name="est" value="A"/>
+	<input type="hidden" id="id_alu" name="id_alu"/>
+	<div class="form-group">
+	<fieldset class="mb-3">
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">Datos para la inscripci&oacute;n</legend>
+		<div class="row detalle">
+			<div class="col-sm-4">
+				<label>Cliente</label>
+                <select id="id_cli" name="id_cli" required placeholder="Seleccione" class="form-control select-search">
+                <option value="">SELECCIONE</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Nivel</label>
+                <select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control ">
+                <option value="">SELECCIONE</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Grado</label>
+                <select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control ">
+				</select>
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-4">
+				<label>Evaluaci&oacute;n</label>
+                <select id="id_eva" name="id_eva" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Costo</label>
+                <input type="text" id="costo" name="costo"  class="form-control input-sm"  readonly="readonly">
+			</div>
+			<div class="col-sm-4">
+				<label>Vacantes</label>
+                <input type="text" id="vacante" name="vacante"  class="form-control input-sm" readonly="readonly" >
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-4">
+				<label>Colegio de Procedencia</label>
+                <select id="id_col" name="id_col" required placeholder="Seleccione" class="form-control select-search">
+                <option value="">Seleccione</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>N&uacute;mero de Compromiso</label>
+                <input type="text" id="num_cont" name="num_cont" required class="form-control input-sm" >
+			</div>
+		</div>
+		</fieldset>
+		<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+	<div class="row">
+	<table class="table" id="admi_inscripcion_alumno-tabla">
+	</table>
+	</div>
+	</div>
+</form>
+</div>
+</div>
+
+

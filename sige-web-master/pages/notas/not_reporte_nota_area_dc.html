@@ -1,0 +1,92 @@
+<script type="text/javascript" src="js/notas/not_reporte_nota_area_dc.js"></script>
+<style>
+
+#not_nota-tabla input {
+    min-width: 60px;   /* depends how much minimum width you require */
+}
+
+th.rotate {
+  /* Something you can count on */
+  height: 210px;
+  white-space: nowrap;
+  padding: 8px 5px;
+}
+
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(2px, 90px)
+    /* 45 is really 360 - 45 */
+    rotate(270deg);
+  width: 10px;
+}
+th.rotate > div > span {
+  border-bottom: 0px solid #ccc;
+  padding: 5px 5px;
+}
+
+</style>
+<div class="panel panel-flat" id="not_nota-panel">
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="buscar-frm">
+			<!-- 
+			<button type="button" class="btn btn-primary btn-sm" data-popup="tooltip" title="Left tooltip" data-placement="left" id="left">Tooltip <i class="icon-play3 position-right"></i></button>
+			-->			
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Giro de Negocio</label>
+				               	<select id="id_gir" name="id_gir" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-2">
+								<label>Nivel</label>
+				               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-2">
+								<label>Grado</label>
+				               	<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Salon</label>
+				               	<select id="id_au" name="id_au"  placeholder="Seleccione" class="form-control select-search">
+								<option value="">TODOS</option>
+								</select>
+							</div>
+							<div class="col-sm-2">
+								<label>Periodo</label>
+				                <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Reporte con Comas</label> 
+								<input type="checkbox" id="rep_com" name="rep_com" class="check" value="0"></input>
+							</div>
+						</div>
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary" id="btn-buscar">Buscar <i class="fa fa-search position-right"></i></button>
+							<button type="button" class="btn btn-danger" id="btn-grabar-siage" style="display:none">Grabar notas siage <i class="fa fa-disk-o position-right"></i></button>
+							<button type="button" class="btn btn-info" id="btn-excel">Excel <i class="fa fa-file-excel-o position-right"></i></button>
+						</div>
+				</form>				
+		</div>
+	</div>
+
+	<div id="not_reporte_aula">
+		<table class="table dataTable table-bordered table-striped table-hover "  id="not_reporte_aula-tabla">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	 
+	
+</div>
+	

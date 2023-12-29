@@ -1,0 +1,87 @@
+<form action="api/reporteConductual" id="col_reporte_conductual_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Informante del Caso</label> 
+				<select id="id_inf" name="id_inf" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>C&oacute;digo del reporte</label>
+                <input type="text" id="cod" name="cod" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>N&uacute;mero de Registro Siseve</label>
+                <input type="text" id="nro_reg" name="nro_reg" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Observaci&oacute;n</label>
+                <input type="text" id="obs" name="obs"  class="form-control input-sm " maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Curso</label> 
+				<select id="id_cur" name="id_cur"  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n del Docente</label>
+                <input type="text" id="des_doc" name="des_doc"  class="form-control input-sm " maxlength="500">
+			</div>
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n del Informante</label>
+                <input type="text" id="des_inf" name="des_inf"  class="form-control input-sm " maxlength="500">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_reporte_conductual-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_reporte_infractor-tab" data-toggle="tab"><i class="fa fa-cube"></i> Infractor del Reporte Conductual</a>
+			</li>
+			<li>
+				<a href="#col_reporte_falta-tab" data-toggle="tab"><i class="fa fa-cube"></i> Reporte Falta</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_reporte_infractor-tab">
+				<table class="table" id="col_reporte_infractor-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_reporte_falta-tab">
+				<table class="table" id="col_reporte_falta-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

@@ -1,0 +1,118 @@
+<script type="text/javascript" src="js/notas/not_registro_notas.js"></script>
+<script type="text/javascript" src="framework/lib/jquery.tabable.min.js"></script>
+<style>
+#not_reporte_aula-tabla input {
+    min-width: 60px;
+	overflow:auto;	/* depends how much minimum width you require */
+}
+
+#div1 {
+     overflow:scroll;
+
+}
+
+table tbody{
+  background-color: #F9E79F;
+} 
+tr {border:2px solid black;}
+td {border:2px solid black;}
+
+</style>
+<div class="panel panel-flat" id="not_nota-panel">
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="buscar-notas-frm">
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Giro Negocio</label>
+				               	<select id="id_gir" name="id_gir" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Salon</label>
+				               	<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Área</label>
+				                <select id="id_area" name="id_area" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3" id="curso">
+								<label>Curso</label>
+				                <select id="id_cur" name="id_cur" placeholder="Seleccione" class="form-control select-search">
+								
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Periodo</label>
+				                <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<!--<div class="col-sm-4">
+								<label>Nivel</label>
+				               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Grado</label> 
+								<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Secci&oacute;n</label> 
+								<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>-->
+						</div>
+						<!--<div class="row">
+							<div class="col-sm-4">
+								<label>Curso</label>
+				                <select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Periodo</label>
+				                <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Evaluaci&oacute;n</label> 
+								<select id="id_eva" name="id_eva" required placeholder="Seleccione" class="form-control select-search">
+								<option value="0">TODAS</option>
+								</select>
+							</div>
+						</div>-->
+						<div class="modal-footer">
+						<div class="text-right">
+							<button type="button" class="btn btn-primary" id="btn-buscar">Buscar <i class="fa fa-search position-right"></i></button>
+							<button type="button" class="btn btn-success"  id="btn-grabar_actual" >Grabar <i class="fa fa-save position-right"></i></button>
+							<!--<button type="button" class="btn btn-warning"  id="btn-eliminar" >Eliminar <i class="fa fa-trash position-right"></i></button>-->
+							<!--<button type="button" class="btn btn-warning" id="btn-actualizar" style="display:none">Actualizar <i class="fa fa-save position-right"></i></button>-->
+						</div>
+						</div>
+				</form>	
+		<button type="button" class="btn bg-brown btn-rounded pull btn-xs" id="btn-agregar" >Configuración de Desempeños<i class="icon-list2 mr-3 icon-2x position-right"></i></button>				
+		</div>
+	</div>
+	<div class="panel-body">
+	<div class="form-group">
+	<div id="div1">
+	<div id="not_nota-div">
+		<table class="table table-bordered"  id="not_reporte_aula-tabla"><!--cambio-->
+			<thead>
+			</thead>
+			<tbody >
+			</tbody>
+		</table>
+	<div class="text-right">
+	<!--<button type="button" class="btn btn-warning" id="btn-eliminar">Eliminar <i class="fa fa-trash position-right"></i></button>-->
+	</div>	
+	</div>
+	</div> 
+	</div>
+	</div> 
+</div>
+	

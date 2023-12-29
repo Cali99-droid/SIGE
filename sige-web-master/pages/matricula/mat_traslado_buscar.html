@@ -1,0 +1,29 @@
+<form action="" id="">
+<!-- action="api/situacionMat" id="mat_situacion_mat-frm" -->
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_mat" name="id_mat" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Alumno</label> 
+			  	<div class="form-group has-feedback has-feedback-left">
+					<input type="text" class="form-control"
+					onkeypress="onkeyAlumno()" 
+					placeholder="Busca alumno (Ingrese por lo menos 3 letras)" id="alumno" required>
+					<div class="form-control-feedback">
+						<i class="icon-search4 text-size-base"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

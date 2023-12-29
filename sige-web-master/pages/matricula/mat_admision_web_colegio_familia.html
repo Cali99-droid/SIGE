@@ -1,0 +1,281 @@
+
+<script type="text/javascript"
+	src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+<script type="text/javascript" src="js/matricula/mat_matricula_web_colegio_familia.js"></script>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: red;
+    color: red;
+}
+
+#div1 {
+     overflow:scroll;
+     height:400px;
+     width:600px;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-flat">
+
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="panel panel-flat">
+
+                        <div class="panel-body">
+						<div class="row col-md-12">
+						<h4 class="text text-bold azul_text">PROCESO DE ADMISIÓN</h4>
+						<p><span class="text-danger">(*)</span> Campo obligatorio de llenar.</p>
+						</div>
+						<h4 class="text text-bold azul_text"><label id="alumno"></label></h4>
+                            <form class="steps-validation" action="api/matricula/matricularColegioWeb" id="frm-matricula">
+							<input type="hidden" id="id" name="id"> <input type="hidden"
+								id="id_alu" name="id_alu" value=""> 
+								<input type="hidden" id="tipo" name="tipo" value="">
+								<input type="hidden" id="id_anio" name="id_anio" value="">
+								<input type="hidden" id="id_cct" name="id_cct">
+								<input type="hidden" id="id_niv" name="id_niv">
+								<input type="hidden" id="est" name="est" value="A">
+			
+		
+	 <h6>1. Actualización de Datos</h6> 
+		 <fieldset>
+		 <div id="div_actualizacion_padres" class="tab-pane">
+		 </div>
+		 </fieldset>
+	<h6>2. Términos y Condiciones</h6> 
+		 <fieldset>
+		<p>Para proceder con la matrícula, será necesario que pueda leer cada documento normativo para el año 2021.</p>
+		 <div class="col-md-12">
+			<!--<label class="display-block text-bold">Nivel</label>-->
+			
+			<ul>
+				<div class="col-md-12">
+				<li>
+				<div class="col-md-6">
+				<a href="http://login.ae.edu.pe:8080/documentos/ReglamentoInterno2021.pdf" onclick="document.getElementById('reg_int').checked=true; " target="_blank">Reglamento Interno</a><input style="display:none" name="reg_int" id="reg_int" type="checkbox">
+				</div>
+				<!--<div class="col-md-6">
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="rg_acept1" name="rg_acept" value="1" type="radio">
+						<p>S&iacute; Acepto</p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="rg_acept2" name="rg_acept" value="0" type="radio">
+						<p> No Acepto </p>
+					</div>
+				</div>
+				</div>-->
+				</li>
+				<li>
+				<div class="col-md-6">
+				<a href="http://login.ae.edu.pe:8080/documentos/ContratoColegioAE2021.pdf" onclick="document.getElementById('con').checked=true;" target="_blank">Contrato</a><input style="display:none" name="con" id="con" type="checkbox">
+				</div>
+				</li>
+				<li>
+				<div class="col-md-6">
+				<a href="http://login.ae.edu.pe:8080/documentos/PlandeEstudios2021.pdf" onclick="document.getElementById('plan').checked=true;" target="_blank">Plan de Estudios</a><input style="display:none" name="plan" id="plan" type="checkbox">
+				</div>
+				</li>
+				<li>
+				<div class="col-md-6">
+				<a href="http://login.ae.edu.pe:8080/documentos/Costos.pdf" onclick="document.getElementById('costos').checked=true;" target="_blank">Costos</a><input style="display:none" name="costos" id="costos" type="checkbox">
+				</div>
+				</li>
+				</li>
+				</div>
+			</ul>
+		</div>
+		 </fieldset>
+		<h6>3. Datos Académicos</h6>
+		<fieldset>
+			<legend class="text-bold">Datos del Apoderado</legend>
+			<div class="row">
+				<!--<div class="col-md-4">
+					<div class="form-group">
+						<label>Familia</label> <select name="id_gpf"
+							id="id_gpf" data-placeholder="Seleccione"
+							class="form-control select-search ">
+						</select>
+					</div>
+				</div>-->
+				<div class="col-md-5">
+					<div class="form-group">
+						<label>Apoderado</label><span class="text-danger">(*)</span> <select name="id_per_res" required
+							id="id_per_res" data-placeholder="Seleccione"
+							class="form-control select-search "><option value="">Seleccione</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Parentesco<!-- <span class="text-danger">*</span> --></label>
+						<input type="text" name="id_fam_par" id="id_fam_par"
+							class="form-control " readonly>
+					</div>
+				</div>
+				<!--<div class="col-md-2">
+				<!--	<div class="form-group">
+						<label>Tipo de Documento<!-- <span class="text-danger">*</span> --></label>
+				<!--		<select name="id_tdc" id="id_tdc"
+							data-placeholder="Seleccione" class="form-control select-search"
+							disabled="disabled">
+						</select>
+					</div>
+				</div>-->
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Nro Doc.<!-- <span class="text-danger">*</span> --></label>
+						<input type="text" name="id_fam_dni" id="id_fam_dni"
+							class="form-control " readonly>
+					</div>
+				</div>
+			</div>
+			<legend class="text-bold">HIJOS A MATRICULAR</legend>
+			<p>Seleccione a los hijos al que desea matricular.</p>
+			<div class="row">
+				<div class="hermanos-div col-sm-12">
+					<b id='titulo'></b>
+						<table class="table" id="hermanos-tabla">
+						</table>
+				</div>
+			</div>
+			<!--<div class="row">
+				
+				<!--
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Email<!-- <span class="text-danger">*</span> --></label>
+				<!--		<input type="text" name="corr" id="corr"
+							class="form-control " readonly>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Celular<!-- <span class="text-danger">*</span> --></label>
+				<!--		<input type="text" name="cel" id="cel"
+							class="form-control " readonly>
+					</div>
+				</div>-->
+			<!--</div>-->
+			<!--<div class="modal-footer">
+				<button type="button" id="btn-grabar_matricula" class="btn btn-success btn-xs pull-right" onclick="grabarMatricula(this)"><i class="icon-floppy-disk"></i>Matricular</button>
+			</div><br>-->
+		</fieldset>
+		<!--<div id="div_pago_matricula">-->
+		<h6>4. Formas de Pago</h6>
+		<fieldset>
+		<div id="div_pago">
+			<input type="hidden" id="id_mat" name="id_mat">  
+			<input type="hidden" id="id_pago" name="id_pago">
+			<input type="hidden" id="id_gpf" name="id_gpf">  
+			<legend class="text-bold" id="divTituloPagos">Datos Económicos</legend>
+			<div class="row">
+				<div class="col-md-3">
+				<div class="form-group">
+						<label>Banco de Preferencia para pago de pensiones<!-- <span class="text-danger">*</span> --></label> <select
+							name="id_bco" id="id_bco" data-placeholder="Seleccione"
+							class="form-control select-search " >
+							<option></option>
+						</select>
+				</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label id="lblTotalPagar">Total a Pagar</label> <input type="text" name="total_costo"
+							id="total_costo" placeholder="Total a pagar" class="form-control "
+							readonly="readonly">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<h6>Resumen de Pagos</h6>
+				<div class="col-md-12">
+					<div class="row" id="resumen-row">
+						<div class="resumen-div col-sm-12">
+							<table class="table" id="resumen-pagos_mat">
+							</table>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btn-grabar_matricula" class="btn btn-success btn-xs pull-right" onclick="grabarMatricula(this)"><i class="icon-floppy-disk"></i>PREMATRICULA</button>
+			</div><br>
+			<!--<div class="row" id="pagardiv">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Abona</label> <input type="text" name="abono" id="abono"
+							placeholder="Abona" class="form-control ">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Vuelto</label> <input type="text" name="vuelto" id="vuelto"
+							placeholder="Vuelto" class="form-control" readonly="readonly">
+					</div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" id="btn-grabar_pago" class="btn btn-success btn-xs pull-right" onclick="grabarPago(this)"><i class="icon-floppy-disk"></i>Pagar</button>
+			</div><br>
+			</div>-->
+		</div>
+		</fieldset>
+		<!--</div>-->
+		<!--<h6>5. Impresión de Documentos</h6>
+		<fieldset>
+			<legend class="text-bold" id="lblObservaciones"></legend>
+			<div class="col-md-12">
+				<div class="row" id="familia-row">
+					<div class="familia-div col-sm-12">
+						<table class="table" id="matriculados-tabla">
+						</table>
+					</div>
+				</div>
+			</div>
+			<div>
+			<table class="table" id="apoderados-tabla">
+			</table>
+			</div>
+			<div class="col-md-12">
+				<label>¿Desea generar el contrato? <br>Si desea matricular mas hijos, por favor continuar, en todo caso generar contrato.</label>
+				<div class="text-right">
+					 <button type="button" class="btn btn-primary" onclick="reimprimir()">Generar Contrato<i class="icon-arrow-right14 position-right"></i></button> 
+				</div>
+				<br/>
+			</div>
+			
+		</fieldset>-->
+	</form>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>

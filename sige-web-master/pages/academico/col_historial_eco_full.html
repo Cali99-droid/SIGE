@@ -1,0 +1,65 @@
+<form action="api/historialEco" id="col_historial_eco_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Matricula</label> 
+				<select id="id_mat" name="id_mat" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Central Riesgo Padre</label> 
+				<select id="id_ccr_pad" name="id_ccr_pad" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Central Riesgo Madre</label> 
+				<select id="id_ccr_mad" name="id_ccr_mad" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Utlima Mensualidad Cancelada</label>
+                <input type="text" id="ult_men" name="ult_men" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>N&uacute;mero de Mensualidades que adeuda </label>
+                <input type="text" id="nro_mens" name="nro_mens" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Ingresos Familiares</label>
+                <input type="text" id="ing_fam" name="ing_fam" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Puntaje</label>
+                <input type="text" id="puntaje" name="puntaje"  class="form-control input-sm decimal" maxlength="10">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_historial_eco-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

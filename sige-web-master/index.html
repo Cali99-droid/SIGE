@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIGE - Sistema de gestión educativa</title>
+
+	<link rel="icon" href="favicon.ico">
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+		type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<!-- /theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/notifications/sweet_alert.min.js"></script>
+	<script type="text/javascript" src="site/js/constantes.js"></script>
+	<script type="text/javascript" src="framework/framework.js"></script>
+	<script type="text/javascript" src="site/js/login.js"></script>
+
+</head>
+
+<body class="login-container bg-slate-800">
+	<div class="logotipo_sistema">
+		<img src="assets/images/img_ui/sige_blanco.png" class="img-responsive">
+	</div>
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Advanced login -->
+					<form id="frm-login">
+						<div class="panel panel-body login-form">
+							<div class="text-center">
+								<div class="img-login">
+									<img id="insignia" class="size-img">
+								</div>
+								<h5 class="content-group-lg">
+									<span class="ui-white title-login">Inicio de sesión</span>
+									<small class="display-block ui-white subtitle-login">Ingrese sus
+										credenciales</small></h5>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input type="text" id="login" name="login" class="form-control" placeholder="Usuario">
+								<div class="form-control-feedback">
+									<i class="fa fa-user-circle-o iconos" aria-hidden="true"></i>
+								</div>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input type="password" id="password" name="password" class="form-control"
+									placeholder="Contraseña">
+								<div class="form-control-feedback">
+									<i class="fa fa-lock iconos" aria-hidden="true"></i>
+								</div>
+							</div>
+
+							<!--<div class="form-group has-feedback has-feedback-left icono-down">
+								<select id='id_per' name='id_per' class="form-control">
+									<option value='8'>Familiar</option>
+									<option value='9'>Personal de la institucion</option>
+									<!-- <option value='10'>Invitado</option> -->
+							<!--	</select>
+							</div>-->
+
+							<div class="form-group login">
+								<button type="submit" class="btn bg-blue-ui btn-block"><i
+										class="fa fa-check iconos-white" aria-hidden="true"></i>
+									Ingresar</button>
+							</div>
+
+							<<div class="form-group -options">
+								<div class="row">
+									 
+									<div class="col-xs-12 text-right">
+										<a href="#" class="ui-white"  data-toggle="modal" data-target="#modal-recover">Olvido su clave?</a>
+										
+									</div>
+								</div>
+							</div> 
+
+
+							<span class="help-block text-center no-margin ui-white">Derechos <a href="#"
+									class="ui-blue">Asociación educativa Luz y Ciencia</a></span>
+						</div>
+					</form>
+					<!-- /advanced login -->
+
+					<div id="modal-recover" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content login-form">
+
+								<!-- Form -->
+								<form class="modal-body" id="frm-recover" action="index.html">
+
+									<div class="text-center">
+										<div class="icon-object border-warning text-warning"><i
+												class="icon-spinner11"></i></div>
+										<h5 class="content-group">
+											<font color='black'>Recuperaci&oacute;n de clave</font> <small
+												class="display-block">Enviaremos las instrucciones a su correo</small>
+										</h5>
+
+									</div>
+
+									<!--<div class="text-center">
+										<select id='id_per' name='id_per' class="form-control">
+											<option value='8'>Familiar</option>
+											<option value='9'>Personal de la institucion</option>
+										</select>
+									</div>-->
+
+
+									<div class="form-group has-feedback">
+										<!--<input type="email" name="usuario" id="usuario" class="form-control"
+											placeholder="Ingrese usuario">-->
+										<input type="text" name="cuenta" id="cuenta" class="form-control"
+											placeholder="Ingrese su código de familia o usuario">
+										<input type="text" name="dni" id="dni" class="form-control"
+											placeholder="Ingrese número de DNI">
+										<!--<div class="form-control-feedback">
+											<i class="icon-mail5 text-muted"></i>
+										</div>-->
+									</div>
+
+									<button type="submit" class="btn bg-blue btn-block">Enviar instrucciones<i
+											class="icon-circle-right2 position-right"></i></button>
+									<button type="button" class="btn btn-default btn-block"
+										data-dismiss="modal">Cancelar</button>
+								</form>
+								<!-- /form -->
+
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+
+</body>
+
+</html>
+<script>
+
+_init();
+$('#insignia').attr('src',_URL + 'api/archivo/codigo/insignia');
+
+</script>

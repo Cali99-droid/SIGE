@@ -1,0 +1,50 @@
+<form action="api/remuneracionCat">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio_rem" name="id_anio_rem" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Categoria Ocupacional</label>
+			   <select id="id_cocu" name="id_cocu" placeholder="Seleccione" class="form-control" >
+					<option value="">Seleccione</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Nivel</label>
+               <!-- <input type="text" id="nom" name="nom" class="form-control input-sm" maxlength="50">-->
+			   <select id="id_lcarr" name="id_lcarr" placeholder="Seleccione" class="form-control" >
+					<option value="">Seleccione</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Denominación</label>
+			   <select id="id_cden" name="id_cden" placeholder="Seleccione" class="form-control" >
+					<option value="">Seleccione</option>
+				</select>
+			</div>
+			
+		</div>
+		<div class="row">
+		<div class="col-sm-6">
+				<label>Remuneracion</label>
+               <input type="text" id="rem" name="rem" class="form-control input-sm" >
+		</div>
+					<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

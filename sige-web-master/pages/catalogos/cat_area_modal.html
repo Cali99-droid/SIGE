@@ -1,0 +1,34 @@
+<form action="api/area" id="cat_area-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Area</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm ">
+			</div>
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n</label>
+                <input type="text" id="des" name="des"  class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

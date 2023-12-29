@@ -1,0 +1,93 @@
+<form action="api/cursoAnio" id="col_curso_anio_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nivel</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>&Aacute;rea</label> 
+				<select id="id_caa" name="id_caa" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Curso</label> 
+				<select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Peso de evaluaci&oacute;n</label>
+                <input type="text" id="peso" name="peso"  class="form-control input-sm number" maxlength="1">
+			</div>
+			<div class="col-sm-6">
+				<label>Orden</label>
+                <input type="text" id="orden" name="orden" required class="form-control input-sm number" maxlength="2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>&iquest;Se promediara?</label>
+				<select id="flg_prom" name="flg_prom" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_curso_anio-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_curso_aula-tab" data-toggle="tab"><i class="fa fa-cube"></i> Curso Aula</a>
+			</li>
+			<li>
+				<a href="#col_competencia-tab" data-toggle="tab"><i class="fa fa-cube"></i> Competencia</a>
+			</li>
+			<li>
+				<a href="#col_curso_unidad-tab" data-toggle="tab"><i class="fa fa-cube"></i> Unidad</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_curso_aula-tab">
+				<table class="table" id="col_curso_aula-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_competencia-tab">
+				<table class="table" id="col_competencia-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_curso_unidad-tab">
+				<table class="table" id="col_curso_unidad-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

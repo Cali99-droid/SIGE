@@ -1,0 +1,37 @@
+
+<form action=" " id="not_evaluacion-frm">
+	<input type="hidden" id="id_nep" name="id_nep" /> <input type="hidden"
+		id="id_tra" name="id_tra" value="A" /> <input type="hidden"
+		id="id_cur" name="id_cur" /> <input type="hidden" id="id_gra"
+		name="id_gra" /> <input type="hidden" id="id_niv" name="id_niv" /> <input
+		type="hidden" id="_id_cpu" name="_id_cpu" /> <input type="hidden"
+		id="id_anio" name="id_anio" value="A" /> <input type="hidden"
+		id="id_ses" name="id_ses" />
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Tipo de Evaluaci&oacute;n</label> <select id="id_nte" name="id_nte" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Instrumento</label> <input type="text" id="ins" name="ins"
+					required class="form-control input-sm " maxlength="100">
+			</div>
+			<div class="col-sm-4">
+				<label>Evidencia</label> <input type="text" id="evi" name="evi"
+					class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<table class="table" id="list_indicadores">
+		</table>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+
+

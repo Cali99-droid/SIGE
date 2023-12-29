@@ -1,0 +1,36 @@
+<form action="api/feriado">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm" maxlength="30">
+			</div>
+			<div class="col-sm-6">
+				<label>D&iacute;a</label>
+                <input type="text" id="dia" name="dia" required   class="daterange-single form-control input-sm " maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Motivo</label>
+                <input type="text" id="motivo" name="motivo" class="form-control input-sm" maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

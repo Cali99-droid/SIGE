@@ -1,0 +1,67 @@
+<script type="text/javascript" src="js/admision/admi_reporte_general.js"></script>
+<div class="panel panel-flat" id="admi_reporte_general-panel">
+	<div class="panel-body">
+	<form class="form-horizontal" id="frm-admi_reporte_general">
+		<div class="form-group">
+				<div class="row">
+					<div class="col-sm-3">
+						<label>Local</label> <select class="form-control select-search"
+							id="id_suc" name="id_suc">
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label>Nivel</label> <select class="form-control select-search"
+							id="id_niv" name="id_niv">
+ 						</select>
+					</div>
+					<div class="col-sm-3">
+						<label>Grado</label> <select class="form-control select-search"
+							id="id_gra" name="id_gra">
+							<option value=''>TODOS</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label>Evaluaci&oacute;n</label> <select class="form-control select-search"
+							id="id_eva" name="id_eva">
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<label>E. Escrito</label> <select class="form-control select-search"
+							id="ex_esc" name="ex_esc">
+							<option value=''>TODOS</option>
+							<option value='APROBO'>APROBO</option>
+							<option value='NO APROBO'>NO APROBO</option>
+							<option value='NR'>NO RINDIO</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label>E. Psicologico</label> <select class="form-control select-search"
+							id="ex_psi" name="ex_psi">
+							<option value=''>TODOS</option>
+							<option value='Y'>APROBO</option>
+							<option value='N'>NO APROBO</option>
+							<option value='NR'>NO RINDIO</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label>Vacante</label> <select class="form-control select-search"
+							id="vac" name="vac">
+							<option value=''>TODOS</option>
+							<option value='A'>OBTIENE VACANTE</option>
+							<option value='N'>SIN VACANTE</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		<br>
+		<div class="text-right">
+			<button type="submit" class="btn btn-primary" id="btn_buscar">Buscar <i class="icon-arrow-right14 position-right"></i></button>
+		</div>
+		<table class="table" id="admi_reporte_general-tabla">
+		</table>
+	</form>	
+	</div>	
+</div>
+	

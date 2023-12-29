@@ -1,0 +1,57 @@
+<form action="api/subtema" id="col_subtema_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tema</label> 
+				<select id="id_tem" name="id_tem" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Subtema</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Orden</label>
+                <input type="text" id="ord" name="ord" required class="form-control input-sm number" maxlength="3">
+			</div>
+			<div class="col-sm-6">
+				<label>Observacion</label>
+                <input type="text" id="obs" name="obs"  class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_subtema-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_curso_subtema-tab" data-toggle="tab"><i class="fa fa-cube"></i> Curso Subtema</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_curso_subtema-tab">
+				<table class="table" id="col_curso_subtema-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

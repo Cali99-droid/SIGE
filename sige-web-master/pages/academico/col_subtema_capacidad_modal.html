@@ -1,0 +1,31 @@
+<form action="api/subtemaCapacidad/agregarDesempenio" id="col_subtema_desempenio-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A" />
+	<input type="hidden" id="id_cgc" name="id_cgc" value="" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Desempe&ntilde;o</label> 
+				<input id="nom" name="nom" required placeholder="Seleccione" class="form-control ">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar-desempenio" class="btn btn-primary" style="display:none">Agregar</button>
+		<button type="button" id="btn-grabar-desempenio" class="btn btn-danger" style="display:none">Grabar</button>
+	</div>
+
+
+</form>
+
+<div class="panel panel-flat" id="aca_festivo-panel">
+
+	<table class="table" id="col_subtema_desempenio-tabla">
+	</table>
+	
+</div>
+	
+
+

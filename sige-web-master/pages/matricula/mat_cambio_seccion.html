@@ -1,0 +1,53 @@
+<script type="text/javascript" src="pages/js/mat_cambio_seccion.js"></script>
+
+<div class="panel panel-flat" id="mat_seccion_sugerida-panel">
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="mat_seccion_sugerida-frm">
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Giro de Negocio</label>
+				               	<select id="id_gir" name="id_gir" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Nivel</label>
+				               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Grado</label> 
+								<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Secci&oacute;n</label> 
+								<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+								<option value="-1">SELECCIONE</option>
+								</select>
+							</div>
+						</div>
+						<div class="text-right">
+							<button type="button" class="btn btn-warning" id="btn-grabar">Aula sugerida <i class="icon-floppy-disk position-right"></i></button>
+							<div style="display:none">				
+								<button type="button" class="btn btn-danger" id="btn-generar">TODO el colegio - Aula sugerida  <i class="icon-floppy-disk position-right"></i></button>
+							</div>	
+						</div>
+				</form>				
+		</div>
+	</div>
+
+	<div id="mat_seccion_sugerida-div">
+		<table class="table dataTable table-bordered table-striped table-hover" id="mat_alumnos_seccion-tabla">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	 
+	
+</div>
+	

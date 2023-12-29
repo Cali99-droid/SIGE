@@ -1,0 +1,97 @@
+
+<div class="panel panel-flat">
+	<div class="panel-body">
+
+		<form  id="alu_familiar_modal-frm">
+			<input type="hidden" id="_id_fam" name="_id_fam" /> 
+			<input type="hidden" id="_id_par" name="_id_par" /> 
+			<input type="hidden" id="id" name="id" /> 
+			<input type="hidden" id="ini" name="ini" /> 
+			<input type="hidden" id="id_tap" name="id_tap" />
+			<input type="hidden" id="est" name="est" value="A"/>
+			<input type="hidden" id="id_gpf" name="id_gpf" />
+	
+			<fieldset class="content-group">
+				<legend class="text-bold">DATOS IMPORTANTES</legend>
+
+				<div class="row">
+					<div class="col-sm-4 ">
+								<label>Tipo de documento</label>
+								<div class="flechas">  
+								<select id="id_tdc"
+									name="id_tdc" required placeholder="Seleccione" class="form-control disabled">
+								</select>
+								</div>
+					</div>
+					<div class="col-sm-4">
+								<label>N&uacute;mero de documento</label>
+ 								<div class="input-group">
+									<input type="text" class="form-control number" id="nro_doc" name="nro_doc" maxlength="8" onkeydown="limpiar()" placeholder="Nro Doc. de identidad">
+									<span class="input-group-btn">
+										<button class="btn bg-teal" type="button" id='btn-buscar-nro_doc' onclick="buscarFamiliar()">Buscar</button>
+									</span>
+								</div>
+					</div>
+					<div class="col-sm-4 fam-det">
+						<label>Parentesco</label> 
+						<select id="id_par" name="id_par" required placeholder="Seleccione" class="form-control" onchange="onchangeParentesco(this)">
+						</select>
+					</div>
+					
+				</div>
+
+				<div class="row fam-det">
+					<div class="col-sm-4">
+						<label>Apellido paterno </label> <input type="text" id="ape_pat" name="ape_pat" required class="form-control input-sm " maxlength="30" readonly>
+					</div>
+					<div class="col-sm-4">
+						<label>Apellido materno </label> <input type="text" id="ape_mat" name="ape_mat" class="form-control input-sm " maxlength="30"
+							readonly>
+					</div>
+					<div class="col-sm-4">
+						<label>Nombres</label> <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="40" readonly>
+					</div>
+				</div>
+
+				<div class="row fam-det">
+					<div class="col-sm-4">
+						<label>G&eacute;nero</label> 
+						<select id="id_gen" name="id_gen" required placeholder="Seleccione" class="form-control select-search">
+							<option value="0">FEMENINO</option>
+							<option value="1">MASCULINO</option>
+						</select>
+					</div>
+				</div>
+
+			</fieldset>
+
+			<fieldset class="content-group fam-det" >
+				<legend class="text-bold">PERMISOS</legend>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="form-group">
+
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" id="flag_permisos" name="flag_permisos" value="A" checked="checked" class="control-primary">
+												Recojer libreta
+											</label>
+										</div>
+
+										
+									</div>
+					</div>
+				</div>
+			</fieldset>
+
+			
+			<div class="modal-footer fam-det">
+				<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+				<button class="btn bg-teal" type="button" id='btn-aceptar' onclick="cerrarModal()" style="display:none">Aceptar</button>
+				
+			</div>
+
+		</form>
+
+	</div>
+</div>

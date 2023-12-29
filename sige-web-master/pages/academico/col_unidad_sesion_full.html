@@ -1,0 +1,76 @@
+<form action="api/unidadSesion" id="col_unidad_sesion_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Unidad</label> 
+				<select id="id_uni" name="id_uni" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>T&iacute;tulo</label>
+                <input type="text" id="tit" name="tit" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Duraci&oacute;n</label>
+                <input type="text" id="dur" name="dur" required class="form-control input-sm decimal" maxlength="4">
+			</div>
+			<div class="col-sm-6">
+				<label>Tipo</label>
+				<select id="tipo" name="tipo" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_unidad_sesion-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_sesion_tema-tab" data-toggle="tab"><i class="fa fa-cube"></i> Sesion Campo Tem&aacute;tico</a>
+			</li>
+			<li>
+				<a href="#col_sesion_indicador-tab" data-toggle="tab"><i class="fa fa-cube"></i> Sesion Indicador</a>
+			</li>
+			<li>
+				<a href="#col_sesion_actividad-tab" data-toggle="tab"><i class="fa fa-cube"></i> Sesion Actividad</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_sesion_tema-tab">
+				<table class="table" id="col_sesion_tema-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_sesion_indicador-tab">
+				<table class="table" id="col_sesion_indicador-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_sesion_actividad-tab">
+				<table class="table" id="col_sesion_actividad-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

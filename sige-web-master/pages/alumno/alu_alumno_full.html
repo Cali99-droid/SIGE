@@ -1,0 +1,200 @@
+<form action="api/alumno" id="alu_alumno_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo de documento</label> 
+				<select id="id_tdc" name="id_tdc" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Lengua primaria</label> 
+				<select id="id_idio1" name="id_idio1" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Lengua secundaria</label> 
+				<select id="id_idio2" name="id_idio2"  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Estado civil</label> 
+				<select id="id_eci" name="id_eci" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo Apellido</label>
+				<select id="id_tap" name="id_tap" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>G&eacute;nero</label>
+				<select id="id_gen" name="id_gen" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Codigo Alumno</label>
+                <input type="text" id="cod" name="cod" required class="form-control input-sm " maxlength="14">
+			</div>
+			<div class="col-sm-6">
+				<label>Numero de documento</label>
+                <input type="text" id="nro_doc" name="nro_doc" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombres</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>Apellido paterno</label>
+                <input type="text" id="ape_pat" name="ape_pat" required class="form-control input-sm " maxlength="30">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Apellido materno</label>
+                <input type="text" id="ape_mat" name="ape_mat" required class="form-control input-sm " maxlength="30">
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha de nacimiento</label>
+                <input type="text" id="fec_nac" name="fec_nac" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>N&uacute;mero de hijo</label>
+                <input type="text" id="num_hij" name="num_hij" required class="form-control input-sm number" maxlength="11">
+			</div>
+			<div class="col-sm-6">
+				<label>direccion</label>
+                <input type="text" id="direccion" name="direccion"  class="form-control input-sm " maxlength="250">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Telefono</label>
+                <input type="text" id="telf" name="telf"  class="form-control input-sm " maxlength="150">
+			</div>
+			<div class="col-sm-6">
+				<label>Celular</label>
+                <input type="text" id="celular" name="celular"  class="form-control input-sm " maxlength="32">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Pasword</label>
+                <input type="text" id="pass_educando" name="pass_educando" required class="form-control input-sm " maxlength="32">
+			</div>
+			<div class="col-sm-6">
+				<label>Foto</label>
+                <input type="text" id="foto" name="foto" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="alu_alumno-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#alu_gru_fam_alumno-tab" data-toggle="tab"><i class="fa fa-cube"></i> Grupo Familiar/alumno</a>
+			</li>
+			<li>
+				<a href="#alu_salud-tab" data-toggle="tab"><i class="fa fa-cube"></i> Salud</a>
+			</li>
+			<li>
+				<a href="#eva_matr_vacante-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matricula Vacante</a>
+			</li>
+			<li>
+				<a href="#mat_reserva-tab" data-toggle="tab"><i class="fa fa-cube"></i> Reserva matr&iacute;cula</a>
+			</li>
+			<li>
+				<a href="#mat_matricula-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matricula</a>
+			</li>
+			<li>
+				<a href="#mat_matricula_doc-tab" data-toggle="tab"><i class="fa fa-cube"></i> Documentos de matricula</a>
+			</li>
+			<li>
+				<a href="#mat_habilitacion-tab" data-toggle="tab"><i class="fa fa-cube"></i> Habilitaci&oacute;n de matricula</a>
+			</li>
+			<li>
+				<a href="#not_nota-tab" data-toggle="tab"><i class="fa fa-cube"></i> Nota Evaluacion</a>
+			</li>
+			<li>
+				<a href="#not_comportamiento-tab" data-toggle="tab"><i class="fa fa-cube"></i> Nota Comportamiento</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="alu_gru_fam_alumno-tab">
+				<table class="table" id="alu_gru_fam_alumno-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="alu_salud-tab">
+				<table class="table" id="alu_salud-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="eva_matr_vacante-tab">
+				<table class="table" id="eva_matr_vacante-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_reserva-tab">
+				<table class="table" id="mat_reserva-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_matricula-tab">
+				<table class="table" id="mat_matricula-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_matricula_doc-tab">
+				<table class="table" id="mat_matricula_doc-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_habilitacion-tab">
+				<table class="table" id="mat_habilitacion-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="not_nota-tab">
+				<table class="table" id="not_nota-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="not_comportamiento-tab">
+				<table class="table" id="not_comportamiento-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

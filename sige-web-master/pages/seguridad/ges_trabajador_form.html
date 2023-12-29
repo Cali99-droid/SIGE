@@ -1,0 +1,113 @@
+<script type="text/javascript" src="pages/js/ges_trabajador_form.js"></script>
+
+<div class="panel panel-flat">
+
+
+		<div class="panel-body">
+			<form action="api/trabajador" id="ges_trabajador-frm">
+				<fieldset class="content-group">
+					<legend class="text-bold">DATOS PERSONALES</legend>
+							<input type="hidden" id="id" name="id" />
+							<input type="hidden" id="id_usr" name="id_usr" />
+							<input type="hidden" id="est" name="est" />
+							<input type="hidden" id="genero" name="genero" />
+							<input type="hidden" id="id_suc" name="id_suc" />
+							<div class="form-group">
+								<div class="row">
+									<div class="col-sm-3">
+										<label>Apellido paterno</label>
+						                <input type="text" id="ape_pat" name="ape_pat" required class="form-control input-sm " maxlength="50" readonly>
+									</div>
+									<div class="col-sm-3">
+										<label>Apellido materno</label>
+						                <input type="text" id="ape_mat" name="ape_mat" required class="form-control input-sm " maxlength="50" readonly>
+									</div>
+									<div class="col-sm-6">
+										<label>Nombres</label>
+						                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50" readonly>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<label>Tipo de documento</label> 
+										<select id="id_tdc" name="id_tdc" required placeholder="Seleccione" class="form-control select-search" >
+										</select>
+									</div>
+									<div class="col-sm-3">
+										<label>Nro de documento</label>
+						                <input type="text" id="nro_doc" name="nro_doc" required class="form-control input-sm " maxlength="50" readonly>
+									</div>
+										
+									<div class="col-sm-3">
+										<label>Fec. Nacimiento</label>
+						                <input type="text" id="fec_nac" name="fec_nac" required class="form-control input-sm daterange-single" maxlength="10">
+									</div>							
+									<div class="col-sm-3">
+										<label>Estado civil</label>
+						                <select id="id_eci" name="id_eci" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>							
+								</div>
+							</div>
+				</fieldset>
+
+				<fieldset class="content-group">
+					<legend class="text-bold">DATOS DE CONTACTO</legend>
+					<div class="form-group">		
+								<div class="row">
+									<div class="col-sm-6">
+										<label>Direcci&oacute;n</label>
+						                <input type="text" id="dir" name="dir" required class="form-control input-sm " maxlength="100">
+									</div>
+									<div class="col-sm-6">
+										<label>Correo</label>
+						                <input type="text" id="corr" name="corr"  class="form-control input-sm " maxlength="100" required>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<label>Celular</label>
+						                <input type="text" id="cel" name="cel"  class="form-control input-sm " maxlength="15" required>
+									</div>
+									<div class="col-sm-6">
+										<label>Tel&eacute;fono</label>
+						                <input type="text" id="tel" name="tel"  class="form-control input-sm " maxlength="15">
+									</div>
+								</div>
+						</div>		
+				</fieldset>
+
+				<fieldset class="content-group">
+					<legend class="text-bold">OTROS DATOS</legend>
+					<div class="form-group">		
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Grado de instrucci&oacute;n</label> 
+										<select id="id_gin" name="id_gin" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Carrera</label>
+						                <input type="text" id="carrera" name="carrera" required class="form-control input-sm " maxlength="50">
+									</div>
+									<div class="col-sm-4">
+										<label>Cant. hijos</label>
+						                <input type="text" id="num_hij" name="num_hij" required class="form-control input-sm number" maxlength="2">
+									</div>
+								</div>
+						</div>		
+				</fieldset>
+
+
+												
+				<div class="modal-footer">
+					<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+				</div>
+					
+			</form>
+	</div>
+</div>
+	
+			
+
+	

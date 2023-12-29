@@ -1,0 +1,75 @@
+<form action="api/movimiento">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A" />
+	<input type="hidden" id="id_mat" name="id_mat" />
+	<input type="hidden" id="tipo" name="tipo" value="S"/>
+	<input type="hidden" id="id_suc" name="id_suc" />
+	<div class="form-group">
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nro de operaci&oacute;n</label> 
+				<input type="text" id="nro_rec" name="nro_rec" required class="form-control input-sm" >
+			</div>
+			<div class="col-sm-6">
+				<label>Concepto</label> 
+				<select id="id_fco" name="id_fco" onchange="onchangeConcepto(this)" required placeholder="Seleccione" class="form-control select-search">
+					<option>Seleccionar</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Fecha</label>
+                <div class="input-group">
+					<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+					<input type="text" id="fec" name="fec" class="form-control daterange-single" >
+				</div>
+			</div>
+        			
+			<div class="col-sm-6">
+				<label>Monto</label>
+                <input type="text" id="monto" name="monto" required  class="form-control input-sm" maxlength="6">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Observaci&oacute;n</label>
+				<input type="text" id="obs" name="obs" class="form-control" >
+			</div>
+        			
+			<div class="col-sm-6">
+				<label>Banco</label>
+               <select id="id_fba" name="id_fba"  required placeholder="Seleccione" class="form-control">
+				</select>
+			</div>
+		</div>
+		
+			<!-- 
+			<div class="col-sm-6">
+				<label>Descuento</label>
+                <input type="text" id="descuento" name="descuento" class="form-control input-sm" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Monto total</label>
+                <input type="text" id="monto_total" name="monto_total" class="form-control input-sm" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>N&uacute;mero Recibo</label>
+                <input type="text" id="nro_rec" name="nro_rec" class="form-control input-sm" maxlength="100">
+			</div>
+			 -->
+			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

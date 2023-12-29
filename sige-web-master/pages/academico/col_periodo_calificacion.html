@@ -1,0 +1,176 @@
+<script type="text/javascript" src="js/academico/col_periodo_calificacion.js"></script>
+<style>
+tr.highlighted td {
+       background: red;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-flat">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+						<div class="row">
+							<div class="col-sm-4">
+								<label class="negrita">Giro de Negocio</label>
+								<select required class="form-control select-search" id="id_gir" name="id_gir">
+									<!--<option value="">SELECCIONE</option>-->
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label class="negrita">Nivel</label>
+								<select required class="form-control select-search" id="id_niv" name="id_niv">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label class="negrita">Periodo</label>
+								<select required class="form-control select-search" id="id_cpu" name="id_cpu">
+								</select>
+							</div>
+						</div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Grados</h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_grados">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Tipo de Calificación para el grado  <label id="nom_grado">PERIODO </label></h6>
+				
+            </div>
+                        <div class="panel-body">
+				<form class="frm-blue" id="frm-calificacion_periodo" action="api/perUni/grabarPeriodoCalificacion">
+				<input type="hidden" id="id" name="id"/>
+				<input type="hidden" id="id_anio" name="id_anio"/>
+				<input type="hidden" id="id_gra" name="id_gra"/>
+				<input type="hidden" id="id_cpu" name="id_cpu"/>
+				<input type="hidden" id="est" name="est" value="A"/>
+                            <fieldset class="content-group text-center">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="col-sm-6">
+                                                <label class="negrita">Tipo de Calificacion</label>
+                                                <select required class="form-control select-search" id="id_tca" name="id_tca">
+                                                    <option value="">SELECCIONE</option>
+                                                </select>
+
+
+                                         </div>
+										  <div class="col-sm-6" id="div_cualitativo" class="div_cualitativo">
+											<div class="custom-control custom-checkbox mb-2">
+												<input type="checkbox" class="custom-control-input letra" id="nota_cuali_AD" name="letra" value="AD">
+												<label class="nota_cualitativa">AD</label>
+											</div>
+											<div class="custom-control custom-checkbox mb-2">
+												<input type="checkbox" class="custom-control-input letra" id="nota_cuali_A" name="letra" value="A">
+												<label class="nota_cualitativa">A</label>
+											</div>
+											<div class="custom-control custom-checkbox mb-2">
+												<input type="checkbox" class="custom-control-input letra" id="nota_cuali_B" name="letra" value="B">
+												<label class="nota_cualitativa">B</label>
+											</div>
+											<div class="custom-control custom-checkbox mb-2">
+												<input type="checkbox" class="custom-control-input letra" id="nota_cuali_C" name="letra" value="C">
+												<label class="nota_cualitativa">C</label>
+											</div>
+                                         </div>
+										 <div id="div_cuantitativo">
+											<div class="col-sm-3">
+                                                <label class="negrita">Desde</label>
+                                                <input type="text" class="form-control input-sm" maxlength="50" id="nota_ini" name="nota_ini"
+                                                    required />
+                                            </div>
+											<div class="col-sm-3">
+                                                <label class="negrita">Hasta</label>
+                                                <input type="text" class="form-control input-sm" maxlength="50" id="nota_fin" name="nota_fin"
+                                                    required />
+                                            </div>
+                                         </div>
+                                        <p></p>
+                                       
+
+
+                                    </div>
+
+
+                                </div>
+								 <div class="row text-right">
+
+                                            <p>
+                                                <button type="button" class="btn-lg btn-primary  icon-floppy-disk" id="btn_grabar">
+                                                    Guardar</button>
+												<button type="button" class="btn-lg btn-danger" id="btn_eliminar">
+                                                    Eliminar</button>
+                                            </p>
+
+                                        </div>
+                            </fieldset>
+						</form>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

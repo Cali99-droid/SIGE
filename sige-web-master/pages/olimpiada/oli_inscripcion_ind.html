@@ -1,0 +1,108 @@
+<script type="text/javascript" src="js/olimpiada/oli_inscripcion_ind.js"></script>
+<div class="panel panel-flat">
+<div class="panel-body">
+<b><font size="5" color="#0000CD" face="sans-serif"><label id="titulo"></label></font></b><br>
+<b><font size="2" color="#0000CD" face="sans-serif"><label id="descripcion"></label></font></b><br>
+<form action="api/public/inscripcionInd" id="oli_inscripcion_ind-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_oli" name="id_oli" />
+	<input type="hidden" id="nivel" name="nivel" />
+	<input type="hidden" id="col_org" name="col_org" />
+	<input type="hidden" id="id_ti" name="id_ti" />
+	<input type="hidden" id="id_oc" name="id_oc" />
+	<input type="hidden" id="est" name="est" value="A" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>DNI</label>
+                <input type="text" id="nro_dni" name="nro_dni" required class="form-control input-sm number" minlength="8" maxlength="8" >
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Apellido Paterno</label>
+                <input type="text" id="ape_pat" name="ape_pat" required class="form-control input-sm " style="text-transform: uppercase;" maxlength="100">
+			</div>
+			<div class="col-sm-4">
+				<label>Apellido Materno</label>
+                <input type="text" id="ape_mat" name="ape_mat" required class="form-control input-sm "  style="text-transform: uppercase;" maxlength="100">
+			</div>
+			<div class="col-sm-4">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm "  style="text-transform: uppercase;" maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-9">
+				<label>Correo Electr&oacute;nico</label>
+                <input type="email" id="corr" name="corr" required class="form-control input-sm "  style="text-transform: uppercase;" maxlength="100">
+			</div>
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Departamento</label>
+				<div class="flechas"> 
+				<select id="id_dep" name="id_dep" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label>Provincia</label>
+				<div class="flechas"> 
+				<select id="id_pro" name="id_pro" required placeholder="Seleccione" class="form-control select-search">
+					<option value=''>SELECCIONAR</option>
+				</select>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label>Distrito</label>
+				<div class="flechas"> 
+				<select id="id_dist" name="id_dist" required placeholder="Seleccione" class="form-control select-search">
+					<option value=''>SELECCIONAR</option>
+				</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<label>Colegio</label>
+                <input type="text" class="form-control input-xs" id="col" name="col" placeholder="Ingrese colegio" required="required"  style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-4">
+				<label>Gesti&oacute;n</label>
+				<div class="flechas"> 
+				<select id="id_cg" name="id_cg" required placeholder="Seleccione" class="form-control select-search">
+				<option value=''>SELECCIONAR</option>
+				</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Nivel</label>
+				<div class="flechas">   
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				<option value=''>SELECCIONAR</option>
+				</select>
+				</div> 
+			</div>
+			<div class="col-sm-4">
+				<label>Grado</label> 
+				<div class="flechas"> 
+				<select id="id_og" name="id_og" required placeholder="Seleccione" class="form-control select-search">
+				<option value=''>SELECCIONAR</option>
+				</select>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- <i class="icon-arrow-left7 mr-3 icon-2x"></i> -->
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" id="btn-cancelar" href="#" onclick="_send('pages/olimpiada/oli_inscripciones.html','Inscripciones','Lista')">Cancelar</button>
+		<button type="button" class="btn btn-primary" id="btn-grabar">Grabar<i class="icon-floppy-disk position-right"></i></button>
+	</div>
+</form>
+</div>
+</div>
+

@@ -1,0 +1,66 @@
+<div class="panel-heading">
+	<h6 class="panel-title">Autoridades del Aula </h6>
+</div>
+<form action="api/aula/grabarAulaDetalle" id="col_aula_detalle-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_au" name="id_au" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label class="negrita">Nivel</label>
+				<input type="text" class="form-control input-sm" id="nivel" name="nivel" readonly/>
+			</div>
+			<div class="col-sm-4">
+				<label class="negrita">Grado</label>
+				<input type="text" class="form-control input-sm" id="grado" name="grado" readonly/>
+			</div>
+			<div class="col-sm-4">
+				<label class="negrita">Sección</label>
+				<input type="text" class="form-control input-sm" id="secc" name="secc" readonly/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label class="negrita">Nombre</label>
+				<input type="text" class="form-control input-sm" id="nom" name="nom" />
+			</div>
+			<div class="col-sm-6">
+				<label class="negrita">Salon</label>
+				<input type="text" class="form-control input-sm" id="salon" name="salon" />
+			</div>
+			<div class="col-sm-12">
+				<label>Tutor</label> 
+				<select id="id_tut" name="id_tut" required placeholder="Seleccione" class="form-control select-search">
+				<option value="">SELECCIONE</option>
+				</select>
+			</div>
+			<div class="col-sm-12">
+				<label>Auxiliar</label> 
+				<select id="id_aux" name="id_aux" required placeholder="Seleccione" class="form-control select-search">
+				<option value="">SELECCIONE</option>
+				</select>
+			</div>
+			<div class="col-sm-12">
+				<label>Coordinador</label> 
+				<select id="id_cord" name="id_cord" required placeholder="Seleccione" class="form-control select-search">
+				<option value="">SELECCIONE</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label class="negrita">Matriculados</label>
+				<input type="text" class="form-control input-sm" id="matriculados" name="matriculados" readonly/>
+			</div>
+			<div class="col-sm-6">
+				<label class="negrita">Trasladados</label>
+				<input type="text" class="form-control input-sm" id="trasladados" name="trasladados" readonly/>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

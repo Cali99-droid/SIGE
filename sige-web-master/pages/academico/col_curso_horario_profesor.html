@@ -1,0 +1,84 @@
+<script type="text/javascript" src="pages/js/col_curso_horario_profesor.js"></script>
+<style>
+.fc .fc-axis{
+padding:1px;
+}
+.fc-time{
+text-align: center
+}
+.fc-title{
+font-size:11px
+}
+</style>
+
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"
+	rel="stylesheet" type="text/css">
+
+
+<div class="panel panel-flat" id="col_curso_horario_profesor-panel">
+	<div class="panel-body">
+		<form action="" id="col_curso_horario_profesor">
+			<div class="row">
+				<div class="col-sm-6">
+						<label>Profesor</label>
+						<div class="flechas">
+							<select id="id_tra" name="id_tra" placeholder="Seleccione"
+								class="form-control">
+							</select>
+						</div>
+					</div>
+				<div class="col-sm-6">
+					<label>Local</label>
+					<div class="flechas">
+						<select class="form-control input-xs" id="id_suc" name="id_suc">
+							<!-- <option value=''>SELECCIONAR</option> -->
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<label>Nivel</label>
+					<div class="flechas">
+						<select class="form-control input-xs" id="id_niv" name="id_niv">
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<label>Grado</label>
+						<div class="flechas">
+							<select class="form-control input-xs" id="id_gra" name="id_gra">
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="text-right">
+					<button type="submit" class="btn btn-primary" id="btn-buscar">
+						Buscar <i class="icon-arrow-right14 position-right"></i>
+					</button>
+					<button type="button" class="btn btn-primary" id="btn-grabar" style='display:none'  >
+						Grabar <i class="fa fa-floppy-o position-right"></i>
+					</button>
+				</div>
+		</form>
+	</div>
+
+	<table class="table" id="col_curso_horario_profesor-tabla">
+	</table>
+	<div class="row" id="div-horario" style="display:none">
+		<!-- <div class="col-md-3">
+			<div class="content-group" id="external-events" id="div-grup-curso">
+				<h6>Cursos</h6>
+				<div id="div-cursos" class="fc-events-container content-group">
+					<div class="fc-event" data-color="#546E7A"><label>Curso</label></div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="col-md-9">
+			<div class="fullcalendar-external"></div>
+		</div>
+	</div>
+
+</div>
+

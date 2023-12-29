@@ -1,0 +1,176 @@
+<form action="api/matricula" id="mat_matricula_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				<select id="id_alu" name="id_alu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Apoderado</label> 
+				<select id="id_fam" name="id_fam"  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Encargado</label> 
+				<select id="id_enc" name="id_enc"  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Condicion Matricula</label> 
+				<select id="id_con" name="id_con" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Cliente</label> 
+				<select id="id_cli" name="id_cli" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nivel</label> 
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha matricula</label>
+                <input type="text" id="fecha" name="fecha" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Presenta carta poder</label>
+				<select id="car_pod" name="car_pod" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>N&uacute;mero de Contrato</label>
+                <input type="text" id="num_cont" name="num_cont" required class="form-control input-sm " maxlength="20">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Observaci&oacute;n</label>
+                <input type="text" id="obs" name="obs"  class="form-control input-sm " maxlength="500">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="mat_matricula-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_aula_especial-tab" data-toggle="tab"><i class="fa fa-cube"></i> Alumno por sal&oacute;n especial</a>
+			</li>
+			<li>
+				<a href="#mat_solicitud-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matr&iacute;cula Solicitud</a>
+			</li>
+			<li>
+				<a href="#mat_condicion-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matr&iacute;cula Condici&oacute;n Alumno</a>
+			</li>
+			<li>
+				<a href="#fac_academico_pago-tab" data-toggle="tab"><i class="fa fa-cube"></i> Facturacion Pago</a>
+			</li>
+			<li>
+				<a href="#fac_movimiento-tab" data-toggle="tab"><i class="fa fa-cube"></i> Movimiento de caja</a>
+			</li>
+			<li>
+				<a href="#fac_alumno_descuento-tab" data-toggle="tab"><i class="fa fa-cube"></i> Descuento por alumno</a>
+			</li>
+			<li>
+				<a href="#col_situacion_mat-tab" data-toggle="tab"><i class="fa fa-cube"></i> Situaci&oacute;n Matr&iacute;cula</a>
+			</li>
+			<li>
+				<a href="#col_historial_eco-tab" data-toggle="tab"><i class="fa fa-cube"></i> Historial Economico Alumno</a>
+			</li>
+			<li>
+				<a href="#not_curso_exoneracion-tab" data-toggle="tab"><i class="fa fa-cube"></i> Exoneraci&oacute;n de cursos</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_aula_especial-tab">
+				<table class="table" id="col_aula_especial-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_solicitud-tab">
+				<table class="table" id="mat_solicitud-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_condicion-tab">
+				<table class="table" id="mat_condicion-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="fac_academico_pago-tab">
+				<table class="table" id="fac_academico_pago-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="fac_movimiento-tab">
+				<table class="table" id="fac_movimiento-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="fac_alumno_descuento-tab">
+				<table class="table" id="fac_alumno_descuento-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_situacion_mat-tab">
+				<table class="table" id="col_situacion_mat-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_historial_eco-tab">
+				<table class="table" id="col_historial_eco-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="not_curso_exoneracion-tab">
+				<table class="table" id="not_curso_exoneracion-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

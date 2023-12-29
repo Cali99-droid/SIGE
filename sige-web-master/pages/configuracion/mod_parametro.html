@@ -1,0 +1,103 @@
+<script type="text/javascript" src="assets/js/plugins/forms/editable/editable.min.js"></script>
+<script type="text/javascript" src="js/configuracion/mod_parametro.js"></script>
+<style>
+.box__file
+					{
+						width: 0.1px;
+						height: 0.1px;
+						opacity: 0;
+						overflow: hidden;
+						position: absolute;
+						z-index: -1;
+					}
+</style>
+
+<div class="panel panel-flat">
+	<div class="panel-body">
+ 			<div class="tabbable">
+				<ul class="nav nav-tabs nav-tabs-highlight">
+					<li class="active"><a id="li-tabs-1" href="#col_datos-tab" data-toggle="tab"><i class="fa fa-credit-card"></i>Información General de la IE</a></li>
+					<li><a id="li-tabs-2" href="#col_datos_generales-tab" data-toggle="tab"><i class="fa fa-user"></i>Datos Generales</a></li>
+					<li><a id="li-tabs-3" href="#col_reglas_negocio-tab"
+						data-toggle="tab"><i class="fa fa-user"></i>Reglas de Negocio</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="col_datos-tab">
+						<input type="hidden" id="type" name="type" />
+
+						<fieldset class="content-group">
+						<div class="panel panel-flat" id="fac_banco-panel">
+
+							<div class="panel-heading">
+								<h5 class="panel-title">COLEGIO</h5>
+								<div class="heading-elements">
+									<ul class="icons-list">
+										<li><a data-action="collapse"></a></li>
+										<li><a data-action="reload"></a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="panel-body">
+								<div class="form-group row">
+									<label class="col-form-label col-lg-6">Insignia</label>
+									<div class="col-lg-6">
+										<label for="file" id='file-insignia'>
+												<img style="max-width: 150px;max-height: 150px;cursor:pointer" />
+												<input type="file" class='box__file' />
+										</label>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-form-label col-lg-6">Logotipo</label>
+									<div class="col-lg-6">
+										<label for="file" id='file-logo'>
+												<img style="max-width: 150px;max-height: 150px;cursor:pointer" />
+												<input type="file" class='box__file' />
+										</label>
+
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-form-label col-lg-6">Lema</label>
+									<div class="col-lg-6">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-form-label col-lg-6">Pagina Web</label>
+									<div class="col-lg-6">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+
+						</div>
+						</fieldset>
+					</div>
+					<div class="tab-pane" id="col_datos_generales-tab">
+						
+						<table class="table" id="mod_modulo-tabla">
+						</table>
+	
+					</div>
+					<div class="tab-pane" id="col_reglas_negocio-tab">
+						
+						<table class="table" id="reglas_negocio-tabla">
+						</table>
+	
+					</div>
+				</div>
+			<div>
+	</div>
+<div>
+					
+	
+<script>
+
+_set_upload('insignia',$('#file-insignia'));
+
+_set_upload('logo',$('#file-logo'));
+
+
+</script>

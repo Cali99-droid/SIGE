@@ -1,0 +1,58 @@
+<form action="api/cursoHorarioPad" id="col_curso_horario_pad_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>A&ntilde;o</label> 
+				<select id="id_anio" name="id_anio" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Fecha Inicio Vigencia</label>
+                <input type="text" id="fec_ini_vig" name="fec_ini_vig" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha Fin Vigencia</label>
+                <input type="text" id="fec_fin_vig" name="fec_fin_vig" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_curso_horario_pad-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_curso_horario-tab" data-toggle="tab"><i class="fa fa-cube"></i> Curso Horario</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_curso_horario-tab">
+				<table class="table" id="col_curso_horario-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

@@ -1,0 +1,126 @@
+<form action="api/grad" id="cat_grad_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>nivel</label> 
+				<select id="id_nvl" name="id_nvl" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Grado Educativo</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo de grado</label>
+				<select id="tipo" name="tipo" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="cat_grad-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#eva_vacante-tab" data-toggle="tab"><i class="fa fa-cube"></i> Vacante</a>
+			</li>
+			<li>
+				<a href="#eva_matr_vacante-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matricula Vacante</a>
+			</li>
+			<li>
+				<a href="#col_capacidad_setup-tab" data-toggle="tab"><i class="fa fa-cube"></i> Configuracion Capacidad</a>
+			</li>
+			<li>
+				<a href="#mat_reserva-tab" data-toggle="tab"><i class="fa fa-cube"></i> Reserva matr&iacute;cula</a>
+			</li>
+			<li>
+				<a href="#mat_matricula-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matricula</a>
+			</li>
+			<li>
+				<a href="#col_aula-tab" data-toggle="tab"><i class="fa fa-cube"></i> Aula</a>
+			</li>
+			<li>
+				<a href="#col_curso_anio-tab" data-toggle="tab"><i class="fa fa-cube"></i> Curso por a&ntilde;o</a>
+			</li>
+			<li>
+				<a href="#col_indicador-tab" data-toggle="tab"><i class="fa fa-cube"></i> Indicador</a>
+			</li>
+			<li>
+				<a href="#col_curso_subtema-tab" data-toggle="tab"><i class="fa fa-cube"></i> Curso Subtema</a>
+			</li>
+			<li>
+				<a href="#col_curso_unidad-tab" data-toggle="tab"><i class="fa fa-cube"></i> Unidad</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="eva_vacante-tab">
+				<table class="table" id="eva_vacante-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="eva_matr_vacante-tab">
+				<table class="table" id="eva_matr_vacante-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_capacidad_setup-tab">
+				<table class="table" id="col_capacidad_setup-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_reserva-tab">
+				<table class="table" id="mat_reserva-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_matricula-tab">
+				<table class="table" id="mat_matricula-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_aula-tab">
+				<table class="table" id="col_aula-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_curso_anio-tab">
+				<table class="table" id="col_curso_anio-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_indicador-tab">
+				<table class="table" id="col_indicador-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_curso_subtema-tab">
+				<table class="table" id="col_curso_subtema-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_curso_unidad-tab">
+				<table class="table" id="col_curso_unidad-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

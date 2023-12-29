@@ -1,0 +1,39 @@
+<form action="api/sesionActividad" id="col_sesion_actividad_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Sesion</label> 
+				<select id="id_ses" name="id_ses" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Actividad</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_sesion_actividad-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

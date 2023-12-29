@@ -1,0 +1,40 @@
+<form action="api/reporteInfractor" id="col_reporte_infractor_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Reporte Conductual</label> 
+				<select id="id_cp" name="id_cp" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Matricula</label> 
+				<select id="id_mat" name="id_mat" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_reporte_infractor-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

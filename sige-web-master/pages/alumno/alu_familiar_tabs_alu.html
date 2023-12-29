@@ -1,0 +1,251 @@
+<script type="text/javascript" src="js/alumno/alu_familiar_tabs.js"></script> 
+<!-- <script type="text/javascript" src="js/matricula/mat_actualizacion_datos_padres.js"></script>   -->
+
+<form  id="alu_alumno-frm" action="api/alumno/alumnoGrabar">
+	<input type="hidden" id="id" name="id" /> 
+	<input type="hidden" id="ini" name="ini" />
+	<input type="hidden" id="id_gpf" name="id_gpf" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<fieldset class="content-group">
+		<legend class="text-bold">ALUMNOS REGISTRADOS</legend>
+			<div class="row">
+				<div class="familia-div col-sm-12">
+					<b id='titulo'></b>
+						<table class="table" id="alumno-tabla">
+						</table>
+				</div>
+			</div>
+	</fieldset>
+	<div id="div_alumno">
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a id="li-tabs-1" href="#alumno_gen-tab" data-toggle="tab"> Generales</a>
+			</li>
+			<li>
+				<a id="li-tabs-2" href="#alumno_com-tab" data-toggle="tab"> Comunicaci&oacute;n</a>
+			</li>
+			<!-- <li> 
+				<a id="li-tabs-2" href="#fam_direccion-tab" data-toggle="tab"><i class="fa fa-map-marker"></i> Direcci&oacute;n</a>
+			</li> -->
+			<li> 
+				<a id="li-tabs-3" href="#alumno_nac-tab" data-toggle="tab">Nacimiento</a>
+			</li>
+			<li> 
+				<a id="li-tabs-4" href="#alumno_doc-tab" data-toggle="tab">Documentos</a>
+			</li>
+			<li> 
+				<a id="li-tabs-5" href="#alumno_otro-tab" data-toggle="tab">Otros Datos</a>
+			</li>
+		</ul>
+		<div class="modal-footer">
+		<button type="button" id="btn-nuevo" class="btn btn-info btn-xs" onclick="alumnoNuevo()"><i class="icon-file-empty"></i>Nuevo</button>
+		<button type="submit" id="btn-grabar" class="btn btn-success btn-xs"><i class="icon-floppy-disk"></i>Grabar</button>
+		</div>
+		<div class="tab-content">
+			<div class="tab-pane active" id="alumno_gen-tab">
+			<div class="row">
+				<div class="col-sm-4">
+					<label>C&oacute;digo</label>
+						<input type="text" id="cod" name="cod" class="form-control" readonly/>
+				</div>
+				<div class="col-sm-4">
+							<label>Tipo de documento</label>&nbsp;<font color="red">(*)</font> 
+							<select id="id_tdc" name="id_tdc"
+								required placeholder="Seleccione" class="form-control disabled">
+							</select>
+				</div>
+				<div class="col-sm-4">
+							<label>N&uacute;mero de documento</label>&nbsp;<font color="red">(*)</font><input type="text"
+								id="nro_doc" name="nro_doc" required
+								class="form-control input-sm " maxlength="50">
+				</div>
+			</div>
+			<!--
+			<div class="row">
+				<div class="col-sm-6">
+					<label for="name" class="control-label">Posee Apellidos</label>&nbsp;<font color="red">(*)</font>
+					<div class="input-group">
+						<div class="radio radio-info radio-inline">
+							<input id="id_tapa1" name="id_tap" value="A" type="radio">
+							<label for="id_tapa1"> Ambos </label>
+						</div>
+						<div class="radio radio-info radio-inline">
+							<input id="id_tapa2" name="id_tap" value="P" type="radio">
+							<label for="id_tapa2"> Solo paterno </label>
+						</div>
+						<div class="radio radio-info radio-inline">
+							<input id="id_tapa3" name="id_tap" value="M" type="radio">
+							<label for="id_tapa3"> Solo materno </label>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6"></div>
+			</div>-->
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Apellido paterno </label> <input type="text" id="ape_pat"
+						name="ape_pat" class="form-control input-sm " maxlength="30">
+				</div>
+				<div class="col-sm-4">
+					<label>Apellido materno </label> <input type="text" id="ape_mat"
+						name="ape_mat" class="form-control input-sm " maxlength="30">
+				</div>
+				<div class="col-sm-4">
+					<label>Nombres</label> <input type="text" id="nom" name="nom"
+						required class="form-control input-sm " maxlength="40">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4">
+					<label>G&eacute;nero</label>&nbsp;<font color="red">(*)</font>
+					<div class="input-group">
+						<div class="radio radio-info radio-inline">
+							<input id="id_gen1" name="id_gen" value="1" type="radio">
+							<label for="id_gen1"> Masculino </label>
+						</div>
+						<div class="radio radio-info radio-inline">
+							<input id="id_gen2" name="id_gen" value="0" type="radio">
+							<label for="id_gen2"> Femenino</label>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<label>Estado civil</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_eci" name="id_eci" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+			</div>
+			</div>
+			<div class="tab-pane" id="alumno_com-tab">
+				<div class="row">
+					<div class="col-sm-6">
+						<label>Celular del Alumno</label>
+						   <input type="text" id="celular" name="celular" class="form-control input-sm " maxlength="50">
+					</div>
+					<div class="col-sm-6">
+						<label>Tel&eacute;fono Fijo de Casa</label>
+						   <input type="text" id="telf" name="telf" class="form-control input-sm " maxlength="50">
+					</div>
+					<!--<div class="col-sm-4">
+						<label>Direcci&oacute;n</label>&nbsp;<font color="red">(*)</font>
+						   <input type="text" id="direccion" name="direccion" required class="form-control input-sm " maxlength="50">
+					</div>
+					<div class="col-sm-4">
+						<label>Referencia Domiciliaria</label>&nbsp;<font color="red">(*)</font>
+						   <input type="text" id="ref" name="ref" required class="form-control input-sm " maxlength="50">
+					</div>-->
+					
+			   </div>
+			   <div class="row">
+					<div class="col-sm-6">
+						<label>Email Personal</label>
+						   <input type="text" id="corr" name="corr"  class="form-control input-sm " maxlength="50">
+					</div>
+					<div class="col-sm-6">
+						<label>Email Institucional</label>
+						   <input type="text" id="corr" name="corr"  class="form-control input-sm " maxlength="50">
+					</div>
+			   </div>
+			</div>
+			<div class="tab-pane" id="alumno_nac-tab">
+				<div class="row">
+					<div class="col-sm-4">
+					<label>Fecha nacimiento</label>&nbsp;<font color="red">(*)</font> <input type="text" id="fec_nac"
+						name="fec_nac" required
+						class="form-control input-sm daterange-single" maxlength="10">
+					</div>
+					<div class="col-sm-4">
+						<label>Pa&iacute;s</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_pais_nac" name="id_pais_nac" required placeholder="Seleccione" class="form-control select-search">
+						<option value="">SELECCIONE</option>
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<label>Nacionalidad</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_nac" name="id_nac" required placeholder="Seleccione" class="form-control select-search">
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<label>Departamento</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_dep_nac" name="id_dep_nac" required placeholder="Seleccione" class="form-control select-search">
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<label>Provincia</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_pro_nac" name="id_pro_nac" required placeholder="Seleccione" class="form-control select-search">
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<label>Distrito</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_dist_nac" name="id_dist_nac" required placeholder="Seleccione" class="form-control select-search">
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="alumno_doc-tab">
+			</div>
+			<div class="tab-pane" id="alumno_otro-tab">
+			<div class="row">
+			<div class="col-sm-4">
+				<label>Lengua materna</label> 
+				<select id="id_idio1" name="id_idio1" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Segunda Lengua</label> 
+				<select id="id_idio2" name="id_idio2" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!--<fieldset class="content-group">
+		<legend class="text-bold">DATOS IMPORTANTES</legend>
+
+		
+
+	</fieldset>
+	<fieldset class="content-group">
+		<legend class="text-bold">DATOS DE NACIMIENTO</legend>
+
+	</fieldset>-->
+	<!--<fieldset class="content-group">
+		<legend class="text-bold">DATOS DE DOMICILIO</legend>
+		<div class="row">
+			<div class="col-sm-4">
+			<button type="button" id="btn-direccionPadre" class="btn btn-info btn-xs" onclick="obtenerDireccionPadre()"><i class="icon-file-empty"></i>Obtener Dirección del Padre</button>
+			<button type="button" id="btn-direccionMadre" class="btn btn-info btn-xs" onclick="obtenerDireccionMadre()"><i class="icon-file-empty"></i>Obtener Dirección de la Madre</button>
+			</div>
+		</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Departamento</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_dep_viv" name="id_dep_viv" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Provincia</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_pro_viv" name="id_pro_viv" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Distrito</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_dist_viv" name="id_dist_viv" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+			</div>
+			
+	</fieldset>-->
+	<!--<fieldset class="content-group">
+		<legend class="text-bold">LENGUAS</legend>
+		
+	</fieldset>-->
+	</div>
+</form>
+

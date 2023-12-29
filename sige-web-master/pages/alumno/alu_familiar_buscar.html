@@ -1,0 +1,100 @@
+<script type="text/javascript" src="js/alumno/alu_familiar_buscar.js"></script>
+
+
+<div class="panel panel-flat">
+	<div class="panel-body">
+		<form id="alu_familiar-frm">
+
+			<div class="tabbable">
+				<ul class="nav nav-tabs nav-tabs-highlight">
+					<li class="active"><a id="li-tabs-1" href="#fam_datos-tab" data-toggle="tab"><i
+								class="fa fa-credit-card"></i> Por Tipo
+							de documento</a></li>
+
+					<li><a id="li-tabs-2" href="#fam_familiares-tab" data-toggle="tab"><i class="fa fa-user"></i>
+							Apellidos y
+							nombres</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="fam_datos-tab">
+
+						<input type="hidden" id="type" name="type" />
+
+						<fieldset class="content-group">
+
+							<div class="row">
+
+								<div class="col-sm-6">
+									<div class="row">
+
+										<div class="col-sm-6">
+											<label>Tipo de documento</label>
+											<select id="id_tdc" required name="id_tdc" required placeholder="Seleccione"
+												class="form-control select-search">
+											</select>
+										</div>
+										<div class="col-sm-6">
+											<label>N&uacute;mero de documento</label> <input type="text" id="nro_doc"
+												name="nro_doc" class="form-control input-sm " maxlength="50" required>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</fieldset>
+
+
+						<div class="modal-footer">
+							<button type="submit" id="btn-buscar" class="btn btn-primary">Buscar</button>
+						</div>
+
+					</div>
+
+					<div class="tab-pane" id="fam_familiares-tab">
+						<fieldset class="content-group">
+							<div class="row">
+
+								<div class="col-sm-12">
+									<div class="row">
+
+										<div class="col-sm-12">
+											<label>Apellidos y Nombres</label> <input type="text" id="apellidosNombres"
+												name="apellidosNombres" class="form-control input-sm " maxlength="50">
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</fieldset>
+
+						<div class="modal-footer">
+							<button type="submit" id="btn-buscar" class="btn btn-primary">Buscar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+
+
+</div>
+
+<div class="panel panel-flat" id="alu_familiar-panel">
+
+	<table class="table" id="alu_familiar-tabla">
+	</table>
+
+</div>
+<div class="panel panel-flat" id="alu_no_existe" style="display:none">
+	<b>Familiar no existe.</b>
+</div>
+<div class="panel panel-flat" id="alu_evaluacion-panel" style="display:none">
+	<table class="table" id="alu_evaluacion-tabla">
+	</table>
+	<button id="btnNuevo" class="btn btn-success" type="button" onclick="crearFamilia()"><span
+			class="glyphicon glyphicon-plus"></span>Desea crear nueva familia?</button>
+</div>

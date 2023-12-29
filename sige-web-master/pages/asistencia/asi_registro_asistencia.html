@@ -1,0 +1,53 @@
+<script type="text/javascript" src="js/asistencia/asi_registro_asistencia.js"></script>
+
+<div class="panel panel-flat">
+
+	<div class="panel-body">
+
+		<form action="api/codigoBarras/registrarAsistencia" id="form_registro_asistencia">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-4">
+						<label>Codigo</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-vcard"></i></span>
+							<input type="text" id="lect_ing" name="lect_ing"
+								class="form-control">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<button type="submit" class="btn btn-primary" id="btn-registrar">
+					Registrar <i class="icon-arrow-right14 position-right"></i>
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+<div class="panel-flat" id="resultados" style="display: none">
+<div class="panel panel-success " id="div-res">
+<div class="panel-heading">
+<h3 class="panel-title">Resultados</h3>
+</div>
+<div class="panel-body">
+<div class="row">
+  <B><div id="alumno" class="col-sm-4"></div>
+  <div id="reg_asis" class="col-sm-2"><p style="color:#1E8449";><P><B></div>
+  <div id ="hora" class="col-sm-2"></div>
+</div>
+<div class="row">
+  <div id="aula" class="col-sm">PRIMARIA - CUARTO D</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+

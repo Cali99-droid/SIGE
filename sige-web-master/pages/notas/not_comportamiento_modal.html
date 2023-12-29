@@ -1,0 +1,52 @@
+<form action="api/comportamiento" id="not_comportamiento-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Trabajador</label> 
+				<select id="id_tra" name="id_tra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				<select id="id_alu" name="id_alu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Periodo Academico</label> 
+				<select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Promedio</label>
+                <input type="text" id="prom" name="prom" required class="form-control input-sm number" maxlength="10">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,361 @@
+<script>
+	var _id_niv;
+	function onloadPage(params) {
+		_onloadPage();
+
+		console.log(params);
+
+		$('#_a_titulo').on(
+				"click",
+				function() {
+					_send('pages/apoderado/apo_hijos.html', 'Mis hijos',
+							'Datos principales');
+				});
+
+		$('#foto').attr('src', _URL + 'api/alumno/foto/' + params.id);
+
+		$('#nom').val(params.nom);
+		$('#nivel').val(params.nivel);
+		$('#grado').val(params.grado);
+		$('#seccion').val(params.seccion);
+		_id_niv = params.id_niv;
+		var param1 = {
+			id_niv : params.id_niv , id_anio: $('#_id_anio').text()
+		};
+		_llenarComboURL('api/cronogramaLibreta/listarPeriodosX_Nivel', $('#id_cpu'), null,
+				param1, function() {
+					$('#id_cpu').change();
+				});
+		_blockUI(true);
+
+		_get('api/nota/listarPromedioCursos/' + params.id_mat, function(data) {
+			
+			console.log(data);
+			var lista = $('#notas-list');
+			var linea = lista.html();
+			for (var i = 0; i < data.listaProfesoresCursos.length - 1; i++) {
+				lista.append(linea);
+			}
+
+			var i = 0;
+			lista.children().each(
+					function() {
+						var notas = data.listaProfesoresCursos[i++];
+						var periodos = notas.periodos;
+						var table = 	$(this).find('#periodos-table');
+						
+						//CABACERA DE LA TABLA
+						var th = "<th></th>";
+						for(var k  in periodos){
+							var periodo = periodos[k];
+							th = th + "<th>"  + periodo.value.substr(0,1) + periodo.aux1 +"</th>"; 
+						}
+						
+						$('#periodos-table thead').html('<tr>' + th + '</tr>');
+
+						//CUERPO TABLA
+						var tr = "<td><B>NOTA1</B></td>";
+						console.log(periodos);
+						for(var k  in periodos){
+							var periodo = periodos[k];
+							console.log(periodo);
+							
+							if(periodo.cursos!=null){
+								var notaPromedioHTML = '';
+								var notaPromedio =periodo.cursos.competenciasPromedio;
+								if (_id_niv=='1')//INICIAL MUESTRA CUALITATIVO
+									notaPromedio =periodo.cursos.competenciasPromedio_cualitativo;
+								if (notaPromedio!=null){
+									if (notaPromedio!='' && notaPromedio < 10)
+										notaPromedioHTML = '0' + notaPromedio;
+									else 
+										notaPromedioHTML = notaPromedio;
+											
+								}
+								var td = $('<td>');
+								var link=$("<a>", {
+									  title: "DETALLE",
+									  text:notaPromedioHTML,
+									  href:'#',
+									  data: periodo.cursos
+									  });
+								link.data('cursos',periodo.cursos);
+								link.on('click', function(){
+									console.log(periodo.id_cpu);
+										/*if(periodo.id_cpu=='23' || periodo.id_cpu=='25' || periodo.id_cpu=='17' || periodo.id_cpu=='20'){
+											alert();
+										}	else{*/
+											detalle($(this),notas.curso);
+										//}									
+									}
+								);
+								
+								td.append(link);
+								//table.find('tbody tr').append("<td><a href='#' onlick='detalle(this)'>"  + periodo.cursos.competenciasPromedio +"</a></td>");
+								table.find('tbody tr').append(td);
+								//tr = tr + "<td><a href='#' onlick='detalle(this)'>"  + periodo.cursos.competenciasPromedio +"</a></td>";
+							}else
+								table.find('tbody tr').append('<td></td>');
+								//$('#periodos-table tbody tr').append('<td></td>');
+								//tr = tr + "<td></td>";
+						}
+						
+						//$('#periodos-table tbody tr').append('<tr>' + tr + '</tr>');
+						
+						/*
+						var competenciasPromedio = notas.competenciasPromedio;
+
+						if (competenciasPromedio == null) {
+							$(this).find('#promedio').html('');
+							$(this).find('#linkDetalle').addClass(
+									"btn disabled");
+						} else {
+							$(this).find('#promedio').html(competenciasPromedio);
+							$(this).find('#linkDetalle').data('notas', notas);
+						}
+						*/
+
+						$(this).find('#curso').html(  notas.curso);
+
+					});
+
+			_blockUI(false);
+		});
+		
+	}
+
+	function detalle(link, cursoTitulo) {
+		//var link = $(_link);
+		console.log(link.data('cursos'));
+
+		var competencias = link.data('cursos').competencias;
+
+		$modal = $('#modal_full').modal('show');
+		$modal.draggable({
+			handle : ".modal-header"
+		});
+		$modal.find('.modal-content').resizable({
+			minHeight : 250,
+			minWidth : 800
+		});
+
+		$modal.on('shown.bs.modal', function() {
+			//_focus($(this));
+
+		})
+
+		$modal.on('hidden.bs.modal', function() {
+			$('#modal_full .modal-body ').html('');
+		})
+
+			$modal.find('.modal-body').html("<table id='notas-table' class='table'>" + 
+											"	<thead>" +
+											"		<tr>" +
+											//"			<th>Nro</th>" +
+											"			<th>Fecha</th>" +
+//											"			<th>Tema</th>" +
+//											"			<th>Sub-Tema</th>" +
+//											"			<th>Tipo</th>" +
+											"			<th>Instrumento</th>" +
+											"			<th>Nota</th>" +
+											//"			<th>Indicador</th>" +
+											"		</tr>" +
+											"	<tbody></tbody></table>");
+			$modal.find('.modal-title').html(cursoTitulo);
+
+			var fila = 1;
+			
+			console.log(competencias);
+			for (var id_com in competencias) {
+				var indicadores = competencias[id_com].indicadores;
+				console.log(indicadores);
+				for (var id_ind in indicadores) {
+					var indicador = indicadores[id_ind];
+					var nota = -1;
+					if (indicador.nota!=null)
+						nota = indicador.nota;
+					var tipo = indicador.tipo;
+					if (tipo=='1')
+						tipo ='Examen';
+					if (tipo=='2')
+						tipo ='Tarea';
+					if (tipo=='3')
+						tipo ='Trabajo';
+					// NOTAS POR INDICADORES
+					console.log('nota',typeof nota);
+					if(nota >-1){
+						var nota_html = (nota < 10 ? '0' : '') + nota;
+						if(_id_niv=='1')
+							nota_html = indicador.cualitativo;
+						$('#notas-table tbody').append('<tr >' + 
+								//'<td>' + fila + '</td>' +
+								'<td nowrap>' + _parseDate(indicador.fec_fin) + '</td>' +
+//								'<td>' + tipo + '</td>' +
+//								'<td>'  + indicador.tema +'</td>' +
+//								'<td>' +  indicador.subtema + '</td>' +
+								'<td norwrap>'  + indicador.ins +'</td>' +
+								//'<td><a href="#" data-placement="top" data-popup="popover" class="notatool" title="' + indicador.ins + '" data-content="' + indicador.indicador + '"  >' + (nota < 10 ? '0' : '') + nota + '</a></td>' +
+								'<td><a href="#" class="notatool"  data-popup="popover-custom" data-placement="top"  title="' + indicador.ins + '" data-content="' + indicador.indicador + '">' +  nota_html +'</a></td>' +
+								//'<td>' +  indicador.indicador + '</td>' +
+							'</tr>');
+
+					}
+					
+					fila++;
+				}
+				
+				// PROMEDIOS POR INDICADORES
+				var prom_ind = (competencias[id_com].indicadoresPromedio!=null && competencias[id_com].indicadoresPromedio < 10 ? '0' : '') + competencias[id_com].indicadoresPromedio;
+				if(_id_niv=='1')
+					prom_ind =competencias[id_com].indicadoresPromedio_cualitativo;
+				$('#notas-table tbody').append('<tr style="background:#f2f5f2">' + 
+													//'<td>' + fila + '</td>' +
+													//'<td nowrap > </td>' +
+													//'<td> </td>' +
+													//'<td> </td>' +
+													'<td colspan="2">' + 'Promedio Parcial de Competencia' + '</td>' +
+													'<td>' + prom_ind + '</td>' +
+												'</tr>');
+				 
+			}
+			
+			// PROMEDIOS POR INDICADORES
+			var prom_com =(link.data('cursos').competenciasPromedio!=null && link.data('cursos').competenciasPromedio < 10 ? '0' : '') + link.data('cursos').competenciasPromedio;
+			if(_id_niv=='1')
+				prom_com = link.data('cursos').competenciasPromedio_cualitativo;
+			
+			$('#notas-table tbody').append('<tr style="background:#fd7e6d">' + 
+												//'<td>' + fila + '</td>' +
+												//'<td nowrap> </td>' +
+												//'<td> </td>' +
+												//'<td> </td>' +
+												'<td colspan="2"><b>PROMEDIO FINAL</b></td>' +
+												'<td><b>' +  prom_com + '</b></td>' +
+											'</tr>');
+			
+			//inicializando los tooltip
+//			$(".notatool").popup();
+			$('.notatool').popover({
+				template: '<div class="popover border-teal-400"><div class="arrow"></div><h3 class="popover-title bg-teal-400"></h3><div class="popover-content"></div></div>'
+			});
+	}
+	
+	$('body').on('click', function (e) {
+	    $('.notatool').each(function () {
+	        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+	            $(this).popover('hide');
+	        }
+	    });
+	});
+</script>
+
+
+<div class="row">
+
+	<div class="col-md-12">
+		<div class="panel panel-flat">
+
+			<div class="panel-body">
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-pagos-buscar">
+						<div class="form-group" id="alumno-div">
+							<div class="form-group form-group-material col-lg-2">
+								<img id="foto" width="100px" height="100px" alt="">
+							</div>
+							<div class="form-group form-group-material col-lg-5">
+								<label class="control-label is-visible">Alumno</label> <input
+									type="text" class="form-control input-xs" id="nom" readonly="">
+							</div>
+							<div class="form-group form-group-material col-lg-5">
+								<label class="control-label is-visible">Nivel</label> <input
+									type="text" class="form-control input-xs" id="nivel"
+									readonly="">
+							</div>
+							<div class="form-group form-group-material col-lg-5">
+								<label class="control-label is-visible">Grado</label> <input
+									type="text" class="form-control input-xs" id="grado"
+									value="Value" readonly="">
+							</div>
+							<div class="form-group form-group-material col-lg-5">
+								<label class="control-label is-visible">Secci&oacute;n</label> <input
+									type="text" class="form-control input-xs" id="seccion"
+									value="Value" readonly="">
+							</div>
+							<!-- 
+							<div class="form-group form-group-material col-lg-4">
+								<label class="control-label is-visible">Bimestre</label> <select
+									id="id_cpu" name="id_cpu" required placeholder="Seleccione"
+									class="form-control select-search">
+								</select>
+							</div>
+							-->
+						</div>
+					</form>
+				</fieldset>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="row" id="notas-list">
+
+	<div class="col-lg-4" >
+		<div class="panel panel-flat blog-horizontal blog-horizontal-2">
+			<div class="panel-body">
+			<!-- 
+				<div class="thumb">
+					<a href="#" data-toggle="modal"> 
+						<img id="foto" class="img-responsive img-circle" alt=""> 
+					</a>
+				</div>
+			-->
+				<div class="blog-preview">
+					<div
+						class="content-group-sm media blog-title stack-media-on-mobile text-left">
+						<div class="media-body">
+							
+							<table >
+								<tr><td width="50%">&nbsp;
+									<font size="3" class="text-semibold no-margin" id="curso">
+								</font></td>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-footer panel-footer-condensed">
+						
+				<div class="datatable-scroll">
+				<table id="periodos-table" class="table datatable-basic table-bordered table-striped table-hover dataTable no-footer" >
+						<thead>
+						</thead>
+						<tbody>
+							<tr>
+								<td>NOTA</td>
+							</tr>
+						</tbody>
+					</table>
+				
+					<!-- 
+					<ul class="heading-text">
+						<li><i class="text-size-base text-info-300">1B 11</i> 
+						</li>
+						<li><i class="text-size-base text-black-300">2B 11</i> 
+						</li>
+						<li><i class="icon-star-full2 text-size-base text-warning-300">3B 11</i> 
+						</li>
+					</ul>
+					
+					<a href="#" class="heading-text pull-right">Enviar mensaje <i class="icon-arrow-right14 position-right"></i></a>
+					 -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+

@@ -1,0 +1,78 @@
+<form action="api/aula" id="col_aula-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_per" name="id_per" />
+	<div class="form-group">
+		<div class="row">
+			<!--<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>-->
+			<div class="col-sm-6">
+				<label>Modalidad Estudio</label> 
+				<select id="id_cme" name="id_cme" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Ciclo</label> 
+				<select id="id_cic" name="id_cic" required  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_grad" name="id_grad" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Secci&oacute;n</label>
+				<input type="text" id="secc" name="secc" required class="form-control input-sm">
+			</div>
+		</div>
+		<div class="row">
+			<!--<div class="col-sm-6">
+				<label>Turno</label> 
+				<select id="id_tur" name="id_tur" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>-->
+			<div class="col-sm-4">
+				<label>Capacidad M&aacute;xima</label>
+                <input type="text" id="cap" name="cap" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-4">
+				<label>Secci&oacute;n anterior</label>
+                <select id="id_secc_ant" name="id_secc_ant"  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<label>Descripción ClassRoom</label>
+            <input type="text" id="des_classroom" name="des_classroom" required class="form-control input-sm">
+		</div>
+		<legend>TURNOS DEL AULA</legend>
+		<div class="row">
+			<table id="tabla_turnos_aula" class="table"></table>
+		</div>
+		<legend>MODALIDADES POR MES DEL AULA &nbsp;<button type="button" id="btn_detallar_mod" class="btn btn-success icon-plus3 btn-sm-4" onclick="agregar_modalidad(this,event)">Agregar</button></legend>
+		<div class="row">
+			<table id="tabla_modalidades_mes" class="table"></table>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<!--<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>-->
+		<button type="button" id="btn_grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

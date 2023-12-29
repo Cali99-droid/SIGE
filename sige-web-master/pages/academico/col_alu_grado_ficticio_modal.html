@@ -1,0 +1,74 @@
+<form action="api/aluGradoFicticio" id="col_alu_grado_ficticio-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+	
+		<div class="row">
+	
+			<div class="col-sm-6">
+				<label>Local</label> <select class="form-control input-xs"
+					id="id_suc" name="id_suc">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nivel</label> <select class="form-control input-xs"
+					id="id_niv" name="id_niv">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+		</div>	
+	
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_gra_ori" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" class="form-control input-xs">
+				</select>
+			</div>
+		</div>	
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Salon Especial</label> 
+				<select id="id_gra_ori" name="id_gra" required class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				<select id="id_mat" name="id_mat" required class="form-control select-search">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+		</div>	
+
+		<!-- 
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				  <div class="form-group has-feedback has-feedback-left">
+						<input type="text" class="form-control"
+						onkeypress="onkeyAlumno()" 
+						placeholder="Ingrese por lo menos 2 letras" id="alumno" required>
+						<div class="form-control-feedback">
+							<i class="icon-search4 text-size-base"></i>
+						</div>
+					</div>
+			</div>
+		</div>
+		-->
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

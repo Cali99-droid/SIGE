@@ -1,0 +1,58 @@
+<script type="text/javascript" src="js/olimpiada/oli_inscripciones.js"></script>
+<script>
+function onloadPage(params){
+	console.log(params);
+	/*var id_oli=params.id;
+	$("#id_oli").val(id_oli);
+	$("#lbl_olimpiada").text(params.nom);*/
+	
+	$('.link_interno_ind').on('click',function(event){
+		/*var id_oli= $(this).attr("data-id_oli");
+		var param={};
+		param.id=id_oli;
+		param.tip='I';*/
+		_send('pages/olimpiada/oli_inscripcion_ind.html','Inscripcion Interno','Registro',params);
+		//_send('pages/olimpiada/oli_inscripcion_interno.html','Inscripcion Interno','Inscripción',param);
+	});
+
+	$('.link_interno_lote').on('click',function(event){
+		/*var id_oli= $(this).attr("data-id_oli");
+		var nom=$(this).attr("data-nom_oli");
+		var param={};
+		param.id=id_oli;
+		param.nom=nom;
+		param.tip='I';*/
+		_send('pages/olimpiada/oli_lectora_cargar_inscripciones.html','Cargar Registros','Registro',params);
+		//_send('pages/olimpiada/oli_inscripcion_interno.html','Inscripcion Interno','Inscripción',param);
+	});
+}
+</script>
+<!-- 
+<div id="div_lista_olimpiadas">
+	<div class="panel panel-flat div_concurso" id="oli_inscripciones-panel">	
+				<input type="hidden" id="id_oli" name="id_oli"/>
+                 <h4><p class="font-weight-bold text-center text-danger" id="nombre"></p>
+                    <p class="font-weight-bold text-center text-secondary">INSCRIPCIONES PARA LA MODALIDAD INTERNO</p>
+                    <p class="text-center text-secondary" id="fecha"></p>
+                </h4>
+
+                
+	
+	</div>
+</div> -->	
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="panel panel-flat >
+<div class="row">
+<b><p class="font-weight-bold text-center text-secondary">INSCRIPCIONES PARA LA MODALIDAD INTERNO</p></b>
+<ul class="list-group list-inline">
+                    <li class="list-group-item ">
+                    <li class="list-group-item oli-ins"><a href="#" id="link_interno_ind" class="link_interno_ind">Inscripci&oacute;n Individual</a></li>
+                    <li class="list-group-item oli-ins "><a href="#" id="link_interno_lote" class="link_interno_lote">Inscripci&oacute;n por Lote</a></li>
+                </ul>
+</div>
+</div>

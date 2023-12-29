@@ -1,0 +1,202 @@
+<script type="text/javascript" src="js/olimpiada/oli_config_form.js"></script>
+<div class="panel panel-flat">
+	<div class="panel-body">
+		<form action="api/config/grabarConfiguracion" id="oli_config-frm">
+			<input type="hidden" id="id_oli" name="id_oli" />
+			<input type="hidden" id="id_col_org" name="id_col_org" />
+			<input type="hidden" id="id_gra_org" name="id_oli_org" />
+			<input type="hidden" id="est" name="est" value="A"/>
+			<input type="hidden" id="id_anio" name="id_anio" />
+			<div class="form-group">
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Datos Generales del
+						Concurso</legend>
+					<div class="row">
+						<div class="col-sm-9">
+							<label>Nombre</label> <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100">
+						</div>
+						<div class="col-sm-3">
+							<label>Fecha del Concurso</label> <input type="text" id="fec"
+								name="fec" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<label>Nro. Preguntas</label> <input
+								type="number" id="nro_pre" name="nro_pre" required class="form-control input-sm number" maxlength="10">
+						</div>
+						<div class="col-sm-3">
+							<label>Puntaje Correcto</label> <input type="number" id="ptje_corr"
+								name="ptje_corr" required class="form-control input-sm number"
+								maxlength="10">
+						</div>
+						<div class="col-sm-3">
+							<label>Puntaje Incorrecto</label> <input type="number"
+								id="ptje_inc" name="ptje_inc" required
+								class="form-control input-sm number" maxlength="10">
+						</div>
+						<div class="col-sm-3">
+							<label>Puntaje Blanco</label> <input type="number" id="ptje_bla"
+								name="ptje_bla" required class="form-control input-sm number"
+								maxlength="10">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-7">
+							<label>Correo Env&iacute;o</label> <input type="text" id="corr_envio" name="corr_envio" required class="form-control input-sm " maxlength="200">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Costo</label> <select id="costo" name="costo"
+								placeholder="Seleccione" class="form-control select-search">
+								<option value="0">NO</option>
+								<option value="1">SI</option>
+							</select>
+						</div>
+						<div class="col-sm-6">
+							<label>Impresi&oacute;n Boletas</label> <select id="imp_bo"
+								name="imp_bo" placeholder="Seleccione"
+								class="form-control select-search">
+								<option value="0">NO</option>
+								<option value="1">SI</option>
+							</select>
+						</div>
+						<div class="col-sm-6">
+							<label>Resultado a Detalle</label> <select id="res_det"
+								name="res_det" placeholder="Seleccione"
+								class="form-control select-search">
+								<option value="0">NO</option>
+								<option value="1">SI</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Inscripciones</legend>
+					<div class="row">
+						<div class="col-sm-3">
+							<label>Fecha Inicio Inscripci&oacute;n</label> <input type="text"
+								id="fec_ini_ins" name="fec_ini_ins" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+						<div class="col-sm-3">
+							<label>Fecha Fin Inscripci&oacute;n</label> <input type="text"
+								id="fec_fin_ins" name="fec_fin_ins" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+						<div class="col-sm-3">
+							<label>Nro. alumnos por delegaci&oacute;n</label> <input
+								type="text" id="nro_alu_del" name="nro_alu_del" required
+								class="form-control input-sm number" maxlength="10">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Colegio Organizador</legend>
+					<div id="div_organizador">
+						<div id="div_colegio" class="divColegioModular">
+							<div class="row">
+								<div class="col-sm-12">
+									<label>C&oacute;digo Modular del Nivel</label> <select
+										id="id_col" name="id_col" placeholder="Seleccione" required
+										class="colegio select-search" >
+										<option value="">SELECCIONE</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<label>Departamento</label> <input type="text" id="dep"
+										name="dep" required class="form-control input-sm" readonly="readonly">
+								</div>
+								<div class="col-sm-6">
+									<label>Provincia</label> <input type="text" id="pro" name="pro"
+										required class="form-control input-sm" readonly="readonly">
+								</div>
+								<div class="col-sm-6">
+									<label>Distrito</label> <input type="text" id="dist"
+										name="dist" required class="form-control input-sm" readonly="readonly">
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" id="btn_agregar_colegio" href="#" class="btn bg-transparent text-indigo-400 border-indigo-400 ml-1"
+					title="agregar colegio">
+						<i class="fa fa-user-plus mr-2"></i>
+					</button>
+				</fieldset>				 
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Niveles que
+						participarán</legend>
+					 
+					<table class="table" id="oli_config-grados"></table>
+
+				</fieldset>				 
+			</div>
+			<div class="modal-footer">
+				<fieldset class="mb-3">
+				<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+				</fieldset>
+			</div>
+		</form>
+
+	</div>
+</div>
+<div class="panel panel-flat">
+	<div class="panel-body" id="div-oli_config-costo">
+		<form action="api/public/costo" id="oli_config-costo">
+		<input type="hidden" id="id" name="id" />
+		<input type="hidden" id="id_oli" name="id_oli" />
+		<input type="hidden" id="est" name="est" value="A"/>
+			<div class="form-group">
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Costos</legend>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Fecha Inicio</label> <input type="text" id="fec_ini"
+								name="fec_ini" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+						<div class="col-sm-6">
+							<label>Fecha Fin</label> <input type="text" id="fec_fin"
+								name="fec_fin" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<label>Modalidad</label> <select id="id_ti" name="id_ti"
+								placeholder="Seleccione" required
+								class="form-control input-sm select-search">
+							</select>
+						</div>
+						<div class="col-sm-4">
+							<label>Gestión</label> <select id="id_cg" name="id_cg"
+								placeholder="Seleccione" required
+								class="form-control input-sm select-search">
+							</select>
+						</div>
+						<div class="col-sm-4">
+							<label>Costo</label> <input type="text" id="costo" name="costo"
+								required class="form-control input-sm" maxlength="10">
+						</div>
+					</div>
+				</fieldset>
+				<div class="modal-footer">
+					<button type="button" id="btn-agregar-costo" class="btn btn-primary">Agregar</button>
+					<button type="button" id="btn-editar-costo" class="btn btn-primary">Editar</button>
+				</div>
+				<table class="table" id="oli_config-precios"></table>
+			</div>
+		</form>
+	</div>
+</div>
+
+

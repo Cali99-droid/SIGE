@@ -1,0 +1,32 @@
+
+<script type="text/javascript" src="js/alumno/alu_familiar_form.js"></script>
+
+<div class="panel panel-flat">
+		<div class="panel-body">
+
+			<form action="api/familiar/confirmarCodigo" id="alu_familiar-frm">
+				<input type="hidden" id="id" 		name="id" />
+				<input type="hidden" id="id_per" 	name="id_per" value="8"/>
+				
+				<fieldset class="content-group">
+					<legend class="text-bold">INGRESE EL C&Oacute;DIGO DE VERIFICACI&Oacute;N QUE LE LLEG&Oacute; A SU EMAIL</legend>
+					<div class="col-sm-4">
+							<label>C&oacutedigo</label> 
+							<input type="text" id="codigo" name="codigo"  class="form-control input-sm " maxlength="20"  required>
+					</div>
+					<div class="col-sm-4">
+					</div>
+					<div class="col-sm-4">
+						</div>
+				</fieldset>
+
+
+			
+				<div class="modal-footer">
+					<button type="submit" id="btn-grabar" class="btn btn-primary">Confirmar</button>
+				</div>
+			
+			</form>
+
+		</div>
+</div>		

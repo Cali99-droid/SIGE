@@ -1,0 +1,64 @@
+<script type="text/javascript" src="js/facturacion/fac_reporte_infocorp.js"></script>
+
+<div class="panel panel-flat">
+
+	<div class="panel-body">
+
+		<form action="api/reporteInfocorp" id="reporte_infocorp-frm">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-3">
+						Escoja los numeros de meses de deuda (>=)<select class="form-control input-xs"
+							id="id_mes" name="id_mes">
+							<option value='1'>1 mes</option>
+							<option value='2'>2 mes</option>
+							<option value='3'>3 mes</option>
+							<option value='4'>4 mes</option>
+							<option value='5'>5 mes</option>
+							<option value='6'>6 mes</option>
+							<option value='7'>7 mes</option>
+							<option value='8'>8 mes</option>
+							<option value='9'>9 mes</option>
+							<option value='10'>10 mes</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<button type="submit" class="btn btn-primary">
+					Buscar <i class="icon-arrow-right14 position-right"></i>
+				</button>
+				<button type="button" class="btn btn-warning" onclick="generarCartas();">
+					Generar Cartas de Pago <i class="icon-arrow-right14 position-right"></i>
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+<div class="panel panel-flat" style="display: block"
+	id="panel-pagos_info">
+	<div class="panel-heading">
+		<h5 class="panel-title">Resultados</h5>
+		<div class="heading-elements">
+			<ul class="icons-list">
+				<li><a data-action="collapse"></a></li>
+				<li><a data-action="reload"></a></li>
+				<li><a data-action="close"></a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<table class="table dataTable table-bordered table-striped table-hover" id="tabla-pagos_info">
+	 <tfoot>
+           <tr>
+                <th colspan="15" class="text-center"><b>TOTAL</b></th>
+                <th class="text-center"></th>
+            </tr>
+        </tfoot> 
+	</table>
+
+</div>

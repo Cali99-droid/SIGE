@@ -1,0 +1,34 @@
+<form action="api/festivo" id="aca_festivo-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>D&iacute;a Festivo</label>
+                <input type="text" id="dia" name="dia" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Motivo</label>
+                <input type="text" id="motivo" name="motivo" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,68 @@
+<form action="api/confCuota" id="mat_conf_cuota-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_per" name="id_per" />
+	<input type="hidden" id="est" name="est" value="A" />
+	
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Modalidad Estudio</label> 
+				<select id="id_cme" name="id_cme" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label class="negrita">NIVEL</label>
+				<select required class="form-control select-search" id="id_nvl" name="id_nvl">
+					<!--<option value="">SELECCIONE</option>-->
+				</select>
+			</div>
+			<div class="col-sm-4">
+						<label class="negrita">TIPO PERIODO</label>
+						<select required class="form-control select-search" id="id_tpe" name="id_tpe">
+							<!--<option value="">SELECCIONE</option>-->
+						</select>
+			</div>
+		</div>
+		<div class="row">		
+			<div class="col-sm-12">
+				<label class="negrita">Ciclo</label>
+				<select required class="form-control select-search" id="id_cct" name="id_cct">
+					<option value="">SELECCIONE</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Costo Matr&iacute;cula (S/)</label>
+                <input type="text" id="matricula" name="matricula" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Cuota Ingreso (S/)</label>
+                <input type="text" id="cuota" name="cuota" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Costo Reserva Vacante (S/)</label>
+                <input type="text" id="reserva" name="reserva" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Cuota de Ingreso</label> 
+				<select id="tip_cuota_ing" name="tip_cuota_ing" required placeholder="Seleccione" class="form-control select-search">
+					<option value="U">Unico</option>
+					<option value="A">Anual</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

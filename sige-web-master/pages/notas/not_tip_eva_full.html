@@ -1,0 +1,40 @@
+<form action="api/tipEva" id="not_tip_eva_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="not_tip_eva-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#not_evaluacion-tab" data-toggle="tab"><i class="fa fa-cube"></i> Evaluaciones Acad&eacute;micas</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="not_evaluacion-tab">
+				<table class="table" id="not_evaluacion-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

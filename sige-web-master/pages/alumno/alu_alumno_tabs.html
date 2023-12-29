@@ -1,0 +1,181 @@
+<!--<script type="text/javascript" src="js/alumno/alu_familiar_tabs.js"></script>-->
+
+<div class="panel panel-flat">
+	<div class="panel-body">
+
+		<div class="form-group" id="_alumno-div">
+			
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Nombres</label> <input type="text" id="nom" name="nom" readonly="readonly"
+						required class="form-control input-sm " maxlength="50">
+				</div>
+				<div class="col-sm-4">
+					<label>Apellido paterno</label> <input type="text" id="ape_pat" readonly="readonly"
+						name="ape_pat" required class="form-control input-sm "
+						maxlength="30">
+				</div>
+				<div class="col-sm-4">
+					<label>Apellido materno</label> <input type="text" id="ape_mat" readonly="readonly"
+						name="ape_mat" required class="form-control input-sm "
+						maxlength="30">
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Codigo Alumno</label> <input type="text" id="cod" name="cod" readonly="readonly"
+						required class="form-control input-sm " maxlength="14">
+				</div>
+
+				<div class="col-sm-4">
+					<label>Tipo de documento</label> <select id="id_tdc" name="id_tdc" readonly="readonly"
+						required placeholder="Seleccione"
+						class="form-control select-search">
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Numero de documento</label> <input type="text" id="nro_doc" readonly="readonly"
+						name="nro_doc" required class="form-control input-sm "
+						maxlength="50">
+				</div>
+			</div>
+			<div class="row">
+				 
+				<div class="col-sm-4">
+					<label>G&eacute;nero</label> <select id="id_gen" name="id_gen" readonly="readonly"
+						placeholder="Seleccione" class="form-control">
+						<option value="1">Masculino</option>
+						<option value="2">Femenino</option>
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Fecha de nacimiento</label> <input type="text" id="fec_nac" readonly
+						name="fec_nac" required class="form-control input-sm "
+						maxlength="100">
+				</div> 
+				<div class="col-sm-4">
+				<label>Identificador </label> 
+				<input type="text" id="id_alu" name="id_alu" readonly="readonly"
+						required class="form-control input-sm " maxlength="14">
+				</div> 
+			</div>
+		 
+
+			  			 
+			  
+
+
+		</div>
+		
+		<div class="tabbable">
+			<ul class="nav nav-tabs nav-tabs-highlight">
+				<li class="active"><a id="li-tabs-1" href="#_alu_situacion-tab"
+					data-toggle="tab"><i class="icon-graduation2"></i> Situaci&oacute;n</a></li>
+				<li  ><a id="li-tabs-2" href="#_alu_meses-tab"
+					data-toggle="tab"><i class="fa fa-money"></i> Deudas</a></li>
+				<li  ><a id="li-tabs-3" href="#fam_datos-tab"
+					data-toggle="tab"><i class="fa fa-user"></i> Padres</a></li>
+				<li><a id="li-tabs-4" href="#fam_otros_familiares-tab"
+					data-toggle="tab"><i class="fa fa-group"></i> Otros familiares</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="_alu_situacion-tab">
+
+						<fieldset class="content-group">
+							<legend class="text-bold">DATOS DE MATRÍCULA</legend>
+
+							<div class="row">
+								<div class="col-sm-4">
+									<label>A&ntilde;o</label> 
+									<select id="id_anio" name="id_anio" required placeholder="Seleccione" class="form-control" > </select>
+								</div>
+
+								<div class="col-sm-4">
+									<label>Local</label> 
+									<select id="id_suc" name="id_suc" required placeholder="Seleccione" class="form-control" disabled> </select>
+								</div>
+
+								<div class="col-sm-4">
+									<label>Nivel</label> 
+									<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control" disabled> </select>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-sm-2">
+									<label>Grado</label>
+									<select id="id_gra" name="id_gra" placeholder="Seleccione" class="form-control" disabled> </select>
+								</div>
+								<div class="col-sm-2">
+									<label>Secci&oacute;n</label>
+									<input type="text" id="id_au" name="id_au" readonly class="form-control input-sm " maxlength="14">
+								</div>
+								<div class="col-sm-4">
+									<label>Modalidad</label>
+									<input type="text" id="id_cme" name="id_cme" readonly class="form-control input-sm " maxlength="14">
+								</div>
+
+								<div class="col-sm-4">
+									<label>Situaci&oacute;n</label>
+									<input type="text" id="sit_nom" name="sit_nom" readonly class="form-control input-sm " maxlength="14">
+								</div>
+								 
+							</div>
+							<legend class="text-bold">Responsables</legend>
+							<div class="row" id="responsables-row">
+							<div class="responsables-div col-sm-12">
+								<table class="table" id="_alu_responsables-tabla">
+								</table>
+							</div>
+							</div>
+    
+						</fieldset>
+
+
+				</div>
+
+
+				<div class="tab-pane" id="_alu_meses-tab">
+					<fieldset class="content-group">
+						<legend class="text-bold">MENSUALIDADES POR PAGAR</legend>
+						<div class="row" id="familia-row">
+							<div class="familia-div col-sm-12">
+								<table class="table" id="_alu_mensualidades-tabla">
+								</table>
+							</div>
+						</div>
+					</fieldset>
+
+				</div>			
+				<div class="tab-pane" id="fam_datos-tab">
+					<fieldset class="content-group">
+						<legend class="text-bold">LISTA DE PADRES</legend>
+						<div class="row" id="familia-row">
+							<div class="familia-div col-sm-12">
+								<table class="table" id="_padres-tabla">
+								</table>
+							</div>
+						</div>
+					</fieldset>
+
+				</div>
+
+				<div class="tab-pane" id="fam_otros_familiares-tab">
+					<fieldset class="content-group">
+						<legend class="text-bold">LISTA DE OTROS FAMILIARES</legend>
+						<div class="row" id="familia-row">
+							<div class="familia-div col-sm-12">
+								<table class="table" id="_familiar-tabla">
+								</table>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+</div>

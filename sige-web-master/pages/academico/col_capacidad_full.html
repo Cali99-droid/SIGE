@@ -1,0 +1,55 @@
+<form action="api/capacidad" id="col_capacidad_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Competencia</label> 
+				<select id="id_com" name="id_com" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Capacidad</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_capacidad-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_indicador-tab" data-toggle="tab"><i class="fa fa-cube"></i> Indicador</a>
+			</li>
+			<li>
+				<a href="#col_subtema_capacidad-tab" data-toggle="tab"><i class="fa fa-cube"></i> Subtema Capacidad</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_indicador-tab">
+				<table class="table" id="col_indicador-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_subtema_capacidad-tab">
+				<table class="table" id="col_subtema_capacidad-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

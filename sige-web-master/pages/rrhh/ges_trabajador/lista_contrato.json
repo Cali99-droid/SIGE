@@ -1,0 +1,14 @@
+[
+	{
+		"id":1,
+		"regimen":"4ta categoria",
+		"fec_ini":"01/01/2018",
+		"fec_fin":"31/12/2018"
+	},
+	{
+		"id":2,
+		"regimen":"5ta categoria",
+		"fec_ini":"01/01/2019",
+		"fec_fin":"20/02/2020"
+	}
+]

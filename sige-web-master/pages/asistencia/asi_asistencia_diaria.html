@@ -1,0 +1,47 @@
+
+<form action="api/reporteAsistencia">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A" />
+	<input type="hidden" id="codigo" name="codigo" />
+	<input type="hidden" id="id_per" name="id_per" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				 <input type="text" id="alumno" class="form-control input-sm" readonly>
+			</div>
+		 <div class="col-sm-6">
+				<label>Fecha</label> 
+				<input type="text" id="fecha_cor" name="fecha_cor" class="form-control input-sm" readonly>
+			</div> 
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Asistencia</label> 
+				 <select class="form-control input-xs" id="asistencia" name="asistencia">
+				 			<option value=''>Seleccione</option>
+							<option value='A'>ASISTENCIA</option>
+							<option value='T'>TARDANZA</option>
+							<option value='F'>FALTA</option>
+			    </select>
+			</div>
+			<!--  <div class="col-sm-6">
+				<label>Hora Ingreso (Lectora Barras)</label> 
+				<input type="text" id="fecha_ori" name="fecha_ori" class="form-control input-sm">
+			</div>-->
+			<div class="col-sm-6">
+				<label>Observación</label> 
+				<textarea rows="" cols="" id="observacion" name="observacion" class="form-control input-sm" > </textarea>  
+				<!--  <input type="text" id="observacion" name="observacion" class="form-control input-sm">-->
+			</div> 
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Actualizar</button>
+	</div>
+
+</form>

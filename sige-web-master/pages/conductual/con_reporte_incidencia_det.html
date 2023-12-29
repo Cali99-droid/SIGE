@@ -1,0 +1,788 @@
+<!-- <script type="text/javascript" src="pages/js/mat_traslado_detalle.js"></script>
+<div class="panel panel-flat" id="mat_traslado_detalle-panel">
+
+	<table class="table" id="mat_traslado_detalle-tabla">
+	</table>
+	
+</div> -->
+
+<script type="text/javascript"
+	src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+<!-- 
+	<script type="text/javascript" src="assets/js/pages/form_checkboxes_radios.js"></script>
+	 -->
+<script type="text/javascript"
+	src="js/conductual/con_reporte_incidencia_det.js"></script> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	
+//$("#frm-matricula").steps('done');//-->
+</script>
+
+<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+
+
+<!-- Wizard with validation -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">
+			DETALLE DEL REPORTE N°: <label id="lbl_reporte"></label>
+		</h6>
+		<div class="heading-elements">
+			<ul class="icons-list">
+				<li><a data-action="collapse"></a></li>
+				<li><a data-action="reload"></a></li>
+				<li><a data-action="close"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<form class="steps-validation" action="#" id="frm-traslado">
+		<input type="hidden" id="id" name="id" value=""> <input
+			type="hidden" id="id_alu" name="id_alu" value=""> <input
+			type="hidden" id="id_mat" name="id_mat" value=""> <input
+			type="hidden" id="id_suc" name="id_suc" value="">
+		<h6>1. Detalle del Caso</h6>
+		<fieldset>
+			<div id="div_reporte_conductual">
+				<legend class="text-bold">Datos del Reporte</legend>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label><b>Periodo Académico:</b></label>&nbsp;<label
+								id="lbl_periodo"></label>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<strong><label>Fecha:</strong></label>&nbsp;<label id="lbl_fecha"></label>
+						</div>
+					</div>
+				</div>
+				<legend class="text-bold">Datos de la persona informante
+					del Caso</legend>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Apellidos y Nombres: </label>&nbsp;<label
+								id="lbl_informante"></label>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Cargo: </label>&nbsp;<label id="lbl_cargo"></label>
+						</div>
+					</div>
+				</div>
+				<legend class="text-bold">Datos de los Infractores</legend>
+				<div class="row">
+					<div class="col-md-12">
+						<table id="infractores_tabla" class="table"></table>
+					</div>
+				</div>
+				<legend class="text-bold">Datos de las Faltas Cometidas</legend>
+				<div class="row">
+					<div class="col-md-12">
+						<table id="faltas_tabla" class="table"></table>
+					</div>
+				</div>
+				<legend class="text-bold">Datos del Docente:</legend>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Apellidos y Nombres: </label>&nbsp;<label id="lbl_docente"></label>
+						</div>
+					</div>
+				</div>
+				<legend class="text-bold">Descripci&oacute;n del Caso:</legend>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="form-group">
+							<label>Descripci'on: </label>&nbsp;<label id="lbl_descripcion"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="div_reporte_bulling">
+				<legend class="text-bold">Datos del Reporte</legend>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<!-- <label>Tipo de Agresi&oacute;n: </label><label id="lbl_agresion"></label> -->
+							<label>Periodo Académico: </label><label id="lbl_periodo"></label>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Fecha: </label><label id="lbl_fecha"></label>
+						</div>
+					</div>
+				</div>
+				<legend class="text-bold">Datos de la persona informante
+					del Caso</legend>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Apellidos y Nombres: </label><label id="lbl_informante"></label>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Cargo: </label><label id="lbl_cargo"></label>
+						</div>
+					</div>
+				</div>
+				<legend class="text-bold">Datos de la persona agredida</legend>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Apellidos y Nombres: </label><label id="lbl_agredido"></label>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<label>Edad: </label><label id="lbl_edad"></label>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<label>Sexo:</label><label id="lbl_sexo"></label> 
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+						 	<label>Grado: </label><label id="lbl_grado"></label>
+						</div>
+					</div>
+				</div>
+				<legend class="text-bold">Datos de la violencia</legend>
+				<div class="row">
+					<table id="violencia_tabla" class="table"></table>
+				</div>
+				<legend class="text-bold">Datos de los Agresores</legend>
+				<div class="row">
+					<table id="agresores_tabla" class="table"></table>
+				</div>
+				<legend class="text-bold">Datos del Motivo de la Violencia</legend>
+				<div class="row">
+					<div id="motivo_otro" style="display:none" class="col-md-6"><label>Motivo: </label><label id="lbl_motivo_otro"></label></div>
+					<table id="motivo_tabla" class="table"></table>
+				</div>
+				<!-- <legend class="text-bold">Datos del Docente:</legend>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Apellidos y Nombres: </label><label id="lbl_docente"></label>
+					</div>
+				</div>
+			</div> -->
+				<legend class="text-bold">Descripci&oacute;n del Caso:</legend>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="form-group">
+							<label>Descripción: </label><label id="lbl_descripcion"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<h6>2. Acciones</h6>
+		<fieldset>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- /accordion with right control button -->
+
+
+					<!-- Accordion with different panel styling -->
+					<h6 class="content-group text-semibold">Lista de los
+						Involucrados</h6>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- <table id="involucrados_tabla" class="table"></table> -->
+							<ul id="lista_involucrados">
+							</ul>
+						</div>
+					</div>
+					<h6 class="content-group text-semibold">Formatos</h6>
+					<input type="hidden" id="id_inc" name="id_inc" />
+					<!-- <div class="panel-group" id="accordion-styled"> -->
+						<div class="panel" id="coll-ficha_entrevista">
+							<div class="panel-heading bg-teal">
+								<h6 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion-styled" 
+										href="#accordion-styled-group1">Ficha de Entrevistas</a>
+								</h6>
+							</div>
+							<div id="accordion-styled-group1"
+								class="panel-collapse collapse in">
+								<div id="frm_entrevista" >
+								<div class="panel-body form-group has-success"
+									id="div_entrevistados">
+									 <input type="hidden" id="id_cfi" name="id_cfi" />
+										<legend class="text-bold">ALUMNOS</legend>
+										<div id="entrevistado_alumnos" class="entrevistado_alumnos">
+										<div id="div_entrevistado_alumno" class="div_entrevistado_alumno">
+											<input type="hidden" id="id_ent_alu" name="id_ent_alu" /> <input
+												type="hidden" id="id_mat" name="id_mat" />
+											<div class="row">
+												<div class="col-md-1">
+												<button type="button" id="btn-ficha_entrevista" class="btn btn-danger btn-rounded pull-left btn-xs" href="#" onclick="imprimirFichasEntrevistas(this)"><i class="fa fa-file-pdf-o mr-3 icon-2x  position-right" title="Imprimir Entrevista"></i></button>
+												</div>
+												<div class="col-md-11">
+													<label><b>ENTREVISTADO:</b></label>&nbsp;<label
+														id="lbl_alu_entrevistado"><b></b></label>
+												</div>
+												
+												<div class="col-md-12">
+													<label>Versión de los hechos</label>
+												</div>
+											</div>
+											<div class="row">
+												<textarea class="form-control"
+													placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+													rows="5" cols="5" id="des"></textarea>
+											</div>
+										<div class="modal-footer">
+										
+										<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarEntrevista(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										</div>
+										</div>
+										
+										</div>
+										<div id="div_docente" style="display:none">
+										<legend class="text-bold">DOCENTE</legend>
+										<div id="div_entrevistado_docente">
+											<input type="hidden" id="id_ent_doc" name="id_ent_doc" />
+											<input type="hidden" id="id_tra" name="id_tra" />
+											<div class="row">
+												<div class="col-md-1">
+												<button type="button" id="btn-ficha_entrevista" class="btn bg-brown btn-rounded pull-left btn-xs" href="#" onclick="imprimirFichasEntrevistas(this)"><i class="icon-newspaper mr-3 icon-2x  position-right" title="Imprimir Entrevista"></i></button>
+												</div>
+												<div class="col-md-11">
+													<label>ENTREVISTADO: </label>&nbsp;<label
+														id="lbl_doc_entrevistado"></label>
+												</div>
+												<div class="col-md-12">
+													<label>Versión de los hechos</label>
+												</div>
+											</div>
+											<div class="row">
+												<textarea class="form-control"
+													placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+													rows="5" cols="5" id="des_doc" name="des_doc"></textarea>
+												<br>
+											</div>
+											<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarEntrevista(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										</div>
+										</div>
+										<div id="div_agredido" style="display:none">
+										<legend class="text-bold">AGREDIDO</legend>
+										<div id="div_entrevistado_agredido">
+											<input type="hidden" id="id_ent_agr" name="id_ent_agr" />
+											<input type="hidden" id="id_vic" name="id_vic" />
+											<div class="row">
+												<div class="col-md-1">
+												<button type="button" id="btn-ficha_entrevista" class="btn bg-brown btn-rounded pull-left btn-xs" href="#" onclick="imprimirFichasEntrevistas(this)"><i class="icon-newspaper mr-3 icon-2x  position-right" title="Imprimir Entrevista"></i></button>
+												</div>
+												<div class="col-md-11">
+													<label>ENTREVISTADO: </label>&nbsp;<label
+														id="lbl_agredido"></label>
+												</div>
+												<div class="col-md-12">
+													<label>Versión de los hechos</label>
+												</div>
+											</div>
+											<div class="row">
+												<textarea class="form-control"
+													placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+													rows="5" cols="5" id="des_agr" name="des_agr"></textarea>
+												<br>
+											</div>
+											<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarEntrevista(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										</div>
+										</div>
+										<!-- <button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarEntrevista(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button> -->
+										
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel" id="coll-ficha_res_entrevista">
+							<div class="panel-heading bg-teal">
+								<h6 class="panel-title">
+									<a class="collapsed" data-toggle="collapse"
+										data-parent="#accordion-styled" id="col-resultados"
+										href="#accordion-styled-group2">Resultados de Entrevista</a>
+								</h6>
+							</div>
+							<div id="accordion-styled-group2" class="div_result_entrevista  panel-collapse collapse">
+								<div class="panel-body">
+									<div id="div_entrevista_res" class="form-group has-success">
+									<input type="hidden" id="id_cfi" name="id_cfi" />
+									<input type="hidden" id="id_ent_res" name="id_ent_res"/>
+									<div class="row">
+										<div class="col-md-12">
+										<label>Descripción del Caso</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+										<textarea class="form-control" 
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="des" name="des"></textarea>
+										</div>
+									</div>
+										<br>
+									<div class="modal-footer">
+										<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarResultEntrevista(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										<button type="button" id="btn-resultado_entrevista" class="btn bg-brown btn-rounded pull btn-xs" href="#" onclick="imprimirResultadoEntrevista(this)"><i class="icon-newspaper mr-3 icon-2x  position-right" title="Imprimir Resultado de la Entrevista"></i></button>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<!-- </div> -->
+					<div class="panel" id="coll-acta_comp_alu">
+						<div class="panel-heading bg-primary">
+							<h6 class="panel-title">
+								<a class="collapsed" data-toggle="collapse"
+									data-parent="#accordion-styled" href="#accordion-styled-group3">Acta de compromiso entre Alumnos</a>
+							</h6>
+						</div>
+						<div id="accordion-styled-group3" class="panel-collapse collapse">
+							<div class="panel-body">
+							<div id="div_compromiso_alu" class="form-group has-success">
+									<input type="hidden" id="id_ctc" name="id_ctc" />
+									<input type="hidden" id="id_cfi" name="id_cfi" />
+									<input type="hidden" id="id_com_alu" name="id_com_alu"/>
+									<legend class="text-bold">DIRECTIVO DE LA INSTITUCIÓN</legend>
+										<div id="div_directivo_docente">
+											<input type="hidden" id="id_dir" name="id_dir" />
+											<div class="row">
+												<div class="col-md-2">
+													<label>DNI: </label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Nombres y Apellidos:</label>&nbsp;<label id="lbl_trabajador"></label>
+												</div>
+												<div class="col-md-4">
+													<label>Cargo:</label>&nbsp;<label id="lbl_cargo"></label>
+												</div>
+											</div>
+										</div>
+									<legend class="text-bold">ESTUDIANTES</legend>
+										<div id="estudiantes"> 
+										<div id="div_estudiantes" class="div_estudiantes">
+											<div class="row">
+												<div class="col-md-4">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-4">
+													<label>Alumno:</label>&nbsp;<label id="lbl_alumno"></label>
+												</div>
+											</div>
+										</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<label>Breve Descripción del Caso</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control" readonly="readonly"
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="des" name="des"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<label>Quienes se comprometen a:</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control"
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="comp" name="comp"></textarea>
+											</div>
+										</div>
+										<br>
+										<div class="modal-footer">
+										<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarCompromisoAlu(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										<button type="button" id="btn-imprimirCompromisoAlu" class="btn bg-brown btn-rounded pull btn-xs" href="#" onclick="imprimirActaCompromisoAlu(this)" title="Imprimir Acta de Compromiso"><i class="icon-newspaper mr-3 icon-2x  position-right"></i></button>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel" id="coll-plan_tutoria">
+						<div class="panel-heading bg-warning">
+							<h6 class="panel-title">
+								<a class="collapsed" data-toggle="collapse"
+									data-parent="#accordion-styled" href="#accordion-styled-group4">Plan de Tutoria</a>
+							</h6>
+						</div>
+						<div id="accordion-styled-group4" class="panel-collapse collapse">
+							<div class="panel-body">
+							<div id="div_plan_tutoria" class="form-group has-success">
+									<input type="hidden" id="id_ctc" name="id_ctc" />
+									<input type="hidden" id="id_cfi" name="id_cfi" />
+									<input type="hidden" id="id_plan_tu" name="id_plan_tu"/>
+									<legend class="text-bold">ESTUDIANTES</legend>
+										<div id="responsables"> 
+										<div id="div_responsable_tutoria" class="div_responsable_tutoria">
+											<div class="row">
+												<div class="col-md-4">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-4">
+													<label>Alumno:</label>&nbsp;<label id="lbl_alumno"></label>
+												</div>
+											</div>
+										</div>
+										</div>
+									<legend class="text-bold">FUNDAMENTO</legend>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control" 
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="fun" name="fun"></textarea>
+											</div>
+										</div>
+									<legend class="text-bold">OBJETIVO</legend>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control" 
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="obj" name="obj"></textarea>
+											</div>
+										</div>
+									<legend class="text-bold">ACTIVIDADES&nbsp;<button type="button" id="btn_agregar_actividad" class="btn bg-transparent text-indigo-400 border-indigo-400 ml-1" title="agregar actividad"><i class="icon-clipboard6 mr-2"></i></button></legend>
+										<div id="div_actividades">
+											<div id="div_actividad" class="div_actividad">
+											<input type="hidden" id="id_plan_act" name="id_plan_act" />
+											<div class="row detalle">
+												<div class="col-sm-2">
+												<label>Fecha</label> 
+												<input type="text" id="fec" name="fec" required class="form-control input-sm daterange-single" maxlength="50" >
+												</div>
+												<div class="col-sm-6">
+												<label>Accio&oacute;n a Realizar</label> 
+												<input type="text" id="des" name="des" required class="form-control input-sm " maxlength="50" >
+												</div>
+												<div class="col-sm-4">
+												<label>Encargado</label> 
+                								<select id="id_enc" name="id_enc" required  class="form-control"></select>
+												</div>
+											</div>
+											</div>
+										</div>
+									<legend class="text-bold">EVALUACIÓN</legend>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control" 
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="eva" name="eva"></textarea>
+											</div>
+										</div>
+										<br>
+										<div class="modal-footer">
+										<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarPlantutoria(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										<button type="button" id="btn-imprimirCompromisoAlu" class="btn bg-brown btn-rounded pull btn-xs" href="#" onclick="imprimirPlanTutoria(this)" title="Imprimir Plan de Tutoria"><i class="icon-newspaper mr-3 icon-2x  position-right"></i></button>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel" id="coll-acta_comp_pad">
+						<div class="panel-heading bg-primary">
+							<h6 class="panel-title">
+								<a class="collapsed" data-toggle="collapse"
+									data-parent="#accordion-styled" href="#accordion-styled-group5">Acta de compromiso entre Padres y Alumnos</a>
+							</h6>
+						</div>
+						<div id="accordion-styled-group5" class="panel-collapse collapse">
+							<div class="panel-body">
+							<div id="div_compromiso_fam" class="form-group has-success">
+									<input type="hidden" id="id_ctc" name="id_ctc" />
+									<input type="hidden" id="id_cfi" name="id_cfi" />
+									<input type="hidden" id="id_com_fam" name="id_com_fam"/>
+									<legend class="text-bold">DIRECTIVO DE LA INSTITUCIÓN</legend>
+										<div id="div_directivo_docente">
+											<input type="hidden" id="id_dir" name="id_dir" />
+											<div class="row">
+												<div class="col-md-2">
+													<label>DNI: </label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Nombres y Apellidos:</label>&nbsp;<label id="lbl_trabajador"></label>
+												</div>
+												<div class="col-md-4">
+													<label>Cargo:</label>&nbsp;<label id="lbl_cargo"></label>
+												</div>
+											</div>
+										</div>
+									<legend class="text-bold">FAMILIARES</legend>
+										<div id="familiares"> 
+										<div id="div_familiares" class="div_familiares">
+											<div class="row">
+												<div class="col-md-6">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Familiar:</label>&nbsp;<label id="lbl_familiar"></label>
+												</div>
+											</div>
+										</div>
+										<div id="div_familiar_agredido" style="display:none">
+											<div class="row">
+												<div class="col-md-6">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Familiar:</label>&nbsp;<label id="lbl_familiar"></label>
+												</div>
+											</div>
+										</div>
+										</div>
+									<legend class="text-bold">ESTUDIANTES</legend>
+										<div id="responsables"> 
+										<div id="div_responsable" class="div_responsable">
+											<div class="row">
+												<div class="col-md-6">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Alumno:</label>&nbsp;<label id="lbl_alumno"></label>
+												</div>
+											</div>
+										</div>
+										<div id="div_estudiante_agredido" style="display: none">
+											<div class="row">
+												<div class="col-md-6">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Alumno:</label>&nbsp;<label id="lbl_alumno"></label>
+												</div>
+											</div>
+										</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<label>Breve Descripción del Caso</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control" readonly="readonly"
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="des" name="des"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<label>Quienes se comprometen a:</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control"
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="comp" name="comp"></textarea>
+											</div>
+										</div>
+										<br>
+										<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarCompromisoFam(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel" id="coll-ficha_derivacion">
+						<div class="panel-heading bg-purple">
+							<h6 class="panel-title">
+								<a class="collapsed" data-toggle="collapse"
+									data-parent="#accordion-styled" href="#accordion-styled-group6">Ficha de Derivación</a>
+							</h6>
+						</div>
+						<div id="accordion-styled-group6" class="panel-collapse collapse">
+							<div class="panel-body">
+							<div id="div_derivacion" class="form-group has-success">
+									<input type="hidden" id="id_cfi" name="id_cfi" />
+									<input type="hidden" id="id_der" name="id_der"/>
+									<legend class="text-bold">DIRECTIVO DE LA INSTITUCIÓN</legend>
+										<div id="div_directivo_docente">
+											<input type="hidden" id="id_dir" name="id_dir" />
+											<div class="row">
+												<div class="col-md-2">
+													<label>DNI: </label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Nombres y Apellidos:</label>&nbsp;<label id="lbl_trabajador"></label>
+												</div>
+												<div class="col-md-4">
+													<label>Cargo:</label>&nbsp;<label id="lbl_cargo"></label>
+												</div>
+											</div>
+										</div>
+									<legend class="text-bold">DEPARTAMENTO O INSTITUCIÓN A LA QUE SE DERIVA:</legend>
+									<div class="row">
+										<div class="col-sm-4">
+											<label>Departamento</label>
+                								<select id="id_cdd" name="id_cdd" required placeholder="Seleccione" class="form-control"></select>
+										</div>
+									</div>
+									<div id="div_derivacion_tipo_conductual">
+									<legend class="text-bold">INFRACTORES</legend>
+										<div id="estudiantes_inf"> 
+										<div id="div_estudiantes_inf" class="div_estudiantes_inf">
+											<div class="row">
+												<div class="col-md-4">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-4">
+													<label>Alumno:</label>&nbsp;<label id="lbl_alumno"></label>
+												</div>
+											</div>
+										</div>
+										</div>
+									</div>
+									<div id="div_derivacion_tipo_bulling" style="display:none">
+									<legend class="text-bold">DATOS DE LA PERSONA AGREDIDA</legend>
+										<div id="agredido"> 
+										<div id="div_victima">
+											<div class="row">
+												<div class="col-md-6">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Alumno:</label>&nbsp;<label id="lbl_alumno"></label>
+												</div>
+											</div>
+										</div>
+										</div>
+									<legend class="text-bold">DATOS DEL AGRESOR O AGRESORES</legend>
+										<div id="agresores"> 
+										<div id="div_agresor" class="div_agresor">
+											<div class="row">
+												<div class="col-md-6">
+													<label>DNI:</label>&nbsp;<label id="lbl_dni"></label>
+												</div>
+												<div class="col-md-6">
+													<label>Alumno:</label>&nbsp;<label id="lbl_alumno"></label>
+												</div>
+											</div>
+										</div>
+										</div>
+									</div>
+									<div class="row">
+											<div class="col-md-12">
+											<label>Breve Resumen del Caso</label>
+											</div>
+									</div>
+										<div class="row">
+											<div class="col-md-12">
+											<textarea class="form-control"
+											placeholder="Trámite seguido frente al hecho de violencia escolar (de acuerdo a los Protocolos para la Atención de la Violencia Escolar)"
+											rows="5" cols="5" id="des" name="des"></textarea>
+											</div>
+										</div>
+										<br>
+										<div class="modal-footer">
+										<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarDerivacion(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										<button type="button" id="btn-imprimirFichaDerivacion" class="btn bg-brown btn-rounded pull btn-xs" href="#" onclick="imprimirFichaDerivacion(this)" title="Imprimir Ficha Derivacion"><i class="icon-newspaper mr-3 icon-2x  position-right"></i></button>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel" id="coll-ficha_seg">
+						<div class="panel-heading bg-info">
+							<h6 class="panel-title">
+								<a class="collapsed" data-toggle="collapse"
+									data-parent="#accordion-styled" href="#accordion-styled-group7">Ficha de Seguimiento</a>
+							</h6>
+						</div>
+						<div id="accordion-styled-group7" class="panel-collapse collapse">
+							<div class="panel-body">
+							<div id="div_ficha_seguimiento" class="form-group has-success">
+									<input type="hidden" id="id_ctc" name="id_ctc" />
+									<input type="hidden" id="id_cfi" name="id_cfi" />
+									<input type="hidden" id="id_fic_seg" name="id_fic_seg"/>
+									<table id="table_actividades" class="table">
+									</table>
+									<div class="row detalle">
+									<div class="col-sm-12">
+									<input type="checkbox" class="form-check-input-styled-primary" id="cierre" name="cierre" >
+									<label>Caso Cerrado</label>
+									</div>
+									</div>
+										<br>
+										<div class="modal-footer">
+										<button
+											class="btn btn-success active btn-rounded pull-right btn-xs"
+											type="button" id="btn_grabar" name="btn_grabar"
+											onclick="grabarSeguimiento(this)">
+											<b><i class="glyphicon glyphicon-floppy-saved"></i></b>Grabar
+										</button>
+										<button type="button" id="btn-imprimirFichaSeguimiento" class="btn bg-brown btn-rounded pull btn-xs" href="#" onclick="imprimirFichaSeguimiento(this)" title="Imprimir Ficha Seguimiento"><i class="icon-newspaper mr-3 icon-2x  position-right"></i></button>
+										</div>
+							</div>
+							</div>
+						</div>
+					</div>				
+				</div>
+				<!-- /accordion with different panel styling -->
+
+			</div>
+</div>
+</fieldset>
+</form>
+</div>
+<!-- /wizard with validation -->

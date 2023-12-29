@@ -1,0 +1,48 @@
+<form action="api/logLogin" id="seg_log_login-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>usuario</label>
+                <input type="text" id="id_usr" name="id_usr" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Perfil</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Ip</label>
+                <input type="text" id="ip" name="ip" required class="form-control input-sm " maxlength="20">
+			</div>
+			<div class="col-sm-6">
+				<label>Exito</label>
+				<select id="exito" name="exito" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

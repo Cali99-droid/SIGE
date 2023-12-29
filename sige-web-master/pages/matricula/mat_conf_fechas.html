@@ -1,0 +1,148 @@
+<script type="text/javascript" src="pages/js/mat_conf_fechas.js"></script>
+<form id='mat_conf_fechas-frm'>
+<input type="hidden" name="ac_id" id="ac_id" >
+<input type="hidden" name="as_id" id="as_id" >
+<input type="hidden" name="nc_id" id="nc_id" >
+<input type="hidden" name="ns_id" id="ns_id" >
+<input type="hidden" name="id_anio" id="id_anio" >
+	<div class="panel panel-flat" id="mat_cronograma_reserva-panel">
+
+
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th width="14%">Tipo de alumnado</th>
+						<th width="14%">Tipo de calendario</th>
+						<th width="14%">Desde</th>
+						<th width="14%">hasta</th>
+						<th width="14%">Cambio de secci&oacute;n</th>
+						<th width="14%">Desde</th>
+						<th width="14%">hasta</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2">Alumnos antiguos</td>
+						<td><a href="#"
+							onclick="_send('pages/matricula/mat_cronograma.html','Cronograma de matricula','Lista')">Matr&iacute;cula con cronograma</a></td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ac_del" name="ac_del"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ac_al" name="ac_al"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td rowspan="2">Fechas para cambio de secci&oacute;n</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ac_del_cs" name="ac_del_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ac_al_cs" name="ac_al_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Matr&iacute;cula sin cronograma</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="as_del" name="as_del"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="as_al" name="as_al"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="as_del_cs" name="as_del_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="as_al_cs" name="as_al_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Alumnos nuevos</td>
+						<td>Matr&iacute;cula con cronograma</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="nc_del" name="nc_del"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="nc_al" name="nc_al"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td rowspan="2">Fechas para cambio de secci&oacute;n</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="nc_del_cs" name="nc_del_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="nc_al_cs" name="nc_al_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+
+					</tr>
+					<tr>
+						<td>Matr&iacute;cula sin cronograma</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ns_del" name="ns_del"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ns_al" name="ns_al"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ns_del_cs" name="ns_del_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						<td>
+							<div class="input-group">
+								<input type="text" id="ns_al_cs" name="ns_al_cs"
+									class="form-control daterange-time" autocomplete="off" />
+							</div>
+						</td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="header-elements">
+		<button id='btn-grabar' class="btn btn-danger pull-right">Grabar</button>
+	</div>
+</form>

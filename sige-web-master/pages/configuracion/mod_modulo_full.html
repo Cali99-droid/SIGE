@@ -1,0 +1,41 @@
+<script type="text/javascript" src="js/configuracion/mod_modulo_modal_full.js"></script>
+
+<div class="panel panel-flat" id="mod_modulo-panel">
+<div class="panel-body">
+	
+	<form action="api/parametro" id="mod_modulo_full-frm">
+		<input type="hidden" id="id" name="id" />
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-6">
+					<label>M&oacute;dulo</label>
+	                <input type="text" id="nom" name="nom" required class="form-control input-sm "  readonly="readonly">
+				</div>
+			</div>
+		</div>
+			<div id="mod_modulo-panel">
+	
+		<div class="tabbable">
+			<ul class="nav nav-tabs nav-tabs-highlight">
+				<li class="active">
+					<a href="#mod_parametro-tab" data-toggle="tab"><i class="fa fa-cube"></i> Par&aacute;metros</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active parametros" id="mod_parametro-tab">
+				
+					<table class="table" id="mod_parametro-tabla">
+					</table>
+					
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	</form>
+	<div class="modal-footer">
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>		
+
+</div>	
+</div>

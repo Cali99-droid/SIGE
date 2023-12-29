@@ -1,0 +1,76 @@
+<form action="api/gradoHorario">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio"  />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Giro Negocio</label>
+				<select class="form-control input-xs" id="id_gir" name="id_gir" required>
+				<option value=''>SELECCIONAR</option>
+				</select>
+			</div>	
+			<div class="col-sm-4">
+				<label>Nivel</label>
+				<select class="form-control input-xs" id="id_niv" name="id_niv" required>
+				<option value=''>SELECCIONAR</option>
+				</select>
+			</div>	
+			<div class="col-sm-4">
+				<label>Tipo Periodo</label>
+				<select class="form-control input-xs" required id="id_tpe" name="id_tpe">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-sm-4">
+				<label>Grado</label>
+				<select class="form-control input-xs" required id="id_gra" name="id_gra">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Ciclo</label>
+				<select class="form-control input-xs" required id="id_cic" name="id_cic">
+				</select>
+			</div>
+			<div class="col-sm-2">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control">
+				</select>
+			</div>
+			
+		</div>
+		<div class="row">
+		<div class="col-sm-6">
+				<label>Hora de inicio</label>
+                <input type="time" id="hora_ini" name="hora_ini" required class="form-control input-sm" maxlength="8">
+			</div>
+			<div class="col-sm-6">
+				<label>Hora fin</label>
+                <input type="time" id="hora_fin" name="hora_fin" required  class="form-control input-sm" maxlength="8">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>(Turno 2)Hora de inicio</label>
+                <input type="time" id="hora_ini_aux" name="hora_ini_aux" class="form-control input-sm" maxlength="8">
+			</div>
+			<div class="col-sm-6">
+				<label>(Turno 2)Hora fin</label>
+                <input type="time" id="hora_fin_aux" name="hora_fin_aux" class="form-control input-sm" maxlength="8">
+			</div>
+			
+			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary" id="btn-Grabar">Grabar</button>
+		<button type="button" id="btn_Agregar" class="btn btn-primary">Agregar</button>
+	</div>
+
+</form>
+
+

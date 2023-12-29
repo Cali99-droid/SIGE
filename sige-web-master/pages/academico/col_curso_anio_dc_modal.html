@@ -1,0 +1,36 @@
+<div class="panel-heading">
+	<h6 class="panel-title">Cursos del Área <label id="nom_area_dc">AREA </label> - <label id="nom_grado_dc">GRADO </label></h6>
+</div>
+<form action="api/cursoAnio/grabarCursosDC" id="col_curso_anio_dc-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_caa" name="id_caa" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<!--<div class="row">
+			<div class="col-sm-4">
+				<label>Área</label> 
+				<select id="id_caa" name="id_caa" required placeholder="Seleccione" class="form-control select-search">
+				<!--<select id="id_cic" name="id_cic" required placeholder="Seleccione" class="form-control select-search">-->
+		<!--		</select>
+			</div>-->
+		</div>
+		 <div class="panel-body">
+			<fieldset class="content-group">
+				<div class="row mt-5">
+					<div class="col-sm-12">
+						<div class="table-responsive mt-5">
+							<table class="table table-bordered text-center" id="tabla_cursos_dc">
+							</table>
+						</div>
+
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

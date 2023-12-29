@@ -1,0 +1,64 @@
+<form action="api/periodo" id="per_periodo-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo de periodo</label> 
+				<select id="id_tpe" name="id_tpe" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Servicio</label> 
+				<select id="id_srv" name="id_srv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<!-- <div class="col-sm-6">
+				<label>Sucursal</label>
+                <select id="id_suc" name="id_suc" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nivel</label>
+                <input type="text" id="id_niv" name="id_niv" required class="form-control input-sm number" maxlength="10">
+			</div> -->
+		</div>
+		<div class="row">
+			
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Fecha Inicio</label>
+                <input type="text" id="fec_ini" name="fec_ini" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-4">
+				<label>Fecha Fin</label>
+                <input type="text" id="fec_fin" name="fec_fin" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-4">
+				<label>Fin Matr&iacute;cula</label>
+                <input type="text" id="fec_cie_mat" name="fec_cie_mat" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+
+		<!-- <div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div> -->
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,89 @@
+<meta charset="utf-8">
+
+<script>
+	function onloadPage(params) {
+
+		_llenarComboURL('api/cronogramaLibreta/listarNiveles', $('#id_niv'),
+				null, null, function() {
+					if($("#id_niv option").length==0)
+						_alertHTML('warning','No existe programación de fechas para recojer libretas.',true);
+					else
+						$('#id_niv').change();
+				});
+
+		$('#id_niv').on(
+				'change',
+				function(event) {
+					var param = {
+						id_anio : $('#_id_anio').text(),
+						id_niv : $("#id_niv").val()
+					}
+					_llenarComboURL('api/cronogramaLibreta/listarPeriodos',
+							$('#id_cpu'), null, param, function() {
+								$('#id_cpu').change();
+								$("id_cpu option:last").prop("selected", "selected");
+							});
+				});
+
+		var validator = $("#buscar-frm").validate();
+		$('#buscar-frm').on('submit',
+				function(event) {
+					event.preventDefault();
+
+					if ($("#buscar-frm").valid())
+					_get('api/nota/tienePermiso?id_anio='
+							+ $('#_id_anio').text() + '&id_niv='
+							+ $('#id_niv').val() + '&id_cpu='
+							+ $('#id_cpu').val() + '&nro_doc='
+							+ $('#nro_doc').val(), function(data) {
+						var url = _URL + 'api/nota/libreta?id_anio='
+								+ $('#_id_anio').text() + '&id_niv='
+								+ $('#id_niv').val() + '&id_cpu='
+								+ $('#id_cpu').val() + '&nro_doc='
+								+ $('#nro_doc').val();
+						$('#nro_doc').val('');
+						window.open(url);
+					});
+				});
+
+	}
+</script>
+<div class="panel panel-flat" id="not_nota-panel">
+
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			
+			<form id="buscar-frm">
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Nivel</label>
+								<div class="flechas">
+					               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<label>Periodo</label>
+								<div class="flechas">
+				                <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<label>Nro doc identidad</label>
+				                <input id="nro_doc" name="nro_doc" required placeholder="Doc. de identidad" class="form-control"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-right">
+								<button type="submit" class="btn btn-warning" id="btn-buscar">Imprimir <i class="fa fa-print position-right"></i></button>
+							</div>
+						</div>
+				</form>
+		</div>
+	</div>
+
+
+</div>

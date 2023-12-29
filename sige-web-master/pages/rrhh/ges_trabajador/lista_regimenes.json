@@ -1,0 +1,16 @@
+[
+	{
+		"id":1,
+		"regimen":"ESSALUD REGULAR",
+		"fec_ini":"01/01/2018",
+		"fec_fin":"31/12/2018",
+		"entidad":""
+	},
+	{
+		"id":2,
+		"regimen":"ESSALUD REGULAR",
+		"fec_ini":"01/01/2018",
+		"fec_fin":"31/12/2018",
+		"entidad":"ENTIDAD1"
+	}
+]

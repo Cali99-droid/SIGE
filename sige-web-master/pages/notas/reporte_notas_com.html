@@ -1,0 +1,71 @@
+<script type="text/javascript" src="pages/js/reporte_notas_com.js"></script>
+<script type="text/javascript" src="framework/lib/jquery.tabable.min.js"></script>
+<style>
+
+#not_nota-tabla input {
+    min-width: 60px;   /* depends how much minimum width you require */
+}
+</style>
+<div class="panel panel-flat" id="not_nota-panel">
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="reporte_nota_com-frm">
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Local</label>
+				               	<select id="id_suc" name="id_suc"  placeholder="Seleccione" class="form-control select-search input-xs">
+				               	 <option value=''>TODOS</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Nivel</label>
+				               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>	Periodo</label>
+				               	<select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>	
+							<!-- <div class="col-sm-4">
+								<label>Grado</label>
+				               	<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div> -->
+						</div>
+						<!-- <div class="row">
+							 <div class="col-sm-4">
+								<label>Aula</label>
+				               	<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div> 
+							
+						</div> -->
+						<!-- <div class="row">
+							<div class="col-sm-6">
+							<label>Fecha Inicio</label>
+							<input type="text" id="fec_ini" name="fec_ini" class="form-control daterange-single" autocomplete="off">
+							</div>
+							<div class="col-sm-6">
+							<label>Fecha Fin</label>
+							<input type="text" id="fec_fin" name="fec_fin" class="form-control daterange-single" autocomplete="off">
+							</div> -->
+							
+						<!-- </div> -->
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary" id="btn-buscar">Buscar <i class="fa fa-search position-right"></i></button>
+							<button type="button" class="btn btn-warning" id="btn-grabar" style="display:none">Grabar <i class="fa fa-save position-right"></i></button>
+							<button type="button" class="btn btn-warning" id="btn-actualizar" style="display:none">Actualizar <i class="fa fa-save position-right"></i></button>
+						</div>
+				</form>				
+		</div>
+	</div>
+	<div id="not_nota_com-div">
+		<table class="table" id="reporte_nota_com-tabla">
+		</table>	
+	</div>
+	 
+	
+</div>
+	

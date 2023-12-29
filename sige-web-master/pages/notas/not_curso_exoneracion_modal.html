@@ -1,0 +1,66 @@
+<form action="api/cursoExoneracion" id="not_curso_exoneracion-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_mat" name="id_mat" />
+	<input type="hidden" id="est" name="est" />
+	
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Alumno</label> 
+			  	<div class="form-group has-feedback has-feedback-left">
+					<input type="text" class="form-control"
+					onkeypress="onkeyAlumno()" 
+					placeholder="Busca alumno (Ingrese por lo menos 3 letras)" id="alumno" required>
+					<div class="form-control-feedback">
+						<i class="icon-search4 text-size-base"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-4">
+				<label>Nivel</label> 
+				<input type="nivel" id="nivel" class="form-control disabled" >
+
+			</div>
+			<div class="col-sm-4">
+				<label>Grado</label>
+                <input type="text" id="grado" class="form-control disabled" >
+			</div>
+			<div class="col-sm-4">
+				<label>Secci&oacute;n</label>
+                <input type="text" id="seccion" class="form-control disabled" >
+			</div>
+		</div>		
+		<div class="row detalle">
+			<div class="col-sm-6">
+				<label>Curso</label> 
+				<select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			
+			<div class="col-sm-6">
+				<label>Fecha</label>
+                <input type="text" id="fecha" name="fecha" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-6">
+				<label>Motivo</label>
+                <input type="text" id="motivo" name="motivo" required class="form-control input-sm " maxlength="200">
+			</div>
+			<div class="col-sm-6">
+				<label>Resoluci&oacute;n</label>
+                <input type="text" id="resol" name="resol"  class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

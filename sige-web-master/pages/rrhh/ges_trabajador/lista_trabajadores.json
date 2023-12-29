@@ -1,0 +1,16 @@
+[
+	{
+		"id":1,
+		"tip_doc":"DNI",
+		"nro_doc":"101202022",
+		"nombre":"juan vargas",
+		"cumpleanios" :"10 Ene"
+	},
+	{
+		"id":2,
+		"tip_doc":"Pasaporte",
+		"nro_doc":"95423232333",
+		"nombre":"Luis Miguel",
+		"cumpleanios" :"15 Set"
+	}
+]

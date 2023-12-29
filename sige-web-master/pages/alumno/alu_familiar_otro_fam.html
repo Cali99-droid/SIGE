@@ -1,0 +1,163 @@
+
+
+<form  id="alu_otro_fam-frm" action="api/familiar/FamiliarGrabar">
+	<input type="hidden" id="id" name="id" /> 
+	<input type="hidden" id="ini" name="ini" />
+	<input type="hidden" id="id_gpf" name="id_gpf" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<fieldset class="content-group">
+		<legend class="text-bold">FAMILIARES REGISTRADOS</legend>
+			<div class="row">
+				<div class="otro_familiar-div col-sm-12">
+					<b id='titulo'></b>
+						<table class="table" id="otro_familiar-tabla">
+						</table>
+				</div>
+			</div>
+	</fieldset>
+	<div id="div_otro_familiar">
+	<fieldset class="content-group">
+		<legend class="text-bold">DATOS IMPORTANTES</legend>
+
+		<div class="row">
+			<div class="col-sm-4">
+						<label>Parentesco</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_par" name="id_par" required placeholder="Seleccione" class="form-control select-search">
+						</select>
+			</div>
+			<div class="col-sm-4">
+						<label>Tipo de documento</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_tdc" name="id_tdc"
+							required placeholder="Seleccione" class="form-control select-search">
+						</select>
+			</div>
+			<div class="col-sm-4">
+						<label>N&uacute;mero de documento</label>&nbsp;<font color="red">(*)</font><input type="text"
+							id="nro_doc" name="nro_doc" required
+							class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label for="name" class="control-label">Posee Apellidos</label>&nbsp;<font color="red">(*)</font>
+				<div class="input-group">
+					<div class="radio radio-info radio-inline">
+						<input id="id_tapa1" name="id_tap" value="A" type="radio">
+						<label for="id_tapa1"> Ambos </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="id_tapa2" name="id_tap" value="P" type="radio">
+						<label for="id_tapa2"> Solo paterno </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="id_tapa3" name="id_tap" value="M" type="radio">
+						<label for="id_tapa3"> Solo materno </label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Apellido paterno </label> <input type="text" id="ape_pat"
+					name="ape_pat" class="form-control input-sm " maxlength="30">
+			</div>
+			<div class="col-sm-4">
+				<label>Apellido materno </label> <input type="text" id="ape_mat"
+					name="ape_mat" class="form-control input-sm " maxlength="30">
+			</div>
+			<div class="col-sm-4">
+				<label>Nombres</label> <input type="text" id="nom" name="nom"
+					required class="form-control input-sm " maxlength="40">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<label>G&eacute;nero</label>&nbsp;<font color="red">(*)</font>
+				<div class="input-group">
+					<div class="radio radio-info radio-inline">
+						<input id="id_gen1" name="id_gen" value="1" type="radio">
+						<label for="id_gen1"> Masculino </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="id_gen2" name="id_gen" value="0" type="radio">
+						<label for="id_gen2"> Femenino</label>
+					</div>
+
+				</div>
+			</div>
+			<!-- <div class="col-sm-4">
+				<label>Pedir&aacute; Informaci&oacute;n</label>&nbsp;<font color="red">(*)</font>
+				<div class="input-group">
+					<div class="radio radio-info radio-inline">
+						<input id="ped_inf1" name="ped_inf" value="1" type="radio">
+						<label for="ped_inf1"> S&iacute; </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="ped_inf2" name="ped_inf" value="0" type="radio">
+						<label for="ped_inf2">No</label>
+					</div>
+
+				</div>
+			</div> -->
+			<div class="col-sm-4">
+				<label>Recojer&aacute; Libretas?</label>&nbsp;<font color="red">(*)</font>
+				<div class="input-group">
+					<div class="radio radio-info radio-inline">
+						<input id="rec_lib1" name="rec_lib" value="1" type="radio">
+						<label for="rec_lib1"> S&iacute; </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="rec_lib2" name="rec_lib" value="0" type="radio">
+						<label for="rec_lib2">No</label>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</fieldset>
+	<fieldset class="content-group">
+								<legend class="text-bold">DATOS DE DOMICILIO</legend>
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Pa&iacute;s</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_pais" name="id_pais" required placeholder="Seleccione" class="form-control select-search">
+										<option value="">SELECCIONE</option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Departamento</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_dep" name="id_dep" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Provincia</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_pro" name="id_pro" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Distrito</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_dist" name="id_dist" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Direcci&oacute;n</label>&nbsp;<font color="red">(*)</font>
+						                <input type="text" id="dir" name="dir" class="form-control input-sm " maxlength="50">
+									</div>
+									<div class="col-sm-4">
+										<label>Referencia Domiciliaria</label>&nbsp;<font color="red">(*)</font>
+						                <input type="text" id="ref" name="ref" class="form-control input-sm " maxlength="50">
+									</div>
+							   </div>
+	</fieldset>
+	</div>
+	<div class="modal-footer">
+		<button type="button" id="btn-nuevo" class="btn btn-info btn-xs" onclick="otroFamiliarNuevo()"><i class="icon-file-empty"></i>Nuevo</button>
+		<button type="button" id="btn_grabarOtroFam" class="btn btn-success btn-xs"><i class="icon-floppy-disk"></i>Grabar</button>
+	</div>
+</form>
+

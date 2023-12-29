@@ -1,0 +1,162 @@
+<script type="text/javascript" src="js/olimpiada/oli_resultados_ind.js"></script>
+<div class="panel panel-flat" id="oli_inscripciones-panel">
+	<h4>
+		<p class="font-weight-bold text-center text-danger" id="nombre"></p>
+		<p class="text-center text-secondary" id="fecha"></p>
+	</h4>
+</div>
+<form action="api/config/grabarConfiguracion" id="oli_resultados-frm">
+
+	<div class="panel panel-flat">
+		<div class="panel-body">
+			<input type="hidden" id="id_oli" name="id_oli" />
+			<fieldset class="mb-3">
+				<legend class="text-uppercase font-size-sm text-center"
+					style="font-weight: 1400 !important;"><h1>RESULTADOS</h1></legend>
+
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">INGRESE EL DNI</label>
+					<div class="col-lg-10">
+						<input type="text" id="dni" name="dni" class="form-control" minlength="8" maxlength="8">
+					</div>
+				</div>
+			</fieldset>
+
+		</div>
+		<div class="modal-footer">
+			<button type="submit" id="btn-buscar_oli" class="btn btn-primary">Buscar</button>
+			<button type="button" id="btn-cancelar" class="btn btn-primary">Cancelar</button>
+		</div>
+
+	</div>
+
+	<div class="panel panel-flat" style="display:none" id="divVacio">
+		<div class="panel-body text-danger text-center">
+			<b>EL ALUMNO NO ESTA REGISTRADO</b>
+		</div>
+	</div>
+	
+	<div class="panel panel-flat" style="display:none" id="divPago">
+		<div class="panel-body text-danger text-center">
+			<b> NO SE PAGO EL DERECHO DE EXAMEN.</b>
+		</div>
+	</div>
+
+	<div class="panel panel-flat" style="display:none" id="divResultados">
+		<div class="panel-body">
+		
+			<fieldset class="mb-3">
+				<legend class="text-uppercase font-size-sm text-center" style="font-weight: 1200 !important;"><h2 id="modalidad" >MODALIDAD</h2></legend>
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Puntaje</label>
+					<div class="col-lg-10">
+						<input type="text" id="puntaje" class="form-control" readonly style="color:blue">
+					</div>
+				</div>	
+							
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Puesto</label>
+					<div class="col-lg-10">
+						<input type="text" id="puesto" class="form-control" readonly style="color:blue">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Total de Alumnos del grado</label>
+					<div class="col-lg-10">
+						<input type="text" id="total" class="form-control" readonly style="color:blue">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Hora de ingreso</label>
+					<div class="col-lg-10">
+						<input type="text" id="hor_ing" class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Hora de salida</label>
+					<div class="col-lg-10">
+						<input type="text" id="hor_sal" class="form-control" readonly>
+					</div>
+				</div>
+			</fieldset>
+			
+			<!--<fieldset class="mb-3">
+				 <legend class="text-uppercase font-size-sm text-center" style="font-weight: 1200 !important;"><h3 >DETALLE DEL EXAMEN</h3></legend>
+				 <div class="form-group row">
+					<label class="col-form-label col-lg-2">Total de Preguntas Correctas</label>
+					<div class="col-lg-10">
+						<input type="text" id="total_buenas" class="form-control" readonly style="color:blue">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Total de Preguntas Incorrectas</label>
+					<div class="col-lg-10">
+						<input type="text" id="total_malas" class="form-control" readonly style="color:blue">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Total de Preguntas en Blanco</label>
+					<div class="col-lg-10">
+						<input type="text" id="total_blanco" class="form-control" readonly style="color:blue">
+					</div>
+				</div>
+				<div id="resultados_tabla">
+					<div class="form-group row" id="div_detalle" align="center">
+					<table  id="tb_detalle"  class="text-center">
+					</table>
+					</div>
+				</div>	  		
+				 
+			</fieldset>-->
+			
+			<fieldset class="mb-3">
+				 <legend class="text-uppercase font-size-sm text-center" style="font-weight: 1200 !important;"><h3 >DATOS DEL ALUMNO</h3></legend>
+				
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Apellido Paterno</label>
+					<div class="col-lg-10">
+						<input type="text" id="ape_pat" class="form-control" readonly>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Apellido Materno</label>
+					<div class="col-lg-10">
+						<input type="text" id="ape_mat" class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Nombres</label>
+					<div class="col-lg-10">
+						<input type="text" id="nom" class="form-control" readonly>
+					</div>
+				</div>	
+				
+
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Colegio</label>
+					<div class="col-lg-10">
+						<input type="text" id="colegio" class="form-control" readonly>
+					</div>
+				</div>	
+							
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Nivel</label>
+					<div class="col-lg-10">
+						<input type="text" id="nivel" class="form-control" readonly>
+					</div>
+				</div>
+					
+				<div class="form-group row">
+					<label class="col-form-label col-lg-2">Grado</label>
+					<div class="col-lg-10">
+						<input type="text" id="grado" class="form-control" readonly>
+					</div>
+				</div>	
+
+			</fieldset>
+		</div>
+	</div>
+</form>

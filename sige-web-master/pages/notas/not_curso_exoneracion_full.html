@@ -1,0 +1,54 @@
+<form action="api/cursoExoneracion" id="not_curso_exoneracion_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Curso</label> 
+				<select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Matr&iacute;cula</label> 
+				<select id="id_mat" name="id_mat" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Fecha</label>
+                <input type="text" id="fecha" name="fecha" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Motivo</label>
+                <input type="text" id="motivo" name="motivo" required class="form-control input-sm " maxlength="200">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Resoluci&oacute;n</label>
+                <input type="text" id="resol" name="resol"  class="form-control input-sm " maxlength="100">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="not_curso_exoneracion-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

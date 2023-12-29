@@ -1,0 +1,95 @@
+<form action="api/evaluacionVac" id="eva_evaluacion_vac_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Descripcion</label>
+                <input type="text" id="des" name="des"  class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Precio</label>
+                <input type="text" id="precio" name="precio" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Puntaje M&iacute;nimo aprobatorio</label>
+                <input type="text" id="ptje_apro" name="ptje_apro"  class="form-control input-sm decimal" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Fecha de inicio</label>
+                <input type="text" id="fec_ini" name="fec_ini" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha fin</label>
+                <input type="text" id="fec_fin" name="fec_fin" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Vigencia de Vacantes</label>
+                <input type="text" id="fec_vig_vac" name="fec_vig_vac"  class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="eva_evaluacion_vac-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#eva_evaluacion_vac_examen-tab" data-toggle="tab"><i class="fa fa-cube"></i> Examen por Marcaci&oacute;n</a>
+			</li>
+			<li>
+				<a href="#eva_vacante-tab" data-toggle="tab"><i class="fa fa-cube"></i> Vacante</a>
+			</li>
+			<li>
+				<a href="#eva_matr_vacante-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matricula Vacante</a>
+			</li>
+			<li>
+				<a href="#eco_eva_economica-tab" data-toggle="tab"><i class="fa fa-cube"></i> Evaluaci&oacute;n Econ&oacute;mica</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="eva_evaluacion_vac_examen-tab">
+				<table class="table" id="eva_evaluacion_vac_examen-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="eva_vacante-tab">
+				<table class="table" id="eva_vacante-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="eva_matr_vacante-tab">
+				<table class="table" id="eva_matr_vacante-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="eco_eva_economica-tab">
+				<table class="table" id="eco_eva_economica-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

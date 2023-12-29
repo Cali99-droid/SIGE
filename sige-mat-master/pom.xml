@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>sige</groupId>
+	<artifactId>sige</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<commons.beanutils.version>1.9.3</commons.beanutils.version>
+		<commons.lang3.version>3.6</commons.lang3.version>
+		<sige.core.commons.version>1.0-SNAPSHOT</sige.core.commons.version>
+		<sige.core.dao.version>1.0-SNAPSHOT</sige.core.dao.version>
+		<sige.core.security.version>1.0-SNAPSHOT</sige.core.security.version>
+		<sige.mat.commons.version>1.0-SNAPSHOT</sige.mat.commons.version>
+		<sige.mat.service.version>1.0-SNAPSHOT</sige.mat.service.version>
+		<sige.mat.dao.version>1.0-SNAPSHOT</sige.mat.dao.version>
+		<sige.mat.web.version>1.0-SNAPSHOT</sige.mat.web.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>sige.core.commons</groupId>
+				<artifactId>sige-core-commons</artifactId>
+				<version>${sige.core.commons.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>sige.core.dao</groupId>
+				<artifactId>sige-core-dao</artifactId>
+				<version>${sige.core.dao.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>sige.core.security</groupId>
+				<artifactId>sige-core-security</artifactId>
+				<version>${sige.core.security.version}</version>
+			</dependency>
+
+			<!--Modules -->
+			<dependency>
+				<groupId>sige.mat.commons</groupId>
+				<artifactId>sige-mat-commons</artifactId>
+				<version>${sige.mat.commons.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>sige.mat.dao</groupId>
+				<artifactId>sige-mat-dao</artifactId>
+				<version>${sige.mat.dao.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>sige.mat.service</groupId>
+				<artifactId>sige-mat-service</artifactId>
+				<version>${sige.mat.service.version}</version>
+			</dependency>
+
+			<!--SL4J -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.19</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>2.7</version>
+			</dependency>
+			<!--LOG4J 2 -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>2.7</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>2.7</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-jcl</artifactId>
+				<version>2.7</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.8.0</version>
+			</dependency>
+			<dependency>
+			    <groupId>com.google.zxing</groupId>
+			    <artifactId>core</artifactId>
+			    <version>2.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!--Librerias que se van a compartir -->
+	<dependencies>
+		<!--  
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+--> 
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.7</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-data-jpa</artifactId> 
+			</dependency> -->
+		<!--SL4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+		</dependency>
+
+		<!--LOG4J 2 -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-jcl</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.codehaus.groovy</groupId>
+		    <artifactId>groovy-all</artifactId>
+		    <version>2.4.10</version>
+		</dependency>
+	</dependencies>
+
+	<!--Spring Boot Parent -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<!--Modulos -->
+	<modules>
+		<module>sige-core-commons</module>
+		<module>sige-core-dao</module>
+		<module>sige-core-security</module>
+		<module>sige-mat-commons</module>
+		<module>sige-mat-dao</module>
+		<module>sige-mat-service</module>
+		<module>sige-mat-web</module>
+  	</modules>
+</project>

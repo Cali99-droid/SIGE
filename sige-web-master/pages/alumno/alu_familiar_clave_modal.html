@@ -1,0 +1,26 @@
+<form action="api/familiar/validarClaveCelular" id="alu_familiar-clave-val-frm">
+	<input type="hidden" id="id_msj" name="id_msj" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Se envi&oacute; un c&oacute;digo al n&uacute;mero de celular:<b><font id="celular"></font></b></label> 
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class="col-form-label col-lg-4">Ingrese el c&oacute;digo</label>
+			<div class="col-lg-4">
+				<input id="clave_celular" name="clave_celular" required placeholder="Ingrese clave" class="form-control" maxlength="4">
+			</div>
+		</div>
+					 
+
+	</div>
+
+	<div class="modal-footer">
+		<button type="submit" id="btn-aceptar-clave" class="btn btn-primary">Aceptar</button>
+		<button type="button" id="btn-reenviar-clave" class="btn btn-info" onclick="javascript:solicitar_clave_celular_otra_vez()">Volver a solicitar clave</button>
+	</div>
+
+</form>
+
+

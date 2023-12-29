@@ -1,0 +1,85 @@
+<form action="api/delegacion" id="oli_delegacion-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Distrito</label>
+                <input type="text" id="id_dist" name="id_dist" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Gesti&oacute;n</label> 
+				<select id="id_cg" name="id_cg" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>C&oacute;digo Modular</label>
+                <input type="text" id="cod_mod" name="cod_mod" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre de Colegio</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Correo Electr&oacute;nico</label>
+                <input type="text" id="corr" name="corr" required class="form-control input-sm " maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Tel&eacute;fono</label>
+                <input type="text" id="tlf" name="tlf" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Apellido Paterno Director</label>
+                <input type="text" id="ape_pat_dir" name="ape_pat_dir" required class="form-control input-sm " maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Apellido Materno Director</label>
+                <input type="text" id="ape_mat_dir" name="ape_mat_dir" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombre del Director</label>
+                <input type="text" id="nom_dir" name="nom_dir" required class="form-control input-sm " maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Apellido Paterno Delegado</label>
+                <input type="text" id="ape_pat_del" name="ape_pat_del" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Apellido Materno Delegado</label>
+                <input type="text" id="ape_mat_del" name="ape_mat_del" required class="form-control input-sm " maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre del Delegado</label>
+                <input type="text" id="nom_del" name="nom_del" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

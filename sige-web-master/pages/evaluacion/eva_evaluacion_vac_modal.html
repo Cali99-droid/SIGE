@@ -1,0 +1,145 @@
+<form action="api/evaluacionVac" id="eva_evaluacion_vac-frm">
+	<input type="hidden" id="id_eva_vacante" name="id_eva_vacante" />
+	<input type="hidden" id="est" name="est" value="A">
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-3">
+				<label>Descripcion</label>
+                <input type="text" id="des" name="des"  class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-3">
+				<label>Precio</label>
+                <input type="text" id="precio" name="precio" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<label>Fecha de inicio</label>
+                <input type="text" id="fec_ini" name="fec_ini" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-3">
+				<label>Fecha fin</label>
+                <input type="text" id="fec_fin" name="fec_fin" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-3">
+				<label>Fecha Vigencia de Vacantes</label>
+                <input type="text" id="fec_vig_vac" name="fec_vig_vac"  class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-3">
+				<label>Puntaje M&iacute;nimo aprobatorio</label>
+                <input type="text" id="ptje_apro" name="ptje_apro"  class="form-control input-sm decimal" maxlength="10">
+			</div>
+		</div>
+		 <fieldset >
+	                                <legend class="">Registro de Exámenes</legend>
+	                                <input type="hidden" id="id_examen" name="id_examen" value=""/>
+	                                <div class="row">
+	                                <div class="col-sm-3">
+	                                    <label>Tipo de evaluación</label>
+                                        <select id="id_tae" name="id_tae" data-placeholder="Seleccione" required="required" class="form-control select-search">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>    
+                                                               	
+	                                <div class="col-sm-3">
+	                                    <label class="control-label" for="id_eae">Area</label>
+		                                 <select id="id_eae" name="id_eae" data-placeholder="Seleccione" required="required" class="form-control select-search">
+		                                    <option value=""></option>
+		                                 </select>                                    	
+	                                </div>
+	                                <div id="eva_esc" name="eva_esc" style="display:none">  
+									<div class="col-sm-3">
+	                                    <label>Fecha Examen</label>
+	                                    <input id="fec_exa" name="fec_exa" class="form-control input-sm daterange-single"  required="required" type="text"  />
+	                                </div>
+	                                <div class="col-sm-3">
+	                                    <label>Fecha de Ingreso de Notas</label>
+	                                    <input id="fec_not" name="fec_not" class="form-control input-sm daterange-single" required="required" type="text"  />
+	                                </div>
+	                                </div>   
+	                                </div>
+          </fieldset>
+          <fieldset id="fieldsetTM3" style="display:none" class="tipo_evaluacion">
+                              	<input type="hidden" id="id_escrito" name="id_escrito" />
+                      			<legend class="">Registro de Examen Escrito</legend>
+                      			<div class="row">
+								<div class="col-sm-4">
+                           			<label >Número de preguntas</label>
+                           			<input type="text" id="num_pre" name="num_pre" required="required" class="form-control input-sm">
+                       			</div>
+								<div class="col-sm-4">
+                           			<label>Puntaje pregunta correcta</label>
+                           			<input type="text" id="pje_pre_cor" name="pje_pre_cor" required="required"  class="form-control input-sm">
+                       			</div>
+								<div class="col-sm-4">
+                           			<label>Puntaje pregunta incorrecta</label>
+                           			<input type="text" id="pje_pre_inc" name="pje_pre_inc" required="required" class="form-control input-sm">
+   								</div>
+   								</div>
+		</fieldset>
+		<fieldset id="fieldsetTM1" style="display:none" class="tipo_evaluacion">
+                              	<input type="hidden" id="id_marcacion" name="id_marcacion" />
+                                <legend class="">Registro de Examen por Marcación</legend>
+                                <div class="row">
+								<div class="col-sm-4">
+                                    <label >Número de preguntas</label>
+                                    <input type="text" id="num_pre" name="num_pre" required="required"  class="form-control input-sm">
+                                </div>
+								<div class="col-sm-4">
+                                    <label>Puntaje pregunta correcta</label>
+                                    <input type="text" id="pje_pre_cor" name="pje_pre_cor" required="required"  class="form-control input-sm">
+                                </div>
+								<div class="col-sm-4">
+                                    <label>Puntaje pregunta incorrecta</label>
+                                    <input type="text" id="pje_pre_inc" name="pje_pre_inc" required="required" class="form-control input-sm">
+                                </div>
+                                </div>
+         </fieldset>
+		<fieldset id="fieldsetTM2" style="display:none" class="tipo_evaluacion">
+							<input type="hidden" id="id_criterio" name="id_criterio" />
+                      			<legend class="section">Registro de Examen por Criterio</legend>
+                      			<div class="row">
+								<div class="col-sm-3">
+                                    <label>Duración</label>
+                                    <input type="text" id="dur" name="dur" required="required"  class="form-control input-sm ">
+                                </div>
+								<div class="col-sm-3">
+                                    <label>Fecha de inicio</label>
+                                    <input id="fec_ini_psi" name="fec_ini_psi" class="form-control input-sm daterange-single" required="required" type="text"/>
+                                </div>
+								<div class="col-sm-3">
+                                    <label>Fecha fin</label>
+                                    <input id="fec_fin_psi" name="fec_fin_psi" class="form-control input-sm daterange-single" required="required" type="text"/>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-3">
+       								<label>Instrumentos a utilizar</label>
+                                </div>
+                                <table id="instrumentos-tabla" name="instrumentos-tabla"  class="table">
+                                </table>
+                                </div>
+                                 
+                            </fieldset>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<!-- <button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button> -->
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+		 <a href="#" onclick="ExamenNuevo()"><button type="button" id="btnExamenNuevo" class="btn btn-success"><i class="fa fa-file"></i> Nuevo</button></a>
+	</div>
+	<h6>Lista de Examenes</h6>
+	<div class="row">
+		<table id="evaluacion_table"  class="table">
+		</table>		
+	</div>
+
+</form>
+
+

@@ -1,0 +1,60 @@
+<form action="api/cursoUnidad" id="col_curso_unidad-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nivel</label> 
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Curso</label> 
+				<select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Periodo Unidad</label> 
+				<select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>N&uacute;mero de Unidad</label>
+                <select id="num" name="num" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Descripcion</label>
+                <input type="text" id="des" name="des" class="form-control input-sm " maxlength="500">
+			</div>
+			<div class="col-sm-6">
+				<label>Producto</label>
+                <input type="text" id="producto" name="producto"  class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,176 @@
+<script type="text/javascript" src="js/olimpiada/oli_inscripcion_del.js"></script>
+<div class="panel panel-flat">
+<div class="panel-body">
+<b><font size="5" color="#0000CD" face="sans-serif"><label id="titulo">MODALIDAD DELEGACI&Oacute;N</label></font></b><br>
+<form action="api/public/delegacion" id="oli_inscripcion_del-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<input type="hidden" id="id_oli" name="id_oli"/>	
+	<input type="hidden" id="id_ti" name="id_ti" />
+	<div class="form-group">
+	<fieldset class="mb-3">
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">Datos de la Delegaci&oacute;n</legend>
+		<div class="row">
+			<div class="col-sm-3">
+				<label>C&oacute;digo Modular</label>
+                <input type="text" id="cod_mod" name="cod_mod" required class="form-control input-sm " maxlength="7">
+			</div>
+			<div class="col-sm-3">
+				<label>Nivel</label>
+				<div class="flechas">  
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre de Colegio</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-3">
+				<label>Gesti&oacute;n</label> 
+				<select id="id_cg" name="id_cg" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Departamento</label>
+				<div class="flechas">  
+				<select id="id_dep" name="id_dep" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label>Provincia</label> 
+				<div class="flechas">
+				<select id="id_pro" name="id_pro" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label>Distrito</label>
+				<div class="flechas"> 
+				<select id="id_dist" name="id_dist" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Correo Electr&oacute;nico</label>
+                <input type="email" id="corr" name="corr" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-6">
+				<label>Celular</label>
+                <input type="text" id="tlf" name="tlf" required class="form-control input-sm " maxlength="9" minlength="9">
+			</div>
+		</div>
+	</fieldset>
+	<fieldset class="mb-3">
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">Datos del Director</legend>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Apellido Paterno</label>
+                <input type="text" id="ape_pat_dir" name="ape_pat_dir" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-4">
+				<label>Apellido Materno</label>
+                <input type="text" id="ape_mat_dir" name="ape_mat_dir" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-4">
+				<label>Nombres</label>
+                <input type="text" id="nom_dir" name="nom_dir" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+		</div>
+	</fieldset>
+	<fieldset class="mb-3">
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">Datos del Delegado</legend>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Apellido Paterno</label>
+                <input type="text" id="ape_pat_del" name="ape_pat_del" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-4">
+				<label>Apellido Materno</label>
+                <input type="text" id="ape_mat_del" name="ape_mat_del" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-4">
+				<label>Nombres</label>
+                <input type="text" id="nom_del" name="nom_del" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+		</div>
+		<!-- <div class="row" id="inscritos">
+			<div class="col-sm-6">
+				<label>Cantidad Inscritos</label>
+                <input type="text" id="cant_ins" name="cant_ins" readonly="readonly" class="form-control input-sm " maxlength="100">
+			</div>
+		</div> -->
+	</fieldset>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline bg-slate-500  border-slate-600 btn-sm"  onclick="_send('pages/olimpiada/oli_inscripciones.html','Inscripciones','Lista')">Cancelar</button>
+		<button type="button" id="btn-grabar-del" class="btn btn-primary btn-sm">Grabar<i class="icon-floppy-disk position-right"></i></button>
+	</div>
+</form>
+</div>
+</div>
+<div class="panel panel-flat">
+<div class="panel-body" id="div_postulantes">
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">Participantes</legend>
+	<div id="div_registro_participante">
+	<div id="div_participante" class="div_participante">
+	<form id="frm_registro_participante" action="api/public/inscripcionDel">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_dis" name="id_dis" />
+	<fieldset class="mb-3">
+		<div class="row">
+			<div class="col-sm-3">
+				<label>DNI</label>
+                <input type="text" id="nro_dni" name="nro_dni" required class="form-control input-sm number" maxlength="8" minlength="8">
+			</div>
+			<div class="col-sm-3">
+				<label>Apellido Paterno</label>
+                <input type="text" id="ape_pat" name="ape_pat" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-3">
+				<label>Apellido Materno</label>
+                <input type="text" id="ape_mat" name="ape_mat" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+			<div class="col-sm-3">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100" style="text-transform: uppercase;">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<label>Nivel</label> 
+				<div class="flechas">
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<label>Grado</label> 
+				<div class="flechas">
+				<select id="id_og" name="id_og" required placeholder="Seleccione" class="grado form-control select-search">
+				</select>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+		<button type="button" id="btn-registrar-part" class="btn btn-success btn-sm" href="#" onclick="registrarParticipante(this)">Registrar Participante<i class="icon-user-check mr-3 icon-2x position-right"></i></button>
+		<button type="button" id="btn-eliminar-part" class="btn btn-danger btn-sm" href="#" onclick="eliminarParticipante(this)">Eliminar Participante<i class="icon-user-cancel mr-3 icon-2x position-right"></i></button>
+		</div>
+	</fieldset>
+	</form>
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;"></legend>
+	</div>
+	</div>
+	<div class="modal-footer" id="div_controles_del">
+	<button type="button" id="btn_agregar_participante" href="#" clas="btn bg-teal-400 btn-labeled btn-labeled-left" title="agregar participante">Agregar Participante<i class="icon-user-plus mr-3 icon-2x position-right"></i></button>
+	<button type="button" id="btn-imprimir_carnets" class="btn bg-brown" href="#" onclick="imprimirCarnets()">Imprimir Carnets<i class="icon-newspaper mr-3 icon-2x  position-right"></i></button>
+	<button type="button" id="btn-imprimir_ficha" class="btn bg-brown" href="#" onclick="imprimirFichaInscripcion()">Imprimir Ficha Inscripci&oacute;n<i class="icon-printer4 mr-3 icon-2x position-right"></i></button>
+	<button type="button" class="btn btn-default" id="btn-cancelar" href="#" onclick="_send('pages/olimpiada/oli_inscripciones.html','Inscripciones','Lista')">Men&uacute; Principal<i class="icon-menu3 mr-3 icon-2x position-right"></i></button>
+	</div>
+</div>
+</div>

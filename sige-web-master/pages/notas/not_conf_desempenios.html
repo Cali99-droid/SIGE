@@ -1,0 +1,49 @@
+
+<!--<link rel="stylesheet" href="assets/css/tree.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<div id="myListTree"></div>-->
+
+
+
+<form action="api/capCom" id="not_cap_com-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+	<div class="page-container">	
+	<div class="row">
+		<div class="col-sm-3">
+								<label>Giro Negocio</label>
+				               	<select id="id_giro" name="id_giro" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+		<div class="col-sm-3">
+			<label>Salon</label>
+			<select id="id_aula" name="id_aula" required placeholder="Seleccione" class="form-control select-search">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<label>Área</label>
+			<select id="id_areadc" name="id_areadc" required placeholder="Seleccione" class="form-control select-search">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<label>Curso</label>
+			<select id="id_curdc" name="id_curdc" placeholder="Seleccione" class="form-control select-search">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<label>Periodo</label>
+			<select id="id_periodo" name="id_periodo" required placeholder="Seleccione" class="form-control select-search">
+			</select>
+		</div>
+	</div>	
+	<div id="tree"></div>	
+	</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-grabar_des" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

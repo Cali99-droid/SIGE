@@ -1,0 +1,40 @@
+<form action="api/periodoAca" id="cat_periodo_aca_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="cat_periodo_aca-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#cat_per_aca_nivel-tab" data-toggle="tab"><i class="fa fa-cube"></i> Periodo Academico-Nivel</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="cat_per_aca_nivel-tab">
+				<table class="table" id="cat_per_aca_nivel-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

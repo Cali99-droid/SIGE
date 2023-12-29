@@ -1,0 +1,53 @@
+<form action="api/concepto">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Concepto</label>
+                <input type="text" id="nom" name="nom" class="form-control input-sm" maxlength="30">
+			</div>
+			<div class="col-sm-6">
+				<label>Tipo</label>
+				<select id="tip" name="tip" placeholder="Seleccione" class="form-control" >
+					<option value="I">Ingreso</option>
+					<option value="S">Salida</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n</label>
+                <input type="text" id="des" name="des" class="form-control input-sm" maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Monto</label>
+                <input type="text" id="monto" name="monto" class="form-control input-sm" maxlength="6">
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Editable?</label> 
+				<select id="flag_edit" name="flag_edit" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>		
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

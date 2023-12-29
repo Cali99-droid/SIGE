@@ -1,0 +1,71 @@
+<form action="api/colegio" id="col_colegio_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Distrito</label> 
+				<select id="id_dist" name="id_dist" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>C&oacute;digo modular</label>
+                <input type="text" id="cod_mod" name="cod_mod" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>nivel</label>
+                <input type="text" id="nom_niv" name="nom_niv" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre del colegio</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estatal</label>
+                <input type="text" id="estatal" name="estatal" required class="form-control input-sm " maxlength="1">
+			</div>
+			<div class="col-sm-6">
+				<label>direccion</label>
+                <input type="text" id="dir" name="dir"  class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tel&eacute;fono</label>
+                <input type="text" id="tel" name="tel"  class="form-control input-sm " maxlength="50">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_colegio-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#eva_matr_vacante-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matricula Vacante</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="eva_matr_vacante-tab">
+				<table class="table" id="eva_matr_vacante-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

@@ -1,0 +1,81 @@
+<script type="text/javascript" src="js/facturacion/fac_envia_resumen_diario.js"></script>
+
+	<!-- Form horizontal -->
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Buscar por fecha</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-pagos-buscar">
+					<input type="hidden" name="id_anio" value="2" >
+					<input type="hidden" name="id_suc" id="id_suc" >
+				
+					<div class="form-group">
+						<div class="col-lg-4">
+							<label>Fecha Carga</label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_ini" name="fec_ini" class="form-control daterange-single" autocomplete="off"
+								>
+							</div>
+						</div>
+						
+						<div class="col-lg-4">
+							<label>Nro de serie</label>
+							<select id="nro_serie" name="nro_serie" required placeholder="Seleccione" class="form-control select-search">
+								<option value="-">TODOS</option>
+								<option value="B001,B002,B003,B005,B006">COLEGIO</option>
+								<option value="B004,B007,B008">BANCOS</option><!--B004,B007,-->
+							</select>
+						</div>
+						<div id= "divFechaEnvio" class="col-lg-4" style="display:none">
+							<label>Fecha Envio</label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_envio_sunat" name="fec_envio_sunat" class="form-control daterange-single" disabled="disabled" >
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Buscar <i class="icon-arrow-right14 position-right"></i></button>
+						<button  style="display:none" type="button" id="btn-envio-sunat" class="btn btn-danger">Enviar a SUNAT <i class="fa fa-cloud-upload position-right"></i></button>
+					</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+	</div>
+	<!-- /form horizontal -->
+
+	<div class="panel panel-flat" style="display:none" id="panel-alumnos">
+		<div class="panel-heading">
+			<h5 class="panel-title">Resultados</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+	              		<li><a data-action="collapse"></a></li>
+	              		<li><a data-action="reload"></a></li>
+	              		<li><a data-action="close"></a></li>
+	              	</ul>
+	       </div>
+		</div>
+	
+	
+		<table class="table" id="tabla-alumnos">
+		</table>
+		
+	</div>

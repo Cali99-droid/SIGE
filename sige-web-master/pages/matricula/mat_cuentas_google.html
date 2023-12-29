@@ -1,0 +1,42 @@
+<script type="text/javascript" src="js/matricula/mat_cuentas_google.js"></script>
+
+<style>
+.mi_button {
+	min-width: 115px;
+	max-width: 115px;
+	margin-top: 15px;
+	margin-right: 2px !important;
+}
+</style>
+
+<ul class="media-list content-group" id="alumnos-list">
+	
+	<li class="media panel panel-body stack-media-on-mobile">
+		<div class="media-left" style="vertical-align: middle;">
+			<!--<a href="#"> <img id="foto" 
+				class="img-rounded img-lg" alt="">
+			</a>-->
+		</div>
+
+		<div class="media-body">
+			<h6 class="media-heading text-semibold text-primary text-align-center" id="nom"></h6>
+			<input type="hidden" id="id_alu" name="id_alu"/>
+			<div>
+				<label><B>Link Acceso:&nbsp; </B></label><a href="https://classroom.google.com/" target="_blank"><img src="images/google-classroom.png"  width="50" height="50"></a><br>
+				
+				<label><B>Usuario Google:&nbsp; </B></label><label id="usuario" name="usuario"></label><br>
+				<label><B>Contraseña:&nbsp;  </B></label><label id="pass" name="pass"></label>
+			</div><br>
+			<!--<div ><a href="#" onclick="restablecer(this)" id="link_restablecer">Cambiar Contrase&ntilde;a del Alumno (Aplicaciones de Google)</a></div>-->
+			<button type="button" class="btn bg-primary btn-rounded pull btn-xs" id="btn-restablecer" onclick="restablecer(this)" >Cambiar Contrase&ntilde;a<i class="icon-key mr-3 icon-2x position-right"></i></button>
+			<button type="button" class="btn bg-success btn-rounded pull btn-xs" id="btn-activar" onclick="activar(this)" >Activar Cuenta<i class="icon-checkmark2 mr-3 icon-2x position-right"></i></button>
+			<div>
+				
+				
+				
+			</div>
+		</div>
+
+	</li>
+
+</ul>

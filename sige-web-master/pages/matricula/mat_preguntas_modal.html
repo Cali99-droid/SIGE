@@ -1,0 +1,120 @@
+<form id="encuesta_pregunta_form" action="api/encuesta/grabarPreguntas">
+                             
+                           <input type="hidden" id="est" name="est" value="A"/>
+						   <input type="hidden" id="id_enc" name="id_enc" value="">
+                      <div class="panel-body">      
+                            
+								
+                            	<div class="form-group">
+                                <fieldset>
+								<legend>Preguntas y Alternativas</legend>
+								 <div  id="divCuestionario" >
+									<label class="control-label col-sm-2" for="prefix">preee</label>
+							
+	                              </div>
+	                                
+	                                
+	                     <div  id="cuestionarioClonar" style="display:none;">
+									
+									<div class="col-md-12 form-group" id="pregunta" >
+									<div class="row">
+									<div class="col-sm-10">
+										<label>PREGUNTA</label> 
+										<input type="hidden" id="id_pre" name="id_pre" value="">
+										<input type="hidden" id="est" name="est" required="required" value="A" class="form-control">
+										<input type="text" id="pre" name="pre" required="required" value="" class="form-control">
+									</div>
+									<div class="col-sm-2">
+										<label>Orden</label> 
+										<input type="text" id="ord" name="ord" required="required" value="" class="form-control">
+									</div>
+									</div>
+									<div class="row">
+									<div class="col-sm-4">
+										<label>Tipo Pregunta</label> 
+										<select id="id_ctp" name="id_ctp" required placeholder="Seleccione" class="form-control select-search">
+										<option value="1">Pregunta Cerrada</option>
+										<option value="2">Pregunta Abierta</option>
+										</select>
+									</div>
+									
+									<div class="col-sm-2">
+										<label>Dependencia</label> 
+										<select id="dep" name="dep" required placeholder="Seleccione" class="form-control select-search">
+										<option value="0">No</option>
+										<option value="1">Sí</option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Nro Preg Dependencia</label> 
+										<select id="id_pre_dep" name="id_pre_dep" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+									<div class="col-sm-2">
+										<button type="button" class="btn btn-success" onclick="grabarPre(this)"><i class="fa fa-save" ></i></button>
+	                                    <button type="button" class="btn btn-warning" onclick="Eliminar()"><i class="fa fa-trash" ></i></button>
+									</div>
+									</div>
+	                                    
+	                                  </div>
+		                                <div class="col-md-12 form-group" id="alternativa">
+										<div class="row">
+										<div class="col-sm-6">
+											<label>Alternativa</label> 
+											<input type="hidden" id="id_alt" name="id_alt" value=""/>
+											<input type="hidden" id="est" name="est" required="required" value="A" class="form-control">
+											<input type="text" id="alt" name="alt" required="required" value="" class="form-control">
+										</div>
+										<div class="col-sm-2">
+											<label>Puntaje</label> 
+											 <input type="text" id="punt" name="punt" required="required" value="" class="form-control input-sm parsley-error">
+										</div>
+										<div class="col-sm-2">
+											<button type="button" class="btn btn-success" onclick="grabarAlt(this)"><i class="fa fa-save" ></i></button>
+		                                    <button type="button" class="btn btn-warning" onclick="eliminarAlternativa(this)"><i class="fa fa-trash" ></i></button>
+										</div>
+										<div class="col-sm-2">
+										 <button type="button" class="btn btn-success" id="btnagregar" onclick="agregarAlternativa(this)">Agregar Alt</button>
+										</div>
+										</div>
+		                                 <!--   <label class="control-label col-sm-2" for="prefix">Alternativa</label>
+		                                     <input type="hidden" id="id_alt" name="id_alt" value=""/>
+		                                    <div class="col-sm-4">
+		                                    <input type="text" id="alt" name="alt" required="required" value="" class="form-control input-sm parsley-error">
+		                                    </div>
+		                                    <label class="control-label col-sm-1" for="prefix">Puntaje</label>
+		                                    <div class="col-sm-1">
+		                                    <input type="text" id="punt" name="punt" required="required" value="" class="form-control input-sm parsley-error">
+		                                    </div>
+		                     
+		                                    <input type="hidden" id="est" name="est" required="required" value="A" class="form-control input-sm parsley-error">
+		                                 
+		                                    <div class="col-sm-2">
+		                                	 <button type="button" class="btn btn-success" onclick="grabarAlt(this)"><i class="fa fa-save" ></i></button>
+		                                    <button type="button" class="btn btn-warning" onclick="eliminarAlternativa(this)"><i class="fa fa-trash" ></i></button>
+		                                	</div>
+		                                     <div class="col-sm-1">
+		                                    <button type="button" class="btn btn-success" id="btnagregar" onclick="agregarAlternativa(this)">Agregar Alternativa</button>
+		                                    </div>-->
+		                                </div>
+	                   </div>
+	                                 
+	                               </fieldset>
+                            
+                         </div>
+
+                   </div>             
+                             
+                            <div class="form-actions" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                    	<button type="button" class="btn btn-success" onclick="agregarPre(this)">Agregar Pregunta</button>
+										<!-- <button type="submit" class="btn btn-success">Grabar</button> -->
+                                        <a ><button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></a>
+                                    </div>
+                                </div>
+                            </div>
+							
+                        </form>
+
+

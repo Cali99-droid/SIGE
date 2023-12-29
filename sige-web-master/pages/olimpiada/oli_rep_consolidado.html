@@ -1,0 +1,82 @@
+<script type="text/javascript" src="js/olimpiada/oli_rep_consolidado.js"></script>
+
+<!-- Form horizontal -->
+<div class="panel panel-flat">
+
+	<div class="panel-body">
+
+		<fieldset class="content-group">
+			<form class="form-horizontal" id="frm-reporte">
+				<input type="hidden" id="id_anio" name="id_anio">
+
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-6">
+							<label for="prefix">Concurso</label>
+							<div class="flechas">
+								<select id="id_oli" name="id_oli" class="form-control" required="required">
+									<option value="">TODOS</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<label for="prefix">Modalidad</label>
+							<div class="flechas">
+								<select id="modalidad" name="modalidad" class="form-control">
+									<option value="1">INTERNO</option>
+									<option value="0">TODOS</option>
+									<option value="2">OTROS</option>
+									
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary"> Buscar <i class="icon-arrow-right14 position-right"></i>
+						</button>
+					</div>
+				</div>
+
+			</form>
+
+		</fieldset>
+
+
+	</div>
+</div>
+<!-- /form horizontal -->
+
+<div class="panel panel-flat" style="display: none" id="panel-inscritos">
+	<div class="panel-heading">
+		<h5 class="panel-title">Resultados</h5>
+		<div class="heading-elements">
+			<ul class="icons-list">
+				<li><a data-action="collapse"></a></li>
+				<li><a data-action="reload"></a></li>
+				<li><a data-action="close"></a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<table class="table" id="tabla-reporte">
+	</table>
+
+</div>
+
+<div class="panel panel-flat" id="fac_movimiento-panel">
+	<table class="table" id="fac_movimiento-tabla">
+		<tfoot >
+			<tr id="foot">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td style="background:#a1eaed;color:black; text-align: center;">TOTAL</td>
+				<td style="background:#a1eaed;color:black; text-align: center;" id='total_parti'></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>

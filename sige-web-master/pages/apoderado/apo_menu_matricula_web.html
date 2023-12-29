@@ -1,0 +1,312 @@
+<!--<script type="text/javascript" src="js/apoderado/apo_hijos.js"></script>-->
+<script>
+var id_anio_ratificacion="";
+//Validar mostrar el ícono de ratificacion de matricula segun cronograma
+//_GET({  url:'api/matricula/validarFechaRatificacion/'+ $('#_id_anio').text(),
+_GET({  url:'api/matricula/validarFechaRatificacion/',
+					success:function(data){
+					console.log(data);
+					if(data.existe==1){
+						$("#div_ratificacion").css('display', 'block');
+						//Agregar el boton en html
+						$("#div_ratificacion").html("<button type='button' id='btnRatificacion'  class='btn btn-primary  btn-float btn-float-sm mi_button'><i class='icon-clipboard5 mr-3 icon-2x mr-3 mi-2x'></i><span>Ratificación</span><span>de Matrícula</span><span>"+data.anio_rat+"</span></button>");
+					    $("#div_ratificacion").attr("data-id_anio_rat",data.id_anio_rat);
+						 $("#div_ratificacion").attr("data-id_anio_mat",data.id_anio_mat);
+						$("#btnRatificacion").on('click',function(event){
+							_send('pages/matricula/mat_ratificacion_form.html','Ratificación de Matrícula','Lista',{id_anio_mat:data.id_anio_mat, id_anio_rat:data.id_anio_rat});
+						});
+						//var b = document.querySelector("#btnRatificacion");
+						//b.setAttribute("id_anio_rat", data.id_anio_rat);
+						//id_anio_ratificacion=data.id_anio_rat;
+					} else if(data.existe==0){
+						$("#div_ratificacion").css('display', 'none');
+					}	
+					},
+		error:function(data){
+	//	_alert_error(data.msg);
+		
+		}
+});
+//Validar si hay fecha para matricula
+_GET({  url:'api/matricula/validarFechaMatriculas/'+ $('#_id_anio').text(),
+					success:function(data){
+					console.log(data);
+					if(data==1){
+						//Validar si hizieron la ratificación
+						_GET({  url:'api/matricula/validarRatificacionFamilia/'+ $('#_id_anio').text()+'/'+_usuario.id,
+						success:function(data){
+						console.log(data);
+						if(data.continua==1){
+						$("#div_matricula").css('display', 'block');
+						//Agregar el boton en html
+						$("#div_matricula").html("<button type='button' class='btn btn-success  btn-float btn-float-sm mi_button' onclick='validarDeudasGen();'><i class='fa fa-book'></i><span>Matrícula Web</span></button>");						
+						} else if(data.continua==0){
+						//Verificar si es un alumno que tiene reserva vigente
+							_GET({  url:'api/reserva/validarReservaVigente/'+_usuario.id,
+								success:function(data){
+								console.log(data);
+								if(data.continua==1){
+								$("#div_matricula").css('display', 'block');
+								//Agregar el boton en html
+								$("#div_matricula").html("<button type='button' class='btn btn-success  btn-float btn-float-sm mi_button' onclick='validarDeudasGen();'><i class='fa fa-book'></i><span>Matrícula Web</span></button>");						
+								} else if(data.continua==0){
+								//Verificar si es un alumno que tiene reserva vigente
+								
+									$("#div_matricula").css('display', 'none');
+								}
+								},
+								error:function(data){
+								//	_alert_error(data.msg);
+
+								}
+								});	
+
+									//$("#div_matricula").css('display', 'none');
+						}
+						},
+						error:function(data){
+						//	_alert_error(data.msg);
+
+						}
+						});	
+
+					} else if(data==0){
+						$("#div_matricula").css('display', 'none');
+					}	
+					},
+		error:function(data){
+	//	_alert_error(data.msg);
+		
+		}
+});
+	
+function validarDeudasGen(){
+						//Validar si hubo hijos que respondieron NO
+	_GET({  url:'api/matricula/validarHijosNoRat/'+ $('#_id_anio').text()+'/'+_usuario.id,
+		success:function(data){
+			if(data.cantidad==0){
+				_GET({  url:'api/matricula/validarDeudasxGruFam/'+_usuario.id+'/' + $('#_id_anio').text(),
+								success:function(data){
+								//if(data){
+									$("#btnAgenda").removeAttr('disabled');
+									_send('pages/matricula/mat_matricula_web_colegio_familia.html','Matrícula Web','Lista',{tipo:'C'});
+								//}	
+								},
+					error:function(data){
+					_alert_error(data.msg);
+					$("#btnAgenda").attr('disabled','disabled');
+					}
+				});
+			
+			} else if(data.cantidad==1 && data.cantidad==data.cantidad_hijos){
+				swal({
+						  title: "IMPORTANTE",
+						  html:true,
+						  type : "warning",
+						  //text: "<p>¡Felicidades!, se ha realizado una <b>PRE MATRÍCULA</b>, recuerde el plazo para completar el proceso es hasta el <font color='green'>"+data.result.dia+" de "+data.result.mes+" del "+data.result.anio+"</font>, el pago lo puede realizar en el "+data.result.banco+" o en Secretaría Jr Huaylas Nro 245 en el horario de <b>8:00am a 3:00pm.</b></p>",
+						   text: "<p>"+data.mensaje+"</p>",
+						  icon: "info",
+						  confirmButtonColor : "rgb(33, 150, 243)",
+						  cancelButtonColor : "#EF5350",
+						  //confirmButtonText : "OK",
+						 button: "Cerrar",
+						});
+				$("#btnAgenda").attr('disabled','disabled');
+			} else if(data.cantidad>=1 && data.cantidad<data.cantidad_hijos){
+				swal({
+						  title: "IMPORTANTE",
+						  html:true,
+						  type : "warning",
+						  //text: "<p>¡Felicidades!, se ha realizado una <b>PRE MATRÍCULA</b>, recuerde el plazo para completar el proceso es hasta el <font color='green'>"+data.result.dia+" de "+data.result.mes+" del "+data.result.anio+"</font>, el pago lo puede realizar en el "+data.result.banco+" o en Secretaría Jr Huaylas Nro 245 en el horario de <b>8:00am a 3:00pm.</b></p>",
+						   text: "<p>"+data.mensaje+"</p>",
+						  icon: "info",
+						  confirmButtonColor : "rgb(33, 150, 243)",
+						  cancelButtonColor : "#EF5350",
+						  //confirmButtonText : "OK",
+						 button: "Cerrar",
+				},function(isConfirm) {
+								if (isConfirm) {									
+								_GET({  url:'api/matricula/validarDeudasxGruFam/'+_usuario.id+'/' + $('#_id_anio').text(),
+													success:function(data){
+													//if(data){
+														$("#btnAgenda").removeAttr('disabled');
+														_send('pages/matricula/mat_matricula_web_colegio_familia.html','Matrícula Web','Lista',{tipo:'C'});
+													//}	
+													},
+										error:function(data){
+										_alert_error(data.msg);
+										$("#btnAgenda").attr('disabled','disabled');
+										}
+									});
+								} else {
+									
+
+									return false;
+								}
+				});
+			} else if(data.cantidad>1 && data.cantidad==data.cantidad_hijos){
+				swal({
+						  title: "IMPORTANTE",
+						  html:true,
+						  type : "warning",
+						  //text: "<p>¡Felicidades!, se ha realizado una <b>PRE MATRÍCULA</b>, recuerde el plazo para completar el proceso es hasta el <font color='green'>"+data.result.dia+" de "+data.result.mes+" del "+data.result.anio+"</font>, el pago lo puede realizar en el "+data.result.banco+" o en Secretaría Jr Huaylas Nro 245 en el horario de <b>8:00am a 3:00pm.</b></p>",
+						   text: "<p>"+data.mensaje+"</p>",
+						  icon: "info",
+						  confirmButtonColor : "rgb(33, 150, 243)",
+						  cancelButtonColor : "#EF5350",
+						  //confirmButtonText : "OK",
+						 button: "Cerrar",
+				});
+				$("#btnAgenda").attr('disabled','disabled');
+			} else {
+			}
+	}		
+	});
+	
+	//_send('pages/matricula/mat_matricula_web_colegio_familia.html','Matrícula Web','Lista',{tipo:'C'});
+}	
+
+function validarFechaEncuesta(){
+	_GET({  url:'api/matricula/validarDeudasxGruFam/'+_usuario.id+'/' + $('#_id_anio').text(),
+					success:function(data){
+						$("#btnAgenda").removeAttr('disabled');
+						_send('pages/matricula/mat_matricula_web_colegio_familia.html','Matrícula Web','Lista',{tipo:'C'});
+					},
+		error:function(data){
+		_alert_error(data.msg);
+		$("#btnAgenda").attr('disabled','disabled');
+		}
+	});
+}	
+
+</script>
+<style>
+.mi_button {
+	min-width: 120px;
+	max-width: 120px;
+	margin-top: 15px;
+	margin-right: 2px !important;
+}
+
+.mi_button2 {
+	min-width: 300px;
+	max-width: 300px;
+	margin-top: 15px;
+	margin-right: 2px !important;
+}
+
+.button2 { 
+
+	transform: translate(-50%, -50%);
+	
+	font-family: 'Rubik One', sans-serif;
+	text-decoration: none;
+	font-size: 4vw;
+	transition: all .5s;
+	background-color: #3498db;
+
+	&::before {
+    @extend %test;
+		bottom: -15px;
+		
+		transform: skewX(45deg);
+		background-color: darken(#3498db, 20%);
+	}
+
+	&::after {
+		@extend %test;
+		bottom: -8px;
+		transform: skewY(45deg);
+		background-color: darken(#3498db, 30%);
+	}
+
+	&:active {
+		margin-left: 10px;
+		margin-top: 10px;
+		&::before {
+			bottom: -5px;
+			height: 5px;
+			left: 3px;
+		}
+		
+    &::after {
+			right: -5px;
+			width: 5px;
+			bottom: -3px;
+		}	
+	}
+}
+
+	.listTweets {
+    overflow : scroll;
+}
+</style>
+<style type="text/css">
+label {
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: xx-small;
+ text-align: center;
+}
+</style>
+
+<ul class="media-list content-group" id="alumnos-list">
+	
+	<li class="media panel panel-body stack-media-on-mobile">
+		
+		<div class="media-body listTweets">
+			<!--<h6 class="media-heading text-semibold text-primary" id="nom">Matrícula Web 2022</h6>-->
+			<div>
+				<table width="40%" id="tb_buttons">
+					<tr>
+						<!--<td width="50%">	
+							<button type="button" id="btnNotas" 
+							class="btn bg-brown btn-float btn-float-sm mi_button" onclick="_send('pages/matricula/mat_matricula_web_familia.html','Matrícula Web','Lista',{tipo:'AV'})">
+							<i class="fa fa-edit"></i> <span>Academia Encinas/ Vacaciones Útiles</span>
+							</button>
+						</td> -->
+						<!--<td width="10%">
+							<button type="button" id="btnAdmision"  class="btn btn-success  btn-float btn-float-sm mi_button" onclick="_send('pages/matricula/mat_admision_web_colegio_familia.html','Proceso de Admisión','Lista')">
+							<i class="fa fa-book"></i> <span>Admision</span>
+							</button>
+						</td>-->
+						<!--<td width="10%">
+							<button type="button" id="btnEncuesta"  class="btn btn-success  btn-float btn-float-sm mi_button2" onclick="_send('pages/matricula/mat_encuesta_form.html','Encuesta','Lista',{id_enc:'1'})">
+							 <img class="mt-3" src="images/encuesta2.jpg"
+                                                            alt=""><span>Encuesta de intención de matrícula</span><span> y modalidad de estudio 2022</span>
+							</button>
+						</td>-->
+					
+						<td width="10%" id="div_ratificacion" name="div_ratificacion">
+							<!--<button type="button" id="btnRatificacion"  class="btn btn-primary  btn-float btn-float-sm mi_button" onclick="_send('pages/matricula/mat_ratificacion_form.html','Encuesta','Lista',{id_anio_rat:"+id_anio_ratificacion+"})">
+							 <i class="icon-clipboard5 mr-3 icon-2x mr-3 mi-2x"></i><span>Ratificación</span><span>de Matrícula</span>
+							</button>-->
+						</td>
+						<td width="10%" id="div_matricula" name="div_matricula">
+							<!--<button type="button" id="btnAgenda"  class="btn btn-success  btn-float btn-float-sm mi_button" onclick="validarDeudasGen();">
+							<i class="fa fa-book"></i> <span>Matrícula Web</span>
+							</button>-->
+						</td>
+					</tr>
+					<!-- <tr>
+						<td colspan="5"></td>
+						<td><label><u><a>T&eacute;rminos y Condiciones</a></u></label></td>
+					</tr> -->
+				</table>
+				<!-- <button type="button"
+					class="btn btn-slate btn-float btn-float-sm mi_button disabled">
+					<i class="fa fa-exclamation-circle"></i> <span>Justificaciones</span>
+				</button> -->
+				
+				
+				<!-- <button type="button"
+					class="btn btn-info btn-float btn-float-sm mi_button disabled">
+					<i class="icon-search4"></i> <span>Datos </span>
+				</button> -->
+				
+			</div>
+		</div>
+
+	</li>
+	
+</ul>
+

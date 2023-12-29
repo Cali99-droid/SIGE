@@ -1,0 +1,213 @@
+<script type="text/javascript" src="js/olimpiada/oli_pagos_form.js"></script>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h5 class="panel-title">
+					CONCURSO <span id="oli.nom" />
+				</h5>
+				<div class="heading-elements">
+					<ul class="icons-list">
+						<li><a data-action="collapse"></a></li>
+						<li><a data-action="reload"></a></li>
+						<li><a data-action="close"></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-pagos-buscar">
+						<input type="hidden" name="id">
+
+						<div class="form-group">
+							<div class="row">
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Alumno</label> <input
+										type="text" class="form-control input-xs" id="oli.alumno"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Nro doc</label> <input
+										type="text" class="form-control input-xs" id="oli.nro_dni"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Modalidad</label> <input
+										type="text" class="form-control input-xs" id="oli.modalidad"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Colegio</label> <input
+										type="text" class="form-control input-xs" id="oli.colegio"
+										readonly>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Distrito</label> <input
+										type="text" class="form-control input-xs" id="oli.distrito"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Nivel</label> <input
+										type="text" class="form-control input-xs" id="oli.nivel"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">grado</label> <input
+										type="text" class="form-control input-xs" id="oli.grado"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">costo (S/)</label> <input
+										type="text" class="form-control input-xs text-right" id="oli.monto"
+										readonly>
+								</div>
+							</div>
+							<div class="row" id="rowDelegacion" class="display:none">
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Delegado</label> <input
+										type="text" class="form-control input-xs" id="oli.delegado"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-3">
+									<label class="control-label is-visible">Director</label> <input
+										type="text" class="form-control input-xs" id="oli.director"
+										readonly>
+								</div>
+							</div>
+						</div>
+					</form>
+				</fieldset>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-flat">
+
+
+			<div class="panel-body">
+				<div class="tabbable">
+					<ul class="nav nav-tabs nav-tabs-highlight">
+						<li class="active"><a href="#left-icon-tab1"
+							data-toggle="tab"><i class="fa fa-money"></i> Por pagar</a></li>
+						<li><a href="#tab_pagados" data-toggle="tab"><i
+								class="fa fa-print"></i> Pagados</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane active" id="left-icon-tab1">
+							<!-- INICIO - SECCION PAGOS -->
+							<div class="row">
+								<div class="col-md-8" id="divRowAlumno">
+									<!-- inicio alumnos -->
+									
+										<table id="tabla-delegacion" class="table" style="display:none">
+										</table>
+									
+									<div class="row rowAlumno" id="divPagos">
+
+										<div class="panel">
+											<div class="panel-body">
+												<div class="panel-body panel_mes">
+													<div class="panel panel-flat  bg-info-700" id="div-resumen">
+														<form class="form-horizontal" id="frm-pagos-resumen">
+
+															<div class="form-group">
+																<label class="control-label col-lg-8 text-white"><b><h4  >DERECHO DE INSCRIPCI&Oacute;N</h4></b></label>
+																<div class="col-lg-4">
+																	<span class="label label-success text-right">
+																	<h6>S/.<resumen_total>0.00</resumen_total></h6></span>
+																</div>
+															</div>
+
+															<div class="form-group" id="div-pagos-btn">
+																<label class="control-label col-lg-8 text-white"><b><h4>TOTAL
+																			A CANCELAR</h4></b></label>
+																<div class="col-lg-4">
+																	<span class="label text-right"><h6>
+																			<button type="button" class="btn btn-danger btnPagar btn-xlg">Pagar <i class="icon-coins"></i>
+																			</button>
+																		</h6></span>
+																</div>
+															</div>
+														 
+
+														</form>
+													</div>
+
+													<!-- 
+													<div class="nodebenada alert alert-info alert-styled-left"
+														style="display: none">El alumno tiene todas las
+														mensualidades pagadas</div>
+													-->
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- fin alumnos -->
+								</div>
+
+							<div class="col-md-4" id="divRowdelegacionResumen" style="display:none">
+							<div class="panel panel-flat  bg-info-700" >
+							<form class="form-horizontal" id="frm-pagos-resumen">
+
+															<div class="form-group">
+																<label class="control-label col-lg-8 text-white"><b><h4  >DERECHO DE INSCRIPCI&Oacute;N</h4></b></label>
+																<div class="col-lg-4">
+																	<span class="label label-success text-right">
+																	<h6>S/.<resumen_total>0.00</resumen_total></h6></span>
+																</div>
+															</div>
+
+															<div class="form-group" id="div-pagos-btn">
+																<label class="control-label col-lg-8 text-white"><b><h4>TOTAL A CANCELAR</h4></b></label>
+																<div class="col-lg-4">
+																	<span class="label text-right"><h6>
+																			<button type="button" class="btn btnPagar btn-danger btn-xlg">
+																				Pagar <i class="icon-coins"></i>
+																			</button>
+																		</h6></span>
+																</div>
+															</div>
+														 
+
+														</form>
+							</div>
+							</div>
+							</div>
+							<!-- FIN - SECCION PAGOS -->
+						</div>
+
+						<div class="tab-pane" id="tab_pagados">
+							<table id="tabla-pagos" class="table" >
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<div id="div-detalle-pago-plantilla" style="display: none">
+	<div class="form-group div-detalle-pago">
+		<label class="control-label col-lg-8"><mensualidad_desc /></label>
+		<div class="col-lg-4">
+			<span class="label label-rounded position-right"><mensualidad /></span>
+		</div>
+	</div>
+</div>
+

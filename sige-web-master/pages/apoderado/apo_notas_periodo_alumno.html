@@ -1,0 +1,88 @@
+<script type="text/javascript" src="js/apoderado/apo_notas_promedio_alumno.js"></script>
+<style>
+.bg-danger-300 {
+background-color: rgba(254, 226, 226, 1);
+}
+.bg-green-200 {
+background-color: rgba(209, 250, 229, 1);
+}
+</style>
+	<!-- Form horizontal -->
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Notas</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-pagos-buscar">
+					<input type="hidden" name="id_anio" value="5" >
+					<input type="hidden" name="id_suc" id="id_suc" >
+					<input type="hidden" name="id_usr" id="id_usr" >
+				
+					<div class="form-group">
+						<div class="col-lg-4">
+							<label>Giro de Negocio</label>
+			               <select id="id_gir" name="id_gir" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+						<div class="col-lg-4">
+							<label>Alumno</label>
+			               <select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+						<div class="col-lg-4">
+							<label>Periodo</label>
+			               <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+					</div>
+
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Buscar <i class="icon-arrow-right14 position-right"></i></button>
+					</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+	</div>
+	<!-- /form horizontal -->
+
+	<div class="panel panel-flat" style="display:none" id="panel-alumnos">
+		<div class="panel-heading">
+			<h5 class="panel-title">Resultados</h5>
+		</div>
+		
+		<div class="col-md-12">	
+															
+			<div class="panel-body">
+			<div class="form-group">
+			<div id="div1">
+			<div id="not_nota-div">
+				<table class="table table-bordered"  id="not_reporte_notas_alumno"><!--cambio-->
+					<thead>
+					</thead>
+					<tbody >
+					</tbody>
+				</table>
+			<div class="text-right">
+			<!--<button type="button" class="btn btn-warning" id="btn-eliminar">Eliminar <i class="fa fa-trash position-right"></i></button>-->
+			</div>	
+			</div>
+			</div> 
+			</div>
+			</div> 															
+	</div>
+		
+	</div>

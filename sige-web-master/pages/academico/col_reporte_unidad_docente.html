@@ -1,0 +1,105 @@
+<script type="text/javascript" src="js/academico/col_reporte_unidad_docente.js"></script>
+
+<style>
+.vth {
+	width: 5%;
+	text-align: center;
+	white-space: nowrap;
+	g-origin: 50% 50%;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+
+.vth p {
+	margin: 0 -100%;
+	display: inline-block;
+}
+
+ 
+.table1 {
+	text-align: center;
+	table-layout: fixed;
+}
+
+
+th.rotate {
+  /* Something you can count on */
+  	height:190px;
+   	width:50px;
+  	white-space: nowrap;
+}
+ 
+th.rotate > p {
+  transform: 
+    /* Magic Numbers */
+    translate(5px, 80px)
+    /* 45 is really 360 - 45 */
+    rotate(270deg);
+  width: 30px;
+}
+
+table.dataTable {
+	width:100% !important;
+}
+</style>
+<div class="panel panel-flat" id="col_reporte_unidad-panel">
+	<div class="panel-body">
+		<form action="" id="frm-reporte-unidad">
+			<div class="row">
+
+				<div class="col-sm-3">
+					<label>Nivel</label> <select
+						class="form-control select-search input-xs" id="id_niv"
+						name="id_niv">
+						<option value=''>SELECCIONAR</option>
+					</select>
+				</div>
+				<div class="col-sm-3">
+					<label>Grado</label> <select
+						class="form-control select-search input-xs" id="id_gra"
+						name="id_gra">
+						<option value=''>SELECCIONAR</option>
+					</select>
+				</div>
+				<div class="col-sm-3">
+					<label>Periodo</label> <select id="id_cpu" name="id_cpu" required
+						placeholder="Seleccione" class="form-control select-search">
+						<option value=''>SELECCIONAR</option>
+					</select>
+				</div>
+				<div class="col-sm-3">
+					<label>Unidad</label>
+					<!-- numero de unidad -->
+					<div class="flechas">
+						<select id="num" name="num" placeholder="Seleccione"
+							class="form-control">
+							<option value=''>SELECCIONAR</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<button type="submit" class="btn btn-primary" id="btn-buscar">
+					Buscar <i class="icon-arrow-right14 position-right"></i>
+				</button>
+				<button type="button" class="btn btn-warning" id="btn-exportar" style="display: none">
+					Exportar <i class="icon-file-excel position-right"></i>
+				</button>
+			</div>
+		</form>
+	</div>
+
+	 
+	<table class="table-bordered table-striped table-hover" id="col_reporte_unidad" style="width:100%;" border="1">
+		<thead>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	
+
+</div>
+

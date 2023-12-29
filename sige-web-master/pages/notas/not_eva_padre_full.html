@@ -1,0 +1,41 @@
+<form action="api/evaPadre" id="not_eva_padre_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Docente</label> 
+				<select id="id_tra" name="id_tra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="not_eva_padre-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#not_evaluacion-tab" data-toggle="tab"><i class="fa fa-cube"></i> Evaluaciones Acad&eacute;micas</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="not_evaluacion-tab">
+				<table class="table" id="not_evaluacion-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

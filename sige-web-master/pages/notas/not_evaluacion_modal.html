@@ -1,0 +1,116 @@
+<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#not_eva-tab" data-toggle="tab"><i class="fa fa-cube"></i> Creacion de la Evaluacion</a>
+			</li>
+			<li  class="disabled" id="li_indicadores">
+				<a href="#not_ind_eva-tab"  id="not_ind_eva"  data-toggle="tab"><i class="fa fa-cube"></i> Indicadores</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="not_eva-tab">
+				<form action=" " id="not_evaluacion-frm">
+				<input type="hidden" id="id_nep" name="id_nep" /><!-- si la logica esta llamando a este, que se use este, ademas id_nep es mas represtantativo q el id aun no lo he probado entoncs qda asi? si  -->
+				<input type="hidden" id="id_tra" name="id_tra" value="A" />
+				<input type="hidden" id="id_anio" name="id_anio" value="A" />
+				<input type="hidden" id="id_ses" name="id_ses" />
+				<!-- <input type="hidden" id="id_cca" name="id_cca" />  -->
+				<!--  <input type="hidden" id="fec_ini" name="fec_ini" />-->
+				<!-- <input type="hidden" id="fec_fin" name="fec_fin" /> -->
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Nivel</label> 
+							<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+						<div class="col-sm-6">
+							<label>Grado</label>
+			               	<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Curso</label> 
+							<select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+						<div class="col-sm-6">
+							<label>Tipo de Evaluaci&oacute;n</label> 
+							<select id="id_nte" name="id_nte" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Instrumento</label>
+			                <input type="text" id="ins" name="ins" required class="form-control input-sm " maxlength="100">
+						</div>
+						<div class="col-sm-6">
+							<label>Evidencia</label>
+			                <input type="text" id="evi" name="evi"  class="form-control input-sm " maxlength="100">
+						</div>
+					</div>
+					<table class="table" id="list_aulas-tabla">
+					</table>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+					 <button type="button" id="btn-siguiente" class="btn btn-primary">Siguiente</button> 
+					<!-- <button type="button" id="btn-actualizar" class="btn btn-primary">Grabar</button> -->
+				</div>
+			
+			</form>			
+			</div>
+			<div class="tab-pane " id="not_ind_eva-tab">
+				<form action=" " id="not_ind_eva-frm">
+				<input type="hidden" id="id" name="id" />
+				<!-- <input type="hidden" id="id_cis" name="id_cis" /> -->
+				<!-- <input type="hidden" id="id_ne" name="id_ne" /> -->
+				<input type="hidden" id="est" name="est" value="A" />
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-4">
+							<label>Periodo</label> 
+							<select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+						<table class="table" id="list_desemp-tabla">
+						</table>
+						<!-- <div class="col-sm-8">
+							<label>Unidad</label>
+			                <select id="id_uni" name="id_uni" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div> -->
+					</div>
+				<!-- 	<div class="row">
+						<div class="col-sm-6">
+							<label>Subtema</label> 
+							<select id="id_sub" name="id_sub" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+						<table class="table" id="list_desemp-tabla">
+						</table>
+						<!-- <div class="col-sm-6">
+							<label>Desempeño</label>
+			                <input type="text" id="des" name="des"  class="form-control input-sm " maxlength="100">
+						</div> -->
+				<!-- 	</div> -->
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+					<!-- <button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button> -->
+					<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>  
+				
+				</div>
+			
+			</form>			
+			</div>
+		</div>
+</div>
+
+
+

@@ -1,0 +1,47 @@
+<form action="api/unidadSesion" id="col_unidad_sesion-frm">
+	<input type="hidden" id="id_uns" name="id_uns" />
+	<input type="hidden" id="nom" name="nom" />
+	<input type="hidden" id="id_ses" name="id_ses" />
+	<div class="form-group">
+ 
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Tipo de Sesi&oacute;n</label> 
+				<select id="id_cts" name="id_cts" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+	<div id="div_desempenio">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Tema</label> 
+				<select id="id_sub" name="id_sub" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Capacidad</label> 
+				<select id="id_cap" name="id_cap" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Desempe&ntilde;os</label>
+				<table class="table" id="col_desempenio-tabla" border="1"></table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<!-- <button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar Indicadores</button> -->
+	</div>
+	</div>
+	
+</form>
+
+

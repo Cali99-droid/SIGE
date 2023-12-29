@@ -1,0 +1,642 @@
+<script type="text/javascript" src="js/rrhh/ges_trabajador_mantenimiento.js"></script>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: red;
+    color: red;
+}
+
+#div1 {
+     overflow:scroll;
+     height:400px;
+     width:400px;
+}
+
+</style>
+<div class="row">
+    <div class="col-md-5">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Búsqueda de Trabajadores</h6>
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                    <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+											 <label class="negrita">Servicio</label>
+											 <select id="id_gir_srv" required name="id_gir_srv" required placeholder="Seleccione"
+                                                class="form-control select-sm select-search">
+                                                <option selected value="">TODOS</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+											<label class="negrita">Local</label>
+                                            <select id="id_suc" required name="id_suc" required placeholder="Seleccione"
+                                                class="form-control select-sm input-sm select-search ">
+                                                <option selected value="">TODOS</option>
+                                            </select>  
+
+                                        </div>
+                                        <div class="col-sm-4">
+											<label class="negrita">Nivel</label>
+                                            <select id="id_niv" required name="" required placeholder="Seleccione"
+                                                class="form-control select-sm select-search">
+                                                <option selected value="">TODOS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+
+                                        <div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="T" class="styled" checked="checked">
+                                              Todos
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="A" class="styled" >
+                                               <label class="form-check-label text-bold text-primary-800" for="exampleCheck1">Activos</label>
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="R" class="styled">
+                                               <label class="form-check-label text-bold text-danger" for="exampleCheck1">Retirados</label>
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="E" class="styled">
+                                               <label class="form-check-label text-bold text-success" for="exampleCheck1">Egresados</label>
+                                        </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="table-responsive mt-5">
+								
+									 <div id="div1">
+										<label class="negrita">Total:</label>&nbsp; <label id="total" name="total"></label>
+                                        <table class="table" id="tabla-trabajadores">
+                                        </table>
+									</div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-7">
+        <div class="panel panel-flat">
+
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="panel panel-flat">
+
+                        <div class="panel-body">
+                            
+                                <div class="tabbable" id="tabs_trabajador">
+                                    <ul class="nav nav-tabs nav-tabs-highlight ">
+                                        <li class="active">
+                                            <a id="li-tabs-1" href="#fam_datos-tab" data-toggle="tab"><i
+                                                    class="fa fa-user text-blue"></i>
+                                                DATOS PRINCIPALES</a>
+                                        </li>
+										
+                                        <li>
+                                            <a id="li-tabs-2" href="#tra_datos_academicos-tab" data-toggle="tab"><i
+                                                    class="icon-magazine"></i>
+                                                DATOS ACADÉMICOS</a>
+                                        </li>
+
+                                        <li>
+                                            <a id="li-tabs-3" href="#fam_contrato-tab" data-toggle="tab"><i
+                                                    class="icon-magazine"></i>
+                                                CONTRATO</a>
+                                        </li>
+
+                                    </ul>
+
+
+                                    <div class="tab-content">
+										
+                                        <div class="tab-pane active" id="fam_datos-tab">
+										<form class="frm-regalu form-horizontal" id="frm-trabajador_mant" action="api/trabajador/grabarTrabajador ">
+                                            <input type="hidden" id="id" name="id" />
+											<input type="hidden" id="id_per" name="id_per"/>
+											<input type="hidden" id="est" name="est" value="A"/>
+                                            <fieldset class="content-group">
+                                                <div class="col-sm-6">
+                                                    <h4 class="text-bold azul_text"><label id="trabajador"></label></h4>
+
+                                                </div>
+
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_nuevo" 
+                                                        class="  icon-plus3 btn btn-lg btn-success btn-block">
+                                                        Nuevo
+                                                    </button>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_grabar" 
+                                                        class=" icon-floppy-disk btn btn-lg btn-primary btn-block">
+                                                        Guardar
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_eliminar"
+                                                        class=" icon-cross2 btn btn-danger btn-lg btn-block">
+                                                        Eliminar
+                                                    </button>
+
+                                                </div>
+                                            </fieldset>
+                                            <div class="table-responsive mt-5">
+                                                <table class="table table-bordered text-center" id="tabla_familiares">
+                                                </table>
+                                            </div>
+                                            <p></p>
+											
+                                            <fieldset class="content-group text-center">
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-9">
+                                                        <div class="row">
+                                                            <!--<div class="col-sm-5">
+                                                                <label class="negrita">Persona</label>
+                                                                <select required class=" form-control select-search" id="id_per" name="id_per">
+                                                                    <option value="">SELECCIONE</option>
+                                                                </select>
+                                                            </div>-->
+															<div class="col-sm-5">
+															<label class="negrita">Buscar Persona</label>
+															<button type="button" id="btn_buscar" class="btn bg-transparent text-indigo-400 border-indigo-400 ml-1" title="Buscar Persona"><i class="icon-search4 mr-2"></i></i></button>
+															</div>
+                                                        </div>
+                                                        <div class="row">
+															<div class="col-sm-3">
+                                                                <label class="negrita">Tipo Doc</label>
+                                                                <select required class="form-control select-search" id="id_tdc" name="id_tdc">
+																	 <option value="">Seleccione</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">N° de Doc</label>
+                                                                <input type="text" class="form-control input-sm" id="nro_doc" name="nro_doc" required
+                                                                    maxlength="50" />
+                                                            </div>
+															<div class="col-sm-3">
+                                                                <label class="negrita">Nacionalidad</label>
+                                                                <select required class=" form-control select-search" id="id_nac" name="id_nac">
+                                                                    <option value="">SELECCIONE</option>
+                                                                </select>
+                                                            </div>
+															<div class="col-sm-3">
+                                                                <label class="negrita">E. Civil</label>
+                                                                <select class=" form-control select-search" id="id_eci" name="id_eci" required>
+                                                                <option value="">SELECCIONE</option>
+																</select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Ap. Paterno</label>
+                                                                <input type="text" class="form-control input-sm" id="ape_pat" name="ape_pat"
+                                                                     required />
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Ap. Materno</label>
+                                                                <input type="text" class="form-control input-sm" id="ape_mat" name="ape_mat"
+                                                                     />
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Nombres</label>
+                                                                <input type="text" class="form-control input-sm" id="nom" name="nom"
+                                                                    required />
+                                                            </div>
+
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Sexo</label>
+                                                                <select  class="form-control select-search" id="id_gen" name="id_gen" required> 
+                                                                    <option value="">Seleccione</option>
+																	<option value="1">Másculino</option>
+                                                                    <option value="0">Femenino</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">F. Nacimiento</label>
+                                                                <input type="text" class="form-control input-sm daterange-single" id="fec_nac" name="fec_nac"/>
+                                                            </div>
+															<div class=" col-sm-3 text-center">
+																<label class="display-block negrita">¿Hijos?</label>
+																<label class="radio-inline">
+																	<input type="radio" id="id_hijo1" name="hijos" value="0"
+																		class="styled" checked>
+																	No
+																</label>
+
+																<label class="radio-inline">
+																	<input type="radio" id="id_hijo2" name="hijos" value="1"
+																		class="styled">
+																	Si
+																</label>
+															</div>
+															<div class="col-sm-3" id="nrohijos">
+                                                                  <label class="negrita">Número de Hijos</label>
+                                                                  <input type="text" class="form-control input-sm" id="num_hij" name="num_hij"
+                                                                        maxlength="50" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-3">
+                                                        <label class="text-bold" id="edad" name="edad">Edad: 6</label>
+
+                                                        <img class="user_photo mt-10" src="../sige/images/photo.jpg"
+                                                            alt="">
+                                                        <div class="text-center pt-10">
+
+                                                            <a href="#"><i class="fa fa-upload fa-2x "></i></a>
+
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <a href="#"><i class="fa fa-trash-o fa-2x"></i></a>
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </fieldset>
+
+											<legend class="text-bold">Datos de Domicilio</legend>
+
+                                            <fieldset class="content-group text-center">
+											<div class="row">
+											<div class="col-sm-3">
+												<label class="negrita">Dirección</label>
+												<input type="text" class="form-control input-sm" id="dir" name="dir"
+													/>
+											</div>
+											<div class="col-sm-3">
+												<label class="negrita">Departamento</label>
+												<select required class="form-control select-search" id="id_dep" name="id_dep">
+													 <option value="">Seleccione</option>
+												</select>
+											</div>
+											<div class="col-sm-3">
+												<label class="negrita">Provincia</label>
+												<select required class="form-control select-search" id="id_pro" name="id_pro">
+													 <option value="">Seleccione</option>
+												</select>
+											</div>
+											<div class="col-sm-3">
+												<label class="negrita">Distrito</label>
+												<select required class="form-control select-search" id="id_dist_viv" name="id_dist_viv">
+													 <option value="">Seleccione</option>
+												</select>
+											</div>
+											</div>
+											</fieldset>
+
+                                            <legend class="text-bold">Datos de Comunicación</legend>
+
+                                            <fieldset class="content-group text-center">
+                                                        <div class="row">
+
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Email Personal</label>
+                                                                <input type="text" class="form-control input-sm" id="corr" name="corr" required
+                                                                     />
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Email Institucional</label>
+                                                                <input type="text" class="form-control input-sm" id="email_inst" name="email_inst"
+                                                                     />
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Celular</label>
+                                                                <input type="text" class="form-control input-sm" id="cel" name="cel"
+                                                                    maxlength="9" />
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Telf. Fijo</label>
+                                                                <input type="text" class="form-control input-sm" id="tlf" name="tlf"
+                                                                    maxlength="50" />
+                                                            </div>
+                                                        </div>
+                                            </fieldset>
+
+                                            <p></p>
+
+                                            <legend class="text-bold text-left">Redes Sociales</legend>
+
+                                            <div class="row">
+                                                <div class="">
+                                                    <div class="row text-center">
+                                                        <div class="col-sm-3">
+                                                            <label class="negrita">Facebook</label>
+                                                            <input type="text" class="form-control input-sm" id="face" name="face"
+                                                                />
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <label class="negrita">Instagram</label>
+                                                            <input type="text" class="form-control input-sm" id="istrg" name="istrg"
+                                                                />
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <label class="negrita">Twitter</label>
+                                                            <input type="text" class="form-control input-sm" id="twitter" name="twitter"
+                                                                />
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <label class="negrita">Tiktok</label>
+                                                            <input type="text" class="form-control input-sm" id="tik_tok" name="tik_tok"
+                                                                />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+										</form>
+										</div>
+								<div class="tab-pane" id="tra_datos_academicos-tab">
+										<form class="frm-regalu form-horizontal" id="frm-datos_academicos_mant" action="api/trabajador/grabarHistorialGradoIns">
+										<input type="hidden" id="id" name="id"/>
+											<input type="hidden" id="id_tra" name="id_tra"/>
+											<input type="hidden" id="est" name="est" value="A"/>
+                                            <fieldset class="content-group">
+                                                <div class="col-sm-6">
+                                                    <h4 class="text-bold azul_text"><label id="trabajador"></label></h4>
+
+                                                </div>
+
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_nuevo"
+                                                        class="  icon-plus3 btn btn-lg btn-success btn-block">
+                                                        Nuevo
+                                                    </button>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_grabar"
+                                                        class=" icon-floppy-disk btn btn-lg btn-primary btn-block">
+                                                        Guardar
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_eliminar"
+                                                        class=" icon-cross2 btn btn-danger btn-lg btn-block">
+                                                        Eliminar
+                                                    </button>
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="content-group text-center">
+											<div class="row">
+                                            <div class="col-sm-12">
+											<div class="row">
+												<div class="col-sm-6">
+												<label class="negrita">Grado de Instrucción</label>
+													<select required class="form-control select-search" id="id_gin" name="id_gin">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-6">
+												<label class="negrita">Profesión</label>
+												<input type="text" class="form-control input-sm" id="carrera" name="carrera" required
+													 />
+												</div>
+                                            <p></p>
+											</div>
+											<legend class="text-bold text-left">Lista de Grados Académicos</legend>
+                                            <div class="row">
+												<div class="">
+													<p></p>
+													<div class="table-responsive">
+														<table class="table table-bordered" id="tabla_grados_academicos">
+														</table>
+													</div>
+												</div>
+											</div>
+											</div>
+											</div>
+											</fieldset>
+										</form>
+										</div>
+                                        <div class="tab-pane" id="fam_contrato-tab">
+										<form class="frm-regalu form-horizontal" id="frm-contrato_mant" action="api/contratoTrabajador/">
+                                            <input type="hidden" id="id" name="id"/>
+											<input type="hidden" id="id_tra" name="id_tra"/>
+											<input type="hidden" id="est" name="est" value="A"/>
+                                            <fieldset class="content-group">
+                                                <div class="col-sm-6">
+                                                    <h4 class="text-bold azul_text"><label id="trabajador"></label></h4>
+
+                                                </div>
+
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_nuevo"
+                                                        class="  icon-plus3 btn btn-lg btn-success btn-block">
+                                                        Nuevo
+                                                    </button>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_grabar"
+                                                        class=" icon-floppy-disk btn btn-lg btn-primary btn-block">
+                                                        Guardar
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-sm-2">
+                                                    <button type="button" id="btn_eliminar"
+                                                        class=" icon-cross2 btn btn-danger btn-lg btn-block">
+                                                        Eliminar
+                                                    </button>
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="content-group text-center">
+											<div class="row">
+                                            <div class="col-sm-12">
+											<div class="row">
+												<div class="col-sm-3">
+												<label class="negrita">Año</label>
+													<select required class="form-control select-search" id="id_anio_con" name="id_anio_con">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Empresa</label>
+													<select required class="form-control select-search" id="id_emp" name="id_emp">
+														<!-- <option value="">Seleccione</option>-->
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Giro Negocio</label>
+													<select required class="form-control select-search" id="id_gir" name="id_gir">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Número de Contrato</label>
+												<input type="text" class="form-control input-sm" id="num_con" name="num_con"
+													 />
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-3">
+												<label class="negrita">Régimen Laboral</label>
+													<select required class="form-control select-search" id="id_reg" name="id_reg">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Modalidad</label>
+													<select required class="form-control select-search" id="id_mod" name="id_mod">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Categoria Ocupacional</label>
+													<select required class="form-control select-search" id="id_cat" name="id_cat">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Puesto</label>
+													<select required class="form-control select-search" id="id_pue" name="id_pue">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Nivel</label>
+													<select required class="form-control select-search" id="id_niv_tra" name="id_niv_tra">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<!--<label><input type="checkbox" id="con_indf"  name="con_indf" value=""> Este es mi primer checkbox</label>-->
+												<label class="radio-inline">
+												   <input type="checkbox" name="con_indf" id="con_indf" value="1" >
+													   <label class="form-check-label text-bold text-success">Indefinido?</label>
+												</label>
+												</div>
+												<div class="col-sm-3">
+													<label class="negrita">F. Inicio</label>
+													<input type="text" class="form-control input-sm daterange-single" id="fec_ini" name="fec_ini"/>
+												</div>
+												<div class="col-sm-3">
+													<label class="negrita">F. Fin</label>
+													<input type="text" class="form-control input-sm daterange-single" id="fec_fin" name="fec_fin"/>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Periodo Prueba</label>
+													<select required class="form-control select-search" id="id_prue" name="id_prue">
+														 <option value="">Seleccione</option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+													<label class="negrita">F. Fin Periodo Prueba</label>
+													<input type="text" class="form-control input-sm daterange-single" id="fec_fin_prue" name="fec_fin_prue"/>
+												</div>
+												
+												<div class="col-sm-3">
+												<label class="negrita">Linea de Carrera</label>
+													<select required class="form-control select-search" id="id_lin_carr" name="id_lin_carr">
+														 <!--<option value="">Seleccione</option>-->
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Denominación</label>
+													<select required class="form-control select-search" id="id_den" name="id_den">
+														 <!--<option value="">Seleccione</option>-->
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Remuneración</label>
+													<select required class="form-control select-search" id="id_rem_cat" name="id_rem_cat">
+														 <!--<option value="">Seleccione</option>-->
+													</select>
+												</div>
+												<div class="col-sm-3">
+												<label class="negrita">Frecuencia de Pago</label>
+													<select required class="form-control select-search" id="id_frec_pag" name="id_frec_pag">
+														 <!--<option value="">Seleccione</option>-->
+													</select>
+												</div>
+											</div>
+											<legend class="text-bold text-left">Lista de Contratos</legend>
+                                            <div class="row">
+                                                    <div class="">
+                                                        <p></p>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-bordered" id="tabla_contratos">
+                                                            </table>
+                                                        </div>
+                                                    </div>
+												</fieldset>
+												</div>
+											</div>
+											</div>
+												</form>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>

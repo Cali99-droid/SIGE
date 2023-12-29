@@ -1,0 +1,208 @@
+<!-- <script type="text/javascript" src="js/matricula/mat_actualizacion_datos_padres.js"></script>   -->
+
+<form  id="alu_alumno-frm" action="api/alumno/alumnoGrabar">
+	<input type="hidden" id="id" name="id" /> 
+	<input type="hidden" id="id_per" name="id_per" /> 
+	<input type="hidden" id="ini" name="ini" />
+	<input type="hidden" id="id_gpf" name="id_gpf" />
+	<input type="hidden" id="id_anio_act" name="id_anio_act" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<fieldset class="content-group">
+		<legend class="text-bold">ALUMNOS REGISTRADOS</legend>
+			<div class="row">
+				<div class="familia-div col-sm-12">
+					<b id='titulo'></b>
+						<table class="table" id="alumno-tabla">
+						</table>
+				</div>
+			</div>
+	</fieldset>
+	<div id="div_alumno">
+	<fieldset class="content-group">
+		<legend class="text-bold">DATOS IMPORTANTES</legend>
+
+		<div class="row">
+			<!--<div class="col-sm-4">
+				<label>C&oacute;digo</label>
+					<input type="text" id="cod" name="cod" class="form-control" readonly/>
+			</div>-->
+			<div class="col-sm-4">
+						<label>Tipo de documento</label>&nbsp;<font color="red">(*)</font> 
+						<select id="id_tdc" name="id_tdc"
+							required placeholder="Seleccione" class="form-control disabled">
+						</select>
+			</div>
+			<div class="col-sm-4">
+						<label>N&uacute;mero de documento</label>&nbsp;<font color="red">(*)</font><input type="text"
+							id="nro_doc" name="nro_doc" required
+							class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<!--<div class="row">
+			<div class="col-sm-6">
+				<label for="name" class="control-label">Posee Apellidos</label>&nbsp;<font color="red">(*)</font>
+				<div class="input-group">
+					<div class="radio radio-info radio-inline">
+						<input id="id_tapa1" name="id_tap" value="A" type="radio">
+						<label for="id_tapa1"> Ambos </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="id_tapa2" name="id_tap" value="P" type="radio">
+						<label for="id_tapa2"> Solo paterno </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="id_tapa3" name="id_tap" value="M" type="radio">
+						<label for="id_tapa3"> Solo materno </label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6"></div>
+		</div>-->
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Apellido paterno </label> <input type="text" id="ape_pat"
+					name="ape_pat" class="form-control input-sm " maxlength="30">
+			</div>
+			<div class="col-sm-4">
+				<label>Apellido materno </label> <input type="text" id="ape_mat"
+					name="ape_mat" class="form-control input-sm " maxlength="30">
+			</div>
+			<div class="col-sm-4">
+				<label>Nombres</label> <input type="text" id="nom" name="nom"
+					required class="form-control input-sm " maxlength="40">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<label>G&eacute;nero</label>&nbsp;<font color="red">(*)</font>
+				<div class="input-group">
+					<div class="radio radio-info radio-inline">
+						<input id="id_gen1" name="id_gen" value="1" type="radio">
+						<label for="id_gen1"> Masculino </label>
+					</div>
+					<div class="radio radio-info radio-inline">
+						<input id="id_gen2" name="id_gen" value="0" type="radio">
+						<label for="id_gen2"> Femenino</label>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label>Estado civil</label>&nbsp;<font color="red">(*)</font> 
+				<select id="id_eci" name="id_eci" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+
+	</fieldset>
+	<fieldset class="content-group">
+		<legend class="text-bold">DATOS DE NACIMIENTO</legend>
+			<div class="row">
+				<div class="col-sm-4">
+				<label>Fecha nacimiento</label>&nbsp;<font color="red">(*)</font> <input type="text" id="fec_nac"
+					name="fec_nac" required
+					class="form-control input-sm daterange-single" maxlength="10">
+				</div>
+				<div class="col-sm-4">
+					<label>Pa&iacute;s</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_pais_nac" name="id_pais_nac" required placeholder="Seleccione" class="form-control select-search">
+					<option value="">SELECCIONE</option>
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Departamento</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_dep_nac" name="id_dep_nac" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Provincia</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_pro_nac" name="id_pro_nac" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Distrito</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_dist_nac" name="id_dist_nac" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+				<!--<div class="col-sm-4">
+					<label>Nacionalidad</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_nac" name="id_nac" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>-->
+			</div>
+	</fieldset>
+	<!--
+	<fieldset class="content-group">
+		<legend class="text-bold">DATOS DE DOMICILIO</legend>
+			<div class="row">
+			<div class="col-sm-12">
+			<button type="button" id="btn-direccionPadre" class="btn bg-purple-400 btn-rounded btn-xs" onclick="obtenerDireccionPadre()">Obtener Direcci&oacute;n del Padre</button>
+			<button type="button" id="btn-direccionMadre" class="btn bg-purple-400 btn-rounded  btn-xs" onclick="obtenerDireccionMadre()">Obtener Direcci&oacute;on de la Madre</button>
+			</div>
+				<div class="col-sm-4">
+					<label>Departamento</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_dep_viv" name="id_dep_viv" required placeholder="Seleccione" class="form-control select-search">
+					<option value="-1">Seleccione</option>
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Provincia</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_pro_viv" name="id_pro_viv" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<label>Distrito</label>&nbsp;<font color="red">(*)</font> 
+					<select id="id_dist_viv" name="id_dist_viv" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Direcci&oacute;n</label>&nbsp;<font color="red">(*)</font>
+		               <input type="text" id="direccion" name="direccion" required class="form-control input-sm " maxlength="50">
+				</div>
+				<div class="col-sm-4">
+					<label>Referencia Domiciliaria</label>&nbsp;<font color="red">(*)</font>
+		               <input type="text" id="ref" name="ref" required class="form-control input-sm " maxlength="50">
+				</div>
+				<div class="col-sm-4">
+					<label>Tel&eacute;fono Fijo de Casa</label>
+		               <input type="text" id="telf" name="telf" class="form-control input-sm " maxlength="50">
+				</div>
+		   </div>
+		   <div class="row">
+				<div class="col-sm-4">
+					<label>Celular del Alumno</label>
+		               <input type="text" id="celular" name="celular" class="form-control input-sm " maxlength="50">
+				</div>
+				<div class="col-sm-4">
+					<label>Email del Alumno</label>
+		               <input type="text" id="corr" name="corr"  class="form-control input-sm " maxlength="50">
+				</div>
+		   </div>
+	</fieldset>-->
+	<fieldset class="content-group">
+		<legend class="text-bold">LENGUAS</legend>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Lengua materna</label> 
+				<select id="id_idio1" name="id_idio1" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Segunda Lengua</label> 
+				<select id="id_idio2" name="id_idio2" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+	</fieldset>
+	</div>
+	<div class="modal-footer">
+		<!-- <button type="button" id="btn-nuevo" class="btn btn-info btn-xs" onclick="alumnoNuevo()"><i class="icon-file-empty"></i>Nuevo</button> -->
+		<button type="button" id="btn-grabar" class="btn btn-success btn-xs" onclick="grabarAlumno()"><i class="icon-floppy-disk"></i>Grabar</button>
+	</div>
+</form>
+

@@ -1,0 +1,96 @@
+<script type="text/javascript" src="pages/js/mat_solicitud_form.js"></script>
+
+<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Solicitud de cambio de local</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              </div>
+		</div>
+
+		<div class="panel-body">
+			
+				<fieldset class="content-group">
+					<legend class="text-bold">ALUMNO: <b id='alu-name'></b><label id="nom_alu"></label></legend>
+				
+					<form class="form-horizontal" id="frm-solicitud" >
+						<input type="hidden" id="id_anio" name="id_anio" />
+						<input type="hidden" id="id_alu" name="id_alu" />
+						<input type="hidden" id="tipo" name="tipo" />
+						<input type="hidden" id="id_anio" name="id_anio" />
+						<input type="hidden" id="id_suc_des" name="id_suc_des" />
+						<input type="hidden" id="id_suc_or" name="id_suc_or" />
+		
+                  	<div class="form-group">
+                  		<div class="row">
+	                  		<div class="col-sm-4">
+	                             <label for="prefix">Nivel</label>
+		                         <input id="id_niv" name="id_niv" 
+									required="required" class="form-control" readonly/>
+										                                  	
+	                  		</div>
+							<div class="col-sm-4">
+							 	<label for="id_gra">Grado</label>
+								<input id="id_gra" name="id_gra"  class="form-control" readonly/>
+							</div>
+							<!--
+							<div class="col-sm-4">
+							 	<label for="apoderado">Secci&oacute;n</label>
+								<input id="id_au" name="id_au"  class="form-control" readonly/>
+							</div>
+							-->
+						</div>
+						
+						<div class="row">
+							<div class="col-sm-4">
+								<label class="control-label" for="prefix">Estado Actual</label> 
+								<select disabled id="estado" class="form-control " >
+									<option value="A">Antiguo no matriculado</option>
+									<option value="M">Matriculado</option>
+									<option value="R">Con Reserva</option>
+									<option value="S">(Solicitud)Pendiente de cambio de local</option>
+								</select> 
+							</div>
+
+							<div class="col-sm-4">
+								<label class="control-label" for="prefix">Local Origen</label> 
+								<select id="id_suc_ori" disabled name="id_suc_ori" data-placeholder="Seleccione"
+									required="required" class="select2 form-control">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label class="control-label" for="prefix">Apoderado</label> 
+								<select id="id_fam" name="id_fam" class="form-control " disabled>
+									<option value="">Seleccionar</option>
+								</select> 
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-sm-4">
+								<label class="control-label" for="prefix">Nro de expediente</label> 
+								<input type="text" id="nro_exp" name="nro_exp" class="form-control" required>
+							</div>
+							<div class="col-sm-8">
+								<label class="control-label" for="prefix">Motivo</label> 
+								<input type="text" id="motivo" name="motivo" class="form-control" required>
+							</div>
+						</div>					
+					</div>
+                   
+					<div class="text-right">
+						<button type="submit" id='btn-grabar' class="btn btn-danger">Grabar <i class="fa fa-save position-right"></i></button>
+						<button type="button" id='btn-cancelar' class="btn bg-teal">Cancelar<i class="fa fa-close position-right"></i></button>
+					</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+</div>
+	

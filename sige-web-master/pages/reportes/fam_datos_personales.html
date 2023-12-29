@@ -1,0 +1,32 @@
+<form action="api/familiarinfo">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A" />
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Apoderado</label> 
+				 <input type="text" id="fam" class="form-control input-sm" readonly>
+			</div>
+			<div class="col-sm-6">
+				<label>Teléfono</label> 
+				<input type="text" id="tlf" name="tlf" class="form-control input-sm" maxlength="9">
+			</div>
+			<div class="col-sm-6">
+				<label>Celular</label> 
+				<input type="text" id="cel" name="cel" class="form-control input-sm" maxlength="9">
+			</div>
+			
+			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,511 @@
+<script type="text/javascript" src="js/academico/col_disenio_curricular.js"></script>
+<style>
+tr.highlighted td {
+       background: red;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Diseño Curricular</h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_disenio_curricular">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Nivel</h6>
+
+                <!-- <div class="heading-elements ">
+
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_nivel">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+		<div class="col-md-3">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Áreas</h6>
+
+                <!-- <div class="heading-elements ">
+
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_areas">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Competencias Transversales</h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_comp_trans">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="col-md-12" id="div_disenio_curricular">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title"><label id="nom_disenio_curricular">DISEÑO CURRICULAR </label></h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+                <form class="frm-blue" id="frm-disenio_curricular" action="api/disenioCurricular">
+				<input type="hidden" id="id" name="id"/>
+				<input type="hidden" id="id_anio" name="id_anio"/>
+				<input type="hidden" id="est" name="est" value="A"/>
+                    <div class="row">
+
+                        <div class="panel-body">
+
+                            <fieldset class="content-group text-center">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <label class="negrita">Nombre</label>
+                                                <input type="text" class="form-control input-sm" maxlength="50" id="nom" name="nom"
+                                                    required />
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <div class="row text-right">
+
+                                            <p>
+                                                <button type="button" class="btn-lg btn-primary  icon-floppy-disk" id="btn_grabar">
+                                                    Guardar</button>
+                                                <button type="button" class="btn-lg btn-success icon-plus3" id="btn_nuevo">
+                                                    Nuevo</button>
+												<button type="button" class="btn-lg btn-danger" id="btn_eliminar">
+                                                        Eliminar
+                                                    </button>
+                                            </p>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+	
+    <div class="col-md-12" id="div_nivel">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title"><label id="nom_nivel" name="nom_nivel"></label></h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+                <form class="frm-blue" id="frm-nivel" action="api/disenioCurricular/grabarNivel">
+				<input type="hidden" id="id" name="id"/>
+				<input type="hidden" id="est" name="est" value="A"/>
+                    <div class="row">
+
+                        <div class="panel-body">
+                            <fieldset class="content-group text-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+											<div class="col-sm-4">
+                                                <label class="negrita">Diseño Curricular</label>
+                                                <select required class="form-control select-search" id="id_dcn" name="id_dcn">
+                                                    <option value="">SELECCIONE</option>
+                                                </select>
+                                            </div>
+											<div class="col-sm-4">
+                                                <label class="negrita">Nivel</label>
+                                                <select required class="form-control select-search" id="id_niv" name="id_niv">
+                                                    <option value="">SELECCIONE</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <div class="row text-right">
+
+                                            <p>
+                                                <button type="button" class="btn-lg btn-primary  icon-floppy-disk" id="btn_grabar">
+                                                    Guardar</button>
+                                                <button type="button" class="btn-lg btn-success icon-plus3" id="btn_nuevo">
+                                                    Nuevo</button>
+												<button type="button" class="btn-lg btn-danger" id="btn_eliminar">
+                                                        Eliminar
+                                                    </button>
+                                            </p>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+	
+	<div class="col-md-12" id="div_area">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title"><label id="area_nom" name="area_nom"></label></h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+                <form class="frm-blue" id="frm_area"  action="api/disenioCurricular/grabarArea">
+				<input type="hidden" id="id" name="id"/>
+				<input type="hidden" id="est" name="est" value="A"/>
+                    <div class="row">
+
+                        <div class="panel-body">
+
+                            <fieldset class="content-group text-center">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+											<div class="col-sm-4">
+                                                <label class="negrita">Nivel</label>
+                                                <select required class="form-control select-search" id="id_dcniv" name="id_dcniv">
+                                                    <option value="">SELECCIONE</option>
+                                                </select>
+                                            </div>
+											<div class="col-sm-4">
+                                                <label class="negrita">Area</label>
+                                                <select required class="form-control select-search" id="id_are" name="id_are">
+                                                    <option value="">SELECCIONE</option>
+                                                </select>
+                                            </div>
+											<div class="col-sm-4">
+                                                <label class="negrita">Orden</label>
+                                                <input type="text" class="form-control input-sm" id="ord" name="ord"/>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <div class="row text-right">
+
+                                            <p>
+                                                <button type="button" class="btn-lg btn-primary  icon-floppy-disk" id="btn_grabar" name="btn_grabar">
+                                                    Guardar</button>
+                                                <button type="button" class="btn-lg btn-success icon-plus3" id="btn_nuevo" name="btn_nuevo">
+                                                    Nuevo</button>
+												<button type="button" class="btn-lg btn-danger" id="btn_eliminar">
+                                                        Eliminar
+                                                    </button>
+                                            </p>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+	
+	    <div class="col-md-12" id="div_competencias_trans">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title"><label id="competencia_trans" name="competencia_trans"></label></h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+                <form class="frm-blue" id="frm_competencia_trans" action="api/disenioCurricular/grabarCompetenciaTransversal">
+				<input type="hidden" id="id" name="id"/>
+				<input type="hidden" id="est" name="est" value="A"/>
+                    <div class="row">
+
+                        <div class="panel-body">
+
+                            <fieldset class="content-group text-center">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <!--<div class="col-sm-3">
+                                                    <label class="negrita">Area</label>
+                                                    <select required class="form-control select-search" id="id_dcare" name="id_dcare">
+                                                        <option value="">SELECCIONE</option>
+                                                    </select>
+                                            </div>-->
+											<div class="col-sm-3">
+                                                <label class="negrita">Nivel</label>
+                                                <select required class="form-control select-search" id="id_dcniv" name="id_dcniv">
+                                                    <option value="">SELECCIONE</option>
+                                                </select>
+                                            </div>
+											<div class="col-sm-3">
+                                                    <label class="negrita">Competencia Transversal</label>
+                                                    <select required class="form-control select-search" id="id_ctran" name="id_ctran">
+                                                        <option value="">SELECCIONE</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+
+                                       <!-- <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <table class="table" id="tab_niveles">
+													</table>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>-->
+
+
+                                    </div>
+
+
+
+
+                                    <p></p>
+                                    <div class="row text-right">
+
+                                        <p>
+                                            <button type="button" class="btn-lg btn-primary  icon-floppy-disk" id="btn_grabar" name="btn_grabar">
+                                                    Guardar</button>
+                                            <button type="button" class="btn-lg btn-success icon-plus3" id="btn_nuevo" name="btn_nuevo">
+                                                    Nuevo</button>
+											<button type="button" class="btn-lg btn-danger" id="btn_eliminar">
+                                                        Eliminar
+                                                    </button>
+                                        </p>
+
+                                    </div>
+
+
+                                </div>
+
+
+                        </div>
+                        </fieldset>
+
+                    </div>
+
+
+            </div>
+            </form>
+        </div>
+    </div>
+
+</div>

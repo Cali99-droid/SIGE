@@ -1,0 +1,70 @@
+<script type="text/javascript" src="js/academico/col_aula.js"></script>
+<div class="panel panel-flat" id="col_reporte_tema-panel">
+	<div class="panel-body">
+	<form id="frm-aula_modalidad" action="api/aula/grabarModalidad">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_au" name="id_au" />
+	<input type="hidden" id="est" name="est" value="A"/>
+				<div class="row">
+					<div class="col-sm-6">
+						<label>Mes</label> <select class="form-control select-search input-xs"
+							id="mes" name="mes">
+							<option value='3'>Marzo</option>
+							<option value='4'>Abril</option>
+							<option value='5'>Mayo</option>
+							<option value='6'>Junio</option>
+							<option value='7'>Julio</option>
+							<option value='8'>Agosto</option>
+							<option value='9'>Setiembre</option>
+							<option value='10'>Octubre</option>
+							<option value='11'>Noviembre</option>
+							<option value='12'>Diciembre</option>
+						</select>
+					</div>
+					<div class="col-sm-6">
+						<label>Modalidad</label> <select class="form-control select-search input-xs"
+							id="id_cme" name="id_cme">
+						</select>
+					</div>
+					<!--<div class="col-sm-3">
+						<label>CICLO</label> <select class="form-control select-search input-xs"
+							id="id_cic" name="id_cic">
+						</select>
+					</div>-->
+					<!-- <div class="col-sm-3">
+						<label>NIVEL</label> <select class="form-control select-search input-xs"
+							id="id_nvl" name="id_nvl">
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label>GRADO</label> <select class="form-control select-search input-xs"
+							id="id_gra" name="id_gra">
+							<option value=''>TODOS</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label>SECCI&Oacute;N</label> <select class="form-control select-search input-xs"
+							id="id_au" name="id_au">
+							<option value=''>TODOS</option>
+						</select>
+					</div>
+					<!--<div class="col-sm-3">
+						<label class="negrita">TIPO PERIODO</label>
+						<select required class="form-control select-search" id="id_tpe" name="id_tpe">
+							<!--<option value="">SELECCIONE</option>-->
+					<!--	</select>
+					</div>-->
+					<!--<div class="col-sm-3">
+						<label class="negrita">CICLO</label>
+						<select required class="form-control select-search" id="id_cic" name="id_cic">
+							<!--<option value="">SELECCIONE</option>-->
+					<!--	</select>
+					</div>-->
+				</div>
+				<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="btn_grabar_mod">Grabar Modalidad <i class="icon-file-check position-right"></i></button>
+				</div>
+	</form>
+	</div>
+</div>
+	

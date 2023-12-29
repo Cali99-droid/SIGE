@@ -1,0 +1,40 @@
+<script type="text/javascript" src="js/campus_virtual/cv_restablecer_contrasenia.js"></script>
+<style type="text/css">
+label {
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: xx-small;
+ text-align: center;
+}
+</style>
+				<form class="modal-body" id="frm-restablecer_contrasenia" action="api/">
+					<input id='id' name='id' type='hidden'/>
+					<input id='usr' name='usr' type='hidden'/>
+					<input id='est' name='est' type="hidden" value="A"/>
+					
+					<fieldset>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-12">
+							<label>Usuario:</label>
+                			<label  id="usuario"></label>
+							</div>
+						</div> 
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Nueva Contrase&ntilde;a</label>
+                				<input type="password" id="nuevo_pass" name="nuevo_pass" required class="form-control input-sm">
+							</div>
+							<div class="col-sm-6">
+								<label>Repita Contrase&ntilde;a</label>
+                				<input type="password" id="conf_pass" name="conf_pass" required class="form-control input-sm">
+							</div>
+							<div class="col-sm-6">
+								<label id="info" style="display:none"></label>
+							</div>
+						</div>
+					</div>
+					</fieldset>
+					<div class="modal-footer">		
+					<button type="button" class="btn bg-blue " id="btn_restablecer" onclick="generar_contrasenia()" >Restablecer <i class="icon-checkmark-circle position-right"></i></button>
+					</div>  
+				</form>

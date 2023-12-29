@@ -1,0 +1,112 @@
+<form action="api/anio" id="col_anio_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>A&ntilde;o</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="150">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_anio-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#mat_cronograma-tab" data-toggle="tab"><i class="fa fa-cube"></i> Cronograma de matr&iacute;cula</a>
+			</li>
+			<li>
+				<a href="#mat_conf_fechas-tab" data-toggle="tab"><i class="fa fa-cube"></i> Cronograma de matr&iacute;cula</a>
+			</li>
+			<li>
+				<a href="#per_periodo-tab" data-toggle="tab"><i class="fa fa-cube"></i> Periodo</a>
+			</li>
+			<li>
+				<a href="#asi_grado_horario-tab" data-toggle="tab"><i class="fa fa-cube"></i> Horario por grado</a>
+			</li>
+			<li>
+				<a href="#cat_grado_horario-tab" data-toggle="tab"><i class="fa fa-cube"></i> Horario por grado</a>
+			</li>
+			<li>
+				<a href="#col_area_anio-tab" data-toggle="tab"><i class="fa fa-cube"></i> &Aacute;reas</a>
+			</li>
+			<li>
+				<a href="#col_curso_horario-tab" data-toggle="tab"><i class="fa fa-cube"></i> Curso Horario</a>
+			</li>
+			<li>
+				<a href="#col_indicador-tab" data-toggle="tab"><i class="fa fa-cube"></i> Indicador</a>
+			</li>
+			<li>
+				<a href="#col_curso_subtema-tab" data-toggle="tab"><i class="fa fa-cube"></i> Curso Subtema</a>
+			</li>
+			<li>
+				<a href="#col_per_uni-tab" data-toggle="tab"><i class="fa fa-cube"></i> Periodo Unidad</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="mat_cronograma-tab">
+				<table class="table" id="mat_cronograma-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_conf_fechas-tab">
+				<table class="table" id="mat_conf_fechas-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="per_periodo-tab">
+				<table class="table" id="per_periodo-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="asi_grado_horario-tab">
+				<table class="table" id="asi_grado_horario-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="cat_grado_horario-tab">
+				<table class="table" id="cat_grado_horario-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_area_anio-tab">
+				<table class="table" id="col_area_anio-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_curso_horario-tab">
+				<table class="table" id="col_curso_horario-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_indicador-tab">
+				<table class="table" id="col_indicador-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_curso_subtema-tab">
+				<table class="table" id="col_curso_subtema-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="col_per_uni-tab">
+				<table class="table" id="col_per_uni-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

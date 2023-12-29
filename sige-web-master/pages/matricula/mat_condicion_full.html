@@ -1,0 +1,50 @@
+<form action="api/condicion" id="mat_condicion_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Condici&oacute;n</label> 
+				<select id="id_cond" name="id_cond" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Matr&iacute;cula Alumno</label> 
+				<select id="id_mat" name="id_mat" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>T&iacute;tulo</label>
+                <input type="text" id="tit" name="tit" required class="form-control input-sm " maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n</label>
+                <input type="text" id="des" name="des" required class="form-control input-sm " maxlength="300">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="mat_condicion-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

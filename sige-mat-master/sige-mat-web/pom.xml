@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>sige.mat.web</groupId>
+	<artifactId>sige-mat-web</artifactId>
+	<!-- war <packaging>war</packaging> -->
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<start-class>com.sige.web.AppTomcat</start-class>
+	</properties>
+
+
+	<dependencies>
+
+		<!--Necesario para generar WAR -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-web</artifactId> 
+			</dependency> -->
+		<dependency>
+			<groupId>sige.core.security</groupId>
+			<artifactId>sige-core-security</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>sige.mat.commons</groupId>
+			<artifactId>sige-mat-commons</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>sige.mat.dao</groupId>
+			<artifactId>sige-mat-dao</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>sige.mat.service</groupId>
+			<artifactId>sige-mat-service</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.6.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.zxing</groupId>
+		    <artifactId>core</artifactId>
+		    <version>2.0</version>
+		</dependency>
+		<dependency>
+	<groupId>com.solvoj.zxing-java6</groupId>
+	<artifactId>javase-java6</artifactId>
+	<version>3.2.0</version>
+</dependency>
+
+
+	</dependencies>
+
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<parent>
+		<artifactId>sige</artifactId>
+		<groupId>sige</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+</project>

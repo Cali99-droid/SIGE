@@ -1,0 +1,49 @@
+<form action="api/confCuota" id="mat_conf_cuota_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Matricula</label>
+                <input type="text" id="matricula" name="matricula" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Cuota Ingreso</label>
+                <input type="text" id="cuota" name="cuota" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Monto reserva vacante</label>
+                <input type="text" id="reserva" name="reserva" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="mat_conf_cuota-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

@@ -1,0 +1,70 @@
+<form action="api/comunicacionBaja" id='comunicacion_baja-form'>
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_fmo" name="id_fmo" />
+	
+	<div class="form-group">
+		<div class="row" >
+			<div class="col-sm-4">
+				<label>Tipo de documento</label>
+				<input type="text" id="doc" class="form-control input-sm" value="" readonly>
+			</div>			
+			<div class="col-sm-4">
+				<label>Nro de documento</label>
+				<input type="text" id="nro_rec" class="form-control input-sm" readonly>
+			</div>			
+			<div class="col-sm-4">
+				<label>Fecha de emisi&oacute;n</label>
+				<input type="text" id="fecha" class="form-control input-sm" value="" readonly>
+			</div>		
+		</div>
+
+		<div class="row" >
+			<div class="col-sm-4">
+				<label>Nivel</label>
+				<input type="text" id="nivel" class="form-control input-sm" value="" readonly>
+			</div>			
+			<div class="col-sm-4">
+				<label>Grado</label>
+				<input type="text" id="grado" class="form-control input-sm" readonly>
+			</div>			
+			<div class="col-sm-4">
+				<label>Secci&oacute;n</label>
+				<input type="text" id="secc" class="form-control input-sm" value="" readonly>
+			</div>		
+		</div>
+
+		<div class="row" >
+			<div class="col-sm-4">
+				<label>Local</label>
+				<div class="flechas">
+					<select id="id_suc" class="form-control disabled">
+					</select>
+				</div>
+			</div>			
+			<div class="col-sm-4">
+				<label>Monto</label>
+				<input type="text" id="monto_total" class="form-control input-sm" value="" readonly>
+			</div>			
+			<div class="col-sm-4">
+				<label>Descripci&oacute;n</label>
+				<input type="text" id="obs" class="form-control input-sm" readonly>
+			</div>			
+		</div>
+		<div class="row detalle_alumno">	
+			<div class="col-sm-12">
+				<label>Motivo de la baja</label>
+				<input type="text" id="motivo" name="motivo" class="form-control input-sm" value="" required>
+			</div>			
+		</div>
+	</div>
+	
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" id="btnGrabar" class="btn btn-primary">Grabar</button>
+		<button type="button" id="btnEnviarSunat" class="btn btn-danger">Enviar a Sunat</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,70 @@
+img.user_photo {
+width: 110px;
+height: 110px;
+background: red;
+display:block;
+margin:auto;
+}
+
+
+.frm-regalu input:focus{
+    background-color: rgb(217, 229, 241);
+border:solid 1px;
+color: rgb(106, 144, 202);
+
+  }
+
+  h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+legend {
+  padding-top: 0px !important;
+  padding-bottom: 2px !important;
+  margin-bottom: 2px !important;
+  text-transform: uppercase;
+}
+
+.inputs_left{
+
+float: left;
+}
+
+.table > thead:first-child > tr:first-child > th {
+
+  text-align: center !important;
+}
+
+.selec_ae{
+
+}
+
+
+
+.btn-primary {
+  color: #fff;
+  background-color: #1565C0 !important;
+  border-color: #2196F3;
+}
+.negrita{
+  font-weight: bold;
+}
+
+.azul_text{
+color: #1565C0;
+
+
+}
+
+.btn-j_01 {
+  width: 35px !important;
+  height: 35px !important;
+  align-items: center;
+}
+
+.frm-blue input:focus{
+  background-color: rgb(217, 229, 241);
+border:solid 1px;
+color: rgb(106, 144, 202);
+
+}

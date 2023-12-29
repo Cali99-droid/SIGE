@@ -1,0 +1,40 @@
+<form action="api/areaAnio" id="col_area_anio-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nivel</label> 
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Area</label> 
+				<select id="id_area" name="id_area" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Orden</label>
+                <input type="text" id="ord" name="ord" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

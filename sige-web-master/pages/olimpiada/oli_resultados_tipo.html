@@ -1,0 +1,42 @@
+<script>
+var _params;
+function onloadPage(params) {
+	console.log(params);
+	_params = params;
+}
+
+function verIndividual(){
+	_send('pages/olimpiada/oli_resultados_ind.html','Resultados','Libre/Independiente/Delegacion', _params);
+}
+
+function verDelegacion(){
+	_send('pages/olimpiada/oli_resultados_del.html','Resultados','Delegacion', _params);
+}
+
+</script>
+
+<div class="panel panel-flat">
+	<div class="panel-body">
+		<b><font size="5" color="#0000CD" face="sans-serif"> <label
+				id="titulo">ELEGIR TIPO DE BUSQUEDA</label></font></b><br>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 text-center">
+			<a class="btn btn-teal btn-lg" href="#" onclick="verIndividual()"> 
+			<img src="site/img/individual.jpg" alt=""> <br/> 
+			<span class="small">POR PARTICIPANTE</span></a>
+		</div>
+		<div class="col-lg-6 text-center">
+			<a class="btn btn-teal btn-lg" href="#" onclick="verDelegacion()">
+				<img src="site/img/delegacion.png" alt=""> <br />
+				<span class="small">POR DELEGACION</span>
+			</a>
+		</div>
+	</div>
+
+
+
+</div>
+
+

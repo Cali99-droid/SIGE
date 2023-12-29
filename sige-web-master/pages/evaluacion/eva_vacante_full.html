@@ -1,0 +1,61 @@
+<form action="api/vacante" id="eva_vacante_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Evaluaci&oacute;n Vacante</label> 
+				<select id="id_eva" name="id_eva" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_grad" name="id_grad" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Capacidad </label>
+                <input type="text" id="nro_vac" name="nro_vac" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Vacantes ofertadas </label>
+                <input type="text" id="vac_ofe" name="vac_ofe" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Postulantes</label>
+                <input type="text" id="post" name="post" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="eva_vacante-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

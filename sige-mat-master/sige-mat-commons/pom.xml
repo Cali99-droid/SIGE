@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>sige.mat.commons</groupId>
+	<artifactId>sige-mat-commons</artifactId>
+	<packaging>jar</packaging>
+
+	<parent>
+		<artifactId>sige</artifactId>
+		<groupId>sige</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>sige.core.commons</groupId>
+			<artifactId>sige-core-commons</artifactId>
+		</dependency>
+		<dependency>
+			    <groupId>com.google.zxing</groupId>
+			    <artifactId>core</artifactId>
+			    <version>2.0</version>
+			</dependency>
+	</dependencies>
+
+	<!--<repositories> <repository> <id>xuggle repo</id> <url>http://www.dcm4che.org/maven2/</url> 
+		</repository> </repositories> -->
+</project>

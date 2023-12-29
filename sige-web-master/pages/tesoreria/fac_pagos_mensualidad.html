@@ -1,0 +1,187 @@
+<script type="text/javascript" src="js/facturacion/fac_alumno_descuento.js"></script>
+<script type="text/javascript" src="js/facturacion/fac_pagos_mensualidad.js"></script>
+
+<div class="row">	
+	<div class="col-md-12">
+		<div class="panel panel-flat">
+				<div class="panel-heading">
+					<h5 class="panel-title">NRO DE CONTRATO <span id="apoderado.num_cont"/></h5>
+					<div class="heading-elements">
+						<ul class="icons-list">
+		               		<li><a data-action="collapse"></a></li>
+		               		<li><a data-action="reload"></a></li>
+		               		<li><a data-action="close"></a></li>
+		               	</ul>
+		              	</div>
+				</div>
+		
+				<div class="panel-body">
+						<fieldset class="content-group">
+							<form class="form-horizontal" id="frm-pagos-buscar">
+							<input type="hidden" name="id_anio" value="2" >
+						
+							<div class="form-group">
+								<div class="form-group form-group-material col-lg-2">
+									<img id="apoderado.foto"  width="100%" height="100%" alt="">
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Cliente</label>
+									<input type="text" class="form-control input-xs" id="apoderado.nom" readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Nro doc</label>
+									<input type="text" class="form-control input-xs" id="apoderado.nro_doc" readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Direcci&oacute;n</label>
+									<input type="text" class="form-control input-xs" id="apoderado.direccion" value="Value" readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Celular</label>
+									<input type="text" class="form-control input-xs" id="apoderado.cel" value="Value" readonly>
+								</div>
+								
+							</div>
+							</form>		
+						</fieldset>
+				</div>
+				
+		</div>
+	</div>
+</div>
+
+<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-flat">
+
+
+								<div class="panel-body">
+									<div class="tabbable">
+										<ul class="nav nav-tabs nav-tabs-highlight">
+											<li class="active"><a href="#left-icon-tab1" data-toggle="tab"><i class="fa fa-money"></i> Mensualidades</a></li>
+											<li><a href="#tab_pagados" data-toggle="tab"><i class="fa fa-print"></i> Pagados</a></li>
+											<li ><a href="#left-icon-tab3" data-toggle="tab"><i class="fa fa-dollar "></i> <span class="text-danger">Deudas</span></a></li>
+										</ul>
+
+										<div class="tab-content">
+											<div class="tab-pane active" id="left-icon-tab1">
+											<!-- INICIO - SECCION PAGOS -->													
+													<div class="row">	
+														<div class="col-md-7" id="divRowAlumno">
+														<!-- inicio alumnos -->	
+													
+															<div class="row rowAlumno" data-id_mat="">
+															
+																<div class="panel">
+																	<div class="panel-body">
+																		<div class="panel-heading">
+																		<h5 class="panel-title"><span id="alumno"/></h5>
+																		<div class="heading-elements">
+																			<ul class="icons-list">
+															               		<li><a data-action="collapse"></a></li>
+															               		<li><a data-action="reload"></a></li>
+															               		<li><a data-action="close"></a></li>
+															               	</ul>
+															              	</div>
+																		</div>	
+																		<div class="panel-body panel_mes">
+																				<div class="col-xs-5 col-md-3 mt-5 mes">
+																							<button type="button" disabled class="btn bg-orange btn-rounded btn-sm btn-sige1"><i class="fa fa-square-o" position-left"></i> <mes></mes></button>
+																				</div>
+																				<div class="nodebenada alert alert-info alert-styled-left" style="display:none">El alumno tiene todas las mensualidades pagadas</div>
+																		</div>		
+																	</div>
+																</div>
+															</div>
+													
+													
+														<!-- fin alumnos -->
+														</div>
+													
+														<div class="col-md-5">	
+															<div class="panel panel-flat  bg-info-700" id="div-resumen" style="display:none">
+																	<div class="panel-heading"  >
+																		<h5 class="panel-title">RESUMEN DE MENSUALIDADES</h5>
+																		
+																	</div>
+															
+																	<div class="panel-body">
+																			<fieldset class="content-group">
+																				<form class="form-horizontal" id="frm-pagos-resumen">
+																					<input type="hidden" id="id" name="id"/>
+																					<input type="hidden" id="id_suc" name="id_suc"/>
+																					<input type="hidden" id="monto" name="monto"/>
+																					<input type="hidden" id="descuento_12" name="descuento_12"/>
+																					<input type="hidden" id="descuento" name="descuento"/>
+																					<input type="hidden" id="descuento_secretaria" name="descuento_secretaria"/>
+																					<input type="hidden" id="descuento_personalizado" name="descuento_personalizado"/>
+																					<div id="frm-pagos-resumen-mes">
+																					</div>
+																				</form>		
+																			</fieldset>
+																	</div>
+																	
+															</div>	
+															
+															<div class="panel panel-flat  bg-info-700" >
+																	<div class="panel-body">
+																			<fieldset class="content-group">
+																				<form class="form-horizontal" id="frm-pagos-resumen">
+																					<!-- 
+																					<div class="form-group" id="nro_recibo">
+																							<label class="control-label col-lg-8"><b><h4>NUMERO DE RECIBO</h4></b></label>
+																							<div class="col-lg-4">
+																								<span class="label label-success position-right"><h6 id="nro_rec"></h6></span>
+																							</div>
+																					</div>
+																					--->
+																					<div class="form-group">
+																							<label class="control-label col-lg-8"><b><h4>TOTAL A CANCELAR</h4></b></label>
+																							<div class="col-lg-4">
+																								<span class="label label-success position-right"><h6>S/.<resumen_total>0.00</resumen_total></h6></span>
+																							</div>
+																					</div>
+																					
+																					<div class="text-right">
+																							<button type="button" id="btnPagar" disabled class="btn btn-danger btn-xlg">Pagar <i class="icon-coins"></i></button>
+																					</div>
+																		
+																				</form>		
+																			</fieldset>
+																	</div>
+																	
+															</div>	
+																														
+														</div>
+															
+													</div>
+											<!-- FIN - SECCION PAGOS -->
+											</div>
+
+											<div class="tab-pane" id="tab_pagados">
+												
+											</div>
+											<div class="tab-pane" id="left-icon-tab3">
+												MUY PRONTO!!
+											</div>
+
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+</div>
+					
+
+
+<div id="div-detalle-pago-plantilla" style="display:none" >
+	<div class="form-group div-detalle-pago" >
+			<label class="control-label col-lg-8"><mensualidad_desc/></label>
+			<div class="col-lg-4">
+				<span class="label label-rounded position-right"><mensualidad/></span>
+			</div>
+	</div>
+</div>
+

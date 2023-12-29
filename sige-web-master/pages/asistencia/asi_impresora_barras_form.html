@@ -1,0 +1,75 @@
+<script type="text/javascript" src="pages/js/asi_impresora_barras.js"></script>
+
+<div class="panel panel-flat">
+	<div class="panel-heading">
+		<h5 class="panel-title">Configuraci&oacute;n de la impresora de c&oacute;digo de barras</h5>
+		<div class="heading-elements">
+			<ul class="icons-list">
+				<li><a data-action="collapse"></a></li>
+				<li><a data-action="reload"></a></li>
+				<li><a data-action="close"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel-body">
+
+		<form action="api/impresoraBarras" id="frm-impresora">
+			<input type="hidden" id="id" name="id" />
+			<input type="hidden" id="est" name="est" value="A" />
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-6">
+						<label>Tipo de codificaci&oacute;n</label>
+		                <input type="text" id="tipo" name="tipo" class="form-control input-sm" maxlength="20">
+					</div>
+					<div class="col-sm-6">
+						<label>Ancho del c&oacute;digo de barras</label>
+		                <input type="text" id="ancho" name="ancho" class="form-control input-sm" maxlength="4">
+					</div>
+					<div class="col-sm-6">
+						<label>Tama&nacute;o de la letra</label>
+		                <input type="text" id="tam_letra" name="tam_letra" class="form-control input-sm" maxlength="4">
+					</div>
+					<div class="col-sm-6">
+						<label>Margen izquierdo</label>
+		                <input type="text" id="mar_izq" name="mar_izq" class="form-control input-sm" maxlength="4">
+					</div>
+					<div class="col-sm-6">
+						<label>Margen derecho</label>
+		                <input type="text" id="mar_der" name="mar_der" class="form-control input-sm" maxlength="4">
+					</div>
+					<div class="col-sm-6">
+						<label>Margen superior</label>
+		                <input type="text" id="mar_sup" name="mar_sup" class="form-control input-sm" maxlength="4">
+					</div>
+					<div class="col-sm-6">
+						<label>Margen inferior</label>
+		                <input type="text" id="mar_inf" name="mar_inf" class="form-control input-sm" maxlength="4">
+					</div>
+					<div class="col-sm-6">
+						<label>Relleno de la celda del texto</label>
+		                <input type="text" id="texto_relleno" name="texto_relleno" class="form-control input-sm" maxlength="4">
+					</div>
+					<div class="col-sm-6">
+						<label>Relleno de la celda del c&oacute;digo de barras</label>
+		                <input type="text" id="barra_relleno" name="barra_relleno" class="form-control input-sm" maxlength="4">
+					</div>
+					
+					
+				</div>
+			</div>
+		
+		
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+				<button type="submit" class="btn btn-primary">Grabar</button>
+			</div>
+		
+		</form>
+		
+		
+		
+	</div>
+</div>
+

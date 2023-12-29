@@ -1,0 +1,3457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIGE - Sistema de gestión educativa</title>
+
+<link rel="icon" href="favicon.ico">
+
+<!-- Global stylesheets -->
+<link	href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+<link href="assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- /global stylesheets -->
+
+<!-- Core JS files -->
+<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/notifications/sweet_alert.min.js"></script>
+
+<!-- /core JS files -->
+
+<!-- Theme JS files -->
+
+<script type="text/javascript" src="assets/js/plugins/forms/validation/validate.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/visualization/d3/d3.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+
+<!-- 
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/core/main.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/daygrid/main.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/timegrid/main.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/list/main.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/interaction/main.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/core/locales/ar.js"></script>
+-->
+<script type="text/javascript"
+	src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+<script type="text/javascript"
+	src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+<script type="text/javascript"
+	src="assets/js/plugins/ui/moment/moment.min.js"></script>
+<script type="text/javascript"
+	src="assets/js/plugins/pickers/daterangepicker.js"></script>
+
+<!-- Theme JS files -->
+<script type="text/javascript"
+	src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
+<script type="text/javascript"
+	src="assets/js/plugins/forms/selects/select2.min.js"></script>
+
+<!--  A PARTIR DE 15 DE JUNIO SE PUSO RECONTRA LENTO
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyCjEGCHF5zTqr9JD-JDX4AUVGP1kXQPny4"></script>
+-->
+<script type="text/javascript"
+	src="assets/js/maps/google/lib/gmap3.min.js"></script>
+<script type="text/javascript"
+	src="assets/js/maps/google/lib/jquery.vmap.min.js"></script>
+
+<script type="text/javascript" src="assets/js/plugins/notifications/pnotify.min.js"></script>
+<script type="text/javascript" src="assets/js/core/app.js"></script>
+<script type="text/javascript" src="assets/js/pages/components_notifications_pnotify.js"></script>
+<script type="text/javascript" src="assets/js/pages/extension_blockui.js"></script>
+<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+<script type="text/javascript" src="assets/js/plugins/pickers/anytime.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.js"></script>
+<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/legacy.js"></script>
+<!-- /theme JS files -->
+
+<script type="text/javascript"
+	src="assets/js/core/libraries/jquery_ui/widgets.min.js"></script>
+
+<script type="text/javascript" src="assets/js/pages/dashboard.js"></script>
+<!-- /theme JS files -->
+
+<script src="assets/js/plugins/forms/styling/switch.min.js"></script>
+
+<!-- /theme full calendario-->
+<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/fullcalendar.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ui/fullcalendar/lang/es.js"></script>
+
+<script type="text/javascript" src="framework/lib/jquery.number.min.js"></script>
+<script type="text/javascript" src="site/js/constantes.js"></script>
+<script type="text/javascript" src="framework/framework.js?v=1.01"></script>
+<script type="text/javascript" src="site/js/dashboard.js?v=1.01"></script>
+
+
+<!-- linaa -->
+
+
+<!-- Theme JS files -->
+<!-- <script type="text/javascript" src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jasny_bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/extensions/cookie.js"></script>
+	
+	<script type="text/javascript" src="assets/js/pages/wizard_steps.js"></script>
+	<script type="text/javascript" src="assets/js/pages/form_checkboxes_radios.js"></script> -->
+
+<style>
+.btn-sige1 {
+	width: 100px !important;
+}
+
+.panel-flat>.panel-heading {
+	padding-bottom: 0px;
+}
+
+.input-xs {
+	height: 25px;
+	padding: 2px 5px;
+}
+
+.panel {
+	margin-bottom: 10px;
+}
+
+.page-header-default {
+	margin-bottom: 10px;
+}
+
+.form-group {
+	margin-bottom: 5px !important;
+}
+
+.heading-elements {
+	margin-top: -15px;
+}
+
+.AnyTime-win {
+	z-index: 9999 !important; /* has to be larger than 1050 */
+}
+
+.daterangepicker {
+	z-index: 9999 !important; /* has to be larger than 1050 */
+}
+
+.ui-autocomplete {
+	z-index: 9998 !important; /* has to be larger than 1050 */
+}
+
+.dataTable {
+	font-size: 11px;
+}
+
+#modal {
+	z-index: 1070;
+}
+
+#modal_full {
+	z-index: 1060 !important;
+}
+
+.sweet-alert {
+	z-index: 1080 !important;
+}
+
+.modal-xl {
+	width: 1200px !important;
+}
+
+.ui-draggable-handle {
+	cursor: move;
+}
+
+.panel-body {
+	padding: 20px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.input-sm {
+	height: 30px;
+	padding: 3px 7px;
+	font-size: 12px;
+	line-height: 1.6666667;
+	border-radius: 2px;
+}
+
+.error {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	display: block;
+	color: #f44336;
+	position: relative;
+	padding-left: 26px;
+}
+
+label {
+	margin-top: 5px;
+	margin-bottom: 1px;
+	font-weight: 400;
+}
+
+legend {
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.select2-selection--single {
+	height: 30px;
+}
+
+.form-control {
+	height: 30px;
+}
+
+.nav-tabs li.disabled a {
+	pointer-events: none;
+}
+
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group
+	{
+	height: 30px;
+}
+
+.modal-ssm {
+	width: 300px;
+}
+</style>
+<script type="text/javascript">
+	$
+			.extend(
+					$.fn.dataTable.defaults,
+					{
+						autoWidth : false,
+						columnDefs : [ {
+							orderable : false,
+							width : '100px'
+						} ],
+						dom : '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+						language : {
+							search : '<span>Filtro:</span> _INPUT_',
+							searchPlaceholder : 'Escribe el filtro...',
+							pageLength : 50,
+							lengthMenu : '<span id="_paginator">Muestra:</span> _MENU_',
+							//lengthMenu: '<a href="#" onclick="_print(this)" <i class="fa fa-print"></i></a>&nbsp;<span>Muestra:</span> _MENU_',
+							paginate : {
+								'first' : 'First',
+								'last' : 'Last',
+								'next' : '&rarr;',
+								'previous' : '&larr;'
+							}
+						},
+						drawCallback : function() {
+							$(this).find('tbody tr').slice(-3).find(
+									'.dropdown, .btn-group').addClass('dropup');
+						},
+						preDrawCallback : function() {
+							$(this).find('tbody tr').slice(-3).find(
+									'.dropdown, .btn-group').removeClass(
+									'dropup');
+						}
+					});
+
+	function _print(obj) {
+
+	}
+</script>
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse bg-white-ui">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="_dashboard.html"> <img
+				src="assets/images/img_ui/sige_color.png" class="img-responsive">
+			</a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"
+					class="border-boton-movil"><i
+						class="fa fa-plus ui-size ui-gris" aria-hidden="true"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle border-boton-movil"><i
+						class="fa fa-bars ui-size ui-gris" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i
+						class="fa fa-bars ui-size ui-gris" aria-hidden="true"></i></i></a></li>
+
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown"> <i class="fa fa-bell ui-size ui-gris"
+						aria-hidden="true"></i> <span
+						class="visible-xs-inline-block position-right">Git updates</span>
+						<span class="badge bg-blue-ui">9</span>
+				</a>
+
+					<div class="dropdown-menu dropdown-content">
+						<div class="dropdown-content-heading">
+							Notificaciones
+							<ul class="icons-list">
+								<li><a href="#"><i
+										class="fa fa-refresh ui-blue ui-size" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+
+						<ul class="media-list dropdown-content-body width-350">
+							<li class="media">
+								<div class="media-left">
+									<a href="#"
+										class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+										class="icon-git-pull-request"></i></a>
+								</div>
+
+								<div class="media-body">
+									Drop the IE <a href="#">specific hacks</a> for temporal inputs
+									<div class="media-annotation">4 minutes ago</div>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="media-left">
+									<a href="#"
+										class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i
+										class="icon-git-commit"></i></a>
+								</div>
+
+								<div class="media-body">
+									Add full font overrides for popovers and tooltips
+									<div class="media-annotation">36 minutes ago</div>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="media-left">
+									<a href="#"
+										class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i
+										class="icon-git-branch"></i></a>
+								</div>
+
+								<div class="media-body">
+									<a href="#">Chris Arney</a> created a new <span
+										class="text-semibold">Design</span> branch
+									<div class="media-annotation">2 hours ago</div>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="media-left">
+									<a href="#"
+										class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i
+										class="icon-git-merge"></i></a>
+								</div>
+
+								<div class="media-body">
+									<a href="#">Eugene Kopyov</a> merged <span
+										class="text-semibold">Master</span> and <span
+										class="text-semibold">Dev</span> branches
+									<div class="media-annotation">Dec 18, 18:36</div>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="media-left">
+									<a href="#"
+										class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+										class="icon-git-pull-request"></i></a>
+								</div>
+
+								<div class="media-body">
+									Have Carousel ignore keyboard events
+									<div class="media-annotation">Dec 12, 05:46</div>
+								</div>
+							</li>
+						</ul>
+
+						<div class="dropdown-content-footer">
+							<a href="#" data-popup="tooltip" title="All activity"><i
+								class="icon-menu display-block"></i></a>
+						</div>
+					</div></li>
+			</ul>
+
+			<p class="navbar-text">
+				<input type="text" style="display: none"
+					class="form-control input-xs ape-nombre" id="_alumno" name="alumno"
+					placeholder="apellidos y nombres del alumno" autocomplete="off">
+			</p>
+
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#">Regular link</a> <a
+					class="dropdown-item active" href="#">Active link</a> <a
+					class="dropdown-item" href="#">Another link</a>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="dropdown language-switch ">
+				<li class="dropdown language-switch border-combo"><a id="_link_anio"
+					class="dropdown-toggle" data-toggle="dropdown"> <i
+						class="fa fa-calendar-check-o position-left ui-blue ui-size"
+						aria-hidden="true"></i> <span id="_ID_ANIO" class="ui-gris ">2020</span>
+						<span id="_id_anio" style='display: none'>4</span> <i
+						class="fa fa-chevron-down ui-blue ml10 rightfloat"
+						aria-hidden="true"></i>
+				</a>
+
+					<ul class="dropdown-menu mt10" id="_anios">
+						<li><a onclick='_onclickAnio(this)' data-id='4'
+							class="deutsch"> <i
+								class="fa fa-calendar-check-o position-left" aria-hidden="true"></i>2020
+						</a></li>
+						<li><a onclick='_onclickAnio(this)' data-id='3'
+							class="deutsch"> <i
+								class="fa fa-calendar-check-o position-left" aria-hidden="true"></i>2019
+						</a></li>
+						<li><a onclick='_onclickAnio(this)' data-id='2'
+							class="deutsch"> <i
+								class="fa fa-calendar-check-o position-left" aria-hidden="true"></i>2018
+						</a></li>
+						<li><a onclick='_onclickAnio(this)' data-id='1'
+							class="deutsch"> <i
+								class="fa fa-calendar-check-o position-left" aria-hidden="true"></i>2017
+						</a></li>
+					</ul></li>
+				 
+
+				<li class="dropdown dropdown-user "><a class="dropdown-toggle"
+					data-toggle="dropdown"> <img
+						src="assets/images/placeholder.jpg" alt="" id="_foto"
+						class="img-perfil-bz"> <span class="name-id"
+						id="usuario.trabajador.ape_pat"
+						data-bean="usuario.trabajador.ape_pat"></span>, <span
+						class="name-id" id="usuario.trabajador.nom"
+						data-bean="usuario.trabajador.nom"></span> <span class="name-id"
+						style="display: none" id="_id_suc" data-bean="usuario.id_suc"></span>
+						<span class="name-id" style="display: none" id="_sucursal"
+						data-bean="usuario.sucursal.nom"></span> <i
+						class="fa fa-chevron-down ui-blue ml10 rightfloat mt10"
+						aria-hidden="true"></i>
+				</a>
+
+					<ul class="dropdown-menu dropdown-menu-right menuser">
+						<li><a href="#" id="link_profile"><i
+								class="fa fa-user-circle-o ui-size" aria-hidden="true"></i> Mi
+								perfil</a></li>
+						<li><a href="#"
+							onclick="_send('pages/seguridad/seg_cambio_clave.html','Actualizaci&oacute;n','Cambio de clave');"><i
+								class="fa fa-lock ui-size" aria-hidden="true"></i>Cambio de
+								clave</a></li>
+						<!-- 
+						<li><a href="#"><i class="icon-coins"></i> My balance</a></li>
+						 -->
+						<li><a href="#"><span
+								class="badge bg-teal-400 pull-right ">58</span> <i
+								class="fa fa-comments ui-size" aria-hidden="true"></i> Mensajes</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="fa fa-cog ui-size"
+								aria-hidden="true"></i> Configuraci&oacute;n</a></li>
+						<li><a href="#" id="logout"><i
+								class="fa fa-sign-in ui-size" aria-hidden="true"></i> Salir</a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main">
+				<div class="sidebar-content">
+
+					<!-- User menu -->
+					<!-- <div class="sidebar-user">
+						<div class="category-content">
+							<div class="media">
+								<a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-sm img-perfil-bz" alt=""></a>
+								<div class="media-body">
+									<span class="media-heading text-semibold texto-header-menu"><span data-bean="usuario.login"/></span>
+									<div class="text-size-mini text-muted texto-header-menu">
+										 <i class="fa fa-map-marker ui-white mr10" aria-hidden="true"></i>Huaraz
+									</div>
+								</div>
+
+								<div class="media-right media-middle">
+									<ul class="icons-list">
+										<li>
+											<a href="#"><i class="icon-cog3"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div> -->
+					<!-- /user menu -->
+
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+
+
+							<ul id="_menu"
+								class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+								<li class="navigation-header"><span>Main</span> <i
+									class="icon-menu" title="Main pages"></i></li>
+								<li class="liMenu"><a href="dashboard.html">
+								<i class="icon-home4"></i> <span>Inicio</span></a></li>
+
+								<li id="li_modulo_matricula" style="display: none"><a href="#"><i
+										class="icon-profile"></i><span>Matr&Iacute;cula</span></a>
+									<ul>
+										<li id="li_admision" style="display: none"><a href="#"><i
+												class="icon-drag-right"></i>Admisión</a>
+											<ul>
+												<li id="li_registro_familia" style="display: none"><a href="#"
+													onclick="_send('pages/alumno/alu_familiar_buscar.html','Registro de Familias','Lista')"><i
+														class="icon-users4"></i> Registro de Familia</a></li>
+												<li id="li_otrogamiento_vacante" style="display: none"><a href="#"><i class="icon-typewriter"></i>Otorgamiento de Vacante</a>
+													<ul>
+													<li id="li_inscripcion_eva" style="display: none"><a href="#"
+														onclick="_send('pages/admision/admi_busqueda_inscripcion.html','Inscripci&oacute;n a Evaluaciaci&oacute;n Vacante','Lista')"><i
+															class="icon-stack-text"></i>Inscripción</a></li>
+													<li id="li_evaluacion_psicologica" style="display: none"><a href="#"
+														onclick="_send('pages/admision/admi_busqueda_eva_psicologica.html','Evaluaci&oacute;n Psicol&oacute;gica','Lista')"><i
+															class="icon-magazine"></i>Evaluación Psicológica</a></li>
+													<li id="li_evaluacion_economica" style="display: none"><a href="#"
+														onclick=""><i
+															class="icon-cash2"></i>Evaluación Económica</a></li>
+													<li id="li_evaluacion_psicologica" style="display: none"><a href="#"
+														onclick=""><i
+															class="icon-cash2"></i>Evaluación Psicológica</a></li>
+													<li id="li_admi_resultados" style="display: none"><a href="#"
+														onclick="_send('pages/admision/admi_reporte_general.html','Reporte General','Lista')"><i
+															class="icon-file-spreadsheet"></i>Resultados</a></li>
+													<li id="li_constancia_vacante" style="display: none"><a href="#"
+														onclick=""><i
+															class="icon-file-openoffice"></i>Constancia de Vacante</a></li>
+													</ul>
+												</li>
+												<li id="li_admi_reportes" style="display: none"><a href="#"><i class="fa fa-file-text-o"></i>Reportes</a>
+													<ul>
+													<li id="li_numero_vacantes"><a href="#"
+													onclick="_send('pages/matricula/mat_consolidado.html','Número de Vacantes','Lista')"><i
+														class="icon-file-stats2"></i> Número de Vacantes</a></li>
+													<li id="li_inscritos_evaluacion"><a href="#"
+													onclick=""><i
+														class="icon-stack"></i>Inscritos por Evaluación</a></li>
+													</ul>
+												</li>
+												<li id="li_admision_conf" style="display: none"><a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span>Configuraci&oacute;n</span></a>
+													<ul>
+													<li id="li_tip_evaluacion"><a href="#"
+													onclick="_send('pages/notas/not_tip_eva.html','Tipos de Evaluación','Lista')"><i
+														class="fa fa-book"></i>Tipos Evaluacion</a></li>
+													<li id="li_evaluacion_vacante"><a href="#"
+													onclick="_send('pages/evaluacion/eva_evaluacion_vac.html','Configuracion de Evaluaciones Vacante','Lista')"><i
+														class="icon-stack-check"></i> Evaluación Vacante</a></li>
+													<li id="li_cronograma_reserva"><a href="#"
+													onclick="_send('pages/matricula/mat_cronograma_reserva.html','Cronograma de reservas','Lista')"><i
+														class="glyphicon glyphicon-calendar"></i>Cronograma de Reserva</a></li>
+													<li id="li_conf_evaluacion"><a href="#"
+													onclick=""><i
+														class="glyphicon glyphicon-calendar"></i>Configuracion de las Evaluaciones</a></li>
+													</ul>
+												</li>
+											</ul>
+											</li>
+									
+										<li id="li_matricula" style="display: none"><a href="#"><i class="icon-graduation"></i> <span>Matrícula</span></a>
+										<ul>
+											<li id="li_mat_reserva" style="display: none"><a href="#"
+													onclick="_send('pages/matricula/mat_reserva.html','Reserva Matricula','Buscar Alumno')"><i
+														class="fa fa-street-view"></i> Reserva de Matrícula</a></li>
+											<li id="li_registro_matricula" style="display: none"><a href="#"
+												onclick="_send('pages/matricula/mat_matricula_buscar.html','Matricula','Buscar Alumno')"><i
+													class="icon-reading"></i> Matrícula</a></li>
+											<li id="li_aula_sugerida" style="display: none"><a href="#"
+													onclick="_send('pages/matricula/mat_seccion_sugerida.html','Configuración','Aula sugerida',{tipo:'I'})"><i
+														class="icon-bubble-dots4"></i> Aula sugerida</a></li>
+											<li id="li_col_situacion_mat" style='display: none'><a
+													href="#"
+													onclick="_send('pages/academico/col_situacion_mat_form.html','Academico','Procesar situacion Final')"><i
+														class="icon-stamp"></i>Procesar Situaci&oacute;n final</a></li>
+											<li id="li_generacion_usr_alu" style='display: none'><a
+													href="#"
+													onclick="_send('pages/matricula/mat_generacion_usu_alu.html','Usuarios','Gneración Usuarios para los alumnos')"><i
+														class="icon-stamp"></i>Generar Usuarios para Alumnos</a></li>
+											<!-- <li id="li_cambio_local" style="display: none"><a href="#"
+												onclick=""><i
+												class="icon-city"></i> Cambio de local</a></li>-->
+											<li id="li_cambio_aula" style="display: none"><a href="#"
+												onclick="_send('pages/matricula/mat_solicitud_buscar.html','Cambio de Local','Solicitud')"><i
+												class="icon-office"></i> Cambio de Local</a></li>
+											<li id="li_condicion_eco" style="display: none"><a href="#"
+													onclick="_send('pages/matricula/mat_cond_eco_buscar.html','Condición Matrícula','Condición Matrícula')"><i
+														class="fa fa-book"></i>Condición Económica</a></li>											
+											<li id="li_matricula_reportes" style="display: none"><a href="#"><i
+												class="fa fa-file-text-o"></i>Reportes</a>
+												<ul>
+												<li id="li_reporte_reservas"><a href="#"
+													onclick="_send('pages/admision/col_reporte_reserva.html','Reporte de Reservas','Lista')"><i
+														class="fa fa-file-photo-o"></i>Reporte Reserva</a></li>
+												<li id="li_estudiantes_seccion"><a href="#"
+													onclick="_send('pages/matricula/mat_reporte_matriculados.html','Matricula','Reporte de matriculados')"><i class="icon-address-book"></i>Estudiantes por Sección</a></li>
+												<li id="li_no_matriculados"><a href="#"
+													onclick="_send('pages/matricula/mat_reporte_no_matriculados.html','Lista de No Matriculados','Reporte de No Matriculados')"><i class="icon-notebook"></i>Alumnos sin Matrícula</a></li>
+												<li id="li_datos_comunicacion"><a href="#"
+													onclick="_send('pages/matricula/mat_reporte_datos_comunicacion.html','Matricula','Lista Datos de Comunicacion')"><i class="icon-address-book"></i>Datos de Comunicación</a></li>
+												<li id="li_resumen_genero"><a href="#"
+													onclick=""><i class="icon-man-woman"></i>Resumen por Género</a></li>
+												<li id="li_contratos"><a href="#"
+													onclick="_send('pages/reportes/reporte_contratos.html','Reporte de contratos','Lista')"><i
+														class="fa fa-book"></i> Contratos</a></li>	
+												<li id="li_padres_codigo_barras" style="display: none"><a href="#"
+													onclick="_send('pages/alumno/alu_familiar_usuario.html','Generaci&oacute;n usuarios de padres','Por local')"><i
+														class="fa fa-barcode"></i> Usuarios de padres</a></li>
+												<li id="li_usuarios_alumnos" style="display: none"><a href="#"
+													onclick="_send('pages/matricula/mat_alumno_usuario.html','Reporte de Usuarios de los Alumnos','Por Nivel')"><i
+														class="fa fa-barcode"></i> Usuarios de alumnos</a></li>									
+												</ul>
+											</li>
+											<li id="li_matricula_conf" style="display: none"><a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span>Configuraci&oacute;n</span></a>
+													<ul>
+													<li id="li_cronograma_matricula"><a href="#"
+													onclick="_send('pages/matricula/mat_conf_fechas.html','Configuraci&oacute;n de fechas','De Matriacute;culas')">
+														<i class="icon-calendar52"></i> Cronograma de matriculas</a></li>
+ 													<li id="li_derechos_matricula"><a href="#"
+													onclick="_send('pages/matricula/mat_conf_cuota.html','Configuracion de Derechos de Matrícula','Lista')"><i
+														class="icon-coins"></i> Derechos de Matrícula</a></li>
+													<li id="li_monto_mensualidad"><a href="#"
+													onclick="_send('pages/matricula/mat_conf_mensualidad.html','Configuración de Montos de Mensualidad','Lista')"><i
+														class="icon-coins"></i> Montos de Mensualidad</a></li>																								
+													</ul>
+											</li>
+										</ul>
+										</li>
+										<li id="li_campus_virtual" style="display: none"><a href="#"><i class="icon-graduation"></i> <span>Campus Virtual</span></a>
+										<ul>
+											<li id="li_inscripciones" style="display: none"><a href="#"
+													onclick="_send('pages/campus_virtual/cv_reporte_inscritos.html','Reporte Inscritos Campus Virtual','Listado')"><i
+														class="fa fa-street-view"></i>Inscripciones</a></li>
+											<li id="li_asignar_grupos" style="display: none"><a href="#"
+													onclick="_send('pages/campus_virtual/cv_asignar_grupos.html','Asignar Grupos por Grado','Asignación')"><i
+														class="fa fa-street-view"></i>Asignar Grupos</a></li>										
+										</ul>
+										</li>
+										<li id="li_traslados" style="display: none"><a href="#"><i class="icon-drag-left"></i> <span>Traslados</span></a>
+										<ul>
+											<li id="li_registro_traslados" style="display: none"><a href="#"
+												onclick="_send('pages/matricula/mat_traslado_listar.html','Traslados','Lista de Traslados')"><i
+												class="fa fa-file-picture-o"></i> Traslados</a></li>
+											<li id="li_reporte_traslados" style="display: none"><a href="#"><i
+												class="fa fa-file-text-o"></i>Reportes</a></li>
+											<li id="li_traslados_conf" style="display: none"><a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span>Configuraci&oacute;n</span></a>
+													<ul>
+													<li id="li_costo_traslado"><a href="#"
+													onclick="_send('pages/matricula/mat_conf_cuota.html','Configuracion de Derechos de Matrícula','Lista')"><i
+														class="icon-coins"></i>Costos de Traslado</a></li>
+													<li id="li_nuevo_colegio"><a href="#"
+													onclick="_send('pages/configuracion/col_colegio.html','Configuración Colegios','Lista')"><i
+														class="icon-library2"></i>Nuevo Colegio</a></li>											
+													</ul>
+											</li>		
+										</ul>
+										</li>
+								</ul>
+								</li>							
+								<li id="li_tesoreria"  style="display: none">
+									<a href="#"><i class="icon-coins"></i> <span>Tesorer&iacute;a</span></a>
+									<ul>
+										<li id="li_caja" style="display: none"><a href="#"><i class="icon-coins"></i><span>Caja</span></a>
+											<ul>
+											<li id="li_ingresos" style="display: none"><a href="#"><i class="icon-coins"></i><span>Ingresos</span></a>
+											<ul>
+												<li id="li_mensualidades"><a href="#"
+													onclick="_send('pages/tesoreria/fac_pagos_buscar_alumno.html','Pago Mensualidad','Buscar Alumno')"><i
+													class="fa fa-money"></i>Mensualidades</a></li>
+												<li id="li_movimiento_ingreso"><a href="#"
+													onclick="_send('pages/tesoreria/fac_movimiento_buscar_alumno.html','Ingresos a caja','Buscar Alumno',{tipo:'I'})"><i
+														class="fa fa-arrow-up"></i> Ingresos</a></li>
+											</ul>
+											</li>
+											<li id="li_salidas" style="display: none"><a href="#"><i class="icon-coins"></i><span>Salidas</span></a>
+											<ul>
+											<li id="li_movimiento_salida"><a href="#"
+													onclick="_send('pages/tesoreria/fac_movimiento_salida.html','Salidas de caja','Buscar movimientos',{tipo:'S'})"><i
+														class="fa fa-arrow-down"></i> Salida de Dinero</a></li>
+											</ul>
+											</li>
+											<li id="li_caja_reportes" style="display: none"><a href="#"><i class="fa fa-file-text-o"></i><span>Reportes</span></a>
+											<ul>
+												<li id="li_tesoreria_reportes_caja"><a href="#"
+													onclick="_send('pages/tesoreria/fac_reporte_caja.html','Reporte de caja','Buscar por dia')"><i
+														class="fa fa-list"></i> Reporte de caja</a></li>
+											</ul>
+											</li>
+											<li id="li_caja_conf" style="display: none"><a href="#"><i
+												class="glyphicon glyphicon-wrench"></i>Configuraci&oacute;n</a>
+												<ul>
+												<li id="li_conf_recibos"><a href="#"
+													onclick="_send('pages/tesoreria/fac_conf_recibo.html','Configuracion Recibos','Lista')"><i
+														class="icon-stack4"></i> Recibos</a></li>
+												<li id="li_concepto_pago"><a href="#"
+													onclick="_send('pages/tesoreria/fac_concepto.html','Concepto de pagos','Lista')"><i
+														class="fa fa-cc"></i> Concepto de pago</a></li>
+												<li id="li_alumno_descuento"><a href="#"
+													onclick="_send('pages/tesoreria/fac_alumno_descuento.html','Descuentos por alumno','Lista de alumnos')"><i
+													class="icon-diff-removed"></i> Descuentos por alumno</a></li>
+												</ul>
+											</li>
+											</ul>
+										<li id="li_tarifa_emergencia" style="display: none"><a href="#"><i class="icon-coins"></i><span>Tarifas de Enegencia</span></a>
+											<ul>
+											<li id="li_conf_tarifa_emergencia"><a href="#"
+													onclick="_send('pages/matricula/mat_tarifas_emergencia.html','Configuración de Tarifas de Emergencia','Lista')"><i
+														class="icon-coins"></i>Configuración</a></li>
+											<li id="li_pago_visa"><a href="#" onclick="_send('pages/pagos_visa/pagos_visa.html','Pagos','Pagos')"><i class="fa fa-list"></i> Pagos Visa</a></li>
+											</ul>
+										</li>
+										<li id="li_nota_credito" style="display: none"><a href="#"><i class="icon-certificate"></i><span>Notas de Crédito</span></a>
+											<ul>
+											<li id="li_registro_nota_credito"><a href="#" onclick="_send('pages/tesoreria/fac_nota_credito.html','Facturaci&oacute;n electr&oacute;nica','Nota de crédito')"><i
+													class="icon-certificate"></i> Nota de cr&eacute;dito</a></li>
+											<li id="li_nota_credito_rep"><a href="#"><i class="fa fa-file-text-o"></i><span>Reporte</span></a>
+												<ul>
+												<li id="li_reporte_nota_credito"><a href="#" onclick="_send('pages/tesoreria/fac_reporte_nota_credito.html','Reporte de Notas de Cr&eacute;dito','Listado')"><i class="icon-stack"></i><span>Notas de Cr&eacute;dito</span></a></li>
+												</ul>
+											</li>
+											</ul>
+										</li>
+										<li id="li_tesoreria_banco" style="display: none"><a href="#"><i class="fa fa-credit-card-alt"></i><span>Bancos</span></a>
+											<ul>
+												<li id="li_banco_exp" style="display: none"><a href="#"
+													onclick="_send('pages/tesoreria/fac_banco_exp.html','Bancos','Generaci&oacute;n de archivos')"><i
+														class="icon-certificate"></i> Generaci&oacute;n de archivos</a></li>
+												<li id="li_banco_carga" style="display: none"><a href="#" onclick="_send('pages/tesoreria/fac_banco_pagos.html','Bancos','Cargar de archivos del banco')">
+													<i class="fa fa-cloud-upload"></i> Carga de archivos de pagos</a></li>
+												<li id="li_banco_reporte" style="display: none"><a href="#" onclick="_send('pages/tesoreria/fac_banco_pagos.html','Bancos','Cargar de archivos del banco')">
+													<i class="fa fa-file-text-o"></i>Reportes</a>
+													<ul>
+														<li id="li_teso_ban_ingresos"><a href="#"><i class="icon-cash3"></i><span>Ingresos</span></a></li>
+														<li id="li_tesoreria_reportes_banco"><a href="#"
+															onclick="_send('pages/tesoreria/fac_reporte_banco.html','Reporte de pagos por banco','Buscar por fecha')"><i
+															class="fa fa-list"></i> Reporte de pagos banco</a></li>
+													</ul>
+												</li>
+												<li id="li_banco_conf" style="display: none"><a href="#"><i
+													class="glyphicon glyphicon-wrench"></i>Configuraci&oacute;n</a>
+													<ul>
+													<li id="li_conf_banco"><a href="#"
+													onclick="_send('pages/tesoreria/fac_banco.html','Bancos','Lista')"><i
+														class="fa fa-bank"></i> Bancos</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li id="li_teso_admin_electronica" style="display: none"><a href="#"><i class="icon-sphere3"></i><span>Administraci&oacute;n de Docuemntos Electr&oacute;nicos</span></a>
+											<ul>	
+											<li id="li_envio_sunat"><a href="#"><i class="icon-file-upload"></i>Env&iacute;o a la SUNAT</a></li>
+											<li id="li_comunicacion_baja"><a href="#" onclick="_send('pages/tesoreria/fac_comunicacion_baja.html','Facturaci&oacute;n electr&oacute;nica','Seleccionar documento para dar de baja')"><i
+													class="icon-sort-time-desc"></i> Comunicaci&oacute;n de baja</a></li>
+											<li id="li_teso_elect_reportes"><a href="#"><i class="fa fa-file-text-o"></i>Reportes</a>
+												<ul>
+												<li id="li_resumen_diario">
+													<a href="#" onclick="_send('pages/tesoreria/fac_envia_resumen_diario.html','Facturaci&oacute;n electr&oacute;nica','Envia resumen diario de boletas')"><i
+													class="icon-file-presentation"></i> Resumen diario</a></li>
+												<li id="li_tesoreria_reportes_factura_electronica"><a
+													href="#"
+													onclick="_send('pages/tesoreria/fac_reporte_factura_electronica.html','Reporte de facturación electrónica','Buscar por fecha')"><i
+														class="fa fa-list"></i>Facturación Electrónica</a></li>
+												</ul>
+											</li>
+											</ul>
+										</li>
+										<li id="li_cartera_morosa" style="display: none"><a href="#"><i class="icon-wallet"></i><span>Cartera Morosa</span></a>
+											<ul>
+											<li id="li_consulta_deudas"><a href="#" onclick=""><i
+													class="icon-newspaper2"></i>Consulta de deudas</a></li>
+											<li id="li_mensualidades_aula"><a href="#"
+													onclick="_send('pages/tesoreria/fac_reporte_pagos.html','Control de pago de Pensiones','Lista')"><i
+														class="icon-list"></i> Reporte Mensualidades por Aula</a></li>
+											<li id="li_reporte_infocorp"><a href="#"
+													onclick="_send('pages/tesoreria/fac_reporte_infocorp.html','Pagos Infocorp','Lista')"><i
+														class="icon-printer4"></i> Reporte Infocorp</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+
+								<li id="li_academico" style="display: none">
+									<a href="#"><i class="icon-graduation2"></i> <span>Académico</span></a>
+									<ul>
+										<li id="li_planificacion" style="display: none"><a href="#"><i class="icon-lan2"></i>Planificaci&oacute;n</a>
+											<ul>
+											<li id="li_subtema_grado" style="display: none"><a href="#"
+													onclick="_send('pages/academico/col_curso_subtema.html','Configuración Curso Subtema','Lista de Subtemas por Cursos')"><i
+														class="fa fa-book"></i>Subtemas por Grado</a></li>
+											<li id="li_desempenios" style="display: none"><a href="#"
+													onclick="_send('pages/academico/col_subtema_capacidad.html','Configuración Capacidad Subtema','Relación Capacidad-Subtema')"><i
+														class="fa fa-book"></i>Desempe&ntilde;os</a></li>
+											<li id="li_unidades" style="display: none"><a href="#"
+													onclick="_send('pages/academico/col_curso_unidad.html','Unidad','Lista')"><i
+														class="fa fa-book"></i>Unidades</a></li>
+											<li id="li_sesiones" style="display: none"><a href="#"
+													onclick="_send('pages/academico/col_unidad_sesion.html','Curricula','Sessiones')"><i
+														class="fa fa-book"></i>Sesiones</a></li>
+											<li id="li_planificacion_reportes" style="display: none"><a href="#"><i
+												class="fa fa-file-text-o"></i>Reportes</a>
+												<ul>
+												<li id="li_reporte_temario_general" style="display: none"><a href="#" onclick="_send('pages/academico/col_reporte_temario_general.html','Reporte','Temario general')"><i class="fa fa-list-alt"></i>Temario General</a></li>
+												<li id="li_reporte_capacidad" style="display: none"><a href="#"
+													onclick="_send('pages/academico/col_reporte_capacidad.html','Reporte Capacidad','Lista')"><i
+														class="fa fa-list-alt"></i>Capacidades</a></li>
+												<li id="li_reporte_unidades" style="display: none"><a href="#" onclick="_send('pages/academico/col_reporte_unidad.html','Reporte','Reporte Unidades')"><i class="fa fa-list-alt"></i>Unidades</a></li>
+												<li id="li_reporte_unidades_docente" style="display: none"><a href="#" onclick="_send('pages/academico/col_reporte_unidad_docente.html','Reporte','Unidades por docente')"><i class="fa fa-list-alt"></i>Unidades-Docente</a></li>
+												<li id="li_reporte_programacion_anual" style="display: none"><a
+													href="#"
+													onclick="_send('pages/academico/col_programacion_anual.html','Reporte','Programación anual')"><i
+														class="fa fa-columns"></i>Programaci&oacute;n Anual</a></li>
+												</ul>
+											</li>
+											<li id="li_planificacion_conf" style="display: none"><a href="#"><i
+												class="glyphicon glyphicon-wrench"></i>Configuraciones</a>
+												<ul>
+												<li id="li_conf_temas_subtemas"><a href="#"
+													onclick="_send('pages/catalogos/cat_curso.html','Configuracion Cursos','Lista')"><i
+														class="icon-list-unordered"></i>Temas y Subtemas</a></li>
+												<li id="li_conf_competencias_capacidades"><a href="#"
+													onclick="_send('pages/academico/col_competencia.html','Configuración Competencia','Lista')"><i
+														class=" icon-brain"></i>Competencias y Capacidades</a></li>
+												<li id="li_area_coordinador"><a href="#"
+													onclick="_send('pages/academico/col_area_coordinador.html','Coordinadores por &aacute;rea','Lista')"><i
+														class="icon-users4"></i>Coordinadores por &aacute;rea</a></li>
+												<li id="li_curso_coordinador"><a href="#"
+													onclick="_send('pages/academico/col_curso_coordinador.html','Coordinadores por Curso','Lista')"><i
+														class="icon-users4"></i>Coordinadores por Curso</a></li>
+												</ul>
+											</li>
+											</ul>
+										</li>
+										<li id="li_evaluacion" style="display: none"><a href="#"><i class="icon-file-check"></i>Evaluaci&oacute;n</a>
+											<ul>
+											<li id="li_semana_sesiones" style="display: none"><a href="#"
+													onclick="_send('pages/academico/col_curso_horario_ses.html','Vinculaci&oacute;n de Sesiones por semana','Vinculaci&oacute;n de Sesiones por semana')"><i
+														class="icon-calendar2"></i>Sesiones por Semana</a></li>
+											<li id="li_ingreso_notas" style="display: none"><a href="#"
+													onclick="_send('pages/notas/not_nota.html','Ingreso de Notas','Lista de Alumnos')"><i
+														class=" icon-pen6"></i>Ingreso Notas</a></li>
+											<li id="li_alumnos_libreta" style="display: none"><a href="#"
+											onclick="_send('pages/alumno/alu_libreta.html','Alumno','Libreta de notas')"><i
+												class="fa fa-columns"></i> Libreta de notas</a></li>
+											<li id="li_nota_traslados" style="display: none;"><a
+													href="#"
+													onclick="_send('pages/notas/not_alumno_traslado.html','Ingreso de notas','Alumnos por traslado',{tipo:'I'})"><i
+														class="icon-quill4"></i>Ingreso de Notas de alumnos traslados</a></li>
+											<li id="li_evaluacion_reportes" style="display: none"><a href="#"><i
+												class="fa fa-file-text-o"></i>Reportes</a>
+												<ul>
+												<li id="li_reporte_nota_curso" style="display: none"><a href="#"
+													onclick="_send('pages/notas/not_reporte_nota_aula.html','Reporte','Reporte Notas por Aula')"><i
+														class="fa fa-book"></i>Notas por Curso</a></li>
+												<li id="li_reporte_nota_aula" style="display: none"><a href="#"
+													onclick="_send('pages/notas/not_reporte_nota_curso.html','Reporte','Reporte Notas por curso')"><i
+														class="fa fa-book"></i>Notas por Aula</a></li>
+												<li id="li_reporte_nota_area" style="display: none"><a href="#"
+													onclick="_send('pages/notas/not_reporte_nota_area.html','Reporte','Reporte Notas por &Aacute;rea')"><i
+														class="fa fa-book"></i>Notas por &Aacute;rea</a></li>
+												<li id="li_reporte_consolidado_docente" style="display: none"><a href="#"
+													onclick="_send('pages/notas/reporte_notas.html','Reporte Notas','Lista')"><i
+														class="fa fa-book"></i>Consolidado por Docente</a></li>
+												<li id="li_reporte_situacion_final" style="display: none"><a
+													href="#"
+													onclick="_send('pages/academico/col_reporte_situacion_final.html','Reporte','Reporte Situacion Final')"><i
+														class="fa fa-book"></i>Situacion Final</a></li>
+												<li id="li_reporte_entrega_lib" style="display: none"><a href="#"
+													onclick="_send('pages/notas/not_seguimiento_reporte.html','Reporte','Entrega de libretas')"><i
+														class="fa fa-book"></i>Entrega de libretas</a></li>
+												<li id="li_registros_auxiliares" style="display: none"><a href="#"
+													onclick="_registrosAuxiliares()" target="_blank"><i
+														class="fa fa-book"></i>Registros Auxiliares</a></li>
+												</ul>
+											</li>
+											<li id="li_evaluacion_configuracion" style="display: none"><a href="#"><i
+												class="glyphicon glyphicon-wrench"></i>Configuraci&oacute;n</a>
+												<ul>
+												<li id="li_exoneraciones"><a href="#"
+													onclick="_send('pages/notas/not_curso_exoneracion.html','Registro de exoneraciones por alumno','Exoneraciones de cursos')"><i
+														class="icon-minus-circle2"></i>Exoneraciones</a></li>
+												<li id="li_extensión_ingreso_notas"><a href="#"
+													onclick="_send('pages/academico/col_permiso_docente.html','Permiso Docente','Lista')"><i
+														class="icon-calendar52"></i>Extensión de Ingreso de Notas</a></li>
+												</ul>
+											</li>
+											</ul>
+										</li>
+										<li id="li_asistencia" data-perfil="1" style="display: none">
+										<a href="#"><i class="glyphicon-dashboard"></i> <span>Asistencia</span></a>
+										<ul>
+											<li id="li_asistencia_codigo_barras" style="display: none"><a href="#"
+												onclick="_send('pages/asistencia/asi_generacion_barras.html','Generaci&oacute;n c&oacute;digo de barras','Buscar Seccion')"><i
+													class="fa fa-barcode"></i> Codigo de barras seccion</a></li>
+											<li id="li_asistencia_codigo_barras_seccion" style="display: none"><a href="#"
+												onclick="_send('pages/asistencia/asi_gen_alumno.html','Generaci&oacute;n c&oacute;digo de barras','Buscar alumno')"><i
+													class="fa fa-barcode"></i> Codigo de barras alumnos</a></li>
+											<li id="li_asistencia_procesar" style="display: none"><a href="#"
+												onclick="_send('pages/asistencia/asi_procesar_barras.html','Leer c&oacute;digo de barras','Subir archivo')"><i
+													class="fa fa-cloud-upload"></i> Leer c&oacute;digo de barras</a></li>
+											<li id="li_asistencia_reportes" style="display: none"><a href="#"><i
+													class="fa fa-list"></i>Reportes</a>
+												<ul>
+													<li id="li_asistencia_diaria" style="display: none"><a href="#"
+														onclick="_send('pages/asistencia/asi_reporte_asistencia.html','Asistencia diaria','Consultar')"><i
+															class="icon-file-spreadsheet mr-3 icon-2x"></i> Asistencia diaria</a></li>
+													<li id="li_asistencia_estadistica" style="display: none"><a href="#"
+														onclick="_send('pages/asistencia/asi_asistencia_estadistica.html','Estad&iacute;stica de Asistencia','Consultar')"><i
+															class="icon-file-stats mr-3 icon-2x"></i>Estad&iacute;sticas</a></li>
+													<li id="li_asistencia_ranqueo" style="display: none"><a href="#"
+														onclick="_send('pages/asistencia/asi_asistencia_ranqueo.html','Ranqueo Asistencia','Consultar')"><i
+															class="icon-printer4 mr-3 icon-2x"></i>Ranqueo Asistencia</a></li>
+													<li id="li_asistencia_educando" style="display: none"><a href="#"
+														onclick="_send('pages/asistencia/asi_asistencia_educando.html','Asistencia por Alumno','Consultar')"><i
+															class="icon-person mr-3 icon-2x"></i>Asistencia por Alumno</a></li>
+													<li id="li_registro_asistencia_mensual" style="display: none"><a href="#"
+													onclick="_send('pages/asistencia/asi_reporte_asistencia_mensual.html','Registros Mensual de Asistencia','Registro Mensual Asistencia')"><i
+														class="fa fa-book"></i>Asistencia Mensual</a></li>
+												</ul>
+											</li>
+											<li id="li_asistencia_conf" style="display: none"><a href="#"><i
+													class="glyphicon glyphicon-wrench"></i>Configuraci&oacute;n</a>
+												<ul>
+													<li><a href="#"
+														onclick="_send('pages/asistencia/asi_grado_horario.html','Horario de grados','Buscar')"><i
+															class="fa fa-calendar"></i> Horario de grados</a></li>
+													<li><a href="#"
+														onclick="_send('pages/asistencia/asi_impresora_barras_form.html','C&oacute;digo de barras','Actualizar')"><i
+															class="fa fa-print"></i> C&oacute;digo de barras</a></li>
+												</ul>
+											</li>
+										</ul>
+										</li>
+										<li id="li_conductual"  style="display: none">
+										<a href="#"><i class="icon-person"></i> <span>Conductual</span></a>
+										<ul>
+											<li id="li_nota_comportamiento" style="display: none"><a href="#"
+													onclick="_send('pages/notas/not_comportamiento.html','Ingreso de Notas de Comportamiento','Lista de Alumnos')"><i
+														class="fa fa-book"></i>Notas Comportamiento</a></li>
+											<li id="li_condicion_cond" style="display: none"><a href="#"
+													onclick="_send('pages/academico/col_reporte_conductual.html','Reporte Conductual','Reporte Conductual')"><i
+														class="fa fa-book"></i>Observaciones Conductuales</a></li>
+											<li id="li_busqueda_incidencia" style="display: none"><a href="#"
+													onclick="_send('pages/conductual/con_busqueda_incidencia.html','Busqueda Incidencia','Busqueda Incidencia')"><i
+														class="fa fa-book"></i>Incidencias</a></li>
+											<li id="li_conductual_reportes" style="display: none"><a href="#"><i
+													class="glyphicon glyphicon-wrench"></i>Reportes</a>
+												<ul>	
+												<li id="li_reporte_notas_com" style="display: none"><a href="#"
+													onclick="_send('pages/notas/reporte_notas_com.html','Reporte Notas Comportamiento','Lista')"><i
+														class="fa fa-book"></i>Reporte Notas Comportamiento</a></li>
+												</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+									</li>
+									<li id="li_administracion_ie" style="display: none">
+									<a href="#"><i class="icon-city"></i> <span>Administración IE</span></a>
+									<ul>	
+										<li id="li_seguridad" data-perfil="1" style="display: none">
+											<a href="#"><i class="icon-stack2"></i> <span>Seguridad</span></a>
+											<ul>
+												<li><a href="#"
+													onclick="_send('pages/seguridad/seg_perfil.html','Configuración Perfil','Lista')"><i
+														class="fa fa-book"></i> Perfil</a></li>
+												<li><a href="#"
+													onclick="_send('pages/seguridad/seg_usuario.html','Configuración Usuario','Lista')"><i
+														class="fa fa-book"></i> Usuario</a></li>
+												<li><a href="#"
+													onclick="_send('pages/seguridad/seg_rol.html','Configuración Rol','Rol')"><i
+														class="fa fa-book"></i> Rol</a></li>
+												<li><a href="#"
+													onclick="_send('pages/seguridad/seg_usuario_rol.html','Configuración Usuario Rol','Usuario Rol')"><i
+														class="fa fa-book"></i> Usuario Rol</a></li>
+												<li><a href="#"
+													onclick="_send('pages/seguridad/seg_rol_opcion.html','Configuración Roles y permisos','Rol y sus permisos')"><i
+														class="fa fa-book"></i> Rol y sus permisos</a></li>
+												<li><a href="#"
+													onclick="_send('pages/seguridad/seg_opcion.html','Seguridad','Opciones')"><i
+														class="fa fa-book"></i> Opciones</a></li>
+												<li><a href="#"
+													onclick="_send('pages/seguridad/seg_bloqueos.html','Seguridad','Bloqueos/Desbloqueos de usuarios')"><i
+														class="icon-blocked"></i> Bloqueos</a></li>
+											</ul>
+										</li>										
+										<li id="li_administracion_configuracion"><a href="#"><i
+												class="glyphicon glyphicon-wrench"></i>Configuraciones</a>
+											<ul>
+											<li id="li_configuracion_general"><a href="#"><i
+												class="icon-cog2"></i>Configuraciones Generales</a>
+											<ul>
+												<li id="li_nivel"><a href="#"
+													onclick="_send('pages/catalogos/cat_nivel.html','Configuracion Niveles','Lista')"><i
+														class="fa fa-th-list"></i>Niveles</a></li>
+												<li id="li_grado"><a href="#"
+													onclick="_send('pages/catalogos/cat_grad.html','Configuracion Grados','Lista')"><i
+														class="fa fa-th-list"></i> Grados</a></li>
+												<li id="li_areas"><a href="#"
+													onclick="_send('pages/catalogos/cat_area.html','Configuracion Áreas','Lista')"><i
+														class="fa fa-book"></i> Áreas</a></li>
+												<li id="li_cursos"><a href="#"
+													onclick="_send('pages/catalogos/cat_curso.html','Configuracion Cursos','Lista')"><i
+														class="fa fa-book"></i> Cursos</a></li>
+												<li id="li_periodo_academico"><a href="#"
+													onclick="_send('pages/catalogos/cat_periodo_aca.html','Configuracion Periodo Académico','Lista')"><i
+														class="fa fa-th-list"></i>Tipos Periodo</a></li>	
+												<li id="li_academico_per_aca_nivel"><a href="#"
+													onclick="_send('pages/catalogos/cat_per_aca_nivel.html','Configuracion Periodo por Nivel','Lista')"><i
+														class="fa fa-th-list"></i> Periodos por nivel</a></li>
+											</ul>
+											</li>
+											<li id="li_configuracion_anuales"><a href="#"><i
+												class="icon-cogs"></i>Configuraciones Anuales</a>
+											<ul>
+												<li id="li_anio"><a href="#"
+													onclick="_send('pages/academico/col_anio.html','Configuración Año Académico','Lista')"><i
+														class="fa fa-th-list"></i> Año Escolar</a></li>	
+												<li id="li_periodo"><a href="#"
+													onclick="_send('pages/academico/per_periodo.html','Periodo','Lista')"><i
+														class="fa fa-th-list"></i>Periodos Academicos</a></li>																					
+												<li id="li_periodo_unidad"><a href="#"
+													onclick="_send('pages/academico/col_per_uni.html','Unidades por Periodo','Lista')"><i
+														class="fa fa-th-list"></i>Unidades por Periodo</a></li>
+												<li id="li_area_anio"><a href="#"
+													onclick="_send('pages/academico/col_area_anio.html','Configuración Área por Nivel','Lista')"><i
+														class="fa fa-th-list"></i>Áreas por Año</a></li>
+												<li id="li_curso_anio"><a href="#"
+													onclick="_send('pages/academico/col_curso_anio.html','Configuración Curso por Grado','Lista')"><i
+														class="icon-bookmark"></i>Cursos por Año</a></li>
+												<li id="li_curso_anio"><a href="#"
+													onclick="_send('pages/academico/col_aula.html','Configuración de Aulas','Lista')"><i
+														class="icon-office"></i>Aulas</a></li>		
+												<li id="li_aula_especial"><a href="#"
+													onclick="_send('pages/academico/col_aula_especial.html','Salon especial','Lista')"><i
+														class="icon-library2"></i> Salon especial</a></li>
+												<li id="li_docentes" ><a href="#"
+													onclick="_send('pages/academico/col_curso_aula.html','Curso Profesor','Lista')"><i
+														class=" icon-reading"></i>Docentes</a></li>
+												<li id="li_tutores"><a href="#"
+													onclick="_send('pages/academico/col_tutor_aula.html','Tutor Aula','Lista')"><i
+														class="icon-user-tie"></i>Tutores</a></li>												
+												<li id="li_horario_aula"><a href="#"
+													onclick="_send('pages/academico/col_curso_horario.html','Curso Horario','Lista')"><i
+														class="icon-calendar3"></i>Horarios por Aula</a></li>
+											</ul>
+											</li>
+											<li id="li_calendario"><a href="#"><i
+												class="fa fa-calendar"></i>Calendario</a>
+											<ul>
+												<li><a href="#"
+													onclick="_send('pages/configuracion/col_conf_anio_escolar.html','Configuración del Año Escolar','Número de Semanas')"><i
+														class="fa fa-calendar-check-o"></i>Número de Semanas del Año Escolar</a></li>
+												<li><a href="#"
+													onclick="_send('pages/configuracion/col_conf_semanas.html','Configuración de Semanas','Lista de Semanas')"><i
+														class="fa fa-calendar-check-o"></i>Configuración de Semanas</a></li>
+												<li><a href="#"
+													onclick="_send('pages/academico/aca_feriado.html','Calendario','Lista de feriados')"><i
+														class="fa fa-calendar-check-o"></i> Feriados</a></li>
+												<li><a href="#"
+													onclick="_send('pages/academico/aca_calendario_clases.html','Calendario','Habilitacion de sab y dom')"><i
+														class="fa fa-calendar-plus-o"></i> Habilitacion de sab y dom</a></li>
+												<li><a href="#"
+													onclick="_send('pages/notas/not_cronograma_libreta.html','Calendario','Entrega de Libretas')"><i
+														class="fa fa-calendar-plus-o"></i> Entrega de Libretas</a></li>
+											</ul>
+											</li>
+											<li id="li_procedimientos_generales"><a href="#"><i
+												class="fa fa-calendar"></i>Procedmientos Generales</a>
+											<ul>
+												<li><a href="#"
+													onclick="_crearGruposClassroom()"><i
+														class="fa fa-calendar-check-o"></i>Crear Grupos en Classroom</a></li>
+												<li><a href="#"
+													onclick="_actualizarIdGoogle()"><i
+														class="fa fa-calendar-check-o"></i>Actualizar Identidicador Google por Alumno</a></li>
+												<li><a href="#"
+													onclick="_enrolFull()"><i
+														class="fa fa-calendar-check-o"></i>Enrolar clases Clasrrom</a></li>
+											</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+								</li>
+								<li id="li_rrhh" data-perfil="1" style="display: none"><a href="#">
+									<i class="icon-users4"></i> <span>Recursos Humanos</span></a>
+									<ul>
+										<li> 
+											<a href="#" onclick="_send('pages/rrhh/ges_trabajador/lista.html','Trabajador','Lista')"><i class="icon-trophy4"></i> Trabajadores</a></li>
+										<!-- 
+										<li>
+											<a href="#" onclick="_send('pages/configuracion/col_colegio.html','Configuración Colegios','Lista')"><i class="icon-library2"></i> Creación Colegios</a></li>
+										<li>
+											<a href="#" onclick="_send('pages/catalogos/cat_cond_alumno.html','Condición Alumno','Lista')"><i class="icon-library2"></i> Condición Alumno</a></li>
+										 -->
+									</ul>
+								</li>
+								<li id="li_nota" data-perfil="1" style="display: none"><a
+									href="#"><i class="icon-dropbox"></i>Registro Notas</a></li>
+								<li id="li_agenda" data-perfil="1" style="display: none"><a
+									href="#"><i class="icon-dropbox"></i>Agenda</a></li>
+								
+
+								<!-- <li id="li_padres" data-perfil="1" style="display: none">
+									<a href="#"><i class="fa fa-group"></i> <span>Familias</span></a>
+									<ul>
+										
+										<li id="li_padres_buscar"><a href="#"
+											onclick="_send('pages/alumno/alu_familiar_buscar.html','Registro de nueva familia','Buscar')"><i
+												class="icon-people"></i> Registro de familia</a></li>
+									</ul>
+								</li> -->
+
+								<li id="li_reportes" data-perfil="1" style="display: none">
+									<a href="#"><i class="fa fa-list"></i> <span>Reportes</span></a>
+									<ul>
+										<li><a href="#"><i class="fa fa-list"></i>Matrícula</a>
+											<ul>
+												
+											</ul>
+											<ul>
+												
+												<!-- <li><a  href="#" onclick="_send('pages/reportes/reporte_contratos.html','Configuracion Recibos','Lista')"><i class="fa fa-book"></i>Registros Auxiliares</a></li>-->
+											</ul>
+											<ul>
+												<!-- <li id="li_registro_asistencia_mensual"><a href="#"
+													onclick="_registrosAsistenciaMensual()"><i
+														class="fa fa-book"></i>Registros Asistencia Mensual</a></li> -->
+												
+												<!-- <li><a  href="#" onclick="_send('pages/reportes/reporte_contratos.html','Configuracion Recibos','Lista')"><i class="fa fa-book"></i>Registros Auxiliares</a></li>-->
+											</ul></li>
+									</ul>
+								</li>
+
+								<li id="li_alumnos" data-perfil="1" style="display: none">
+									<a href="#"><i class="fa fa-group"></i> <span>Alumnos</span></a>
+									<ul>
+										
+									</ul>
+								</li>
+
+								
+								<li id="li_olimpiadas" data-perfil="1" style="display: none">
+									<a href="#"><i class="icon-atom2"></i> <span>Olimpiadas</span></a>
+									<ul>
+									
+									<li id="li_oli_reportes"><a href="#"><i class="fa fa-list"></i>Consultas</a>
+										<ul>
+											<li id="li_oli_reportes_inscritos"><a href="#" onclick="_send('pages/olimpiada/oli_rep_inscritos.html','Consultas','Inscritos')"><i class="fa fa-list"></i> Inscritos</a></li>
+											<li id="li_oli_reportes_delegaciones"><a href="#" onclick="_send('pages/olimpiada/oli_rep_delegaciones.html','Consultas','Delegaciones')"><i class="fa fa-list"></i> Delegaciones</a></li>
+											<li id="li_oli_reportes_asistencia"><a href="#" onclick="_send('pages/olimpiada/oli_rep_asistencia.html','Consultas','Asistencia')"><i class="fa fa-list"></i> Asistencia</a></li>
+											<li id="li_oli_reportes_consolidado"><a href="#" onclick="_send('pages/olimpiada/oli_rep_consolidado.html','Consultas','Consolidado')"><i class="fa fa-list"></i> Consolidado</a></li>
+										</ul>
+									</li>
+									
+									<li id="li_oli_tesoreria" style="display: none"><a href="#"><i class="icon-coins"></i>Tesoreria</a>
+										<ul>
+											<li id="li_tesoreria_pagar"><a href="#" onclick="_send('pages/olimpiada/oli_pagos_buscar.html','Olimpiadas','Pagar')"><i class="fa fa-list"></i> Pagar</a></li>
+											<li id="li_oli_reportes_pagos"><a href="#" onclick="_send('pages/olimpiada/oli_rep_pagos.html','Reporte','Pagos')"><i class="fa fa-list"></i> Pagos Realizados</a></li>
+
+										</ul>
+									</li>
+									
+									<li id="li_oli_calificacion" style="display: none"><a href="#"><i class="icon-pen2"></i>Calificacion</a>
+										<ul>
+											<li id="li_calificacion_descarga"><a href="#" onclick="_send('pages/olimpiada/oli_formato_calificacion.html','Formato','Formato calificación')"><i class="fa fa-list"></i> Descargar Formato</a></li>
+											<li id="li_calificacion_cargar"><a href="#" onclick="_send('pages/olimpiada/oli_lectora_cargar_xls.html','Calificacion','Cargar calificación')"><i class="fa fa-list"></i> Cargar calificación</a></li>
+											<li id="li_calificacion_cargar"><a href="#" onclick="_send('pages/olimpiada/oli_salidas_buscar.html','Calificacion','Edición hora de salida')"><i class="fa fa-clock-o"></i> Edición hora salida</a></li>
+											<li id="li_calificacion_result"><a href="#" onclick="_send('pages/olimpiada/oli_lectora_resultados.html','Calificación','Resultados')"><i class="fa fa-list"></i> Resultados</a></li>
+										</ul>
+									</li>
+									
+									
+									<li id="li_oli_config"><a href="#"><i class="fa fa-cog"></i>Configuración</a>
+										<ul>
+											<li id="li_oli_config1"><a href="#" onclick="_send('pages/olimpiada/oli_config.html','Configuración','Olimpiadas')"><i class="fa fa-book"></i> Olimpiadas</a></li>		
+											<li id="li_oli_result_leer"><a href="#" onclick="_send('pages/olimpiada/oli_config_flags.html','Configuración','Permisos')"><i class="fa fa-list"></i> Permisos</a></li>
+											<li id="li_oli_config_usuarios"><a href="#" onclick="_send('pages/olimpiada/oli_config_usuario.html','Configuración','Usuarios')"><i class="fa fa-list"></i> Asignar Uuarios</a></li>
+											<li id="li_oli_config_preguntas"><a href="#" onclick="_send('pages/olimpiada/oli_preguntas.html','Configuración','Preguntas')"><i class="fa fa-list"></i> Preguntas</a></li>
+										</ul>
+									</li>
+									</ul>
+								</li>
+								<li id="li_mensajeria" data-perfil="1" style="display: none"><a href="#"><i
+										class="fa fa-gears"></i> <span>Mensajeria</span></a>
+									<ul>
+										<li><a href="#"
+											onclick="_send('pages/mensajeria/msj_bandeja.html','Configuración Perfil','Lista')"><i
+												class="fa fa-book"></i>Mensajes</a></li>
+										<li><a href="#"
+											onclick="_send('pages/mensajeria/msj_bandeja.html','Configuración Perfil','Lista')"><i
+												class="fa fa-book"></i>Generación de Usuarios</a></li>
+									</ul>
+								</li>
+								<li id="li_configuracion_gen" data-perfil="1" style="display: none"><a href="#"><i
+										class="fa fa-gears"></i> <span>Configuracion</span></a>
+									<ul>
+										<li><a href="#"
+											onclick="_send('pages/configuracion/mod_parametro.html','Configuración Perfil','Lista')"><i
+												class="fa fa-book"></i> Del sistema</a></li>
+										<li><a href="#"
+											onclick="_send('pages/catalogos/cat_cond_alumno.html','Condición Alumno','Lista')"><i
+												class="icon-library2"></i> Condición Alumno</a></li>
+										<li><a href="#"
+											onclick="_send('pages/configuracion/mod_modulo.html','Configuración Módulos','Lista')"><i
+												class="fa fa-book"></i>Módulos</a></li>
+									</ul></li>
+								
+								<li id="li_fam_pagos" data-perfil="8" style="display: none">
+									<a href="#"><i class="icon-coins"></i> <span>Mis
+											pagos</span></a>
+									<ul>
+										<li id="li_fam_pagos_list"><a href="#"
+											onclick="_send('pages/tesoreria/fac_pagos_hijos.html','Mis pagos','Pagos realizados')"><i class="fa fa-money"></i> Pagos realizados</a></li>
+									</ul>
+								</li>
+
+								<li id="li_fam_hijos" data-perfil="8" style="display: none">
+									<a href="#"><i class="fa fa-child"></i> <span>Mis
+											hijos</span></a>
+									<ul>
+										<li id="li_fac_pagos_buscar_alumno"><a href="#"
+											onclick="_send('pages/apoderado/apo_hijos.html','Mis hijos','Datos principales')"><i
+												class="fa fa-money"></i> Mis hijos</a></li>
+									</ul>
+								</li>
+								<li id="li_fam_aula_virtual" data-perfil="8" style="display: none">
+									<a href="#"><i class="icon-laptop"></i> <span>Aula Virtual</span></a>
+									<ul>
+										<li id="li_accesos_aula_virtual"><a href="#"
+											onclick="_send('pages/aula_virtual/av_reporte_acceso.html','Aula Virtual','Usuarios para el acceso al Aula Virtual')"><i
+												class="icon-enter2"></i>Acceso Aula Virtual
+												</a></li>
+									</ul>
+								</li>
+								<li id="li_fam_reportes" data-perfil="8" style="display: none">
+									<a href="#"><i class="icon-user-plus"></i> <span>Reportes</span></a>
+									<ul>
+
+										<li id="li_fac_pagos_buscar_alumno"><a href="#"
+											onclick="_send('pages/apoderado/apo_reporte_libretas.html','Control de libreta de notas recogidas','Libretas recogidas')"><i
+												class="fa fa-list"></i> Libretas recogidas</a></li>
+									</ul>
+								</li>
+
+								<li id="li_fam_config" data-perfil="8" style="display: none">
+									<a href="#"><i class="icon-user-plus"></i> <span>Configuracion</span></a>
+									<ul>
+
+										<li id="li_fac_pagos_buscar_alumno"><a href="#"
+											onclick="_send('pages/apoderado/apo_autorizacion_form.html','Configuraci&oacute;n','Autorizaci&oacute;n')"><i
+												class="fa fa-check"></i> Autorizaciones</a></li>
+									</ul>
+								</li>
+
+							</ul>
+
+
+						</div>
+					</div>
+					<!-- /main navigation -->
+
+				</div>
+			</div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header page-header-default">
+					<div class="page-header-content">
+
+						<div class="page-title" style="padding:25px 0px 0px 0px">
+							<ul class="breadcrumb">
+								<li><a href="#" id="_a_titulo"><i
+										class="fa fa-desktop ui-blue ui-size circle-gris"
+										aria-hidden="true"></i>&nbsp; <span class="_titulo">Home</span></a></li>
+								<li class="active _subTitulo">Inicio</li>
+							</ul>
+						</div>
+
+						<div class="heading-elements" id="heading-trabajador">
+							<div class="heading-btn-group">
+								<a href="#" class="btn btn-link btn-float has-text"><img
+									src="assets/images/img_ui/estadisticas.png"
+									class="imagen-submenu"><span>Estad&iacute;sticas</span></a> <span
+									class="hr-vertical"></span> <a href="#"
+									class="btn btn-link btn-float has-text"><img
+									src="assets/images/img_ui/cursos.png" class="imagen-submenu">
+									<span>Cursos</span></a> <span class="hr-vertical"></span> <a
+									href="#" class="btn btn-link btn-float has-text"><img
+									src="assets/images/img_ui/agenda.png" class="imagen-submenu">
+									<span>Agenda</span></a>
+							</div>
+						</div>
+
+						<div class="heading-elements" id="heading-familiar" style="display:none">
+							<div class="heading-btn-group">
+								<a href="#" onclick="_send('pages/tesoreria/fac_pagos_hijos.html','Mis pagos','Pagos realizados')" class="btn btn-link btn-float has-text"><img
+									src="assets/images/img_ui/mispagos.png"
+									class="imagen-submenu"><span>Mis pagos</span></a> 
+								<span class="hr-vertical"></span> 
+								<a href="#" onclick="_send('pages/apoderado/apo_hijos.html','Mis hijos','Datos principales')"
+									class="btn btn-link btn-float has-text"><img
+									src="assets/images/img_ui/cursos.png" class="imagen-submenu">
+									<span>Mis hijos</span></a> <span class="hr-vertical"></span> <a
+									href="#" onclick="_send('pages/apoderado/apo_reporte_libretas.html','Reporte','Entrega de libretas')" class="btn btn-link btn-float has-text"><img
+									src="assets/images/img_ui/reportes.png" class="imagen-submenu">
+									<span>Reportes</span></a>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="breadcrumb-line">
+
+						<h4 class="title-contenido">
+							<i class="fa fa-desktop ui-blue ui-size circle-blue"
+								aria-hidden="true"></i> &nbsp; <span class="_titulo">Home</span><!--   - <SPAN class="_subTitulo">Dashboard</SPAN>-->
+						</h4>
+
+
+						<ul class="breadcrumb-elements">
+							<li><a href="#" id="_btnRefresh" onclick="_refresh()"><i
+									class="glyphicon glyphicon-refresh position-left ui-blue ui-zise"></i>
+									<span class="refrescar"> Refrescar</span></a></li>
+						</ul>
+
+
+					<ul class="dropdown-menu dropdown-menu-right menuser">
+						<li><a href="#" id="link_profile"><i class="fa fa-user-circle-o ui-size" aria-hidden="true"></i> Mi
+								perfil</a></li>
+						<li><a href="#" onclick="_send('pages/seguridad/seg_cambio_clave.html','Actualización','Cambio de clave');"><i class="fa fa-lock ui-size" aria-hidden="true"></i>Cambio de
+								clave</a></li>
+						<!-- 
+						<li><a href="#"><i class="icon-coins"></i> My balance</a></li>
+						 -->
+						<li><a href="#"><span class="badge bg-teal-400 pull-right ">58</span> <i class="fa fa-comments ui-size" aria-hidden="true"></i> Mensajes</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="fa fa-cog ui-size" aria-hidden="true"></i> Configuración</a></li>
+						<li><a href="#" id="logout"><i class="fa fa-sign-in ui-size" aria-hidden="true"></i> Salir</a></li>
+					</ul></li>
+
+					
+						<ul class="breadcrumb-elements" id="_botonera">
+						</ul>
+					</div>
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+
+					<div class="content-body">
+						<!-- Main charts -->
+						<div class="row">
+							<div class="col-lg-7">
+
+								<!-- Traffic sources -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">Traffic sources</h6>
+										<div class="heading-elements">
+											<form class="heading-form" action="#">
+												<div class="form-group">
+													<label
+														class="checkbox-inline checkbox-switchery checkbox-right switchery-xs">
+														<input type="checkbox" class="switch" checked="checked">
+														Live update:
+													</label>
+												</div>
+											</form>
+										</div>
+									</div>
+
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-lg-4">
+												<ul class="list-inline text-center">
+													<li><a href="#"
+														class="btn border-teal text-teal btn-flat btn-rounded btn-icon btn-xs valign-text-bottom"><i
+															class="icon-plus3"></i></a></li>
+													<li class="text-left">
+														<div class="text-semibold">New visitors</div>
+														<div class="text-muted">2,349 avg</div>
+													</li>
+												</ul>
+
+												<div class="col-lg-10 col-lg-offset-1">
+													<div class="content-group" id="new-visitors"></div>
+												</div>
+											</div>
+
+											<div class="col-lg-4">
+												<ul class="list-inline text-center">
+													<li><a href="#"
+														class="btn border-warning-400 text-warning-400 btn-flat btn-rounded btn-icon btn-xs valign-text-bottom"><i
+															class="icon-watch2"></i></a></li>
+													<li class="text-left">
+														<div class="text-semibold">New sessions</div>
+														<div class="text-muted">08:20 avg</div>
+													</li>
+												</ul>
+
+												<div class="col-lg-10 col-lg-offset-1">
+													<div class="content-group" id="new-sessions"></div>
+												</div>
+											</div>
+
+											<div class="col-lg-4">
+												<ul class="list-inline text-center">
+													<li><a href="#"
+														class="btn border-indigo-400 text-indigo-400 btn-flat btn-rounded btn-icon btn-xs valign-text-bottom"><i
+															class="icon-people"></i></a></li>
+													<li class="text-left">
+														<div class="text-semibold">Total online</div>
+														<div class="text-muted">
+															<span class="status-mark border-success position-left"></span>
+															5,378 avg
+														</div>
+													</li>
+												</ul>
+
+												<div class="col-lg-10 col-lg-offset-1">
+													<div class="content-group" id="total-online"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="position-relative" id="traffic-sources"></div>
+								</div>
+								<!-- /traffic sources -->
+
+							</div>
+
+							<div class="col-lg-5">
+
+								<!-- Sales stats -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">Sales statistics</h6>
+										<div class="heading-elements">
+											<form class="heading-form" action="#">
+												<div class="form-group">
+													<select class="change-date select-sm" id="select_date">
+														<optgroup
+															label="<i class='icon-watch pull-right'></i> Time period">
+															<option value="val1">June, 29 - July, 5</option>
+															<option value="val2">June, 22 - June 28</option>
+															<option value="val3" selected="selected">June,
+																15 - June, 21</option>
+															<option value="val4">June, 8 - June, 14</option>
+														</optgroup>
+													</select>
+												</div>
+											</form>
+										</div>
+									</div>
+
+									<div class="container-fluid">
+										<div class="row text-center">
+											<div class="col-md-4">
+												<div class="content-group">
+													<h5 class="text-semibold no-margin">
+														<i class="icon-calendar5 position-left text-slate"></i>
+														5,689
+													</h5>
+													<span class="text-muted text-size-small">orders
+														weekly</span>
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="content-group">
+													<h5 class="text-semibold no-margin">
+														<i class="icon-calendar52 position-left text-slate"></i>
+														32,568
+													</h5>
+													<span class="text-muted text-size-small">orders
+														monthly</span>
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="content-group">
+													<h5 class="text-semibold no-margin">
+														<i class="icon-cash3 position-left text-slate"></i>
+														$23,464
+													</h5>
+													<span class="text-muted text-size-small">average
+														revenue</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="content-group-sm" id="app_sales"></div>
+									<div id="monthly-sales-stats"></div>
+								</div>
+								<!-- /sales stats -->
+
+							</div>
+						</div>
+						<!-- /main charts -->
+
+
+						<!-- Dashboard content -->
+						<div class="row">
+							<div class="col-lg-8">
+
+								<!-- Marketing campaigns -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">Marketing campaigns</h6>
+										<div class="heading-elements">
+											<span class="label bg-success heading-text">28 active</span>
+											<ul class="icons-list">
+												<li class="dropdown"><a href="#"
+													class="dropdown-toggle" data-toggle="dropdown"><i
+														class="icon-menu7"></i> <span class="caret"></span></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-sync"></i> Update
+																data</a></li>
+														<li><a href="#"><i class="icon-list-unordered"></i>
+																Detailed log</a></li>
+														<li><a href="#"><i class="icon-pie5"></i>
+																Statistics</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-cross3"></i> Clear
+																list</a></li>
+													</ul></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="table-responsive">
+										<table class="table table-lg text-nowrap">
+											<tbody>
+												<tr>
+													<td class="col-md-5">
+														<div class="media-left">
+															<div id="campaigns-donut"></div>
+														</div>
+
+														<div class="media-left">
+															<h5 class="text-semibold no-margin">
+																38,289 <small class="text-success text-size-base"><i
+																	class="icon-arrow-up12"></i> (+16.2%)</small>
+															</h5>
+															<ul class="list-inline list-inline-condensed no-margin">
+																<li><span class="status-mark border-success"></span>
+																</li>
+																<li><span class="text-muted">May 12, 12:30
+																		am</span></li>
+															</ul>
+														</div>
+													</td>
+
+													<td class="col-md-5">
+														<div class="media-left">
+															<div id="campaign-status-pie"></div>
+														</div>
+
+														<div class="media-left">
+															<h5 class="text-semibold no-margin">
+																2,458 <small class="text-danger text-size-base"><i
+																	class="icon-arrow-down12"></i> (- 4.9%)</small>
+															</h5>
+															<ul class="list-inline list-inline-condensed no-margin">
+																<li><span class="status-mark border-danger"></span>
+																</li>
+																<li><span class="text-muted">Jun 4, 4:00 am</span>
+																</li>
+															</ul>
+														</div>
+													</td>
+
+													<td class="text-right col-md-2"><a href="#"
+														class="btn bg-indigo-300"><i
+															class="icon-statistics position-left"></i> View report</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<div class="table-responsive">
+										<table class="table text-nowrap">
+											<thead>
+												<tr>
+													<th>Campaign</th>
+													<th class="col-md-2">Client</th>
+													<th class="col-md-2">Changes</th>
+													<th class="col-md-2">Budget</th>
+													<th class="col-md-2">Status</th>
+													<th class="text-center" style="width: 20px;"><i
+														class="icon-arrow-down12"></i></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="active border-double">
+													<td colspan="5">Today</td>
+													<td class="text-right"><span class="progress-meter"
+														id="today-progress" data-progress="30"></span></td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img
+																src="assets/images/brands/facebook.png"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+														<div class="media-left">
+															<div class="">
+																<a href="#" class="text-default text-semibold">Facebook</a>
+															</div>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-blue position-left"></span>
+																02:00 - 03:00
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted">Mintlime</span></td>
+													<td><span class="text-success-600"><i
+															class="icon-stats-growth2 position-left"></i> 2.43%</span></td>
+													<td><h6 class="text-semibold">$5,489</h6></td>
+													<td><span class="label bg-blue">Active</span></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-file-stats"></i>
+																			View statement</a></li>
+																	<li><a href="#"><i class="icon-file-text2"></i>
+																			Edit campaign</a></li>
+																	<li><a href="#"><i class="icon-file-locked"></i>
+																			Disable campaign</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i class="icon-gear"></i>
+																			Settings</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img
+																src="assets/images/brands/youtube.png"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+														<div class="media-left">
+															<div class="">
+																<a href="#" class="text-default text-semibold">Youtube
+																	videos</a>
+															</div>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-danger position-left"></span>
+																13:00 - 14:00
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted">CDsoft</span></td>
+													<td><span class="text-success-600"><i
+															class="icon-stats-growth2 position-left"></i> 3.12%</span></td>
+													<td><h6 class="text-semibold">$2,592</h6></td>
+													<td><span class="label bg-danger">Closed</span></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-file-stats"></i>
+																			View statement</a></li>
+																	<li><a href="#"><i class="icon-file-text2"></i>
+																			Edit campaign</a></li>
+																	<li><a href="#"><i class="icon-file-locked"></i>
+																			Disable campaign</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i class="icon-gear"></i>
+																			Settings</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img
+																src="assets/images/brands/spotify.png"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+														<div class="media-left">
+															<div class="">
+																<a href="#" class="text-default text-semibold">Spotify
+																	ads</a>
+															</div>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-grey-400 position-left"></span>
+																10:00 - 11:00
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted">Diligence</span></td>
+													<td><span class="text-danger"><i
+															class="icon-stats-decline2 position-left"></i> - 8.02%</span></td>
+													<td><h6 class="text-semibold">$1,268</h6></td>
+													<td><span class="label bg-grey-400">Hold</span></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-file-stats"></i>
+																			View statement</a></li>
+																	<li><a href="#"><i class="icon-file-text2"></i>
+																			Edit campaign</a></li>
+																	<li><a href="#"><i class="icon-file-locked"></i>
+																			Disable campaign</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i class="icon-gear"></i>
+																			Settings</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img
+																src="assets/images/brands/twitter.png"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+														<div class="media-left">
+															<div class="">
+																<a href="#" class="text-default text-semibold">Twitter
+																	ads</a>
+															</div>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-grey-400 position-left"></span>
+																04:00 - 05:00
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted">Deluxe</span></td>
+													<td><span class="text-success-600"><i
+															class="icon-stats-growth2 position-left"></i> 2.78%</span></td>
+													<td><h6 class="text-semibold">$7,467</h6></td>
+													<td><span class="label bg-grey-400">Hold</span></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-file-stats"></i>
+																			View statement</a></li>
+																	<li><a href="#"><i class="icon-file-text2"></i>
+																			Edit campaign</a></li>
+																	<li><a href="#"><i class="icon-file-locked"></i>
+																			Disable campaign</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i class="icon-gear"></i>
+																			Settings</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr class="active border-double">
+													<td colspan="5">Yesterday</td>
+													<td class="text-right"><span class="progress-meter"
+														id="yesterday-progress" data-progress="65"></span></td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img src="assets/images/brands/bing.png"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+														<div class="media-left">
+															<div class="">
+																<a href="#" class="text-default text-semibold">Bing
+																	campaign</a>
+															</div>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-success position-left"></span>
+																15:00 - 16:00
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted">Metrics</span></td>
+													<td><span class="text-danger"><i
+															class="icon-stats-decline2 position-left"></i> - 5.78%</span></td>
+													<td><h6 class="text-semibold">$970</h6></td>
+													<td><span class="label bg-success-400">Pending</span></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropup"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-file-stats"></i>
+																			View statement</a></li>
+																	<li><a href="#"><i class="icon-file-text2"></i>
+																			Edit campaign</a></li>
+																	<li><a href="#"><i class="icon-file-locked"></i>
+																			Disable campaign</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i class="icon-gear"></i>
+																			Settings</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img
+																src="assets/images/brands/amazon.png"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+														<div class="media-left">
+															<div class="">
+																<a href="#" class="text-default text-semibold">Amazon
+																	ads</a>
+															</div>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-danger position-left"></span>
+																18:00 - 19:00
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted">Blueish</span></td>
+													<td><span class="text-success-600"><i
+															class="icon-stats-growth2 position-left"></i> 6.79%</span></td>
+													<td><h6 class="text-semibold">$1,540</h6></td>
+													<td><span class="label bg-blue">Active</span></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropup"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-file-stats"></i>
+																			View statement</a></li>
+																	<li><a href="#"><i class="icon-file-text2"></i>
+																			Edit campaign</a></li>
+																	<li><a href="#"><i class="icon-file-locked"></i>
+																			Disable campaign</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i class="icon-gear"></i>
+																			Settings</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img
+																src="assets/images/brands/dribbble.png"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+														<div class="media-left">
+															<div class="">
+																<a href="#" class="text-default text-semibold">Dribbble
+																	ads</a>
+															</div>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-blue position-left"></span>
+																20:00 - 21:00
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted">Teamable</span></td>
+													<td><span class="text-danger"><i
+															class="icon-stats-decline2 position-left"></i> 9.83%</span></td>
+													<td><h6 class="text-semibold">$8,350</h6></td>
+													<td><span class="label bg-danger">Closed</span></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropup"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-file-stats"></i>
+																			View statement</a></li>
+																	<li><a href="#"><i class="icon-file-text2"></i>
+																			Edit campaign</a></li>
+																	<li><a href="#"><i class="icon-file-locked"></i>
+																			Disable campaign</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i class="icon-gear"></i>
+																			Settings</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- /marketing campaigns -->
+
+
+								<!-- Quick stats boxes -->
+								<div class="row">
+									<div class="col-lg-4">
+
+										<!-- Members online -->
+										<div class="panel bg-teal-400">
+											<div class="panel-body">
+												<div class="heading-elements">
+													<span class="heading-text badge bg-teal-800">+53,6%</span>
+												</div>
+
+												<h3 class="no-margin">3,450</h3>
+												Members online
+												<div class="text-muted text-size-small">489 avg</div>
+											</div>
+
+											<div class="container-fluid">
+												<div id="members-online"></div>
+											</div>
+										</div>
+										<!-- /members online -->
+
+									</div>
+
+									<div class="col-lg-4">
+
+										<!-- Current server load -->
+										<div class="panel bg-pink-400">
+											<div class="panel-body">
+												<div class="heading-elements">
+													<ul class="icons-list">
+														<li class="dropdown"><a href="#"
+															class="dropdown-toggle" data-toggle="dropdown"><i
+																class="icon-cog3"></i> <span class="caret"></span></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#"><i class="icon-sync"></i>
+																		Update data</a></li>
+																<li><a href="#"><i class="icon-list-unordered"></i>
+																		Detailed log</a></li>
+																<li><a href="#"><i class="icon-pie5"></i>
+																		Statistics</a></li>
+																<li><a href="#"><i class="icon-cross3"></i>
+																		Clear list</a></li>
+															</ul></li>
+													</ul>
+												</div>
+
+												<h3 class="no-margin">49.4%</h3>
+												Current server load
+												<div class="text-muted text-size-small">34.6% avg</div>
+											</div>
+
+											<div id="server-load"></div>
+										</div>
+										<!-- /current server load -->
+
+									</div>
+
+									<div class="col-lg-4">
+
+										<!-- Today's revenue -->
+										<div class="panel bg-blue-400">
+											<div class="panel-body">
+												<div class="heading-elements">
+													<ul class="icons-list">
+														<li><a data-action="reload"></a></li>
+													</ul>
+												</div>
+
+												<h3 class="no-margin">$18,390</h3>
+												Today's revenue
+												<div class="text-muted text-size-small">$37,578 avg</div>
+											</div>
+
+											<div id="today-revenue"></div>
+										</div>
+										<!-- /today's revenue -->
+
+									</div>
+								</div>
+								<!-- /quick stats boxes -->
+
+
+								<!-- Support tickets -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">Support tickets</h6>
+										<div class="heading-elements">
+											<button type="button"
+												class="btn btn-link daterange-ranges heading-btn text-semibold">
+												<i class="icon-calendar3 position-left"></i> <span></span> <b
+													class="caret"></b>
+											</button>
+										</div>
+									</div>
+
+									<div class="table-responsive">
+										<table class="table table-xlg text-nowrap">
+											<tbody>
+												<tr>
+													<td class="col-md-4">
+														<div class="media-left media-middle">
+															<div id="tickets-status"></div>
+														</div>
+
+														<div class="media-left">
+															<h5 class="text-semibold no-margin">
+																14,327 <small class="text-success text-size-base"><i
+																	class="icon-arrow-up12"></i> (+2.9%)</small>
+															</h5>
+															<span class="text-muted"><span
+																class="status-mark border-success position-left"></span>
+																Jun 16, 10:00 am</span>
+														</div>
+													</td>
+
+													<td class="col-md-3">
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn border-indigo-400 text-indigo-400 btn-flat btn-rounded btn-xs btn-icon"><i
+																class="icon-alarm-add"></i></a>
+														</div>
+
+														<div class="media-left">
+															<h5 class="text-semibold no-margin">
+																1,132 <small class="display-block no-margin">total
+																	tickets</small>
+															</h5>
+														</div>
+													</td>
+
+													<td class="col-md-3">
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn border-indigo-400 text-indigo-400 btn-flat btn-rounded btn-xs btn-icon"><i
+																class="icon-spinner11"></i></a>
+														</div>
+
+														<div class="media-left">
+															<h5 class="text-semibold no-margin">
+																06:25:00 <small class="display-block no-margin">response
+																	time</small>
+															</h5>
+														</div>
+													</td>
+
+													<td class="text-right col-md-2"><a href="#"
+														class="btn bg-teal-400"><i
+															class="icon-statistics position-left"></i> Report</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<div class="table-responsive">
+										<table class="table text-nowrap">
+											<thead>
+												<tr>
+													<th style="width: 50px">Due</th>
+													<th style="width: 300px;">User</th>
+													<th>Description</th>
+													<th class="text-center" style="width: 20px;"><i
+														class="icon-arrow-down12"></i></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="active border-double">
+													<td colspan="3">Active tickets</td>
+													<td class="text-right"><span class="badge bg-blue">24</span>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center">
+														<h6 class="no-margin">
+															12 <small class="display-block text-size-small no-margin">hours</small>
+														</h6>
+													</td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-teal-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<a href="#"
+																class="display-inline-block text-default text-semibold letter-icon-title">Annabelle
+																Doney</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-blue position-left"></span>
+																Active
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> <span
+															class="text-semibold">[#1183] Workaround for OS X
+																selects printing bug</span> <span
+															class="display-block text-muted">Chrome fixed the
+																bug several versions ago, thus rendering this...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-checkmark3 text-success"></i> Resolve
+																			issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center">
+														<h6 class="no-margin">
+															16 <small class="display-block text-size-small no-margin">hours</small>
+														</h6>
+													</td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img src="assets/images/placeholder.jpg"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+
+														<div class="media-body">
+															<a href="#"
+																class="display-inline-block text-default text-semibold letter-icon-title">Chris
+																Macintyre</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-blue position-left"></span>
+																Active
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> <span
+															class="text-semibold">[#1249] Vertically center
+																carousel controls</span> <span class="display-block text-muted">Try
+																any carousel control and reduce the screen width
+																below...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-checkmark3 text-success"></i> Resolve
+																			issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center">
+														<h6 class="no-margin">
+															20 <small class="display-block text-size-small no-margin">hours</small>
+														</h6>
+													</td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-blue btn-rounded btn-icon btn-xs"> <span
+																class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<a href="#"
+																class="display-inline-block text-default text-semibold letter-icon-title">Robert
+																Hauber</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-blue position-left"></span>
+																Active
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> <span
+															class="text-semibold">[#1254] Inaccurate small
+																pagination height</span> <span class="display-block text-muted">The
+																height of pagination elements is not consistent with...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-checkmark3 text-success"></i> Resolve
+																			issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center">
+														<h6 class="no-margin">
+															40 <small class="display-block text-size-small no-margin">hours</small>
+														</h6>
+													</td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-warning-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<a href="#"
+																class="display-inline-block text-default text-semibold letter-icon-title">Dex
+																Sponheim</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-blue position-left"></span>
+																Active
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> <span
+															class="text-semibold">[#1184] Round grid column
+																gutter operations</span> <span class="display-block text-muted">Left
+																rounds up, right rounds down. should keep everything...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-checkmark3 text-success"></i> Resolve
+																			issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr class="active border-double">
+													<td colspan="3">Resolved tickets</td>
+													<td class="text-right"><span class="badge bg-success">42</span>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><i
+														class="icon-checkmark3 text-success"></i></td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-success-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<a href="#"
+																class="display-inline-block text-default letter-icon-title">Alan
+																Macedo</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-success position-left"></span>
+																Resolved
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> [#1046]
+															Avoid some unnecessary HTML string <span
+															class="display-block text-muted">Rather than
+																building a string of HTML and then parsing it...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-plus3 text-blue"></i> Unresolve issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><i
+														class="icon-checkmark3 text-success"></i></td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-pink-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<a href="#"
+																class="display-inline-block text-default letter-icon-title">Brett
+																Castellano</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-success position-left"></span>
+																Resolved
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> [#1038]
+															Update json configuration <span
+															class="display-block text-muted">The <code>files</code>
+																property is necessary to override the files property...
+														</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-plus3 text-blue"></i> Unresolve issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><i
+														class="icon-checkmark3 text-success"></i></td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img src="assets/images/placeholder.jpg"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+
+														<div class="media-body">
+															<a href="#" class="display-inline-block text-default">Roxanne
+																Forbes</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-success position-left"></span>
+																Resolved
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> [#1034]
+															Tooltip multiple event <span
+															class="display-block text-muted">Fix behavior when
+																using tooltips and popovers that are...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropdown"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-plus3 text-blue"></i> Unresolve issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr class="active border-double">
+													<td colspan="3">Closed tickets</td>
+													<td class="text-right"><span class="badge bg-danger">37</span>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><i
+														class="icon-cross2 text-danger-400"></i></td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"><img src="assets/images/placeholder.jpg"
+																class="img-circle img-xs" alt=""></a>
+														</div>
+
+														<div class="media-body">
+															<a href="#" class="display-inline-block text-default">Mitchell
+																Sitkin</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-danger position-left"></span>
+																Closed
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> [#1040]
+															Account for static form controls in form group <span
+															class="display-block text-muted">Resizes control
+																label's font-size and account for the standard...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropup"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-reload-alt text-blue"></i> Reopen issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><i
+														class="icon-cross2 text-danger"></i></td>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-brown-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<a href="#"
+																class="display-inline-block text-default letter-icon-title">Katleen
+																Jensen</a>
+															<div class="text-muted text-size-small">
+																<span class="status-mark border-danger position-left"></span>
+																Closed
+															</div>
+														</div>
+													</td>
+													<td><a href="#"
+														class="text-default display-inline-block"> [#1038]
+															Proper sizing of form control feedback <span
+															class="display-block text-muted">Feedback icon
+																sizing inside a larger/smaller form-group...</span>
+													</a></td>
+													<td class="text-center">
+														<ul class="icons-list">
+															<li class="dropup"><a href="#"
+																class="dropdown-toggle" data-toggle="dropdown"><i
+																	class="icon-menu7"></i></a>
+																<ul class="dropdown-menu dropdown-menu-right">
+																	<li><a href="#"><i class="icon-undo"></i>
+																			Quick reply</a></li>
+																	<li><a href="#"><i class="icon-history"></i>
+																			Full history</a></li>
+																	<li class="divider"></li>
+																	<li><a href="#"><i
+																			class="icon-plus3 text-blue"></i> Unresolve issue</a></li>
+																	<li><a href="#"><i
+																			class="icon-cross2 text-danger"></i> Close issue</a></li>
+																</ul></li>
+														</ul>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- /support tickets -->
+
+
+								<!-- Latest posts -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">Latest posts</h6>
+										<div class="heading-elements">
+											<ul class="icons-list">
+												<li><a data-action="collapse"></a></li>
+												<li><a data-action="reload"></a></li>
+												<li><a data-action="close"></a></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-lg-6">
+												<ul class="media-list content-group">
+													<li class="media stack-media-on-mobile">
+														<div class="media-left">
+															<div class="thumb">
+																<a href="#"> <img
+																	src="assets/images/placeholder.jpg"
+																	class="img-responsive img-rounded media-preview" alt="">
+																	<span class="zoom-image"><i class="icon-play3"></i></span>
+																</a>
+															</div>
+														</div>
+
+														<div class="media-body">
+															<h6 class="media-heading">
+																<a href="#">Up unpacked friendly</a>
+															</h6>
+															<ul
+																class="list-inline list-inline-separate text-muted mb-5">
+																<li><i class="icon-book-play position-left"></i>
+																	Video tutorials</li>
+																<li>14 minutes ago</li>
+															</ul>
+															The him father parish looked has sooner. Attachment
+															frequently gay terminated son...
+														</div>
+													</li>
+
+													<li class="media stack-media-on-mobile">
+														<div class="media-left">
+															<div class="thumb">
+																<a href="#"> <img
+																	src="assets/images/placeholder.jpg"
+																	class="img-responsive img-rounded media-preview" alt="">
+																	<span class="zoom-image"><i class="icon-play3"></i></span>
+																</a>
+															</div>
+														</div>
+
+														<div class="media-body">
+															<h6 class="media-heading">
+																<a href="#">It allowance prevailed</a>
+															</h6>
+															<ul
+																class="list-inline list-inline-separate text-muted mb-5">
+																<li><i class="icon-book-play position-left"></i>
+																	Video tutorials</li>
+																<li>12 days ago</li>
+															</ul>
+															Alteration literature to or an sympathize mr imprudence.
+															Of is ferrars subject as enjoyed...
+														</div>
+													</li>
+												</ul>
+											</div>
+
+											<div class="col-lg-6">
+												<ul class="media-list content-group">
+													<li class="media stack-media-on-mobile">
+														<div class="media-left">
+															<div class="thumb">
+																<a href="#"> <img
+																	src="assets/images/placeholder.jpg"
+																	class="img-responsive img-rounded media-preview" alt="">
+																	<span class="zoom-image"><i class="icon-play3"></i></span>
+																</a>
+															</div>
+														</div>
+
+														<div class="media-body">
+															<h6 class="media-heading">
+																<a href="#">Case read they must</a>
+															</h6>
+															<ul
+																class="list-inline list-inline-separate text-muted mb-5">
+																<li><i class="icon-book-play position-left"></i>
+																	Video tutorials</li>
+																<li>20 hours ago</li>
+															</ul>
+															On it differed repeated wandered required in. Then girl
+															neat why yet knew rose spot...
+														</div>
+													</li>
+
+													<li class="media stack-media-on-mobile">
+														<div class="media-left">
+															<div class="thumb">
+																<a href="#"> <img
+																	src="assets/images/placeholder.jpg"
+																	class="img-responsive img-rounded media-preview" alt="">
+																	<span class="zoom-image"><i class="icon-play3"></i></span>
+																</a>
+															</div>
+														</div>
+
+														<div class="media-body">
+															<h6 class="media-heading">
+																<a href="#">Too carriage attended</a>
+															</h6>
+															<ul
+																class="list-inline list-inline-separate text-muted mb-5">
+																<li><i class="icon-book-play position-left"></i>
+																	FAQ section</li>
+																<li>2 days ago</li>
+															</ul>
+															Marianne or husbands if at stronger ye. Considered is as
+															middletons uncommonly...
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /latest posts -->
+
+							</div>
+
+							<div class="col-lg-4">
+
+								<!-- Progress counters -->
+								<div class="row">
+									<div class="col-md-6">
+
+										<!-- Available hours -->
+										<div class="panel text-center">
+											<div class="panel-body">
+												<div class="heading-elements">
+													<ul class="icons-list">
+														<li class="dropdown text-muted"><a href="#"
+															class="dropdown-toggle" data-toggle="dropdown"><i
+																class="icon-cog3"></i> <span class="caret"></span></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#"><i class="icon-sync"></i>
+																		Update data</a></li>
+																<li><a href="#"><i class="icon-list-unordered"></i>
+																		Detailed log</a></li>
+																<li><a href="#"><i class="icon-pie5"></i>
+																		Statistics</a></li>
+																<li><a href="#"><i class="icon-cross3"></i>
+																		Clear list</a></li>
+															</ul></li>
+													</ul>
+												</div>
+
+												<!-- Progress counter -->
+												<div class="content-group-sm svg-center position-relative"
+													id="hours-available-progress"></div>
+												<!-- /progress counter -->
+
+
+												<!-- Bars -->
+												<div id="hours-available-bars"></div>
+												<!-- /bars -->
+
+											</div>
+										</div>
+										<!-- /available hours -->
+
+									</div>
+
+									<div class="col-md-6">
+
+										<!-- Productivity goal -->
+										<div class="panel text-center">
+											<div class="panel-body">
+												<div class="heading-elements">
+													<ul class="icons-list">
+														<li class="dropdown text-muted"><a href="#"
+															class="dropdown-toggle" data-toggle="dropdown"><i
+																class="icon-cog3"></i> <span class="caret"></span></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#"><i class="icon-sync"></i>
+																		Update data</a></li>
+																<li><a href="#"><i class="icon-list-unordered"></i>
+																		Detailed log</a></li>
+																<li><a href="#"><i class="icon-pie5"></i>
+																		Statistics</a></li>
+																<li><a href="#"><i class="icon-cross3"></i>
+																		Clear list</a></li>
+															</ul></li>
+													</ul>
+												</div>
+
+												<!-- Progress counter -->
+												<div class="content-group-sm svg-center position-relative"
+													id="goal-progress"></div>
+												<!-- /progress counter -->
+
+												<!-- Bars -->
+												<div id="goal-bars"></div>
+												<!-- /bars -->
+
+											</div>
+										</div>
+										<!-- /productivity goal -->
+
+									</div>
+								</div>
+								<!-- /progress counters -->
+
+
+								<!-- Daily sales -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">Daily sales stats</h6>
+										<div class="heading-elements">
+											<span class="heading-text">Balance: <span
+												class="text-bold text-danger-600 position-right">$4,378</span></span>
+											<ul class="icons-list">
+												<li class="dropdown text-muted"><a href="#"
+													class="dropdown-toggle" data-toggle="dropdown"><i
+														class="icon-cog3"></i> <span class="caret"></span></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-sync"></i> Update
+																data</a></li>
+														<li><a href="#"><i class="icon-list-unordered"></i>
+																Detailed log</a></li>
+														<li><a href="#"><i class="icon-pie5"></i>
+																Statistics</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-cross3"></i> Clear
+																list</a></li>
+													</ul></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="panel-body">
+										<div id="sales-heatmap"></div>
+									</div>
+
+									<div class="table-responsive">
+										<table class="table text-nowrap">
+											<thead>
+												<tr>
+													<th>Application</th>
+													<th>Time</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-primary-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<div class="media-heading">
+																<a href="#" class="letter-icon-title">Sigma
+																	application</a>
+															</div>
+
+															<div class="text-muted text-size-small">
+																<i class="icon-checkmark3 text-size-mini position-left"></i>
+																New order
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted text-size-small">06:28
+															pm</span></td>
+													<td>
+														<h6 class="text-semibold no-margin">$49.90</h6>
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-danger-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<div class="media-heading">
+																<a href="#" class="letter-icon-title">Alpha
+																	application</a>
+															</div>
+
+															<div class="text-muted text-size-small">
+																<i class="icon-spinner11 text-size-mini position-left"></i>
+																Renewal
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted text-size-small">04:52
+															pm</span></td>
+													<td>
+														<h6 class="text-semibold no-margin">$90.50</h6>
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-indigo-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<div class="media-heading">
+																<a href="#" class="letter-icon-title">Delta
+																	application</a>
+															</div>
+
+															<div class="text-muted text-size-small">
+																<i class="icon-lifebuoy text-size-mini position-left"></i>
+																Support
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted text-size-small">01:26
+															pm</span></td>
+													<td>
+														<h6 class="text-semibold no-margin">$60.00</h6>
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-success-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<div class="media-heading">
+																<a href="#" class="letter-icon-title">Omega
+																	application</a>
+															</div>
+
+															<div class="text-muted text-size-small">
+																<i class="icon-lifebuoy text-size-mini position-left"></i>
+																Support
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted text-size-small">11:46
+															am</span></td>
+													<td>
+														<h6 class="text-semibold no-margin">$55.00</h6>
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<div class="media-left media-middle">
+															<a href="#"
+																class="btn bg-danger-400 btn-rounded btn-icon btn-xs">
+																<span class="letter-icon"></span>
+															</a>
+														</div>
+
+														<div class="media-body">
+															<div class="media-heading">
+																<a href="#" class="letter-icon-title">Alpha
+																	application</a>
+															</div>
+
+															<div class="text-muted text-size-small">
+																<i class="icon-spinner11 text-size-mini position-left"></i>
+																Renewal
+															</div>
+														</div>
+													</td>
+													<td><span class="text-muted text-size-small">10:29
+															am</span></td>
+													<td>
+														<h6 class="text-semibold no-margin">$90.50</h6>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- /daily sales -->
+
+
+								<!-- My messages -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">My messages</h6>
+										<div class="heading-elements">
+											<span class="heading-text"><i
+												class="icon-history text-warning position-left"></i> Jul 7,
+												10:30</span> <span class="label bg-success heading-text">Online</span>
+										</div>
+									</div>
+
+									<!-- Numbers -->
+									<div class="container-fluid">
+										<div class="row text-center">
+											<div class="col-md-4">
+												<div class="content-group">
+													<h6 class="text-semibold no-margin">
+														<i class="icon-clipboard3 position-left text-slate"></i>
+														2,345
+													</h6>
+													<span class="text-muted text-size-small">this week</span>
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="content-group">
+													<h6 class="text-semibold no-margin">
+														<i class="icon-calendar3 position-left text-slate"></i>
+														3,568
+													</h6>
+													<span class="text-muted text-size-small">this month</span>
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="content-group">
+													<h6 class="text-semibold no-margin">
+														<i class="icon-comments position-left text-slate"></i>
+														32,693
+													</h6>
+													<span class="text-muted text-size-small">all
+														messages</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /numbers -->
+
+
+									<!-- Area chart -->
+									<div id="messages-stats"></div>
+									<!-- /area chart -->
+
+
+									<!-- Tabs -->
+									<ul
+										class="nav nav-lg nav-tabs nav-justified no-margin no-border-radius bg-indigo-400 border-top border-top-indigo-300">
+										<li class="active"><a href="#messages-tue"
+											class="text-size-small text-uppercase" data-toggle="tab">
+												Tuesday </a></li>
+
+										<li><a href="#messages-mon"
+											class="text-size-small text-uppercase" data-toggle="tab">
+												Monday </a></li>
+
+										<li><a href="#messages-fri"
+											class="text-size-small text-uppercase" data-toggle="tab">
+												Friday </a></li>
+									</ul>
+									<!-- /tabs -->
+
+
+									<!-- Tabs content -->
+									<div class="tab-content">
+										<div class="tab-pane active fade in has-padding"
+											id="messages-tue">
+											<ul class="media-list">
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-xs" alt=""> <span
+															class="badge bg-danger-400 media-badge">8</span>
+													</div>
+
+													<div class="media-body">
+														<a href="#"> James Alexander <span
+															class="media-annotation pull-right">14:58</span>
+														</a> <span class="display-block text-muted">The
+															constitutionally inventoried precariously...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-xs" alt=""> <span
+															class="badge bg-danger-400 media-badge">6</span>
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Margo Baker <span
+															class="media-annotation pull-right">12:16</span>
+														</a> <span class="display-block text-muted">Pinched a
+															well more moral chose goodness...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-xs" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Jeremy Victorino <span
+															class="media-annotation pull-right">09:48</span>
+														</a> <span class="display-block text-muted">Pert
+															thickly mischievous clung frowned well...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-xs" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Beatrix Diaz <span
+															class="media-annotation pull-right">05:54</span>
+														</a> <span class="display-block text-muted">Nightingale
+															taped hello bucolic fussily cardinal...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-xs" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Richard Vango <span
+															class="media-annotation pull-right">01:43</span>
+														</a> <span class="display-block text-muted">Amidst
+															roadrunner distantly pompously where...</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+
+										<div class="tab-pane fade has-padding" id="messages-mon">
+											<ul class="media-list">
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Isak Temes <span
+															class="media-annotation pull-right">Tue, 19:58</span>
+														</a> <span class="display-block text-muted">Reasonable
+															palpably rankly expressly grimy...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Vittorio Cosgrove <span
+															class="media-annotation pull-right">Tue, 16:35</span>
+														</a> <span class="display-block text-muted">Arguably
+															therefore more unexplainable fumed...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Hilary Talaugon <span
+															class="media-annotation pull-right">Tue, 12:16</span>
+														</a> <span class="display-block text-muted">Nicely
+															unlike porpoise a kookaburra past more...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Bobbie Seber <span
+															class="media-annotation pull-right">Tue, 09:20</span>
+														</a> <span class="display-block text-muted">Before
+															visual vigilantly fortuitous tortoise...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Walther Laws <span
+															class="media-annotation pull-right">Tue, 03:29</span>
+														</a> <span class="display-block text-muted">Far
+															affecting more leered unerringly dishonest...</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+
+										<div class="tab-pane fade has-padding" id="messages-fri">
+											<ul class="media-list">
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Owen Stretch <span
+															class="media-annotation pull-right">Mon, 18:12</span>
+														</a> <span class="display-block text-muted">Tardy
+															rattlesnake seal raptly earthworm...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Jenilee Mcnair <span
+															class="media-annotation pull-right">Mon, 14:03</span>
+														</a> <span class="display-block text-muted">Since hello
+															dear pushed amid darn trite...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Alaster Jain <span
+															class="media-annotation pull-right">Mon, 13:59</span>
+														</a> <span class="display-block text-muted">Dachshund
+															cardinal dear next jeepers well...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Sigfrid Thisted <span
+															class="media-annotation pull-right">Mon, 09:26</span>
+														</a> <span class="display-block text-muted">Lighted
+															wolf yikes less lemur crud grunted...</span>
+													</div>
+												</li>
+
+												<li class="media">
+													<div class="media-left">
+														<img src="assets/images/placeholder.jpg"
+															class="img-circle img-sm" alt="">
+													</div>
+
+													<div class="media-body">
+														<a href="#"> Sherilyn Mckee <span
+															class="media-annotation pull-right">Mon, 06:38</span>
+														</a> <span class="display-block text-muted">Less
+															unicorn a however careless husky...</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- /tabs content -->
+
+								</div>
+								<!-- /my messages -->
+
+
+								<!-- Daily financials -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h6 class="panel-title">Daily financials</h6>
+										<div class="heading-elements">
+											<form class="heading-form" action="#">
+												<div class="form-group">
+													<label
+														class="checkbox checkbox-inline checkbox-switchery checkbox-right switchery-xs">
+														<input type="checkbox" class="switcher" id="realtime"
+														checked="checked"> Realtime
+													</label>
+												</div>
+											</form>
+											<span class="badge bg-danger-400 heading-text">+86</span>
+										</div>
+									</div>
+
+									<div class="panel-body">
+										<div class="content-group-xs" id="bullets"></div>
+
+										<ul class="media-list">
+											<li class="media">
+												<div class="media-left">
+													<a href="#"
+														class="btn border-pink text-pink btn-flat btn-rounded btn-icon btn-xs"><i
+														class="icon-statistics"></i></a>
+												</div>
+
+												<div class="media-body">
+													Stats for July, 6: 1938 orders, $4220 revenue
+													<div class="media-annotation">2 hours ago</div>
+												</div>
+
+												<div class="media-right media-middle">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-arrow-right13"></i></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+
+											<li class="media">
+												<div class="media-left">
+													<a href="#"
+														class="btn border-success text-success btn-flat btn-rounded btn-icon btn-xs"><i
+														class="icon-checkmark3"></i></a>
+												</div>
+
+												<div class="media-body">
+													Invoices <a href="#">#4732</a> and <a href="#">#4734</a>
+													have been paid
+													<div class="media-annotation">Dec 18, 18:36</div>
+												</div>
+
+												<div class="media-right media-middle">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-arrow-right13"></i></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+
+											<li class="media">
+												<div class="media-left">
+													<a href="#"
+														class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-xs"><i
+														class="icon-alignment-unalign"></i></a>
+												</div>
+
+												<div class="media-body">
+													Affiliate commission for June has been paid
+													<div class="media-annotation">36 minutes ago</div>
+												</div>
+
+												<div class="media-right media-middle">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-arrow-right13"></i></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+
+											<li class="media">
+												<div class="media-left">
+													<a href="#"
+														class="btn border-warning-400 text-warning-400 btn-flat btn-rounded btn-icon btn-xs"><i
+														class="icon-spinner11"></i></a>
+												</div>
+
+												<div class="media-body">
+													Order <a href="#">#37745</a> from July, 1st has been
+													refunded
+													<div class="media-annotation">4 minutes ago</div>
+												</div>
+
+												<div class="media-right media-middle">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-arrow-right13"></i></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+
+											<li class="media">
+												<div class="media-left">
+													<a href="#"
+														class="btn border-teal-400 text-teal btn-flat btn-rounded btn-icon btn-xs"><i
+														class="icon-redo2"></i></a>
+												</div>
+
+												<div class="media-body">
+													Invoice <a href="#">#4769</a> has been sent to <a href="#">Robert
+														Smith</a>
+													<div class="media-annotation">Dec 12, 05:46</div>
+												</div>
+
+												<div class="media-right media-middle">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-arrow-right13"></i></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /daily financials -->
+
+							</div>
+						</div>
+						<!-- /dashboard content -->
+
+					</div>
+
+					<!-- Footer -->
+					<div class="footer text-muted">
+						&copy; 2018. <a href="#" class="ui-blue">Sistema integral</a> by <a
+							href="#" class="ui-blue">Asociación Educativa Luz y Ciencia</a>
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+	<!-- modal container -->
+	<div id="modal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content ui-resizable">
+				<div class="modal-header ui-draggable-handle">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h5 class="modal-title"></h5>
+				</div>
+
+				<div class="modal-body"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="modal_full" class="modal fade modal_full">
+		<div class="modal-dialog ">
+			<!--  modal-xl -->
+			<div class="modal-content ui-resizable">
+				<div class="modal-header ui-draggable-handle">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h5 class="modal-title"></h5>
+				</div>
+
+				<div class="modal-body"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

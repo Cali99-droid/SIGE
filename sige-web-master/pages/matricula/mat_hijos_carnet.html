@@ -1,0 +1,41 @@
+<script type="text/javascript" src="js/matricula/mat_carnet_alumnos.js"></script>
+
+<style>
+.mi_button {
+	min-width: 115px;
+	max-width: 115px;
+	margin-top: 15px;
+	margin-right: 2px !important;
+}
+</style>
+
+<ul class="media-list content-group" id="alumnos-list">
+	
+	<li class="media panel panel-body stack-media-on-mobile">
+		<div class="media-left" style="vertical-align: middle;">
+			<!--<a href="#"> <img id="foto" 
+				class="img-rounded img-lg" alt="">
+			</a>-->
+		</div>
+
+		<div class="media-body">
+			<h6 class="media-heading text-semibold text-primary text-align-center" id="nom"></h6>
+			<input type="hidden" id="id_alu" name="id_alu"/>
+			<button type="button" class="btn bg-primary btn-rounded pull btn-xs" id="btn-agregar" onclick="printGeneracionSeccion(this,event)" >Carnet<i class="icon-vcard mr-3 icon-2x position-right"></i></button>
+			<div>
+				<table id="tabla" class="table">
+				</table>
+				<!--<label><B>Usuario Google:&nbsp; </B></label><label id="usuario" name="usuario"></label><br>
+				<label><B>Contraseña:&nbsp;  </B></label><label id="pass" name="pass"></label>-->
+			</div>
+			<!--<div ><a href="#" onclick="restablecer(this)" id="link_restablecer">Cambiar Contrase&ntilde;a del Alumno (Aplicaciones de Google)</a></div>-->
+			<div>
+				
+				
+				
+			</div>
+		</div>
+
+	</li>
+
+</ul>

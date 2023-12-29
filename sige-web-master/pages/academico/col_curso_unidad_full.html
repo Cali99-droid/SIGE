@@ -1,0 +1,76 @@
+<div class="panel panel-flat" id="cat_curso-panel">
+<div class="panel-body">
+<form action="api/cursoUnidad" id="col_curso_unidad_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nivel</label> 
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Curso</label> 
+				<select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Periodo Unidad</label> 
+				<select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>N&uacute;mero de Unidad</label>
+                <select id="num" name="num" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100" readonly="readonly">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Descripcion</label>
+                <input type="text" id="des" name="des" class="form-control input-sm " maxlength="500" readonly="readonly">
+			</div>
+			<div class="col-sm-6">
+				<label>Producto</label>
+                <input type="text" id="producto" name="producto"  class="form-control input-sm " maxlength="100" readonly="readonly">
+			</div>
+		</div>
+	</div>
+</form>
+<div>
+</div>
+
+<div class="panel panel-flat" id="cat_curso-panel">
+<div class="panel-body">		
+<div id="col_curso_unidad-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_uni_sub-tab" data-toggle="tab"><i class="fa fa-cube"></i> Relacion Unidad-Subtema</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_uni_sub-tab">
+				<table class="table" id="col_uni_sub-tabla">
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+</div>

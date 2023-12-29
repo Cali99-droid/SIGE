@@ -1,0 +1,56 @@
+<script type="text/javascript" src="pages/js/col_reporte_situacion_final.js"></script>
+<script type="text/javascript" src="framework/lib/jquery.tabable.min.js"></script>
+<style>
+
+</style>
+<div class="panel panel-flat" id="col_reporte_situacion-panel">
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="frm-not_reporte_situacion_final">
+			<!-- 
+			<button type="button" class="btn btn-primary btn-sm" data-popup="tooltip" title="Left tooltip" data-placement="left" id="left">Tooltip <i class="icon-play3 position-right"></i></button>
+			-->			
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Giro Negocio</label>
+				               	<select id="id_gir" name="id_gir" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Nivel</label>
+				               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Grado</label> 
+								<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label>Secci&oacute;n</label> 
+								<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+								<option value="-1">SELECCIONE</option>
+								</select>
+							</div>
+						</div>
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary" id="btn-buscar">Buscar <i class="fa fa-search position-right"></i></button>
+						</div>
+				</form>				
+		</div>
+	</div>
+
+	<div id="not_reporte_situacion_final">
+		<table class="table dataTable table-bordered table-striped table-hover" id="not_reporte_situacion_final-tabla">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	 
+	
+</div>
+	

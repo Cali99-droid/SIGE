@@ -1,0 +1,101 @@
+
+<style>
+.button_mod {
+	min-width: 175px !important;
+	max-width: 175px !important;
+	height: 175px !important;
+	margin-top: 25px;
+	margin-right: 3px !important;
+}
+
+.button2 {
+	transform: translate(-50%, -50%);
+	font-family: 'Rubik One', sans-serif;
+	text-decoration: none;
+	font-size: 4vw;
+	transition: all .5s;
+	background-color: #3498db; &:: before { @extend %test;
+	bottom: -15px;
+	transform: skewX(45deg);
+	background-color: darken(#3498db, 20%);
+}
+
+&
+::after { @extend %test;
+	bottom: -8px;
+	transform: skewY(45deg);
+	background-color: darken(#3498db, 30%);
+}
+
+&
+:active {
+	margin-left: 10px;
+	margin-top: 10px; &:: before { bottom : -5px;
+	height: 5px;
+	left: 3px;
+}
+
+&
+::after {
+	right: -5px;
+	width: 5px;
+	bottom: -3px;
+}
+}
+}
+</style>
+<style type="text/css">
+label {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	text-align: center;
+}
+</style>
+
+<div class="row">
+
+	<div class="col-md-12 text-center">
+
+		<button type="button" id="btnNotas"
+			class="btn bg-violet-300 btn-float btn-float-sm  button_mod">
+			<img src='assets/images/modulo/matricula.png' width='50px'
+				height='50px' />  <span>Matr&iacute;cula</span>
+		</button>
+
+		<button type="button" id="btnNotas"
+			class="btn bg-brown btn-float btn-float-sm  button_mod">
+			<img src='assets/images/modulo/notas.png' width='50px' height='50px' />
+			<span>Calificaciones</span>
+		</button>
+
+
+		<button type="button" id="btnAgenda"
+			class="btn btn-success  btn-float btn-float-sm button_mod">
+			<img src='assets/images/modulo/agenda.png' width='50px' height='50px' />
+			<span>Agenda</span>
+		</button>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12 text-center">
+
+		<button type="button" onclick="profesores(this)"
+			class="btn bg-slate btn-float btn-float-md button_mod">
+			<img src='assets/images/modulo/profesores.png' width='50px'
+				height='50px' /> <span>Aula</span>
+		</button>
+
+		<button type="button" id="btnAsistencia"
+			class="btn btn-warning btn-float btn-float-sm button_mod">
+			<img src='assets/images/modulo/pagos.png' width='50px' height='50px' />
+			<span>Pagos</span>
+		</button>
+
+		<button type="button"
+			class="btn btn-danger btn-float btn-float-sm button_mod">
+			<img src='assets/images/modulo/mesa-ayuda.png' width='50px'
+				height='50px' /> <span>Mesa de Ayuda</span>
+		</button>
+	</div>
+</div>

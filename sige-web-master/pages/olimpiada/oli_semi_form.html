@@ -1,0 +1,107 @@
+<script type="text/javascript" src="js/olimpiada/oli_semi_form.js"></script>
+<div class="panel panel-flat">
+	<div class="panel-body">
+		<form action="api/seminario/" id="oli_config-frm">
+			<input type="hidden" id="id" name="id" />
+			<input type="hidden" id="est" name="est" value="A"/>
+			<input type="hidden" id="id_anio" name="id_anio" />
+			<div class="form-group">
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Datos Generales del
+						Seminario</legend>
+					<div class="row">
+						<div class="col-sm-9">
+							<label>Nombre</label> <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="100">
+						</div>
+						<div class="col-sm-3">
+							<label>Fecha del Seminario</label> <input type="text" id="fec"
+								name="fec" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-7">
+							<label>Correo Env&iacute;o</label> <input type="text" id="corr_envio" name="corr_envio" required class="form-control input-sm " maxlength="200">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Costo</label> <select id="costo" name="costo"
+								placeholder="Seleccione" class="form-control select-search">
+								<option value="0">NO</option>
+								<option value="1">SI</option>
+							</select>
+						</div>
+						<div class="col-sm-6">
+							<label>Monto</label> <input type="text" id="monto" name="monto" required class="form-control input-sm " maxlength="200">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Inscripciones</legend>
+					<div class="row">
+						<div class="col-sm-3">
+							<label>Fecha Inicio Inscripci&oacute;n</label> <input type="text"
+								id="fec_ini_ins" name="fec_ini_ins" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+						<div class="col-sm-3">
+							<label>Fecha Fin Inscripci&oacute;n</label> <input type="text"
+								id="fec_fin_ins" name="fec_fin_ins" required
+								class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+					</div>
+				</fieldset>			 
+			</div>
+			<div class="modal-footer">
+				<fieldset class="mb-3">
+				<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+				</fieldset>
+			</div>
+		</form>
+
+	</div>
+</div>
+<div class="panel panel-flat">
+	<div class="panel-body" id="div-oli_config-grupo">
+		<form action="api/seminario/grabarSeminarioGrupo" id="oli_config-grupo">
+		<input type="hidden" id="id" name="id" />
+		<input type="hidden" id="id_sem" name="id_sem" />
+		<input type="hidden" id="est" name="est" value="A"/>
+			<div class="form-group">
+				<fieldset class="mb-3">
+					<legend class="text-uppercase font-size-sm"
+						style="font-weight: 700 !important;">Grupos</legend>
+					<div class="row">
+						<div class="col-sm-4">
+							<label>Nombre</label> <input type="text" id="nom" name="nom"
+								required class="form-control input-sm">
+						</div>
+						<div class="col-sm-4">
+							<label>Nro</label> <input type="text" id="nro" name="nro"
+								required class="form-control input-sm">
+						</div>
+						<div class="col-sm-4">
+							<label>Capacidad</label> <input type="text" id="cap" name="cap"
+								required class="form-control input-sm">
+						</div>
+						<div class="col-sm-4">
+							<label>Hora Ingreso</label> <input type="time" id="hor_ing"
+								name="hor_ing" required
+								class="form-control input-sm" maxlength="10">
+						</div>
+					</div>
+				</fieldset>
+				<div class="modal-footer">
+					<button type="button" id="btn-agregar-grupo" class="btn btn-primary">Agregar</button>
+					<button type="button" id="btn-editar-grupo" class="btn btn-primary">Editar</button>
+				</div>
+				<table class="table" id="oli_config-grupos"></table>
+			</div>
+		</form>
+	</div>
+</div>
+
+

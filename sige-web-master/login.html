@@ -1,0 +1,77 @@
+
+<!-- Advanced login -->
+					<form id="login-frm" action="api/seguridad/login">
+						<input type="hidden" id="id_per" name="id_per"/>
+					
+						<div class="panel panel-body login-form">
+							<div class="text-center">
+								<div class="icon-object border-warning-400 text-warning-400"><i class="icon-people"></i></div>
+								<h5 class="content-group-lg">Inicio de sesi&oacute;n <small class="display-block">Ingrese sus credenciales</small></h5>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input type="text" id="login" name="login" class="form-control" placeholder="Username">
+								<div class="form-control-feedback"> 
+									<i class="fa fa-user-circle-o text-muted" aria-hidden="true"></i>
+
+								</div>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input type="password" id="password" name="password" class="form-control" placeholder="Password">
+								<div class="form-control-feedback">
+									<i class="icon-lock2 text-muted"></i>
+								</div>
+							</div>
+
+
+							
+							<div class="form-group">
+								<button type="submit" class="btn bg-blue btn-block">Login <i class="icon-circle-right2 position-right"></i></button>
+							</div>
+							
+						</div>
+					</form>
+					<div id="modal-recover" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content login-form">
+
+								<!-- Form -->
+								<form class="modal-body" id="frm-recover" action="index.html">
+									<div class="text-center">
+										<div class="icon-object border-warning text-warning"><i
+												class="icon-spinner11"></i></div>
+										<h5 class="content-group">
+											<font color='black'>Recuperaci&oacute;n de clave</font> <small
+												class="display-block">Enviaremos las instrucciones a su correo</small>
+										</h5>
+
+									</div>
+
+									<div class="text-center">
+										<select id='id_per' name='id_per' class="form-control">
+											<option value='8'>Familiar</option>
+											<option value='9'>Personal de la institucion</option>
+										</select>
+									</div>
+
+
+									<div class="form-group has-feedback">
+										<input type="email" name="correo" id="correo" class="form-control"
+											placeholder="Ingrese correo">
+										<div class="form-control-feedback">
+											<i class="icon-mail5 text-muted"></i>
+										</div>
+									</div>
+
+									<button type="submit" class="btn bg-blue btn-block">Enviar instrucciones<i
+											class="icon-circle-right2 position-right"></i></button>
+									<button type="button" class="btn btn-default btn-block"
+										data-dismiss="modal">Cancelar</button>
+								</form>
+								<!-- /form -->
+
+							</div>
+						</div>
+					</div>
+					<!-- /advanced login -->

@@ -1,0 +1,64 @@
+<form action="api/comportamiento" id="not_comportamiento_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Trabajador</label> 
+				<select id="id_tra" name="id_tra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				<select id="id_alu" name="id_alu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Periodo Academico</label> 
+				<select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Promedio</label>
+                <input type="text" id="prom" name="prom" required class="form-control input-sm number" maxlength="10">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="not_comportamiento-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#not_cap_com-tab" data-toggle="tab"><i class="fa fa-cube"></i> Nota Capacidad Comportamiento</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="not_cap_com-tab">
+				<table class="table" id="not_cap_com-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

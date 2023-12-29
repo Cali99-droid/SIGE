@@ -1,0 +1,199 @@
+<script type="text/javascript" src="pages/js/col_reporte_conductual_modal.js"></script>
+<div class="panel panel-flat">
+<div class="panel-body">
+<form action="api/reporteConductual" id="col_reporte_conductual-frm">
+	<input type="hidden" id="id" name="id" />
+	<!-- <input type="hidden" id="id_inf" name="id_inf" /> -->
+	<input type="hidden" id="id_anio" name="id_anio" />	
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+	<fieldset class="mb-3">
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">1. Datos Generales del Reporte</legend>
+		<div class="row detalle">
+			<div class="col-sm-3">
+				<label>Caso</label>
+                <input type="text" id="cod" name="cod" required class="form-control input-sm " readonly="readonly">
+			</div>
+			<div class="col-sm-3">
+				<label>N° Registro Síseve</label>
+                <input type="text" id="nro_reg" name="nro_reg" required class="form-control input-sm ">
+			</div>
+			<div class="col-sm-3">
+				<label>DREA</label>
+                <input type="text" id="drea" name="drea" required class="form-control input-sm " value="ANCASH" readonly="readonly">
+			</div>
+			<div class="col-sm-3">
+				<label>UGEL</label>
+                <input type="text" id="ugel" name="ugel" required class="form-control input-sm " value="HUARAZ" readonly="readonly">
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-4">
+				<label>Periodo Académico</label>
+                <select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+                <option value="">SELECCIONE</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Tipo de Reporte</label>
+                <select id="id_ctf" name="id_ctf" required placeholder="Seleccione" class="form-control select-search">
+                <option value='-1'>TODOS</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Fecha</label>
+                <input type="text" id="fecha" name="fecha" required class="form-control input-sm daterange-single" >
+			</div>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">2. Datos de la persona Informante del caso</legend>
+		<div class="row detalle">
+			<!-- <div class="col-sm-12">
+			<input type="checkbox" class="form-check-input-styled-primary" checked="" data-fouc="" id="login" name="login">
+			<label>Informante del Caso</label>
+			</div> -->
+			<div class="" id="form_informante">
+			<input type="hidden" id="id_inf" name="id_inf">
+			<input type="hidden" id="tip_inf" name="tip_inf" >
+			<div class="col-sm-6">
+				<label>Apellidos y Nombres</label> 
+				<input type="text" id="trabajador" name="trabajador" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+			<div class="col-sm-3">
+				<label>DNI</label>
+                <input type="text" id="dni_inf" name="dni_inf" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+			<div class="col-sm-3">
+				<label>Rol</label>
+                <input type="text" id="rol" name="rol" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+			</div>
+		</div>
+		<div class="row detalle">
+		<div class="col-sm-12">
+		<input type="checkbox" class="form-check-input-styled-primary" id="otro" name="otro" >
+		<label>Otro</label>
+		</div>
+		</div>
+		<div class="" id="form_otro_informante">
+		<div class="row detalle">
+		<input type="hidden" id="id_inf" name="id_inf">
+			<div class="col-sm-4">
+				<label>Nombre</label> 
+				<input type="text" id="informante" name="informante" required class="form-control input-sm " maxlength="50" >
+			</div>
+			<div class="col-sm-4">
+				<label>Apellido Paterno</label> 
+				<input type="text" id="ape_pat_otro" name="ape_pat_otro" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-4">
+				<label>Apellido Materno</label>
+                <input type="text" id="ape_mat_otro" name="ape_mat_otro" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-2">
+				<label>Tipo de Documento</label>
+                <select id="tip_doc_otro" name="tip_doc_otro" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-3">
+				<label>DNI</label> 
+				<input type="text" id="dni_otro" name="dni_otro" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-3">
+				<label>Celular</label>
+                <input type="text" id="cel_otro" name="cel_otro" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-4">
+				<label>Dirección</label>
+                <input type="text" id="dir_otro" name="dir_otro" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">3. Datos del presunto infactor
+		<button type="button" id="btn_agregar_alumno" href="pages/academico/col_reporte_conductual_buscar.html" class="btn bg-transparent text-indigo-400 border-indigo-400 ml-1" title="agregar alumno"><i class="fa fa-user-plus mr-2"></i></button>
+		</legend>
+		<div id="div-infractor" name="div-infractor">
+		<div id="div-infractor_alumno" name="div-infractor_alumno">
+		<div class="row detalle">
+		<input type="hidden" id="id_mat" name="id_mat" required class="form-control input-sm " maxlength="50">
+			<div class="col-sm-3">
+				<label>DNI</label>
+                <input type="text" id="alumno_dni" name="alumno_dni" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+			<div class="col-sm-6">
+				<label>Alumno</label>
+                <input type="text" id="alumno_nom" name="alumno_nom" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+			<div class="col-sm-3">
+				<label>Nivel/ Grado/ Sección</label>
+                <input type="text" id="aula" name="aula" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-4">
+				<label>Edad</label>
+                <input type="text" id="edad" value="12" name="edad" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+			<div class="col-sm-4">
+				<label>Sexo</label> 
+				<input type="text" id="sexo" name="sexo" value="M" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+			<!-- <div class="col-sm-3">
+				<label>Turno</label>
+                <input type="text" id="turno" name="turno" value="M" required class="form-control input-sm " maxlength="50">
+			</div> -->
+			<div class="col-sm-4">
+				<label>Celular</label>
+                <input type="text" id="celular" name="celular" required class="form-control input-sm " maxlength="50" readonly="readonly">
+			</div>
+		</div>
+		</div>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">4. Datos del Profesor o Clase:</legend>
+		<div class="row detalle">
+			<div class="col-sm-6">
+				<label>Docente</label>
+                 <select id="id_prof" name="id_prof" required placeholder="Seleccione" class="form-control select-search">
+                 <option value="">SELECCIONE</option>
+				</select>
+			</div>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">5. Faltas Cometidas</legend>
+		<table class="table" id="list_faltas-tabla">
+		</table>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">6. Datos Complementarios</legend>
+		<div class="row detalle">
+			<div class="col-sm-12">
+				<label>Descripci&oacute;n del Docente</label>
+                <textarea rows="12" cols="12" class="form-control elastic" id="des_doc" name="des_doc" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 96px;" readonly="readonly"></textarea>
+			</div>
+			<div class="col-sm-12">
+				<label>Descripci&oacute;n del Informante</label>
+                <textarea rows="12" cols="12" class="form-control elastic" id="des_inf" name="des_inf" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 96px;"></textarea>
+			</div>
+		</div>
+		</fieldset>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+</div>
+</div>
+
+

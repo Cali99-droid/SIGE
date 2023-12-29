@@ -1,0 +1,73 @@
+<form action="api/cursoAnio" id="col_curso_anio-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<input type="hidden" id="id_cur_ses" name="id_cur_ses" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				<!--<select id="id_cic" name="id_cic" required placeholder="Seleccione" class="form-control select-search">-->
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Ciclo</label> 
+				<select id="id_cic" name="id_cic" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Grado</label> 
+				<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>&Aacute;rea</label> 
+				<select id="id_caa" name="id_caa" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Curso</label> 
+				<select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Peso de evaluaci&oacute;n</label>
+                <input type="text" id="peso" name="peso"  class="form-control input-sm number" maxlength="1">
+			</div>
+			<div class="col-sm-4">
+				<label>Orden</label>
+                <input type="text" id="orden" name="orden" required class="form-control input-sm number" maxlength="2">
+			</div>
+			<div class="col-sm-4">
+				<label>Código Classroom</label>
+                <input type="text" id="cod_classroom" name="cod_classroom" required class="form-control input-sm" maxlength="2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>&iquest;Se promediara?</label>
+				<select id="flg_prom" name="flg_prom" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nro. de Sesiones</label>
+                <input type="text" id="nro_ses" name="nro_ses" required class="form-control input-sm number">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,49 @@
+<script type="text/javascript" src="js/matricula/mat_generacion_usu_alu.js"></script>
+<div class="panel panel-flat" id="mat_generacion_usu_alu-panel">
+	<div class="panel-body">
+	<form action="" id="frm_generacion_usu_alu">
+	<input id="id_anio" name="id_anio" type="hidden"/>
+	<table class="table" id="mat_generacion_usu_alu">
+	</table>
+	</form>
+	<button type="button" id="btn-generar" class="btn btn-primary pull-right btn-sm" >Generar Usuarios</button>
+	</div>
+</div>
+
+<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5>Procesar Paswords de los Alumnos</h5>
+			<h5 class="panel-title">Seleccionar archivo</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="lectora-frm">
+					
+						<div class="form-group">
+								<div class="col-lg-6">
+								<label>Archivo</label>
+								<input type="file" class="form-control input-xs" id="file" name="file"/>
+							</div>
+						</div>
+	
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary" id="btn-cargar">Cargar archivo<i class="icon-arrow-right14 position-right"></i></button>
+							<button type="submit" class="btn btn-primary" id="btn-procesar" style="display:none" >Procesar <i class="icon-arrow-right14 position-right"></i></button>
+						</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+	</div>

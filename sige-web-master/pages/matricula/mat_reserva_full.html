@@ -1,0 +1,94 @@
+<form action="api/reserva" id="mat_reserva_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				<select id="id_alu" name="id_alu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nivel</label> 
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Condicion Matricula</label> 
+				<select id="id_con" name="id_con" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Cliente</label> 
+				<select id="id_cli" name="id_cli" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Apoderado</label> 
+				<select id="id_fam" name="id_fam"  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Fecha Reserva</label>
+                <input type="text" id="fec" name="fec" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha L&iacute;mite</label>
+                <input type="text" id="fec_lim" name="fec_lim" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="mat_reserva-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#fac_reserva_cuota-tab" data-toggle="tab"><i class="fa fa-cube"></i> Reserva Cuota</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="fac_reserva_cuota-tab">
+				<table class="table" id="fac_reserva_cuota-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

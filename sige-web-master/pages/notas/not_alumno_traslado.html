@@ -1,0 +1,82 @@
+<script type="text/javascript" src="pages/js/not_alumno_traslado.js"></script>
+
+	<!-- Form horizontal -->
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Buscar alumno</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              </div>
+		</div>
+
+		<div class="panel-body">
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-alumno">
+						<input type='hidden' id='id_niv' name='id_niv'>
+						<div class="form-group">
+							<div class="col-lg-12">
+								<input type="text" class="form-control input-xs" id="alumno" name="alumno" placeholder="Ingrese apellidos y nombres del alumno"  autocomplete="off">
+							</div>
+						</div>
+					</form>	
+				</fieldset>
+
+		</div>
+	</div>
+	<!-- /form horizontal -->
+
+	<div class="panel panel-flat" style="display:none" id="panel-alumno">
+		<div class="panel-heading">
+			<h5 class="panel-title">Alumno</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+	              		<li><a data-action="collapse"></a></li>
+	              		<li><a data-action="reload"></a></li>
+	              		<li><a data-action="close"></a></li>
+	              	</ul>
+	        </div>
+		</div>
+	
+		<form class="form-horizontal" id="frm-notas">
+		<div class="panel-body">
+			<input type='hidden' id='id_mat' name='id_mat'>
+			
+			<div class="row">
+				<div class="col-sm-3">
+					<label>Nivel</label> 
+					<input type="nivel" id="nivel" class="form-control disabled" >
+	
+				</div>
+				<div class="col-sm-3">
+					<label>Grado</label>
+	                <input type="text" id="grado" class="form-control disabled" >
+				</div>
+				<div class="col-sm-3">
+					<label>Secci&oacute;n</label>
+	                <input type="text" id="seccion" class="form-control disabled" >
+				</div>
+				<div class="col-sm-3">
+					<label>Periodo</label>
+	                <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+					</select>
+				</div>
+			</div>	
+		</div>			
+		 
+		<table class="table" id="table-alumno">
+		</table>
+		</form>
+		
+		<div class="text-right">
+			<button type="button" id='btn-grabar' class="btn btn-danger"> Grabar notas<i class="fa fa-save position-right"></i>
+			</button>
+		</div>
+			
+	</div>
+
+	

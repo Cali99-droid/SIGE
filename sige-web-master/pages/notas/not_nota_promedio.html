@@ -1,0 +1,278 @@
+<meta charset="utf-8">
+<style>
+#not_nota-tabla input {
+	min-width: 60px; /* depends how much minimum width you require */
+}
+
+th.rotate {
+  /* Something you can count on */
+  height: 140px;
+   width: 50px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(25px, 51px)
+    /* 45 is really 360 - 45 */
+    rotate(270deg);
+  width: 30px;
+}
+th.rotate > div  {
+  /*border-bottom: 1px solid #ccc;*/
+  /*padding: 5px 10px;*/
+  padding: 4px 4px 50px 4px;
+}
+
+table.dataTable {
+	width:400px !important;
+}
+
+</style>
+<script>
+function _getTR(id_table,index){
+	return $('#' + id_table + ' > thead>tr:nth-child(' + index + ')');
+}
+function onloadPage(params){
+	
+	$('#id_cur').on('change',function(event) {
+
+		var param1 = {id_niv : $('#id_niv').val() };
+		_llenarComboURL('api/cursoUnidad/listarPeriodos',
+			$('#id_cpu'), null, param1, function() {
+				$('#id_cpu').change();
+			});
+		});
+
+	
+	$('#id_cpu').on('change',function(event) {
+		 //$('#not_nota-tabla').html('');
+	});
+
+	$('#id_au').on(
+			'change',
+			function(event) {
+				var param = {
+					id_tra : _usuario.id_tra,
+					id_anio : $('#_id_anio').text(),
+					id_au : $(this).val()
+				}
+				_llenarComboURL('api/nota/listarCursosProfesor', $('#id_cur'),null, param, function(){$('#id_cur').change()});
+			});
+
+	$('#id_gra').on(
+			'change',
+			function(event) {
+				var param = {
+					id_tra : _usuario.id_tra,
+					id_grad : $(this).val(),
+					id_suc : $('#id_suc').val(),
+					id_anio : $('#_id_anio').text()
+				}
+				_llenarComboURL('api/nota/listarAulaProfesor', $('#id_au'),	null, param, function() {
+							$('#id_au').change();
+						});
+			});
+
+	$('#id_niv').on(
+			'change',
+			function(event) {
+				// _llenarCombo('cat_grad',$('#id_gra'),null,$(this).val(),function(){$('#id_gra').change();
+				var param = {
+					id_tra : _usuario.id_tra,
+					id_anio : $('#_id_anio').text(),
+					id_niv : $("#id_niv").val()
+				}
+				_llenarComboURL('api/evaluacion/listarGrados', $('#id_gra'),
+						null, param, function() {
+							$('#id_gra').change();
+							/*var param1 = {
+								id_niv : $('#id_niv').val()
+							};
+							_llenarComboURL('api/cursoUnidad/listarPeriodos',
+									$('#id_cpu'), null, param1, function() {
+										$('#id_cpu').change();
+									});
+							*/
+						});
+
+			});
+
+	$('#id_suc').on(
+			'change',
+			function(event) {
+				// _llenarCombo('ges_servicio',$('#id_niv'),null,$(this).val(),function(){$('#id_niv').change();});
+				var param = {
+					id_tra : _usuario.id_tra,
+					id_anio : $('#_id_anio').text()
+				};
+				_llenarComboURL('api/evaluacion/listarNiveles', $('#id_niv'),
+						null, param, function() {
+							$('#id_niv').change();
+						});
+			});
+	
+	var param = {
+			id_tra : _usuario.id_tra,
+			id_anio : $('#_id_anio').text()
+		};
+		
+	_llenarComboURL('api/nota/listarSucursal', $('#id_suc'), null, param,
+			function() {
+				$('#id_suc').change();
+			});
+	
+	var tamanio_max_indicador=16;
+	//INICIO - DATA 
+	//var bimestres = ['PRIMER BIMESTRE','SEGUNDO BIMESTRE','TERCERO BIMESTRE','CUARTO BIMESTRE'];
+	var competencias = [{id:1,
+						nom:'Diseña y construye soluciones tecnológicas para resolver problemas de su entorno',
+						indicadores: ['Reconoce a los elementos químicos',
+									'Relaciona la distribución de un elemento con sus propiedades',
+									'Describe las porpiedades de los elementos químicos']
+						},
+						{id:2,
+						nom:'Explica el mundo físico basándose en conocimientos sobre los seres vivos, materia y energía, biodiversidad, Tierra y universo',
+						indicadores:  [
+								'Describe las porpiedades de los elementos químicos',
+								'Determina los parámetros del último electrón',
+								'Emplea la regla de moller para la distribución electrónica']
+						}
+						];
+	var indicadores =  ['Reconoce a los elementos químicos',
+						'Relaciona la distribución de un elemento con sus propiedades',
+						'Describe las porpiedades de los elementos químicos',
+						'Determina los parámetros del último electrón',
+						'Emplea la regla de moller para la distribución electrónica'];
+	//FIN - DATA
+
+	var id_datatable = 'not_nota-tabla';
+	var TR_competencias =_getTR(id_datatable,1);//PRIMER TR DEL THEAD (COMPETENCIA)
+	var TR_indicador =_getTR(id_datatable,2);//SEGUNDO TR DEL THEAD (INDICADORES)
+	
+	//LLENANDO COMPETENCIA
+	//CLONAR CELDAS
+	var TD_competencia_html = TR_competencias.html();
+	for ( var i=0; i<competencias.length-1;i++){
+		TR_competencias.append(TD_competencia_html);	
+	}
+	//LLENAR CELDAS
+	var i=0;
+	TR_competencias.children('th').each(function () {
+		var descripcion =  competencias[i].nom;
+		$(this).attr('colspan',competencias[i].indicadores.length);
+		$(this).html(descripcion);
+		i++;
+	});
+
+	
+	var TD_indicador_html = TR_indicador.html();
+	for ( var i=0; i<indicadores.length-1;i++){
+		TR_indicador.append(TD_indicador_html);	
+	}
+	
+	var i=0;
+	TR_indicador.children('th').each(function () {
+		var descripcion = (i+1) + '-' +indicadores[i++].substr(0,tamanio_max_indicador) + '...';
+		$(":first-child", $(this)).html(descripcion);
+	});
+	
+}	
+</script>
+<div class="panel panel-flat" id="not_nota-panel">
+
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="buscar-frm">
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Local</label> 
+								<select id="id_suc" name="id_suc" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Nivel</label>
+				               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Grado</label> 
+								<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Secci&oacute;n</label> 
+								<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Curso</label>
+				                <select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Periodo</label>
+				                <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+						</div>
+
+						
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary" id="btn-buscar">Buscar <i class="fa fa-search position-right"></i></button>
+							<button type="button" class="btn btn-warning" id="btn-grabar" style="display:none">Grabar <i class="fa fa-save position-right"></i></button>
+							<button type="button" class="btn btn-warning" id="btn-actualizar" style="display:none">Actualizar <i class="fa fa-save position-right"></i></button>
+						</div>
+				</form>				
+		</div>
+	</div>
+
+
+
+	<div class="panel-body">
+
+		<table class="table table-bordered table-striped table-hover" id="not_nota-tabla" style="width:auto;">
+			<thead style="background-color: #eceadf;">
+				<tr>
+					<th width='100'>COMPETENCIA X</th>
+				</tr>
+				<tr >
+					<th class="rotate"><div>DESEMPEÑO Y</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>11
+					</td>
+					<td>10
+					</td>
+					<td>12
+					</td>
+					<td>12
+					</td>
+					<td>16
+					</td>
+				</tr>
+				<tr>
+					<td>11
+					</td>
+					<td>10
+					</td>
+					<td>12
+					</td>
+					<td>12
+					</td>
+					<td>16
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>

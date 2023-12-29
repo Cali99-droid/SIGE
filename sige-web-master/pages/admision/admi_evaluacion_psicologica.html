@@ -1,0 +1,99 @@
+<script type="text/javascript" src="js/admision/admi_evaluacion_psicologica.js"></script>
+
+<div class="panel panel-flat">
+<div class="panel-body">
+<form action="api/criterioNota" id="admi_evaluacion_psicologica-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_ex_cri" name="id_ex_cri" />	
+	<input type="hidden" id="id_mat_vac" name="id_mat_vac" />	
+	<input type="hidden" id="id_ex_cri" name="id_alu" />	
+	<!-- <input type="hidden" id="id_inf" name="id_inf" /> -->
+	<input type="hidden" id="id_anio" name="id_anio" />	
+	<input type="hidden" id="puntaje" name="puntaje">
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+	<div class="panel-heading">
+	<h6 class="panel-title" align="center"><label id="informe">INFORME PSICOL&Oacute;GICO NUM. </label><input id="num" name="num" readonly="readonly"></input></h6> <!-- <font style="font-size: 20px; " align="center"> -->
+	</div>
+	<fieldset class="mb-3">
+	<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">1. Datos Personales</legend>
+	
+		<div class="row detalle">
+			<div class="col-sm-2">
+				<label><font style="font-size: 14px; "><b>Apellidos y Nombres: </b></font></label>
+			</div>
+			<div class="col-sm-6">
+				<label id="apeNom"></label>
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-2">
+				<label><font style="font-size: 14px; "><b>Fecha de Nacimiento: </b></font></label>
+			</div>
+			<div class="col-sm-6">
+				<label id="fecNac"></label>
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-2">
+				<label><font style="font-size: 14px; "><b>Edad: </b></font></label>
+			</div>
+			<div class="col-sm-6">
+				<label id="edad"></label>
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-2">
+				<label><font style="font-size: 14px; "><b>Grado de Ingreso: </b></font></label>
+			</div>
+			<div class="col-sm-6">
+				<label id="grado"></label>
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-2">
+				<label><font style="font-size: 14px; "><b>Fecha de Evaluacion: </b></font></label>
+			</div>
+			<div class="col-sm-6">
+				<label id="fecha"></label>
+			</div>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">2. Preguntas</legend>
+		<div class="row detalle">
+			<table id="preguntas_table" class="table">
+			</table>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">3. Instrumentos y Tecnicas Utilizadas</legend>
+		<div class="row detalle">
+			<table id="instrumentos_table" class="table"></table>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">4. Resultados y Conclusiones</legend>
+		<div class="row detalle form-group has-success">
+		<textarea  required="required" name="resultado" id="resultado" class="form-control" rows="14" cols="100"  style="resize:none; font-size: 14px; text-align:justify; "></textarea>
+		</div>
+		</fieldset>
+		<fieldset class="mb-3">
+		<legend class="text-uppercase font-size-sm" style="font-weight: 700!important;">5. Condici&oacute;n Final</legend>
+		<div class="row detalle">
+		<div class="form-group" align="center">
+		<input type="radio" name="apto" id="apto1" value="Y" class="styled"><label for="car_pod1">Apto</label> 
+		<input type="radio" name="apto" id="apto2" value="N" class="styled"><label for="car_pod2">No Apto</label>
+		</div>
+		</div>
+		</fieldset>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-success"><i class="glyphicon glyphicon-floppy-disk"></i>Grabar</button>
+	</div>
+</form>
+</div>
+</div>
+
+

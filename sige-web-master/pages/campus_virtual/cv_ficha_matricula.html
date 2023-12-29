@@ -1,0 +1,122 @@
+
+<style>
+.sweet-alert {
+
+
+                border: 1px solid !important;
+
+            }
+</style>
+<script>
+
+</script>
+				<form class="modal-body" id="frm-ficha_matricula" action="">
+					<input id='id' name='id' type='hidden'/>
+					<input id='id_fam' name='id_fam' type='hidden'/>
+					<input id='id_anio' name='id_anio' type='hidden'/>
+					<input id='id_gpf' name='id_gpf' type='hidden'/>
+					<input id='est' name='est' type="hidden" value="A"/>
+					 <!-- <iframe
+   					src="http://docs.google.com/gview?url=C:/plantillas/Contrato_Servicios_Virtuales.pdf&embedded=true"
+   					style="width:700px; height:700px;"
+   					frameborder="0"> 
+					</iframe> -->
+					<fieldset>
+					<legend>LEER LOS SIGUIENTES DOCUMENTOS</legend><br>
+					
+					<center>
+					<a href="http://ae.edu.pe:8080/documentos/TerminosyCondiciones.pdf" onclick="document.getElementById('tc_view_tyc').checked = true;" target="_blank">T&eacute;rminos y condiciones</a>
+					<input id="tc_view_tyc" style="display:none" name="tc_view_tyc"  type="checkbox">
+					/
+					<!-- ALUMNO ANTIGUO -->
+					<!-- <a href="http://ae.edu.pe:8080/documentos/AA_Contrato_Servicios_Virtuales.pdf" onclick="document.getElementById('tc_view_con').checked = true;" target="_blank">Contrato servicios virtuales</a>
+					<input id="tc_view_con" style="display:none" name="tc_view_con"  type="checkbox">
+					/ -->
+					<a href="http://ae.edu.pe:8080/documentos/Costos.pdf" onclick="document.getElementById('tc_view_cos').checked = true;" target="_blank" target="_blank">Costos Fijos y Variables minimos del Servicio Educativo(DL NRO. 1476)</a>
+					<input id="tc_view_cos" style="display:none" name="tc_view_cos"  type="checkbox">
+					</center>
+					<hr/>
+					
+					
+					<!-- <div id="div_contrato" class="form-group"> -->
+					<!-- <embed src="http://ae.edu.pe:8080/documentos/TerminosyCondiciones.pdf" type="application/pdf" width="100%" height="300px" title="Términos y Condiciones"/> -->  
+					<!-- <embed src="http://ae.edu.pe:8080/documentos/Contrato_Servicios_Virtuales.pdf" type="application/pdf" width="100%" height="300px" title="Contrato"/> -->
+					 <!-- <iframe src="https://docs.google.com/viewer?url=http://www.jtech.ua.es/dadm/restringido/java/sesion01-apuntes.pdf&embedded=true" style="width:100%; height:300px;" frameborder="0"></iframe> -->
+					<!--  </div> -->
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-12">
+							<p>Yo como padre, madre o apoderado, deseo realizar la matr&iacute;cula para el campus virtual de mi(s) hijo(s):</p>
+								<div>
+									<ul id="hijos">
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="row">
+							<div class="col-sm-6">
+							<p>El monto mensual de las pensiones ser&aacute; S/.</p>
+							</div> 
+						</div> -->
+						
+						<div class="row">
+							<!-- <div class="col-sm-4">
+							</div> -->
+							<div class="col-sm-12">
+								<!-- <div class="radio radio-info radio-inline"> -->
+									<input id="tc_acept" name="tc_acept"  type="checkbox">
+									He le&iacute;do y acepto los "T&eacute;rminos y Condiciones" , el "Contrato de los Servicios Virtuales" y los "Costos Fijos y Variables minimos del Servicio Educativo (DL NRO. 1476)"
+								<!-- </div> -->
+							</div>
+							<!-- <div class="col-sm-3">
+								
+							</div>  -->
+						</div>
+						<!-- <div class="row">
+							<div class="col-sm-3">
+							</div>
+							<div class="col-sm-3">
+								<div class="radio radio-info radio-inline">
+									<input id="tc_acept1" name="tc_acept" value="1" type="radio">
+									<p>S&iacute; Acepto</p>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="radio radio-info radio-inline">
+									<input id="tc_acept2" name="tc_acept" value="0" type="radio">
+									<p> No Acepto </p>
+								</div>
+								</div>
+								<div class="col-sm-3">
+								</div>
+						</div>
+						<div class="row"> 
+							<div class="col-sm-6">
+							<a href="" align="rigth">T&eacute;rminos y Condiciones</a>
+							</div> 
+						</div> -->
+							<!-- <div class="col-sm-6">
+							<p><input type="checkbox" id="tc_acept" name="tc_acept"/>Acepto los T&eacute;rminos y Condiciones</p>
+							</div>	
+							<div class="col-sm-6">
+							<p><input type="checkbox" id="tc_acept" name="tc_acept"/>No Acepto los T&eacute;rminos y Condiciones</p>
+							</div> -->
+						<div id="div_no_acepta_tc">
+							<div class="row">
+								<div class="col-sm-12">
+								<p>Cu&eacute;ntanos&nbsp;<font color="red">(*)</font></p>
+								</div>
+							</div>
+							<div class="row has-success">
+								<div class="col-md-12">
+								<textarea class="form-control" placeholder="" rows="3" cols="3" id="tc_not_acept_mot" name="tc_not_acept_mot">
+								</textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					</fieldset>
+					<div class="modal-footer">		
+					<button type="button" class="btn bg-blue " id="btn_matricular" onclick="matricular()" >Finalizar <i class="icon-checkmark-circle position-right"></i></button>
+					</div>  
+				</form>

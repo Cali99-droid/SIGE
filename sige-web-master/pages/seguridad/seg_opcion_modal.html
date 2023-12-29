@@ -1,0 +1,58 @@
+<form action="api/opcion" id="seg_opcion-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Padre</label> 
+				<select id="id_opc" name="id_opc" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Titulo</label>
+                <input type="text" id="titulo" name="titulo" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>SubTitulo</label>
+                <input type="text" id="subtitulo" name="subtitulo" required class="form-control input-sm " maxlength="50">
+			</div>
+					</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Icono</label>
+                <input type="text" id="icon" name="icon" required class="form-control input-sm " maxlength="20">
+			</div>
+		
+			<div class="col-sm-6">
+				<label>URL</label>
+                <input type="text" id="url" name="url" required class="form-control input-sm " maxlength="100">
+			</div>
+
+			
+		</div>
+		<div class="row">
+			
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

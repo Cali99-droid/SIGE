@@ -1,0 +1,45 @@
+<form action="api/config/flags" id='config-modal-frm'>
+	<input type="hidden" id="id_oli" name="id_oli" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Olimpiada</label>
+                <input type="text" id="nom" name="nom" readonly class="form-control input-sm" >
+			</div>
+			<div class="col-sm-6">
+				<label>Configuraci&oacute;n</label>
+                <input type="text"readonly   class="  form-control input-sm no-border" maxlength="10" value="Pulbicaci&oacute;n de resultados">
+			</div>
+			<div class="col-sm-6">
+				<label>Habilitado</label>
+				<div class="flechas">
+				<select id="result_flag" name="result_flag" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+				</div>
+			</div>
+			<div class="col-sm-6">
+                <input type="text" readonly   class=" form-control input-sm no-border" maxlength="10" value="Fecha inicio de inscripci&oacute;n">
+			</div>
+			<div class="col-sm-6">
+				<input type="text" class="form-control daterange-time" id="fec_ini_ins" name="fec_ini_ins" />
+			</div>			
+			<div class="col-sm-6">
+                <input type="text" readonly   class=" form-control input-sm no-border" maxlength="10" value="Fecha fin de inscripci&oacute;n">
+			</div>
+			<div class="col-sm-6">
+				<input type="text" class="form-control daterange-time" id="fec_fin_ins" name="fec_fin_ins" />
+			</div>			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,67 @@
+<form action="api/colegio" id="col_colegio-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>C&oacute;digo modular</label>
+                <input type="text" id="cod_mod" name="cod_mod" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-4">
+				<label>Nombre del colegio</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-4">
+				<label>nivel</label>
+                <select id="nom_niv" name="nom_niv" placeholder="Seleccione" required class="form-control select-search">
+				<option value="INICIAL">INICIAL</option>
+				<option value="PRIMARIA">PRIMARIA</option>
+				<option value="SECUNDARIA">SECUNDARIA</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Departamento</label> 
+				<select id="id_dep" name="id_dep" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>	
+			<div class="col-sm-4">
+				<label>Provincia</label> 
+				<select id="id_prov" name="id_prov" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>	
+			<div class="col-sm-4">
+				<label>Distrito</label> 
+				<select id="id_dist" name="id_dist" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Direccion</label>
+                <input type="text" id="dir" name="dir"  class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-4">
+				<label>Tel&eacute;fono</label>
+                <input type="text" id="tel" name="tel"  class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-4">
+				<label>Estatal</label> 
+				<select id="estatal" name="estatal" placeholder="Seleccione" class="form-control">
+					<option value="1">S&iacute;</option>
+					<option value="0">No</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

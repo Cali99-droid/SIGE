@@ -1,0 +1,64 @@
+<script type="text/javascript" src="pages/js/not_reporte_nota_aula.js"></script>
+<style>
+
+#not_nota-tabla input {
+    min-width: 60px;   /* depends how much minimum width you require */
+}
+</style>
+<div class="panel panel-flat" id="not_nota-panel">
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="buscar-frm">
+			<!-- 
+			<button type="button" class="btn btn-primary btn-sm" data-popup="tooltip" title="Left tooltip" data-placement="left" id="left">Tooltip <i class="icon-play3 position-right"></i></button>
+			-->			
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Nivel</label>
+				               	<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Grado</label> 
+								<select id="id_gra" name="id_gra" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Secci&oacute;n</label> 
+								<select id="id_au" name="id_au" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Curso</label>
+				                <select id="id_cur" name="id_cur" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Periodo</label>
+				                <select id="id_cpu" name="id_cpu" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+						</div>
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary" id="btn-buscar">Buscar <i class="fa fa-search position-right"></i></button>
+						</div>
+				</form>				
+		</div>
+	</div>
+
+	<div id="not_reporte_aula">
+		<table class="table table-bordered" id="not_reporte_aula-tabla">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	 
+	
+</div>
+	

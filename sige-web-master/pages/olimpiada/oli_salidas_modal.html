@@ -1,0 +1,41 @@
+<form action="api/config/actualizarHorSal" id='config-modal-frm'>
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_oli" name="id_oli" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Alumno</label>
+                <input type="text" id="nom" name="nom" readonly class="form-control input-sm" >
+			</div>
+		</div>
+		
+		<div class="col-sm-6">
+               <input type="text"readonly   class="form-control input-sm no-border" maxlength="10" value="Hora de Ingreso">
+		</div>
+		
+		<div class="col-sm-6">
+			<input type="text" class="form-control" id="hor_ing" readonly/>
+		</div>
+
+
+		<div class="col-sm-6">
+               <input type="text"readonly   class="form-control input-sm no-border" maxlength="10" value="Hora de Salida">
+		</div>
+		
+		<div class="col-sm-6">
+			<input type="text" class="form-control daterange-time" id="hor_sal" name="hor_sal" />
+		</div>
+
+
+		
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

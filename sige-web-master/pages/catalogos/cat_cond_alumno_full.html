@@ -1,0 +1,51 @@
+<form action="api/condAlumno" id="cat_cond_alumno_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo de Condicion</label> 
+				<select id="id_ctc" name="id_ctc" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Condicion</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n</label>
+                <input type="text" id="des" name="des" required class="form-control input-sm " maxlength="150">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="cat_cond_alumno-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#mat_condicion-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matr&iacute;cula Condici&oacute;n Alumno</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="mat_condicion-tab">
+				<table class="table" id="mat_condicion-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

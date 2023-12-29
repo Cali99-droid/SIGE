@@ -1,0 +1,45 @@
+<form action="api/subtema" id="col_subtema-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_tem" name="id_tem">
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tema</label> 
+				<input type="text" id="nom_tem" name="nom_tem" required class="form-control input-sm " maxlength="200" readonly="readonly">	
+			</div>
+			<div class="col-sm-6">
+				<label>Subtema</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="200">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Orden</label>
+                <input type="text" id="ord" name="ord" required class="form-control input-sm number" maxlength="3">
+			</div>
+			<div class="col-sm-6">
+				<label>Observacion</label>
+                <input type="text" id="obs" name="obs"  class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

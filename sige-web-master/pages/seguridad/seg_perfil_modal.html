@@ -1,0 +1,36 @@
+<form action="api/perfil">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" class="form-control input-sm" maxlength="20">
+			</div>
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n</label>
+                <input type="text" id="des" name="des" class="form-control input-sm" maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>D&iacute;as Adicionales Login</label>
+                <input type="text" id="dias_adi_login" name="dias_adi_login" class="form-control input-sm" maxlength="100">
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

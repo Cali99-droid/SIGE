@@ -1,0 +1,54 @@
+<script type="text/javascript" src="pages/js/mat_reporte_matriculados.js"></script>
+<div class="panel panel-flat" id="col_reporte_tema-panel">
+	<div class="panel-body">
+	<form action="" id="frm-reporte-reserva">
+				<div class="row">
+					<div class="col-sm-4">
+						<label>LOCAL</label> <select class="form-control select-search input-xs"
+							id="id_suc" name="id_suc">
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<label>NIVEL</label> <select class="form-control select-search input-xs"
+							id="id_nvl" name="id_nvl">
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<label>GRADO</label> <select class="form-control select-search input-xs"
+							id="id_gra" name="id_gra">
+							<option value=''>TODOS</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<label>SECCIÓN</label> <select class="form-control select-search input-xs"
+							id="id_au" name="id_au">
+							<option value=''>TODOS</option>
+						</select>
+					</div>
+					<!-- 
+					<div class="col-sm-4">
+						<label>FECHA DE RESERVA</label> 
+						<input id="fec" name="fec" class="form-control input-sm daterange-single" required="required" type="text"  value="" />
+					</div> -->
+					<div class="col-sm-4">
+						<label>MATRICULA</label> <select class="form-control select-search input-xs"
+							id="mat" name="mat">
+							<option value="">TODOS</option>
+							<option value="S">MATRICULADO</option>
+							<option value="N">NO MATRICULADO</option>
+						</select>
+					</div>
+				</div>
+				<div class="text-right">
+						<button type="submit" class="btn btn-primary" id="btn-buscar">Buscar <i class="icon-arrow-right14 position-right"></i></button>
+				</div>
+	</form>
+	</div>
+								
+	<table class="table" id="col_reporte_reserva">
+	</table>
+	
+</div>
+	

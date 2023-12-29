@@ -1,0 +1,149 @@
+<script type="text/javascript" src="js/facturacion/fac_reporte_deudores.js"></script>
+
+	<!-- Form horizontal -->
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Buscar por banco</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-pagos-buscar">
+					<input type="hidden" name="id_anio" value="2" >
+					<input type="hidden" name="id_suc" id="id_suc" >
+
+				
+					<div class="form-group">
+						<div class="row">
+						<div class="col-sm-3">
+								<label class="negrita">Giro</label>
+								<select  class="form-control select-search" id="id_gir" name="id_gir">
+								</select>
+						</div>
+						<div class="col-sm-3">
+								<label class="negrita">Nivel</label>
+								<select  class="form-control select-search" id="id_niv" name="id_niv">
+								<option value="">TODOS</option>
+								</select>
+						</div>
+						<div class="col-sm-3">
+						<label class="negrita">TIPO PERIODO</label>
+						<select required class="form-control select-search" id="id_tpe" name="id_tpe">
+							<!--<option value="">SELECCIONE</option>-->
+						</select>
+						</div>
+						<div class="col-sm-3">
+								<label class="negrita">Ciclo</label>
+								<select  class="form-control select-search" id="id_cic" name="id_cic">
+								<option value="">TODOS</option>
+								</select>
+						</div>
+						</div>
+						<div class="row">
+						<div class="col-sm-3">
+								<label class="negrita">Grado</label>
+								<select  class="form-control select-search" id="id_gra" name="id_gra">
+								<option value="">TODOS</option>
+								</select>
+						</div>
+						<div class="col-sm-3">
+								<label class="negrita">Sección</label>
+								<select  class="form-control select-search" id="id_au" name="id_au">
+								<option value="">TODOS</option>
+								</select>
+						</div>
+						<div class="col-sm-3">
+								<label class="negrita">Mes (Hasta)</label>
+								<select  class="form-control select-search" id="mes" name="mes">
+								<option value="">TODOS</option>
+								<option value="1">Enero</option>
+								<option value="2">Febrero</option>
+								<option value="3">Marzo</option>
+								<option value="4">Abril</option>
+								<option value="5">Mayo</option>
+								<option value="6">Junio</option>
+								<option value="7">Julio</option>
+								<option value="8">Agosto</option>
+								<option value="9">Setiembre</option>
+								<option value="10">Octubre</option>
+								<option value="11">Noviembre</option>
+								<option value="12">Diciembre</option>
+								</select>
+						</div>
+						<div class="col-sm-3">
+							<label class="negrita">Matricula</label>
+							<select  class="form-control select-search" id="mat" name="mat">
+							<option value="">TODOS</option>
+							<option value="S">Si</option>
+							<option value="N">No</option>
+							</select>
+						</div>
+						</div>
+						<div class="row">
+						<div class="col-sm-3">
+							<label>Generación y Orden</label>
+			                <select  class="form-control select-search" id="ord" name="ord">
+							<option value="A">Alfabético</option>
+							<option value="AU">Aula</option>
+							</select>
+						</div>
+						</div>
+					</div>
+					
+					<!-- 				
+					<div class="form-group">
+						<div class="col-lg-6">
+							<label>Desde </label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_ini" name="fec_ini" class="form-control daterange-single" >
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<label>Hasta</label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_fin" name="fec_fin" class="form-control daterange-single" >
+							</div>
+						</div>
+					</div>
+ 					-->
+ 
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Generar Excel <i class="icon-file-excel position-right"></i></button>
+					</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+	</div>
+	<!-- /form horizontal -->
+
+	<div class="panel panel-flat" style="display:none" id="panel-pagos">
+		<div class="panel-heading">
+			<h5 class="panel-title">Resultados</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+	              		<li><a data-action="collapse"></a></li>
+	              		<li><a data-action="reload"></a></li>
+	              		<li><a data-action="close"></a></li>
+	              	</ul>
+	             	</div>
+		</div>
+	
+	
+		<table class="table" id="tabla-pagos">
+		</table>
+		
+	</div>

@@ -1,0 +1,97 @@
+<script type="text/javascript" src="js/facturacion/fac_pagos_familia.js"></script>
+<style>
+.bg-danger-300 {
+background-color: rgba(254, 226, 226, 1);
+}
+.bg-green-200 {
+background-color: rgba(209, 250, 229, 1);
+}
+</style>
+	<!-- Form horizontal -->
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Buscar por fecha</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-pagos-buscar">
+					<input type="hidden" name="id_anio" value="5" >
+					<input type="hidden" name="id_suc" id="id_suc" >
+					<input type="hidden" name="id_usr" id="id_usr" >
+				
+					<div class="form-group">
+						<div class="col-lg-6">
+							<label>Alumno</label>
+			               <select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+						<div class="col-lg-6">
+							<label>Año Consulta</label>
+			               <select id="id_anio_des" name="id_anio_des" required placeholder="Seleccione" class="form-control select-search">
+							</select>
+						</div>
+					</div>
+
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Buscar <i class="icon-arrow-right14 position-right"></i></button>
+					</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+	</div>
+	<!-- /form horizontal -->
+
+	<div class="panel panel-flat" style="display:none" id="panel-alumnos">
+		<div class="panel-heading">
+			<h5 class="panel-title">Resultados</h5>
+		</div>
+		
+		<div class="col-md-12">	
+															
+		<div id="pagos_resumen">
+		<div class="panel panel-body div_pago" id="div_pago">
+				<div class="panel-body">
+							<form class="form-horizontal" id="frm-pagos-resumen">
+								<!-- 
+								<div class="form-group" id="nro_recibo">
+										<label class="control-label col-lg-8"><b><h4>NUMERO DE RECIBO</h4></b></label>
+										<div class="col-lg-4">
+											<span class="label label-success position-right"><h6 id="nro_rec"></h6></span>
+										</div>
+								</div>
+								--->
+								<div class="form-group">
+												<div class="row col-lg-12">
+												<strong><label  id="concepto">CONCEPTO</label><strong>
+												</div>
+												<div class="row col-lg-4">
+												<strong><label  id="fecha">Fecha :</strong></label>&nbsp;<label id="lbl_fecha_est"></label>
+												</div>
+												<div class="row col-lg-4">
+												<strong><label  id="estado">Fecha:</strong></label>&nbsp;<label id="lbl_monto"></label>
+												</div>
+												<div class="row col-lg-4 text-right" id="div_impresion">
+												<button type="button" id="btnImprimir" class="btn btn-danger  btn-sm" data-id_fmo="" onclick="pdf(event,this)">Generar Recibo<i class="icon-file-pdf mr-3 icon-2x"></i></button>
+												</div>
+								</div>																		
+							</form>		
+				</div>
+				
+		</div>	
+		</div>															
+	</div>
+		
+	</div>

@@ -1,0 +1,54 @@
+<form action="api/condMatricula" id="cat_cond_matricula_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Condicion</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>Descripci&oacute;n</label>
+                <input type="text" id="des" name="des" required class="form-control input-sm " maxlength="150">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="cat_cond_matricula-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#mat_reserva-tab" data-toggle="tab"><i class="fa fa-cube"></i> Reserva matr&iacute;cula</a>
+			</li>
+			<li>
+				<a href="#mat_matricula-tab" data-toggle="tab"><i class="fa fa-cube"></i> Matricula</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="mat_reserva-tab">
+				<table class="table" id="mat_reserva-tabla">
+				</table>
+				
+			</div>
+			<div class="tab-pane" id="mat_matricula-tab">
+				<table class="table" id="mat_matricula-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

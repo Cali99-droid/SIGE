@@ -1,0 +1,76 @@
+<script type="text/javascript" src="pages/js/col_historial_conductual.js"></script>
+
+<div class="panel panel-flat" id="col_reporte_conductual-panel">
+<div class="panel-body">
+<div class="row detalle">
+			<div class="col-sm-12">
+				<b><font size="5" color="#0000CD" face="sans-serif"><label id="alumno"></label></font></b>&nbsp;
+			</div>
+</div><br>
+<form action="api/condicion" id="mat_condicion-frm" style="display:none">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_mat" name="id_mat" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<input type="hidden" id="tip_blo" name="tip_blo" value="C"/>
+	<div class="form-group">
+		<div class="row">
+				<!-- <label><b><font size="2" >APODERADO:&nbsp;</font></b></label><font size="2" ><label id="apoderado"></label></font>&nbsp;<br>
+				<label><b><font size="2" >DNI:&nbsp;</font></b></label><font size="2" ><label id="dni"></label></font>&nbsp;<br> 
+				<label><b><font size="2" >Celular:&nbsp;</font></b></label><font size="2" ><label id="celular"></label></font>&nbsp; <br> -->
+			<div class="col-md-12">
+				<label><b>CONDICI&Oacute;N</b></label>
+			</div>
+			<div class="col-md-12">
+				<select id="id_cond" name="id_cond" required placeholder="Seleccione" class="form-control select-search">
+				<option value="">Seleccione</option>
+				</select>
+			</div>
+			<div class="col-md-12">
+				<label><b>OBSERVACI&Oacute;N</b></label>
+			</div>
+			<div class="col-md-12">
+				<textarea rows="4" cols="50" name="des" id="des" />
+			</div>
+			<div id="bloqueo">
+			<div class="col-md-12">
+				<label><b>BLOQUEADO PARA MATR&Iacute;CULA</b></label>
+				<input type="checkbox" class="form-check-input-styled-primary" id="mat_blo" name="mat_blo">
+			</div>
+			<div class="col-md-12">
+				<label><b>MOTIVO DE BLOQUEO</b></label>
+			</div>
+			<div class="col-md-12">
+				<textarea rows="3" cols="100" name="obs_blo" id="obs_blo"/>
+			</div>
+			</div>
+		</div>
+		
+		<div class="row detalle">
+			<div class="col-sm-7">
+				
+			</div>
+		</div>
+		<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar_cond" class="btn btn-primary">Agregar</button>
+		<button type="button" id="btn-grabar_cond" class="btn btn-primary">Grabar</button>
+		</div>
+	</div>
+
+</form>
+	<input type="hidden" id="id_mat" name="id_mat" />
+	<div class="col-sm-12">
+				<b><font size="5" color="#0000CD" face="sans-serif"><label id="alumno"></label></font></b>&nbsp;
+				<!-- <label><font size="4" color="#000080">(</font></label><font size="4" color="#000080"><label id="nivel"></label></font> 
+				<label><font size="4" color="#000080"> - </font></label><font size="4" color="#000080"><label id="grado"></label></font>
+				<label><font size="4" color="#000080"> - </font></label><font size="4" color="#000080"><label id="seccion"></label></font><label><font size="4" color="#000080">)</font></label> -->
+	
+	</div>
+	<div class="col-sm-12">
+	<h5>Historial conductual del Alumno</h5>
+	<table class="table" id="col_historial_conductual-tabla">
+	</table>
+	</div>
+</div>
+</div>
+	

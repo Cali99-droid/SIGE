@@ -1,0 +1,40 @@
+<form action="api/usuarioRol" id="seg_usuario_rol-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_usr" name="id_usr" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Trabajador</label> 
+				<select id="id_tra" name="id_tra" required placeholder="Seleccione" class="form-control select-search">
+				<option value="">Seleccione</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Usuario</label> 
+				<input id="login" name="login" required placeholder="Seleccione" autocomplete="off" class="form-control" readonly="readonly"/>
+			</div>
+			<div class="col-sm-6">
+				<label>Rol</label> 
+				<select id="id_rol" name="id_rol" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

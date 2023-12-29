@@ -1,0 +1,68 @@
+<form action="api/confRecibo">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo</label> <select id="tipo" name="tipo"
+					class="form-control">
+					<option value="F">Fisico</option>
+					<option value="E">Electronico</option>
+				</select>
+			</div>
+
+			<div class="col-sm-6">
+				<label>Local</label>
+				<div class="flechas">
+					<select id="id_suc" name="id_suc"
+						class="form-control">
+					</select>
+				</div> 
+				
+			</div>
+
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Serie</label> <input type="text" id="serie" name="serie"
+					placeholder="Nro de serie" class="form-control">
+			</div>
+
+
+			<div class="col-sm-6">
+				<label>Correlativo</label> <input type="text" id="numero"
+					name="numero" placeholder="Correlativo" class="form-control">
+			</div>
+
+
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="row">
+
+			<div class="col-sm-6">
+				<label>Max correlativo</label> <input type="text" id="hasta"
+					name="hasta" placeholder="Max numero correlativo"
+					class="form-control">
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label> <select id="est" name="est"
+					class="form-control">
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>

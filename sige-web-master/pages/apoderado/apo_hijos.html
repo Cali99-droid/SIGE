@@ -1,0 +1,164 @@
+<script type="text/javascript" src="js/apoderado/apo_hijos.js"></script>
+
+<style>
+.mi_button {
+	min-width: 115px;
+	max-width: 115px;
+	margin-top: 15px;
+	margin-right: 2px !important;
+}
+
+.button2 { 
+
+	transform: translate(-50%, -50%);
+	
+	font-family: 'Rubik One', sans-serif;
+	text-decoration: none;
+	font-size: 4vw;
+	transition: all .5s;
+	background-color: #3498db;
+
+	&::before {
+    @extend %test;
+		bottom: -15px;
+		
+		transform: skewX(45deg);
+		background-color: darken(#3498db, 20%);
+	}
+
+	&::after {
+		@extend %test;
+		bottom: -8px;
+		transform: skewY(45deg);
+		background-color: darken(#3498db, 30%);
+	}
+
+	&:active {
+		margin-left: 10px;
+		margin-top: 10px;
+		&::before {
+			bottom: -5px;
+			height: 5px;
+			left: 3px;
+		}
+		
+    &::after {
+			right: -5px;
+			width: 5px;
+			bottom: -3px;
+		}	
+	}
+}
+
+	.listTweets {
+    overflow : scroll;
+}
+</style>
+<style type="text/css">
+label {
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: xx-small;
+ text-align: center;
+}
+</style>
+<!--comentado todo
+<ul class="media-list content-group" id="alumnos-list">
+	
+	<li class="media panel panel-body stack-media-on-mobile">
+		<!--<div class="media-left" style="vertical-align: middle;">
+			<a href="#"> <img id="foto" 
+				class="img-rounded img-lg" alt="">
+			</a>
+		</div>-->
+		<!--ocultado x ahora
+		<div class="media-body listTweets">
+			<h6 class="media-heading text-semibold text-primary" id="nom"></h6>
+			<div>
+				<table width="100%">
+					<tr>
+						<td width="15%">Local</td>
+						<td width="35%"><b id="sucursal"></b></td>
+						<td width="15%">nivel</td>
+						<td width="35%"><b id="nivel"></b></td>
+					</tr>
+					<tr>
+						<td>Grado</td>
+						<td><b id="grado"></b></td>
+						<!-- <td>Secci&oacute;n</td>
+						<td><b id="seccion"></b></td> -->
+		<!--ocultado x ahora			</tr>
+				</table>
+			</div>
+			<div>
+				<table width="100%" id="tb_buttons">
+					<tr>
+						<th colspan="5"></th>
+						<th>
+						
+						<div id="div_accesos" style="display: none">
+							<label><b>Usuario:</b></label>&nbsp;<label id="usuario"></label><br>
+							<label><b>Contrase&ntilde;a:</b></label>&nbsp;<label id="psw"></label>&nbsp;<label></label><u><div ><a href="#" onclick="restablecer(this)" id="link_restablecer">Cambiar Contrase&ntilde;a del Alumno (Aplicaciones de Google)</a></div></u>
+						</div>
+						</th>
+					</tr>
+					<tr>
+						<td width="10%">	
+							<button type="button" id="btnNotas" disabled
+							class="btn bg-brown btn-float btn-float-sm mi_button">
+							<i class="fa fa-edit"></i> <span>Notas</span>
+							</button>
+						</td> 
+						<td width="10%">
+							<button type="button" id="btnAgenda" disabled
+							class="btn btn-success  btn-float btn-float-sm mi_button">
+							<i class="fa fa-book"></i> <span>Agenda</span>
+							</button>
+						</td>
+						<td width="10%">
+							<button type="button" onclick="profesores(this)" disabled
+							class="btn bg-slate btn-float btn-float-md mi_button">
+							<i class="fa fa-graduation-cap"></i> <span>Profesores</span>
+							</button>
+						</td>	
+						<td width="10%">
+							<button type="button" id="btnAsistencia" disabled
+							class="btn btn-warning btn-float btn-float-sm mi_button">
+							<i class="fa fa-clock-o"></i> <span>Asistencia</span>
+							</button>
+						</td>
+						<td width="10%">
+							<button type="button" disabled
+							class="btn btn-danger btn-float btn-float-sm mi_button disabled">
+							<i class="fa fa-bullhorn"></i> <span>Reclamos</span>
+							</button>
+						</td>
+						<td width="50%">
+							<button type="button" id="btnCampusVirtual" disabled
+							class="btn btn-info btn-float btn-float-sm mi_button pace-progress" title="Empezamos el 11 de mayo">
+							<i class=" icon-book3"></i> <span>Acceso <br>a Plataforma </span>
+							</button>
+						</td>
+					</tr>
+					<!-- <tr>
+						<td colspan="5"></td>
+						<td><label><u><a>T&eacute;rminos y Condiciones</a></u></label></td>
+					</tr> -->
+				<!-- ocultado x ahora</table>
+				<!-- <button type="button"
+					class="btn btn-slate btn-float btn-float-sm mi_button disabled">
+					<i class="fa fa-exclamation-circle"></i> <span>Justificaciones</span>
+				</button> -->
+				
+				
+				<!-- <button type="button"
+					class="btn btn-info btn-float btn-float-sm mi_button disabled">
+					<i class="icon-search4"></i> <span>Datos </span>
+				</button> -->
+				
+			<!-- ocultado x ahora</div>-->
+<!--comentado todo		</div>
+
+	</li>
+
+</ul>
+

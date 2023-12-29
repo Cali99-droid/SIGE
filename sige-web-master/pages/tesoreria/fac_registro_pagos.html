@@ -1,0 +1,254 @@
+<script type="text/javascript" src="js/facturacion/fac_registro_pago.js"></script>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: red;
+    color: red;
+}
+
+#div1 {
+     overflow:scroll;
+     height:400px;
+     width:400px;
+}
+
+#div2 {
+     overflow:scroll;
+     height:200px;
+     width:800px;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">B&uacute;squeda por</h6>
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+                                    <div class="row mt-5">
+
+                                        <div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="A" class="styled" checked="checked">
+                                              Alumno
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="F" class="styled" >
+                                               <label class="form-check-label text-bold text-primary-800" for="exampleCheck1">Familia</label>
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="P" class="styled">
+                                               <label class="form-check-label text-bold text-danger" for="exampleCheck1">Personal</label>
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="L" class="styled">
+                                               <label class="form-check-label text-bold text-success" for="exampleCheck1">Libre</label>
+                                        </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="table-responsive mt-5">
+								
+									 <div id="div1">
+										<label class="negrita">Total:</label>&nbsp; <label id="total" name="total"></label>
+                                        <table class="table" id="tabla-alumnos">
+                                        </table>
+									</div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-8">
+        <div class="panel panel-flat">
+
+            <div class="panel-body">
+			<h6 class="text text-bold azul_text"><label id="alumno"></label></h6>
+			<div class="row">	
+				<div class="col-md-12">
+					<div class="panel panel-flat">
+							<div class="panel-heading">
+								<!--<h5 class="panel-title">NRO DE CONTRATO <span id="apoderado.num_cont"/></h5>-->
+								<div class="heading-elements">
+									<ul class="icons-list">
+										<li><a data-action="collapse"></a></li>
+										<li><a data-action="reload"></a></li>
+										<li><a data-action="close"></a></li>
+									</ul>
+									</div>
+							</div>
+							<form id="frm-datos_familiar">
+							<div class="panel-body">
+									<fieldset class="content-group">
+										<form class="form-horizontal" id="frm-pagos-buscar">
+										<input type="hidden" name="id_anio" value="2" >
+									
+										<div class="form-group">
+											<div class="form-group form-group-material col-lg-4">
+												<label class="control-label is-visible">Cliente</label>
+												<select name="id_per" id="id_per" data-placeholder="Seleccione"
+													class="form-control select-search " >
+													<option>Seleccione</option>
+												</select>
+											</div>
+											<div class="form-group form-group-material col-lg-2">
+												<label class="control-label is-visible">Nro doc</label>
+												<input type="text" class="form-control input-xs" id="nro_doc" readonly>
+											</div>
+											<div class="form-group form-group-material col-lg-4">
+												<label class="control-label is-visible">Direcci&oacute;n</label>
+												<input type="text" class="form-control input-xs" id="direccion" value="Value" readonly>
+											</div>
+											<div class="form-group form-group-material col-lg-2">
+												<label class="control-label is-visible">Celular</label>
+												<input type="text" class="form-control input-xs" id="cel" value="Value" readonly>
+											</div>
+											<!--<div class="form-group form-group-material col-lg-5">
+												<label class="control-label is-visible">Boleta Electrónica</label>
+												<input type="text" class="form-control input-xs" id="nro_rec" value="Value" readonly>
+											</div>-->
+										</div>
+										</form>		
+									</fieldset>
+							</div>
+							</form>
+				</div>
+</div>
+			</div>
+		</div>
+		
+	</div>
+	 <div class="panel panel-flat">
+	<div class="panel-body">
+	<form id="frm-pagos-resumen">
+	<input type="hidden" id="id" name="id"> 
+	<input type="hidden" id="id_alu" name="id_alu"> 
+	<input type="hidden" id="id_mat" name="id_mat"> 
+	<input type="hidden" id="id_suc" name="id_suc"> 
+	<input type="hidden" id="id_per_pag" name="id_per_pag"> 
+	<input type="hidden" id="monto" name="monto"/>
+	<input type="hidden" id="descuento_12" name="descuento_12"/>
+	<input type="hidden" id="descuento" name="descuento"/>
+	<input type="hidden" id="descuento_secretaria" name="descuento_secretaria"/>
+	<input type="hidden" id="descuento_personalizado" name="descuento_personalizado"/>
+	<input type="hidden" id="descuento_pago_ade" name="descuento_pago_ade"/>
+	<input type="hidden" id="descuento_beca" name="descuento_beca"/>
+	<input type="hidden" id="tipo_pago" name="tipo_pago"/>
+	<input type="hidden" id="id_alu" name="id_alu" value=""> 
+							<div class="table-responsive mt-5">
+								<div class="col-lg-3">
+								<label class="negrita">Detalle:</label>
+								</div>
+								<div class="text-right col-lg-9">
+									<button type="button" id="btnPagar"  class="btn btn-danger btn-xs">Pagar <i class="icon-coins"></i></button>
+								</div>
+								<table class="table" id="tabla-detalle_pagos">
+								<thead>
+								<th class="">Nro</th>
+								<th class="">Año</th>
+								<th class="">Mes</th>
+								<th class="">Concepto</th>
+								<th class="">Monto Unit.</th>
+								<th class="">Cant.</th>
+								<th class="">Monto</th>
+								<th class="">Descuento</th>
+								<th class="">Monto Total</th>
+								</thead>
+								<tbody></tbody>
+								<tfoot>
+								   <tr>
+										<th colspan="4" class="text-center"><b>TOTAL</b></th>
+										<th class="text-center" id="total_monto_unit"></th>
+										<th class="text-center" id="total_cant"></th>
+										<th class="text-center" id="total_monto"></th>
+										<th class="text-center" id="total_desc"></th>
+										<th class="text-center" id="total_monto_total" bgcolor="#aac3e4"></th>
+									</tr>
+								</tfoot> 
+								</table>
+                            </div>
+						</div>	
+	</form>
+	</div>	
+	<div class="panel panel-flat ">	
+					<div class="panel-body">
+					<div class="tabbable">
+						<ul class="nav nav-tabs nav-tabs-highlight">
+							<li ><a href="#tab_deudas_pendientes" data-toggle="tab" class="active"><i class="fa fa-dollar "></i> <span class="text-danger">Deudas Pendientes</span></a></li>
+							<li><a href="#tab_pagados" data-toggle="tab"><i class="fa fa-print"></i> Pagados</a></li>
+							<li><a href="#tab_devoluciones" data-toggle="tab"><i class="fa fa-print"></i> Devoluciones</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="text-right col-lg-12">
+									
+									<button type="button" id="btnBecar"  class="btn btn-warning btn-xs">Becar <i class="icon-coins"></i></button>
+							</div>
+							<div class="tab-pane active" id="tab_deudas_pendientes">
+								 <table class="table" id="tabla-deudas_pendientes">
+                                 </table>
+							</div>
+							<div class="tab-pane col-lg-7" id="tab_pagados">
+								<div class="col-sm-12">
+								<table class="table" id="tabla-pagos_alumno">
+								</table>
+								</div>
+							</div>
+							<div class="tab-pane col-lg-7" id="tab_devoluciones">
+								<div class="col-sm-12">
+								<table class="table" id="tabla-devoluciones_alumno">
+								</table>
+								</div>
+							</div>
+						</div>
+					</div>
+							
+					</div>
+	</div>
+</div>	

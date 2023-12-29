@@ -1,0 +1,26 @@
+<form action="api/confAnioEscolar" id="col_conf_anio_escolar-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>A&ntilde;o</label> 
+				<select id="id_anio" name="id_anio" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>N&uacute;mero de Semanas</label>
+                <input type="text" id="nro_sem" name="nro_sem" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

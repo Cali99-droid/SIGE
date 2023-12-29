@@ -1,0 +1,172 @@
+<script type="text/javascript" src="js/academico/col_area_anio_dc.js"></script>
+<style>
+tr.highlighted td {
+       background: red;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-flat">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+						<div class="row">
+							<div class="col-sm-6">
+								<label class="negrita">Giro de Negocio</label>
+								<select required class="form-control select-search" id="id_gir" name="id_gir">
+									<!--<option value="">SELECCIONE</option>-->
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label class="negrita">Nivel</label>
+								<select required class="form-control select-search" id="id_niv" name="id_niv">
+									<option value="">TODOS</option>
+								</select>
+							</div>
+						</div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Grados</h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_grados">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Áreas del <label id="nom_grado">GRADO </label></h6>
+				
+				 <div class="row text-right card card-body border-top-primary">
+
+					<p>
+						<button type="button" class="btn-lg btn-primary  icon-plus3 btn-sm" id="btn_agregar_areas">
+							Agregar</button>
+					</p>
+
+				</div>
+                <!-- <div class="heading-elements ">
+
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_areas">
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+	<div class="col-md-4">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Cursos del Área <label id="nom_area">AREA </label> - <label id="nom_grado">GRADO </label></h6>
+				
+				 <div class="row text-right card card-body border-top-primary">
+
+					<p>
+						<button type="button" class="btn-lg btn-primary  icon-plus3 btn-sm" id="btn_agregar_cursos">
+							Agregar</button>
+					</p>
+
+				</div>
+                <!-- <div class="heading-elements ">
+
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_cursos">
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

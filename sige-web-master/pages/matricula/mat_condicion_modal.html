@@ -1,0 +1,160 @@
+<script type="text/javascript" src="pages/js/mat_condicion.js"></script>
+<div class="panel panel-flat">
+	<div class="panel-body">
+		<form action="api/condicion" id="mat_condicion-frm">
+			<input type="hidden" id="id" name="id" /> 
+			<input type="hidden" id="id_mat" name="id_mat" /> 
+			<input type="hidden" id="est" name="est" value="A" />
+			<input type="hidden" id="tip_blo" name="tip_blo" value="E" />
+			<div class="form-group">
+				<div class="row detalle">
+					<div class="col-sm-12">
+						<b><font size="5" color="#0000CD" face="sans-serif"><label
+								id="alumno"></label></font></b>&nbsp; <label><font size="4"
+							color="#000080">(</font></label><font size="4" color="#000080"><label
+							id="nivel"></label></font> <label><font size="4" color="#000080">
+								- </font></label><font size="4" color="#000080"><label id="grado"></label></font>
+						<label><font size="4" color="#000080"> - </font></label><font
+							size="4" color="#000080"><label id="seccion"></label></font><label><font
+							size="4" color="#000080">)</font></label>
+					</div>
+				</div>
+				<div class="row detalle">
+					<div class="col-sm-12">
+						<label><b><font size="2">APODERADO:&nbsp;</font></b></label><font
+							size="2"><label id="apoderado"></label></font>&nbsp;<br> <label><b><font
+								size="2">DNI:&nbsp;</font></b></label><font size="2"><label
+							id="dni"></label></font>&nbsp;<br> <label><b><font
+								size="2">Celular:&nbsp;</font></b></label><font size="2"><label
+							id="celular"></label></font>&nbsp; <br>
+						<div class="col-sm-1">
+							<label><b><font size="2">CONDICI&oacute;N</font></b></label>
+						</div>
+						<div class="col-sm-11">
+							<select id="id_cond" name="id_cond" required
+								placeholder="Seleccione" class="form-control select-search">
+								<option value="">Seleccione</option>
+							</select>
+						</div>
+						<br>
+						<div class="col-sm-1">
+							<label><b>OBSERVACI&oacute;N</b></label>
+						</div>
+						<div class="col-sm-5">
+							<textarea rows="4" cols="50" name="des" id="des" />
+						</div>
+						
+					</div>
+					
+					<div class="row detalle">
+						<div id="bloqueo">
+							<div class="col-sm-1">
+								<label><b>BLOQUEADO PARA MATRÍCULA</b></label>
+								<input type="checkbox" class="form-check-input-styled-primary" id="mat_blo" name="mat_blo">
+							</div>
+							<div class="col-sm-6">
+								<textarea rows="4" cols="50" name="obs_blo" id="obs_blo" placeholder="MOTIVO DE BLOQUEO"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row detalle">
+					<div class="col-sm-7"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+					<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+					<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+					<button type="button" id="btn-eliminar" class="btn btn-warning">Eliminar</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+<div class="panel panel-flat">
+	<div class="panel-body">
+		<form action="api/historialEco" id="col_historial_eco-frm">
+			<input type="hidden" id="id" name="id" /> <input type="hidden"
+				id="id_mat" name="id_mat" value="" /> <input type="hidden" id="est"
+				name="est" value="A" />
+			<h5>Evaluaci&oacute;n Econ&oacute;mica de la Familia</h5>
+			<div class="form-group">
+				<div class="row detalle">
+					<div class="table-responsive" id="historial_mat">
+						<table class="table">
+							<thead>
+								<tr>
+									<!-- <th><font color="black">Nº</font></th> -->
+									<th><font color="black">Fecha</font></th>
+									<th><font color="black">Ultima Mens. Cancelada</font></th>
+									<th><font color="black">Nro. Mensualidades Adeuda</font></th>
+									<th><font color="black">Ingresos Familiares</font></th>
+									<th><font color="black">DNI Padre</font></th>
+									<th><font color="black">Central Riesgo Padre</font></th>
+									<th><font color="black">DNI Madre </font></th>
+									<th><font color="black">Central Riesgo Madre</font></th>
+									<th><font color="black">Puntaje</font></th>
+									<th><font color="black">Acción</font></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="table-success">
+									<td><input type="text" id="fecha" name="fecha" required
+										class="form-control input-sm " maxlength="100"
+										readonly="readonly"></td>
+									<td><input type="text" id="ult_men" name="ult_men"
+										required class="form-control input-sm " maxlength="100"
+										readonly="readonly"></td>
+									<td><input type="text" id="nro_mens" name="nro_mens"
+										required class="form-control input-sm " maxlength="100"
+										readonly="readonly"></td>
+									<td><select id="ing_fam" name="ing_fam"
+										placeholder="Seleccione" class="form-control select-search">
+											<option value="0">Seleccione</option>
+											<option value="1">0-1499</option>
+											<option value="2">1500-2499</option>
+											<option value="3">2500 a mas</option>
+									</select></td>
+									<td><input type="text" id="dni_padre" name="dni_padre"
+										required class="form-control input-sm " maxlength="100"
+										readonly="readonly"></td>
+									<td><select id="id_ccr_pad" name="id_ccr_pad"
+										placeholder="Seleccione"
+										class="form-control select-search input-xs">
+											<option value="-1">Seleccione</option>
+									</select></td>
+									<td><input type="text" id="dni_madre" name="dni_madre"
+										required class="form-control input-sm " maxlength="100"
+										readonly="readonly"></td>
+									<td><select id="id_ccr_mad" name="id_ccr_mad"
+										placeholder="Seleccione"
+										class="form-control select-search input-xs">
+											<option value="-1">Seleccione</option>
+									</select></td>
+									<td><input type="text" id="puntaje" name="puntaje"
+										required class="form-control input-sm " maxlength="100"
+										readonly="readonly"></td>
+									<td><button type="button" id="btn-grabar_hist"
+											class="btn btn-primary">
+											<i class="mi-save"></i>Grabar
+										</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="panel panel-flat">
+	<div class="panel-body">
+		<div class="row detalle">
+			<h5>Historial de Consultas</h5>
+			<table class="table" id="col_historial_eco-tabla">
+			</table>
+		</div>
+	</div>
+</div>

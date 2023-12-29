@@ -1,0 +1,44 @@
+<form action="api/banco">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" class="form-control input-sm" maxlength="30">
+			</div>
+			<div class="col-sm-6">
+				<label>C&oacute;digo</label>
+                <input type="text" id="cod" name="cod" class="form-control input-sm" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Nro de cuenta</label>
+                <input type="text" id="nro_cta" name="nro_cta" class="form-control input-sm" maxlength="20">
+			</div>
+			<div class="col-sm-6">
+				<label>Moneda</label>
+                <input type="text" id="moneda" name="moneda" class="form-control input-sm" maxlength="3">
+			</div>
+			<div class="col-sm-6">
+				<label>Tipo de cuenta</label>
+                <input type="text" id="tip_cta" name="tip_cta" class="form-control input-sm" maxlength="3">
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+			
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

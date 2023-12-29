@@ -1,0 +1,47 @@
+<form action="api/resDiarioBoleta" id="fac_res_diario_boleta-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Numero</label>
+                <input type="text" id="numero" name="numero" required class="form-control input-sm " maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha Emision</label>
+                <input type="text" id="fec_emi" name="fec_emi" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Cantidad de Registros Procesados</label>
+                <input type="text" id="cant_reg" name="cant_reg"  class="form-control input-sm " maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Estado</label>
+				<select id="estado" name="estado" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

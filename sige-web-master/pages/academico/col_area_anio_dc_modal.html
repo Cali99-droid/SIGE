@@ -1,0 +1,45 @@
+<form action="api/areaAnio/grabarAreasDC" id="col_area_anio_dc-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<input type="hidden" id="id_gra" name="id_gra" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="id_gir" name="id_gir" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Tipo de Calificación</label> 
+				<select id="id_tca" name="id_tca" required placeholder="Seleccione" class="form-control select-search">
+				<!--<select id="id_cic" name="id_cic" required placeholder="Seleccione" class="form-control select-search">-->
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Prom. Periodo</label> 
+				<select id="id_pro_per" name="id_pro_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>Prom. Anual</label> 
+				<select id="id_pro_anu" name="id_pro_anu" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		 <div class="panel-body">
+			<fieldset class="content-group">
+				<div class="row mt-5">
+					<div class="col-sm-12">
+						<div class="table-responsive mt-5">
+							<table class="table table-bordered text-center" id="tabla_areas_dc">
+							</table>
+						</div>
+
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

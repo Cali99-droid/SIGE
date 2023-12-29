@@ -1,0 +1,468 @@
+
+<script type="text/javascript"
+	src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+<script type="text/javascript" src="js/matricula/mat_matricula_web_familia.js"></script>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: red;
+    color: red;
+}
+
+#div1 {
+     overflow:scroll;
+     height:400px;
+     width:600px;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">B&uacute;squeda del alumno</h6>
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+									<!--
+                                    <div class="row">
+                                        <div class="col-sm-4">
+											 <label class="negrita">Servicio</label>
+											 <select id="id_gir" required name="id_gir" required placeholder="Seleccione"
+                                                class="form-control select-sm select-search">
+                                                <option selected value="">TODOS</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+											<label class="negrita">Nivel</label>
+                                            <select id="id_niv" required name="" required placeholder="Seleccione"
+                                                class="form-control select-sm select-search">
+                                                <option selected value="">TODOS</option>
+                                            </select>
+                                        </div>
+                                    </div>-->
+                                    <div class="table-responsive mt-5">
+								
+									 <!--<div id="div1">-->
+										<label class="negrita">Total:</label>&nbsp; <label id="total" name="total"></label>
+                                        <table class="table" id="tabla-alumnos">
+                                        </table>
+									<!--</div>-->
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-7">
+        <div class="panel panel-flat">
+
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="panel panel-flat">
+
+                        <div class="panel-body">
+						<div class="row col-md-12">
+						<div class="col-sm-3 pull-right">
+							<button type="button" id="btn_nuevo" 
+								class="  icon-plus3 btn btn-lg btn-success btn-block pull-right">
+								Nueva Pre Matrícula
+							</button>
+						</div>
+						</div>
+						<h4 class="text text-bold azul_text"><label id="alumno"></label></h4>
+                            <form class="steps-validation" action="api/matricula/matricularAcadPag" id="frm-matricula">
+							<input type="hidden" id="id" name="id"> <input type="hidden"
+								id="id_alu" name="id_alu" value=""> 
+								<input type="hidden" id="tipo" name="tipo" value="">
+								<input type="hidden" id="id_cct" name="id_cct">
+								<input type="hidden" id="id_niv" name="id_niv">
+								<input type="hidden" id="est" name="est" value="A">
+			
+		 <h6>1. Términos y Condiciones</h6> 
+		 <fieldset>
+		<p>Para proceder con la matrícula, será necesario que pueda aceptar los siguientes Términos y Condiciones.</p>
+		 <div class="col-md-12">
+			<!--<label class="display-block text-bold">Nivel</label>-->
+			
+			<ul>
+				<div class="col-md-12">
+				<li>
+				<div class="col-md-6">
+				<a href="http://login.ae.edu.pe:8080/documentos/tycAcademiaVacaciones.pdf" onclick="document.getElementById(\'tc_view_con'\').checked=true;" target="_blank">Términos y Condiciones</a>
+				</div>
+				<div class="col-md-6">
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="tc_acept1" name="tc_acept" value="1" type="radio">
+						<p>S&iacute; Acepto</p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="tc_acept2" name="tc_acept" value="0" type="radio">
+						<p> No Acepto </p>
+					</div>
+				</div>
+				</div>
+				</li>
+				</div>
+				<!--
+				<div class="col-md-12">
+				<li>
+				<div class="col-md-6">
+				<a href="http://ae.edu.pe:8080/documentos/AN_Contrato_Servicios_Virtuales.pdf" onclick="document.getElementById(\'tc_view_con'\').checked=true;" target="_blank">Cuenta con Servicio a Internet</a>
+				</div>
+				<div class="col-md-6">
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="srvint1" name="srvint" value="1" type="radio">
+						<p>S&iacute;</p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="srvint2" name="srvint" value="0" type="radio">
+						<p>No</p>
+					</div>
+				</div>
+				</div>
+				</li>
+				</div>
+				<div class="col-md-12">
+				<li>
+				<div class="col-md-6">
+				<a href="http://ae.edu.pe:8080/documentos/AN_Contrato_Servicios_Virtuales.pdf" onclick="document.getElementById(\'tc_view_con'\').checked=true;" target="_blank">Cuenta con cámara web y micrófono</a>
+				</div>
+				<div class="col-md-6">
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="camweb1" name="camweb" value="1" type="radio">
+						<p>S&iacute;</p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="radio radio-info radio-inline">
+						<input id="camweb2" name="camweb" value="0" type="radio">
+						<p>No</p>
+					</div>
+				</div>
+				</div>
+				</li>
+				</div>-->
+			</ul>
+		</div>
+		 </fieldset>
+		<h6>2. Datos Académicos</h6>
+		<fieldset>
+			<legend class="text-bold">Datos del Apoderado</legend>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Familia</label> <select name="id_gpf"
+							id="id_gpf" data-placeholder="Seleccione"
+							class="form-control select-search ">
+						</select>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="form-group">
+						<label>Apoderado</label> <select name="id_per_res" required
+							id="id_per_res" data-placeholder="Seleccione"
+							class="form-control select-search ">
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Parentesco<!-- <span class="text-danger">*</span> --></label>
+						<input type="text" name="id_fam_par" id="id_fam_par"
+							class="form-control " readonly>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Tipo de Documento<!-- <span class="text-danger">*</span> --></label>
+						<select name="id_tdc" id="id_tdc"
+							data-placeholder="Seleccione" class="form-control select-search"
+							disabled="disabled">
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Nro Doc.<!-- <span class="text-danger">*</span> --></label>
+						<input type="text" name="id_fam_dni" id="id_fam_dni"
+							class="form-control " readonly>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Email<!-- <span class="text-danger">*</span> --></label>
+						<input type="text" name="corr" id="corr"
+							class="form-control " readonly>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Celular<!-- <span class="text-danger">*</span> --></label>
+						<input type="text" name="cel" id="cel"
+							class="form-control " readonly>
+					</div>
+				</div>
+			</div>
+
+			<legend class="text-bold">Datos de la matrícula</legend>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>	Servicio<!-- <span class="text-danger">*</span> --></label>
+						<select name="id_gir" id="id_gir" data-placeholder="Seleccione"
+							class="form-control ">
+							<option value="2">Academia Encinas</option>
+							<option value="3">Vacaciones Útiles</option>
+						</select>
+					</div>
+				</div>
+				<!--<div class="col-md-3">
+					<div class="form-group">
+						<label>Local<!-- <span class="text-danger">*</span> --><!--</label> <select
+							name="id_suc" id="id_suc" data-placeholder="Seleccione"
+							class="form-control select-search ">
+						</select>
+					</div>
+				</div>-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>	Periodo<!-- <span class="text-danger">*</span> --></label>
+						<select name="id_per" id="id_per" data-placeholder="Seleccione"
+							class="form-control ">
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>	Ciclo<!-- <span class="text-danger">*</span> --></label>
+						<select name="id_cic" id="id_cic" data-placeholder="Seleccione"
+							class="form-control " >
+						</select>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<!--<div class="col-md-3">
+					<div class="form-group">
+						<label>Nivel</label> <select name="id_niv" id="id_niv"
+							data-placeholder="Seleccione" class="form-control select-search "
+							>
+							<option></option>
+						</select>
+					</div>
+				</div>-->
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Turno</label> <select name="id_tur" id="id_tur"
+							data-placeholder="Seleccione" class="form-control "
+							>
+							<option>Seleccione</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label id="lbl_grado">Grado<!-- <span class="text-danger">*</span> --></label> <select
+							name="id_grad" id="id_grad" data-placeholder="Seleccione"
+							class="form-control " >
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<!--
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Sección</label>
+						<select name="id_au" id="id_au" data-placeholder="Seleccione"
+							class="form-control select-search ">
+						</select>
+					</div>
+				</div>
+				-->
+				<!--<div class="col-md-1">
+					<div class="form-group">
+						<label id="lbl_nro_vacantes" for="nro_vacantes" class="active">Vacantes</label>
+						<input readonly="readonly" id="nro_vacantes" class="form-control"
+							type="text" value=""> <input type="hidden"
+							id="vacantes_disponibles" class="form-control" type="text">
+						<!-- <label id ="lbl_nro_vacantes" for="nro_vacantes" class="active">Vacantes</label> -->
+				<!--	</div>
+
+				</div>
+				<div class="col-md-1">
+					<div class="form-group">
+						<label for="spanCap" class="active">Capacidad</label> <input
+							readonly="readonly" id="spanCap" class="form-control" type="text"
+							class="form-control">
+					</div>
+				</div>-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btn-consultar_vac" class="btn btn-warning btn-xs pull-right" href="#" ><i class="glyphicon glyphicon-question-sign"></i>Consultar Vacantes</button>
+			</div><br>
+			<!--<div class="modal-footer">
+				<button type="button" id="btn-grabar_matricula" class="btn btn-success btn-xs pull-right" onclick="grabarMatricula(this)"><i class="icon-floppy-disk"></i>Matricular</button>
+			</div><br>-->
+		</fieldset>
+		<!--<div id="div_pago_matricula">-->
+		<h6>3. Formas de Pago</h6>
+		<fieldset>
+		<div id="div_pago">
+			<input type="hidden" id="id_mat" name="id_mat">  
+			<input type="hidden" id="id_pago" name="id_pago">
+			<input type="hidden" id="id_gpf" name="id_gpf">  
+			<legend class="text-bold" id="divTituloPagos">Datos Económicos</legend>
+			<div class="row">
+				<div class="col-md-3">
+				<div class="form-group">
+						<label>Nro de Cuota<!-- <span class="text-danger">*</span> --></label> <select
+							name="nro_cuo" id="nro_cuo" data-placeholder="Seleccione"
+							class="form-control select-search " >
+							<option></option>
+						</select>
+				</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label id="lblTotalPagar">Total a Pagar</label> <input type="text" name="total_costo"
+							id="total_costo" placeholder="Total a pagar" class="form-control "
+							readonly="readonly">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<h6>Cuotas a Pagar</h6>
+				<div class="col-md-12">
+					<div class="row" id="cuotas-row">
+						<div class="familia-div col-sm-12">
+							<table class="table" id="cuotas-tabla">
+							<thead>
+							</thead>
+							<tbody>
+							</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<h6>Resumen de Pagos</h6>
+				<div class="col-md-12">
+					<div class="row" id="resumen-row">
+						<div class="resumen-div col-sm-12">
+							<table class="table" id="resumen-tabla">
+							</table>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btn-grabar_matricula" class="btn btn-success btn-xs pull-right" onclick="grabarMatricula(this)"><i class="icon-floppy-disk"></i>PRE MATRÍCULA</button>
+			</div><br>
+			<!--<div class="row" id="pagardiv">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Abona</label> <input type="text" name="abono" id="abono"
+							placeholder="Abona" class="form-control ">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Vuelto</label> <input type="text" name="vuelto" id="vuelto"
+							placeholder="Vuelto" class="form-control" readonly="readonly">
+					</div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" id="btn-grabar_pago" class="btn btn-success btn-xs pull-right" onclick="grabarPago(this)"><i class="icon-floppy-disk"></i>Pagar</button>
+			</div><br>
+			</div>-->
+		</div>
+		</fieldset>
+		<!--</div>-->
+		<h6>4. Mis Servicios</h6>
+		<fieldset>
+			<legend class="text-bold" id="lblObservaciones"></legend>
+			<div class="col-md-12">
+				<div class="row" id="familia-row">
+					<div class="familia-div col-sm-12">
+						<table class="table" id="matriculas_alumno-tabla">
+						</table>
+					</div>
+				</div>
+			</div>
+			<div>
+			<!--<table class="table" id="apoderados-tabla">
+			</table>-->
+			</div>
+			
+		</fieldset>
+	</form>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>

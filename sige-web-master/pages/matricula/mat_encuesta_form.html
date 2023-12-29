@@ -1,0 +1,93 @@
+
+<script type="text/javascript"
+	src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+<!-- 
+	<script type="text/javascript" src="assets/js/pages/form_checkboxes_radios.js"></script>
+	 -->
+<script type="text/javascript" src="js/matricula/mat_encuesta_alu.js"></script>
+<!-- <script type="text/javascript" src="js/matricula/mat_actualizacion_datos_padres.js"></script> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	
+//$("#frm-matricula").steps('done');//-->
+</script>
+
+<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+
+<!-- Wizard with validation -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h4>
+			<label id="titulo"></label>
+		</h4>
+	</div>
+
+	<form class="steps-validation" action="api/encuesta/grabarEncuestaAlumno" id="frm-encuesta">
+		<input type="hidden" id="id" name="id"> 
+		<input type="hidden" id="id_enc" name="id_enc" value=""> 
+		<input type="hidden" id="id_mat" name="id_mat" value=""> 	
+		 <h6>1. Importante</h6> 
+		 <fieldset class="content-group">
+		 <div id="div_inicio" class="panel-heading">
+		 </div>
+		 </fieldset>
+		<h6>2. Alumnos </h6>
+		<fieldset>
+			<legend class="text-bold">ALUMNOS REGISTRADOS</legend>
+			<div class="row">
+				<div class="hermanos-div col-sm-12">
+					<b id='titulo'></b>
+						<table class="table" id="hermanos-tabla">
+						</table>
+				</div>
+			</div>
+		</fieldset>
+		<!--<div id="div_pago_matricula">-->
+		<h6>3. Encuesta</h6>
+		<fieldset>
+		<div class="panel-body">
+		<div id="div_encuesta">
+		<fieldset class="content-group">
+			<!--<legend class="text-bold">ENCUESTA 2022</legend>-->
+			<legend class="text-bold"><label id="titulo_encuesta">ENCUESTA 2022</label></legend>
+			<div class="row ">
+				<div class="col-md-12">
+					<label class="text text-bold">ALUMNO:</label> &nbsp;<label id="lblAlumno">HUAMAN LEON ESTEFANIA</label>
+				</div>
+				<div class="col-md-12">
+					<label class="text text-bold">LOCAL ÚLTIMA MATRÍCULA:</label>&nbsp; <label id="lblLocal">Princiapla</label>
+				</div>
+				<div class="col-md-12">
+					<label class="text text-bold">DATOS ACADÉMICOS 2022</label>
+				</div>
+				<div class="col-md-12">
+					<label class="text text-bold">NIVEL:</label>&nbsp;<label id="lblNivel">INICIAL</label>
+				</div>
+				<div class="col-md-12">
+					<label class="text text-bold">GRADO:</label> &nbsp;<label id="lblGrado">Segundo</label>
+				</div>	
+			</div> <br>
+			
+			<div class="row" id="encuesta">
+			<!--<h4><p>Según las disposiciones del MINEDU en marzo del 2022 se inicia el retorno progresivo, seguro, voluntario y flexible a las clases presenciales.</p></h4>-->
+				<table id="tabla">
+				<thead>
+				</thead>
+				<tbody>
+				</tbody>
+			  </table>
+			</div>
+			</fieldset>
+		</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" id="btn-grabar_encuesta" class="btn btn-success btn-xs pull-right" onclick="grabarEncuesta(this)"><i class="icon-floppy-disk"></i>GRABAR</button>
+		</div><br>
+		</fieldset>
+		<!--</div>-->
+
+	</form>
+</div>
+<!-- /wizard with validation -->
+
+

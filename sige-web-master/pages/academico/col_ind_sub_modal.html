@@ -1,0 +1,48 @@
+<form action="api/indSub" id="col_ind_sub-frm">
+	<input type="hidden" id="id" name="id" /> 	<!-- ID DE COL_INDICADOR -->
+	<input type="hidden" id="id_cuc" name="id_cuc" />
+	<input type="hidden" id="id_sub" name="id_sub" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<input type="hidden" id="id_cap" name="id_cap" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="id_gra" name="id_gra" />
+	<input type="hidden" id="id_csc" name="id_csc" />
+	
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tema</label> 
+				<input id="tema" class="form-control" readonly/>
+			</div>
+			<div class="col-sm-6">
+				<label>Subtema</label> 
+				<input id="subtema" class="form-control" readonly/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Capacidad</label> 
+				<input id="capacidad" class="form-control" readonly/>
+			</div>
+			<div class="col-sm-6">
+				<label>Indicador</label> 
+				<input id="nom" name="nom" class="form-control" required maxlength="500"/>
+			</div>
+
+		</div>
+	</div>
+	
+	
+	<table class="table table-bordered table-hover " id="col_indicador-tabla">
+	</table>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Actualizar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,64 @@
+<form action="api/confPagosCiclo/grabarDescuento" id="frm_descuento">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_cct" name="id_cct"/>
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<!--<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" class="form-control input-sm" required>
+			</div>-->
+			<div class="col-sm-6">
+				<label>Descuento</label>
+				<select id="id_des" name="id_des" placeholder="Seleccione" class="form-control" required>
+					<option value="">Seleccione</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Monto</label>
+                <input type="text" id="monto" name="monto" class="form-control input-sm" required>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Vencimiento</label>
+				<select id="venc" name="venc" placeholder="Seleccione" class="form-control" required>
+					<option value="1">SI</option>
+					<option value="S">NO</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha de Vencimiento</label>
+                <input type="text" id="fec_venc" name="fec_venc" class="form-control input-sm daterange-single" required>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Acumulable</label> 
+				<select id="acu" name="acu" placeholder="Seleccione" class="form-control" required>
+					<option value="1">SI</option>
+					<option value="0">NO</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Aplicables para Pagos en (Nro.Cuotas)</label> 
+				<select id="nro_cuota_max" name="nro_cuota_max" placeholder="Seleccione" class="form-control" required>
+					<option value="">Seleccione</option>
+				</select>
+			</div>
+			<!--<div class="col-sm-6">
+			<h1 class="panel-title"><label id="nom_periodo">Cuotas</label></h1>
+			<table id="tab_cuotas"></table>
+			</div>-->
+		</div>		
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" class="btn btn-primary" id="btn-grabar">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,165 @@
+<script>
+function _onchangeAnio(id_anio, anio){
+ 
+	listarPagos();	
+}
+
+function onloadPage(params){
+	listarPagos();
+	listarPagosPendientes();
+}	
+
+function listarPagos(){
+	_get('api/familiar/pagosHijos?id_anio=' + $('#_id_anio').text() + '&id_fam=' + _usuario.id,
+			function(data){
+		for(var i in data)
+		{
+			var alumno =data[i]; 
+		     var id = alumno.id;
+
+		     var html = "<fieldset class='content-group'>" + 
+		     			"<legend>"+ alumno.ape_pat + " " + alumno.ape_mat + ", " + alumno.nom + "</legend>" +
+						"<table class='table' id='tabla-pagados" + id +"'>" +
+						" </table>" +
+						"</fieldset>";
+		     $('.panel-body').append(html);
+		     
+		     $('#tabla-pagados' + id).dataTable({
+				 data : alumno.pagos,
+				 aaSorting: [],
+				 destroy: true,
+				 bLengthChange: false,
+				 bPaginate: false,
+				 bFilter: false,
+				 select: true,
+		         columns : [ 
+					   {"title":"Recibo", "data" : "nro_rec"},
+					   {"title": "Mes", "render":function ( data, type, row ) {return _MES[row.mens-1];}},
+					   {"title": "Fec. pago", "data" : "fec_pago"}, 
+					   {"title": "Banco", "data" : "banco"}, 
+			           {"title":"Monto", "data" : "monto","render":function ( data, type, row ) {return 'S./' + $.number( data, 2);}},
+			           {"title":"Desc. x hermano", "data" : "desc_hermano","render":function ( data, type, row ) {return 'S./' +$.number( data, 2);}},
+			           {"title":"Desc. pronto pago", "data" : "desc_pronto_pago","render":function ( data, type, row ) {return 'S./' +$.number( data, 2);}},
+			           {"title":"Desc. administrativo", "data" : "desc_personalizado","render":function ( data, type, row ) {return 'S./' +$.number( data, 2);}},
+			           {"title":"Monto total", "data" : "monto_total", 
+			        	   "render":function ( data, type, row ) {return 'S./' + $.number( data, 2);}
+			           }
+		        ]
+		    });
+		     
+		     //alert(nom);
+		}
+	});
+}
+function listarPagosPendientes(){
+	_get('api/familiar/pagosPendientesHijos?id_anio=' + $('#_id_anio').text() + '&id_fam=' + _usuario.id,
+			function(data){
+		for(var i in data)
+		{
+			var alumno =data[i]; 
+		     var id = alumno.id;
+
+		     var html = "<fieldset class='content-group'>" + 
+		     			"<legend>"+ alumno.ape_pat + " " + alumno.ape_mat + ", " + alumno.nom + "</legend>" +
+						"<FORM id='frmPagos' target='_blank'><input name='id_fac' id='id_fac' type='hidden'><table class='table' id='tabla-pendientes" + id +"'>" +
+						" </table></FORM>" +
+						"</fieldset>";
+		     $('.panel-pendiente').append(html);
+		     
+		     $('#tabla-pendientes' + id).dataTable({
+				 data : alumno.pagos,
+				 aaSorting: [],
+				 destroy: true,
+				 bLengthChange: false,
+				 bPaginate: false,
+				 bFilter: false,
+				 select: true,
+		         columns : [ 
+					  // {"title":"Recibo", "data" : "nro_rec"},
+					   {"title": "Mes", "render":function ( data, type, row ) {return _MES[row.mens-1];}},
+					  // {"title": "Fec. pago", "data" : "fec_pago"}, 
+					   //{"title": "Banco", "data" : "banco"}, 
+			           {"title":"Monto", "data" : "monto","render":function ( data, type, row ) {return 'S./' + $.number( data, 2);}},
+			           {"title":"Desc. x hermano", "data" : "desc_hermano","render":function ( data, type, row ) {return 'S./' +$.number( data, 2);}},
+			           {"title":"Desc. pronto pago", "data" : "desc_pronto_pago","render":function ( data, type, row ) {return 'S./' +$.number( data, 2);}},
+			           {"title":"Desc. administrativo", "data" : "desc_personalizado","render":function ( data, type, row ) {return 'S./' +$.number( data, 2);}},
+			           {"title":"Monto total", "data" : "monto_total", 
+			        	   "render":function ( data, type, row ) {return 'S./' + $.number( data, 2);}
+			           },
+			           {"title":"Acciones", "render": function ( data, type, row ) {
+		                   //return '<input type="checkbox" ' + ((row.flag_sit==null) ? '': 'disabled') + ' ' + ((row.flag_sit==null) ? '': 'checked') + ' name="id" value="' + row.id + '" >';}
+							return '<button type="button" id="btn-asignar" class="btn btn-primary pull-right btn-sm" data-id_fac="' + row.id_fac + '" onclick="pagar(this,event)">Pagar</button>';
+						}}
+		        ]
+		    });
+		     
+		     //alert(nom);
+		}
+	});
+}
+
+function pagar(obj,event){
+	event.preventDefault();
+	var id_fac = $(obj).data('id_fac');
+
+	$('#frmPagos #id_fac').val(id_fac);
+	$('#frmPagos').attr('action',_URL + 'api/pagoLinea');
+	$('#frmPagos').submit();
+
+	//alert();
+	// window.open('pages/campus_virtual/boton.jsp', '_blank');
+}
+
+	/*
+				
+
+			*/
+</script>
+	<!-- Form horizontal -->
+	<!-- <div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Pagos de mis hijos</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+	
+
+			
+		</div>
+	</div> -->
+	<!-- /form horizontal -->
+
+	<div class="panel panel-flat">
+
+
+								
+									<div class="tabbable">
+										<ul class="nav nav-tabs nav-tabs-highlight">
+											<li class="active"><a href="#tab_pagados" data-toggle="tab"><i class="fa fa-money"></i> Pagados</a></li>
+											<li><a href="#tab_pendientes" data-toggle="tab"><i class="fa fa-print"></i> Pagos Pendientes</a></li>
+											<!-- <li ><a href="#left-icon-tab3" data-toggle="tab"><i class="fa fa-dollar "></i> <span class="text-danger">Deudas</span></a></li>-->
+										</ul>
+										<div class="tab-content">
+										<div class="tab-pane active" id="tab_pagados">
+											<!-- <div class="tab-pane active" id="left-icon-tab1"> -->
+											<div class="panel-body">
+											</div>
+											<!-- </div> -->
+										</div>
+										<div class="tab-pane" id="tab_pendientes">
+											<div class="panel-pendiente">
+											</div>	
+										</div>
+										</div>
+									</div>
+							
+</div>		

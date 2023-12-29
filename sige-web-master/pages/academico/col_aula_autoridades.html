@@ -1,0 +1,172 @@
+<script type="text/javascript" src="js/academico/col_aula_autoridades.js"></script>
+<style>
+tr.highlighted td {
+       background: red;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-flat">
+            <div class="panel-body">
+               <div class="row">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+						<div class="row">
+							<div class="col-sm-3">
+								<label class="negrita">Giro de Negocio</label>
+								<select required class="form-control select-search" id="id_gir" name="id_gir">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label class="negrita">Nivel</label>
+								<select required class="form-control select-search" id="id_niv" name="id_niv">
+									<!--<option value="">SELECCIONE</option>-->
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label class="negrita">Tipo Periodo</label>
+								<select required class="form-control select-search" id="id_tpe" name="id_tpe">
+									<!--<option value="">SELECCIONE</option>-->
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label class="negrita">Ciclo</label>
+								<select required class="form-control select-search" id="id_cic" name="id_cic">
+									<!--<option value="">SELECCIONE</option>-->
+								</select>
+							</div>
+						</div>
+                    </fieldset>
+                </div>
+            </div>
+			<div class="row">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+						<div class="row">
+							<div class="col-sm-3">
+								<label class="negrita">Grado</label>
+								<select required class="form-control select-search" id="id_grad" name="id_grad">
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<label class="negrita">Aula</label>
+								<select required class="form-control select-search" id="id_au" name="id_au">
+								<option value="">TODOS</option>
+								</select>
+							</div>
+						</div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Aulas</h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_aulas">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Matriculados</h6>
+
+                <!-- <div class="heading-elements ">
+
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_matriculados">
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

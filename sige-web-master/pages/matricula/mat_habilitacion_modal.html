@@ -1,0 +1,48 @@
+<form action="api/habilitacion" id="mat_habilitacion-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_alu" name="id_alu" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<input type="hidden" id="usr_ins" name="usr_ins">
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Alumno</label> 
+			  	<div class="form-group has-feedback has-feedback-left">
+					<input type="text" class="form-control"
+					onkeypress="onkeyAlumno()" 
+					placeholder="Busca alumno (Ingrese por lo menos 3 letras)" id="alumno" required>
+					<div class="form-control-feedback">
+						<i class="icon-search4 text-size-base"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row detalle">
+			<div class="col-sm-6">
+				<label>Habilitado?</label>
+				<select id="hab" name="hab" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha Fin</label>
+                <input type="text" id="fec_fin" name="fec_fin" required class="form-control input-sm " maxlength="10" readonly="readonly">
+			</div>
+			<div class="col-sm-12">
+				<label>Usuario</label>
+                <input type="text" id="usuario" name="usuario" class="form-control disabled" >
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

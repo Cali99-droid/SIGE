@@ -1,0 +1,235 @@
+<script type="text/javascript" src="js/catalogos/cat_catalogo_mant.js"></script>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: red;
+    color: red;
+}
+
+#div1 {
+     overflow:scroll;
+     height:400px;
+     width:400px;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Mantenimiento de Datos</h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_catalogos">
+											<thead>
+												<tr class="bg-primary-800">
+													<th>Nro</th>
+													<th>Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="doc_en"/><label id="nombre" name="nombre">Documentos a entregar por el alumno</label></td>
+												</tr>
+												<tr>
+                                                    <td>2</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="cent_rie"/><label id="nombre" name="nombre">Central Riesgo</label></td>
+												</tr>
+												<tr>
+                                                    <td>3</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="cent_sal"/><label id="nombre" name="nombre">Central Salud</label></td>
+												</tr>
+												<tr>
+                                                    <td>4</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="tip_cli"/><label id="nombre" name="nombre">Tipos de Cliente para Matricula</label></td>
+												</tr>
+												<tr>
+                                                    <td>5</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="sit_aca_alu"/><label id="nombre" name="nombre">Situación Académica del Alumno</label></td>
+												</tr>
+												<tr>
+                                                    <td>6</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="con_tra_per"/><label id="nombre" name="nombre">Condición de trabajo de la persona</label></td>
+												</tr>
+												<tr>
+                                                    <td>7</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="est_civil"/><label id="nombre" name="nombre">Estado Civil de la persona</label></td>
+												</tr>
+												<tr>
+                                                    <td>8</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="grad_ins"/><label id="nombre" name="nombre">Grado de Instrucción de la persona</label></td>
+												</tr>
+												<tr>
+                                                    <td>9</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="idi"/><label id="nombre" name="nombre">Idioma</label></td>
+												</tr>
+												<tr>
+                                                    <td>10</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="mot_bu"/><label id="nombre" name="nombre">Motivo de Bulling</label></td>
+												</tr>
+												<tr>
+                                                    <td>11</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="nacionalidad"/><label id="nombre" name="nombre">Nacionalidad</label></td>
+												</tr>
+												<tr>
+                                                    <td>12</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="parentesco"/><label id="nombre" name="nombre">Parentesco</label></td>
+												</tr>
+												<tr>
+                                                    <td>13</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="religion"/><label id="nombre" name="nombre">Religion</label></td>
+												</tr>
+												<tr>
+                                                    <td>14</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="tip_per_aca"/><label id="nombre" name="nombre">Tipos de Periodos Académicos</label></td>
+												</tr>
+												<tr>
+                                                    <td>15</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="tip_per"/><label id="nombre" name="nombre">Tipos de Periodo</label></td>
+												</tr>
+												<tr>
+                                                    <td>16</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="tip_doc_ide"/><label id="nombre" name="nombre">Tipos de Documentos de Identidad</label></td>
+												</tr>
+												<tr>
+                                                    <td>17</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="tip_seg"/><label id="nombre" name="nombre">Tipos de Seguro</label></td>
+												</tr>
+												<tr>
+                                                    <td>18</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="mod_tra"/><label id="nombre" name="nombre">Modalidad de Trabajo</label></td>
+												</tr>
+												<tr>
+                                                    <td>19</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="cat_ocu"/><label id="nombre" name="nombre">Categoria Ocupacional</label></td>
+												</tr>
+												<tr>
+                                                    <td>20</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="per_prue"/><label id="nombre" name="nombre">Periodo Prueba</label></td>
+												</tr>
+												<tr>
+                                                    <td>21</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="lin_carr"/><label id="nombre" name="nombre">Linea Carrera</label></td>
+												</tr>
+												<tr>
+                                                    <td>22</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="den"/><label id="nombre" name="nombre">Denominacion</label></td>
+												</tr>
+												<!--<tr>
+                                                    <td>23</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="rem"/><label id="nombre" name="nombre">Remuneracion</label></td>
+												</tr>-->
+												<tr>
+                                                    <td>23</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="frec_pag"/><label id="nombre" name="nombre">Frecuencia Pago</label></td>
+												</tr>
+												<tr>
+                                                    <td>24</td>
+                                                    <td><input type="hidden" id="cat" name="cat" value="mod_est"/><label id="nombre" name="nombre">Modalidad Estudio</label></td>
+												</tr>
+											</tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+	<div class="col-md-6" id="catalogo">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title"><label id="nom_catalogo"></label></h6>
+				<input type="hidden" id="cat" name="cat" />
+
+                <!-- <div class="heading-elements ">
+
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+							<div class="row text-right">
+							<p>
+								<button type="button" class="btn-lg btn-success icon-plus3" id="btn_nuevo">
+									Agregar</button>
+							</p>
+
+                            </div>
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-bordered text-center" id="tabla_listado_catalogo">
+                                        </table>
+                                    </div>
+
+                                </div>
+				
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

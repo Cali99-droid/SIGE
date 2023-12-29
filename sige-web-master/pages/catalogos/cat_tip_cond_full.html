@@ -1,0 +1,40 @@
+<form action="api/tipCond" id="cat_tip_cond_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo de Condicion</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="cat_tip_cond-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#cat_cond_alumno-tab" data-toggle="tab"><i class="fa fa-cube"></i> Condici&oacute;n del alumno</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="cat_cond_alumno-tab">
+				<table class="table" id="cat_cond_alumno-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

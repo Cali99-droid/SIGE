@@ -1,0 +1,67 @@
+<script type="text/javascript" src="pages/js/eva_vacante.js"></script>
+<div class="panel panel-flat">
+<div class="panel-body">
+<form action="api/vacante" id="eva_vacante-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo</label> 
+				<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Evaluaci&oacute;n Vacante</label> 
+				<select id="id_eva" name="id_eva" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<table id="div_grados" class="table">
+			</table>
+			<!-- <div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_grad" name="id_grad" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Capacidad </label>
+                <input type="text" id="nro_vac" name="nro_vac" required class="form-control input-sm number" maxlength="10">
+			</div> -->
+		</div>
+		<!-- 
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Vacantes ofertadas </label>
+                <input type="text" id="vac_ofe" name="vac_ofe" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Postulantes</label>
+                <input type="text" id="post" name="post" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+		 -->
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+<table id="vacante_table" class="table">
+</table>
+</div>
+</div>
+

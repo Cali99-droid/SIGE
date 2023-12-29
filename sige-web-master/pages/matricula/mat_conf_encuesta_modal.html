@@ -1,0 +1,51 @@
+<form action="api/encuesta" id="mat_conf_encuesta-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Giro de Negocio</label> 
+				<select id="id_gir" name="id_gir" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>nom</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Fecha Inicio</label>
+                <input type="text" id="fec_ini" name="fec_ini" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha Fin</label>
+                <input type="text" id="fec_fin" name="fec_fin" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Mensaje Incial</label> 
+				<textarea class="form-control" rows="5" cols="5" id="msj_ini" name="msj_ini"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Mensaje Final</label> 
+				<textarea class="form-control" rows="5" cols="5" id="msj_fin" name="msj_fin"></textarea>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar_pre" class="btn btn-primary" onclick="agregar_preguntas(this,event)">Agregar Preguntas</button>
+		<button type="button" id="btn-grabar_enc" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

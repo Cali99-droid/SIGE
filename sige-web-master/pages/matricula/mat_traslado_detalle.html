@@ -1,0 +1,184 @@
+<!-- <script type="text/javascript" src="pages/js/mat_traslado_detalle.js"></script>
+<div class="panel panel-flat" id="mat_traslado_detalle-panel">
+
+	<table class="table" id="mat_traslado_detalle-tabla">
+	</table>
+	
+</div> -->
+
+<script type="text/javascript"
+	src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+<!-- 
+	<script type="text/javascript" src="assets/js/pages/form_checkboxes_radios.js"></script>
+	 -->
+<script type="text/javascript" src="pages/js/mat_traslado_detalle.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	
+//$("#frm-matricula").steps('done');//-->
+</script>
+
+<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+
+
+<!-- Wizard with validation -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">
+			TRASLADO DEL ALUMNO: <label id="lbl_alumno"></label>
+		</h6>
+		<div class="heading-elements">
+			<ul class="icons-list">
+				<li><a data-action="collapse"></a></li>
+				<li><a data-action="reload"></a></li>
+				<li><a data-action="close"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<form class="steps-validation" action="#" id="frm-traslado">
+		<input type="hidden" id="id" name="id" value="">
+		<input type="hidden" id="id_alu" name="id_alu" value=""> 
+		<input	type="hidden" id="id_mat" name="id_mat" value="">
+		<input	type="hidden" id="id_suc" name="id_suc" value="">
+		<h6>1. Gestión de Traslado</h6>
+		<fieldset>
+			<legend class="text-bold">Datos del Alumno</legend>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Situación<!-- <span class="text-danger">*</span> --></label>
+						<select name="id_sit" id="id_sit" 
+							class="form-control select-search"><option>Seleccione</option></select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Fecha<!-- <span class="text-danger">*</span> --></label> <input
+							type="text" name="fec" id="fec"
+							class="form-control daterange-single">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Motivo<!-- <span class="text-danger">*</span> --></label> <input
+							type="text" name="mot" id="mot" class="form-control ">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Colegio Destino<!-- <span class="text-danger">*</span> --></label>
+						<select name="id_col" id="id_col" data-placeholder="Seleccione" class="form-control select-search ">
+						</select>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<h6>2. Control de Deudas</h6>
+		<fieldset>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-flat">
+						<div class="panel-heading">
+							<h5 class="panel-title">
+								NRO DE CONTRATO <span id="apoderado.num_cont" />
+							</h5>
+							<div class="heading-elements">
+								<ul class="icons-list">
+									<li><a data-action="collapse"></a></li>
+									<li><a data-action="reload"></a></li>
+									<li><a data-action="close"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<div class="form-group form-group-material col-lg-2">
+									<img id="apoderado.foto" width="100%" height="100%" alt="">
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Cliente</label> <input
+										type="text" class="form-control input-xs" id="apoderado.nom"
+										readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Nro doc</label> <input
+										type="text" class="form-control input-xs"
+										id="apoderado.nro_doc" readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Direcci&oacute;n</label>
+									<input type="text" class="form-control input-xs"
+										id="apoderado.direccion" value="Value" readonly>
+								</div>
+								<div class="form-group form-group-material col-lg-5">
+									<label class="control-label is-visible">Celular</label> <input
+										type="text" class="form-control input-xs" id="apoderado.cel"
+										value="Value" readonly>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<h5 class="panel-title">MENSUALIDADES QUE ADEUDA</h5>
+						<table id="table-mensualidades_adedua" class="table"></table>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<h6>3. Pagos por los documentos</h6>
+		<fieldset>
+			<div class="form-group">
+			<div class="col-md-12">
+				<div id="inicial">
+				<input type="checkbox" class="form-check-input-styled-primary" id="id_fco11" name="id_fco" value="11" monto="40">Certificado Inicial</input><br>
+				</div>
+				<div id="primaria">
+				<input type="checkbox" class="form-check-input-styled-primary" id="id_fco12" name="id_fco" value="12" monto="50">Certificado Primaria</input><br>
+				</div>
+				<div id="secundaria">
+				<input type="checkbox" class="form-check-input-styled-primary" id="id_fco13" name="id_fco" value="13" monto="60">Certificado Secundaria</input><br>
+				</div>
+				<input type="checkbox" class="form-check-input-styled-primary" id="id_fco15" name="id_fco" value="15" monto="10">Certificado de Conducta</input><br>
+				<input type="checkbox" class="form-check-input-styled-primary" id="id_fco18" name="id_fco" value="18" monto="20">Traslado de Matrícula</input><br>
+			</div>
+			</div>
+			<div class="form-group">
+			<div class="col-md-6">
+				<div class="form-group">
+				<label>Monto de Mensualidades</label> <input type="text" id="total_mens" name="total_mens"  readonly class="form-control input-sm">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+				<label>Monto de Documentos</label> <input type="text" id="total_doc" name="total_doc"  readonly class="form-control input-sm">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+				<label>Monto a pagar</label> <input type="text" id="total" name="total"  readonly class="form-control input-sm">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+				<label>Abona</label> <input type="text" id="abono" name="abono"  class="form-control input-sm">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+				<label>Vuelto</label> <input type="text" id="vuelto" name="vuelto"  readonly class="form-control input-sm">
+				</div>
+			</div>
+			
+			</div>
+		</fieldset>
+		<h6>4. Impresión de Documentos</h6>
+		<fieldset></fieldset>
+	</form>
+</div>
+<!-- /wizard with validation -->

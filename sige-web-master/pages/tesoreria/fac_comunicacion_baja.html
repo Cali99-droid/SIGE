@@ -1,0 +1,65 @@
+<script type="text/javascript" src="js/facturacion/fac_comunicacion_baja.js"></script>
+
+<!-- Form horizontal -->
+<div class="panel panel-flat">
+	<div class="panel-heading">
+		<h5 class="panel-title">Buscar por fecha</h5>
+		<div class="heading-elements">
+			<ul class="icons-list">
+				<li><a data-action="collapse"></a></li>
+				<li><a data-action="reload"></a></li>
+				<li><a data-action="close"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel-body">
+
+
+		<fieldset class="content-group">
+			<form class="form-horizontal" id="frm-pagos-buscar">
+			
+
+				<div class="form-group">
+					<div class="col-lg-6">
+						<label>Cliente</label>
+							<input type="text" id="cliente" name="cliente" required="required" class="form-control">
+					</div>
+					<div class="col-lg-6">
+						<label>Alumno</label>
+							<input type="text" id="alumno" name="alumno" class="form-control">
+					</div>
+				</div>
+
+
+				<div class="text-right">
+					<button type="submit" class="btn btn-primary">
+						Buscar <i class="icon-arrow-right14 position-right"></i>
+					</button>
+				</div>
+			</form>
+
+		</fieldset>
+
+
+	</div>
+</div>
+<!-- /form horizontal -->
+
+<div class="panel panel-flat" style="display: none" id="panel-alumnos">
+	<div class="panel-heading">
+		<h5 class="panel-title">Seleccionar documento a dar de baja</h5>
+		<div class="heading-elements">
+			<ul class="icons-list">
+				<li><a data-action="collapse"></a></li>
+				<li><a data-action="reload"></a></li>
+				<li><a data-action="close"></a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<table class="table" id="tabla-recibos">
+	</table>
+
+</div>

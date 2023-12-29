@@ -1,0 +1,138 @@
+
+
+<div class="panel panel-flat">
+
+
+	<div class="panel-body">
+		<form action="api/trabajador" id="ges_trabajador-frm">
+			<fieldset class="content-group">
+				<legend class="text-bold">DATOS DEL TRABAJADOR</legend>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-4">
+							<label>tipo de documento</label> <input type="text" id="ape_pat"
+								name="ape_pat" required class="form-control input-sm "
+								maxlength="50" readonly value="DNI">
+						</div>
+						<div class="col-sm-4">
+							<label>Numero de documento</label> <input type="text"
+								id="ape_mat" name="ape_mat" required
+								class="form-control input-sm " maxlength="50" readonly
+								value="10626482">
+						</div>
+						<div class="col-sm-4">
+							<label>Nombres</label> <input type="text" id="nom" name="nom"
+								required class="form-control input-sm " maxlength="50" readonly
+								value="VALLE LEON,MICHAEL">
+						</div>
+					</div>
+
+				</div>
+			</fieldset>
+
+			<fieldset class="content-group">
+				<legend class="text-bold">NUEVO CONTRATO</legend>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Fecha de inicio</label> <input type="text" id="dir"
+								name="dir" required class="form-control input-sm "
+								maxlength="100">
+						</div>
+						<div class="col-sm-6">
+							<label>Fecha de fin</label> <input type="text" id="corr" name="corr"
+								class="form-control input-sm " maxlength="100" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<label>Regimen laboral</label> 
+							<div class="flechas">
+								<select id="id_tdc" name="id_tdc" required
+									placeholder="Seleccione" class="form-control">
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label>Categoria Ocupacional</label><div class="flechas">
+										<select id="id_tdc" name="id_tdc" required
+											placeholder="Seleccione" class="form-control">
+										</select>
+									</div>
+						</div>
+						<div class="col-sm-4">
+							<label>Ocupaci&oacute;n</label><div class="flechas">
+										<select id="id_tdc" name="id_tdc" required
+											placeholder="Seleccione" class="form-control">
+										</select>
+									</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-4">
+							<label>Tipo de contrato</label> 
+							<div class="flechas">
+								<select id="id_tdc" name="id_tdc" required placeholder="Seleccione" class="form-control">
+									<option>A tiempo parcial</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label>Tipo de pago</label><div class="flechas">
+										<select id="id_tdc" name="id_tdc" required
+											placeholder="Seleccione" class="form-control">
+										</select>
+									</div>
+						</div>
+						<div class="col-sm-4">
+							<label>Monto de la renumeraci&oacute;n</label> 
+										 <input type="text" id="corr" name="corr"
+								class="form-control input-sm " maxlength="100" required>
+									 
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset class="content-group">
+				<legend class="text-bold">OTROS DATOS</legend>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-4">
+							<label>Establecimiento</label> <div class="flechas">
+								<select id="id_tdc" name="id_tdc" required
+									placeholder="Seleccione" class="form-control">
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label>Jornada Laboral</label> <div class="flechas">
+								<select id="id_tdc" name="id_tdc" required
+									placeholder="Seleccione" class="form-control">
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label>Situacion especial</label><div class="flechas">
+								<select id="id_tdc" name="id_tdc" required
+									placeholder="Seleccione" class="form-control">
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+
+
+			<div class="modal-footer">
+				<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+
+

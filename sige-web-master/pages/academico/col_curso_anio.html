@@ -1,0 +1,49 @@
+<script type="text/javascript" src="pages/js/col_curso_anio.js"></script>
+<script type="text/javascript" src="pages/js/col_curso_anio_modal_full.js"></script>
+
+<div class="panel panel-flat" id="cat_curso-panel">
+
+	<div class="panel-body">
+
+		<form action="api/curso" id="cat_curso_full-frm">
+			<input type="hidden" id="id" name="id" />
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-6">
+						<label>Nivel</label> <select class="form-control input-xs"
+							id="id_niv" name="id_niv">
+							<option value=''>SELECCIONAR</option>
+						</select>
+					</div>
+					<div class="col-sm-6">
+						<label>Grado</label> <select class="form-control input-xs"
+							id="id_grad" name="id_gra">
+							<option value=''>TODOS</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<button type="button" class="btn btn-primary" id="btn-clonar" style="display:none">
+					Clonar desde A&ntilde;o Anterior<i
+						class="icon-floppy-disks position-right"></i>
+				</button>
+			</div>
+		</form>
+
+		<div id="cat_curso-panel">
+
+			<div class="tabbable">
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="col_tema-tab">
+						<table class="table" id="col_curso_anio-tabla">
+						</table>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,84 @@
+<style>
+<!--@media screen and (max-width: 320px) {
+     table {
+       display: block;
+       overflow-x: auto;
+     }
+}-->
+@media screen and (max-width: 600px) {
+       table {
+           width:100%;
+       }
+       thead {
+           display: none;
+       }
+       tr:nth-of-type(2n) {
+           background-color: inherit;
+       }
+       tr td:first-child {
+           background: #f0f0f0;
+           font-weight:bold;
+           font-size:1.3em;
+       }
+       tbody td {
+           display: block;
+           text-align:center;
+       }
+       tbody td:before {
+           content: attr(data-th);
+           display: block;
+           text-align:center;
+       }
+}
+
+</style>
+<script type="text/javascript"
+	src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+<!-- 
+	<script type="text/javascript" src="assets/js/pages/form_checkboxes_radios.js"></script>
+	 -->
+<script type="text/javascript" src="js/matricula/mat_ratificacion.js"></script>
+<!-- <script type="text/javascript" src="js/matricula/mat_actualizacion_datos_padres.js"></script> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	
+//$("#frm-matricula").steps('done');//-->
+</script>
+
+<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+
+<!-- Wizard with validation -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h4>
+			<label id="titulo">RATIFICACION DE MATRICULA</label>
+		</h4>
+	</div>
+
+	<form action="api/matricula/grabarRatificacion" id="frm-ratificacion">
+		<input type="hidden" id="id_anio_rat" name="id_anio_rat"> 	
+		<div class="panel-body">
+		 <fieldset class="content-group">
+		 <legend class="text-bold"><label id="nom_rat">RATIFICACION DE MATRICULA</label></legend>
+			<p></p>
+			<div class="row">
+				<div class="hermanos-div col-sm-12 table-responsive">
+					<b id='titulo'></b>
+						<table class="table" id="hermanos-tabla">
+						</table>
+				</div>
+			</div>
+	
+		<div class="modal-footer">
+			<button type="button" class="btn btn-link" data-dismiss="modal" onclick="_send('pages/apoderado/apo_menu_matricula_web.html','','Lista')">CANCELAR</button>
+			<button type="button" id="btn-grabar_ratificacion" class="btn btn-success btn-xs pull-right" onclick="grabarRatificacion(this)"><i class="icon-floppy-disk"></i>GRABAR</button>
+		</div><br>
+		</fieldset>
+		<div>
+		<!--</div>-->
+
+	</form>
+</div>
+<!-- /wizard with validation -->
+
+

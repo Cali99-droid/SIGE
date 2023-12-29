@@ -1,0 +1,29 @@
+<form action="api/pagos/grabarBecas" id="frm_pago_beca">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A"/>
+	<div class="form-group">
+		<div class="row">
+			<!--<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" class="form-control input-sm" required>
+			</div>-->
+			<div class="col-sm-6">
+				<label>Alumno</label>
+                <input type="text" id="alumno" name="alumno" class="form-control input-sm" required readonly>
+			</div>
+		</div>
+		<div class="row">
+		<table id="tabla_deudas" class="table">
+		</table>
+		</div>	
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" class="btn btn-primary" id="btn-grabar">Grabar</button>
+	</div>
+
+</form>
+
+

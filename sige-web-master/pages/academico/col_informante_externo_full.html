@@ -1,0 +1,62 @@
+<form action="api/informanteExterno" id="col_informante_externo_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombre</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>Apellido Paterno</label>
+                <input type="text" id="ape_pat" name="ape_pat" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Apellido Materno</label>
+                <input type="text" id="ape_mat" name="ape_mat" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>N&uacute;mero de documento</label>
+                <input type="text" id="nro_doc" name="nro_doc" required class="form-control input-sm number" maxlength="8">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo de documento</label>
+                <input type="text" id="tip_doc" name="tip_doc" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Celular</label>
+                <input type="text" id="cel" name="cel" required class="form-control input-sm number" maxlength="9">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Direcci&oacute;n</label>
+                <input type="text" id="dir" name="dir" required class="form-control input-sm " maxlength="100">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_informante_externo-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+		</ul>
+		<div class="tab-content">
+		</div>
+	</div>
+
+</div>
+

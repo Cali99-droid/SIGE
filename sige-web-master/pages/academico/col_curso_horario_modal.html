@@ -1,0 +1,25 @@
+<form action="api/cursoHorario/cursoHorarioPad" id="col_curso_horario_pad-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="id_au" name="id_au" />
+	<input type="hidden" id="est" name="est" value="A" />
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Desde</label> 
+				 <input type="text" id="fec_ini_vig" name="fec_ini_vig" required class="form-control input-sm daterange-single" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Hasta</label> 
+				<input type="text" class="form-control input-sm" value="Fin de a&ntilde;o" readonly>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>

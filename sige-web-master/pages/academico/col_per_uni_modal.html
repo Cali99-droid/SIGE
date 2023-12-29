@@ -1,0 +1,71 @@
+<form action="api/perUni" id="col_per_uni-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="est" name="est" value="A" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Giro Negocio</label> 
+				<select id="id_gir" name="id_gir" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nivel</label> 
+				<select id="id_niv" name="id_niv" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Periodo Acad&eacute;mico</label> 
+				<select id="id_cpa" name="id_cpa" required placeholder="Seleccione" class="form-control ">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>N&uacute;m. Periodo</label>
+				<select id="nump" name="nump" required placeholder="Seleccione" class="form-control">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Unidad Inicio</label>
+                <input type="text" id="numu_ini" name="numu_ini" required class="form-control input-sm number" maxlength="10">
+			</div>
+			<div class="col-sm-6">
+				<label>Unidad Fin</label>
+                <input type="text" id="numu_fin" name="numu_fin" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Fecha Inicio</label>
+				<input type="text" id="fec_ini" name="fec_ini" class="form-control daterange-single" >
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha Fin</label>
+				<input type="text" id="fec_fin" name="fec_fin" class="form-control daterange-single" >
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Registro de Notas (Desde)</label>
+				<input type="text" id="fec_ini_ing" name="fec_ini_ing" class="form-control daterange-single" >
+			</div>
+			<div class="col-sm-6">
+				<label>Registro de Notas (Hasta)</label>
+				<input type="text" id="fec_fin_ing" name="fec_fin_ing" class="form-control daterange-single" >
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		
+		<button type="button" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+	
+	<table  class="table" id="col_per_uni_det-tabla">
+	</table>
+
+</form>
+
+

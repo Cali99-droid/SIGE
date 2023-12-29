@@ -1,0 +1,63 @@
+<script type="text/javascript" src="js/campus_virtual/cv_ficha_matricula.js"></script>
+<style type="text/css">
+label {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: xx-small;
+ text-align: center;
+}
+</style>
+				<form class="modal-body" id="" action="">
+				<div>
+				<ol>
+				<li>El presente formulario debe ser llenado &uacute;nicamente por el padre o madre que realiz&oacute; la matricula en la modalidad presencial.</li>
+				<li>Los datos consignados en el presente formulario ser&aacute;n utilizados para la identificaci&oacute;n del padre o madre apoderado del menor, tr&aacute;mite documentario y comunicaciones oficiales del colegio.</li>
+				<li>Todo los datos entregados en el presente formulario tienen car&aacute;cter de declaraci&oacute;n jurada.</li>
+				</ol>
+				</div>
+				</form>
+				<form class="modal-body" id="frm-ficha_validacion_datos" action="">
+					<input id='id' name='id' type='hidden'/>
+					<input id='id_fam' name='id_fam' type='hidden'/>
+					<input id='id_anio' name='id_anio' type='hidden'/>
+					<input id='id_gpf' name='id_gpf' type='hidden'/>
+					<input id='est' name='est' type="hidden" value="A"/>
+					
+					<fieldset>
+					<legend>DATOS DEL APODERADO</legend><br>
+					<div class="form-group">			
+						<div class="row">
+						<div class="col-sm-6">
+							<label><font color="black">DNI </font></label>
+							<input type="number" id="nro_dni" name="nro_dni" required class="form-control input-sm" readonly="readonly">
+						</div>
+						<div class="col-sm-6">
+							<label><font color="black">Apellidos y Nombres: </font></label>
+							<input type="text" id="ape_nom" name="ape_nom" required class="form-control input-sm" readonly="readonly">
+						</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+							<label><font color="black">Nro. Celular</font></label>
+							<input type="number" id="cel" name="cel" required maxlength="9" class="form-control input-sm">
+							</div>
+							<div class="col-sm-6">
+							<label><font color="black">Email</font></label>
+							<input type="email" id="corr" name="corr" required class="form-control input-sm">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+							<label><font color="black">Fecha de Emisi&oacute;n del DNI</font></label>
+							<input type="text" id="fec_emi_dni" name="fec_emi_dni" required class="form-control daterange-single">
+							</div>
+							<div class="col-sm-6">
+							<label><font color="black">Nro. de Ubigeo (Se encuentra en el DNI)</font></label>
+							<input type="number" id="ubigeo" name="ubigeo" required class="form-control input-sm">
+							</div>
+						</div>
+					</div>
+					</fieldset>
+					<div class="modal-footer">		
+					<button type="button" class="btn bg-blue " id="btn_siguiente" onclick="validar_datos()" >Continuar <i class="icon-checkmark-circle position-right"></i></button>
+					</div>  
+				</form>

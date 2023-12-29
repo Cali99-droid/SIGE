@@ -1,0 +1,56 @@
+<script type="text/javascript" src="pages/js/mat_solicitud_buscar.js"></script>
+<div class="panel panel-flat" id="mat_matricula-panel">
+ <div class="panel-heading">
+			<h5 class="panel-title">Buscar alumno</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-alumno-buscar">
+ 					<div class="form-group">
+						<div class="col-lg-3">
+							<select id="id_suc_ori" name="id_suc_ori" class="form-control">
+							</select>
+						</div>
+						<div class="col-lg-9">
+							<input type="text" class="form-control input-xs" id="alumno" name=""alumno"" placeholder="Ingrese apellidos y nombres del alumno"  autocomplete="off">
+						</div>
+					</div>
+
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Buscar <i class="icon-arrow-right14 position-right"></i></button>
+					</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+</div>
+
+<div class="panel panel-flat" style="display:none" id="panel-matricula-alumnos">
+		<div class="panel-heading">
+			<h5 class="panel-title">Resultados</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+	              		<li><a data-action="collapse"></a></li>
+	              		<li><a data-action="reload"></a></li>
+	              		<li><a data-action="close"></a></li>
+	              	</ul>
+	             	</div>
+		</div>
+	
+	
+		<table class="table table-bordered" id="tabla-matricula-alumnos">
+		</table>
+		
+</div>

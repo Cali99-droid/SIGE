@@ -1,0 +1,73 @@
+<form action="api/confMensualidad" id="mat_conf_mensualidad-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_per" name="id_per" />
+	<input type="hidden" id="est" name="est" value="E"/>
+	<input type="hidden" id="mes" name="mes" value="0"/>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Modalidad Estudio</label> 
+				<select id="id_cme" name="id_cme" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label class="negrita">NIVEL</label>
+				<select required class="form-control select-search" id="id_nvl" name="id_nvl">
+					<!--<option value="">SELECCIONE</option>-->
+				</select>
+			</div>
+			<div class="col-sm-4">
+						<label class="negrita">TIPO PERIODO</label>
+						<select required class="form-control select-search" id="id_tpe" name="id_tpe">
+							<!--<option value="">SELECCIONE</option>-->
+						</select>
+			</div>
+		</div>
+		<div class="row">		
+			<div class="col-sm-12">
+				<label class="negrita">Ciclo</label>
+				<select required class="form-control select-search" id="id_cct" name="id_cct">
+					<option value="">SELECCIONE</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Monto</label>
+                <input type="text" id="monto" name="monto" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Dcto. Secretaria</label>
+                <input type="text" id="descuento" name="descuento" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Dcto. Banco</label>
+                <input type="text" id="desc_banco" name="desc_banco" required class="form-control input-sm decimal" maxlength="5">
+			</div>
+			<div class="col-sm-6">
+				<label>Tipo Fecha Vencimiento</label> 
+				<select id="tipo_fec_ven" name="tipo_fec_ven" required placeholder="Seleccione" class="form-control select-search">
+				<option value="D">Dia</option>
+				<option value="F">Fin de Mes</option>				
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<label>Ult. D&iacute;a de Pago</label>
+                <input type="text" id="dia_mora" name="dia_mora" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

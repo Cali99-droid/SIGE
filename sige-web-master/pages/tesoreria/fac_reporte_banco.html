@@ -1,0 +1,103 @@
+<script type="text/javascript" src="js/facturacion/fac_reporte_banco.js"></script>
+
+	<!-- Form horizontal -->
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">Buscar por banco</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+               		<li><a data-action="collapse"></a></li>
+               		<li><a data-action="reload"></a></li>
+               		<li><a data-action="close"></a></li>
+               	</ul>
+              	</div>
+		</div>
+
+		<div class="panel-body">
+			
+			
+				<fieldset class="content-group">
+					<form class="form-horizontal" id="frm-pagos-buscar">
+					<input type="hidden" name="id_anio" value="2" >
+					<input type="hidden" name="id_suc" id="id_suc" >
+
+				
+					<div class="form-group">
+						<div class="col-sm-4">
+								<label class="negrita">Nª Serie</label>
+								<select  class="form-control select-search" id="nro_serie" name="nro_serie">
+								<option value="">TODOS</option>
+								<option value="B001">B001</option>
+								<option value="B002">B002</option>
+								<option value="B003">B003</option>
+								<option value="B004">B004</option>
+								<option value="B005">B005</option>
+								<option value="B006">B006</option>
+								<option value="B007">B007</option>
+								<option value="B008">B008</option>
+								</select>
+							</div>
+						<div class="col-lg-4">
+							<label>Fecha Inicio</label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_ini" name="fec_ini" class="form-control daterange-single" autocomplete="off">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<label>Fecha Fin</label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_fin" name="fec_fin" class="form-control daterange-single" autocomplete="off">
+							</div>
+						</div>
+					</div>
+					
+					<!-- 				
+					<div class="form-group">
+						<div class="col-lg-6">
+							<label>Desde </label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_ini" name="fec_ini" class="form-control daterange-single" >
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<label>Hasta</label>
+			                <div class="input-group">
+								<span class="input-group-addon"><i class="icon-calendar22"></i></span>
+								<input type="text" id="fec_fin" name="fec_fin" class="form-control daterange-single" >
+							</div>
+						</div>
+					</div>
+ 					-->
+ 
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Buscar <i class="icon-arrow-right14 position-right"></i></button>
+					</div>
+					</form>		
+
+				</fieldset>
+
+			
+		</div>
+	</div>
+	<!-- /form horizontal -->
+
+	<div class="panel panel-flat" style="display:none" id="panel-pagos">
+		<div class="panel-heading">
+			<h5 class="panel-title">Resultados</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+	              		<li><a data-action="collapse"></a></li>
+	              		<li><a data-action="reload"></a></li>
+	              		<li><a data-action="close"></a></li>
+	              	</ul>
+	             	</div>
+		</div>
+	
+	
+		<table class="table" id="tabla-pagos">
+		</table>
+		
+	</div>

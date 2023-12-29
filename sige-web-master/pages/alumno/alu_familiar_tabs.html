@@ -1,0 +1,458 @@
+<script type="text/javascript" src="js/alumno/alu_familiar_tabs.js"></script> 
+
+<div class="panel panel-flat">
+		<div class="panel-body">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a id="li-tabs-1" href="#fam_familia-tab" data-toggle="tab"><i class="fa fa-user"></i> Familia</a>
+			</li>
+			<li>
+				<a id="li-tabs-1" href="#fam_datos-tab" data-toggle="tab"><i class="fa fa-user"></i> Familiares</a>
+			</li>
+			<!-- <li> 
+				<a id="li-tabs-2" href="#fam_direccion-tab" data-toggle="tab"><i class="fa fa-map-marker"></i> Direcci&oacute;n</a>
+			</li> -->
+			<li> 
+				<a id="li-tabs-3" href="#fam_alumnos-tab" data-toggle="tab"><i class="fa fa-child"></i> Alumnos</a>
+			</li>
+			<!--<li> 
+				<a id="li-tabs-4" href="#fam_otros_familiares-tab" data-toggle="tab"><i class="fa fa-group"></i> Otros familiares</a>
+			</li>-->
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="fam_familia-tab">				
+				<form action="api/familiar/actualizarDireccion" id="alu_direccion-frm">
+					<input type="hidden" id="id" 	name="id" />
+						<div class="row">
+							<div class="col-sm-3">
+								<label>C&oacute;digo</label> 
+								<input type="text" id="cod" name="cod" required class="form-control input-sm ">
+							</div>
+							<div class="col-sm-3">
+								<label>Nombre de Familia</label> 
+								<input type="text" id="cod" name="cod" required class="form-control input-sm ">
+							</div>
+							<div class="col-sm-3">
+								<label>Direcci&oacute;n</label>
+				                <input type="text" id="dir" name="dir" required class="form-control input-sm " maxlength="50">
+							</div>
+							<div class="col-sm-3">
+								<label>Referencia</label>
+				                <input type="text" id="referencia" name="referencia" required class="form-control input-sm " maxlength="50">
+							</div>
+						</div>					
+					<fieldset class="content-group">
+						<legend class="text-bold">MAPA</legend>
+						<div class="row">
+							<div class="col-sm-12">
+							
+								<div class="map" style="width:100% !important">
+									<div id="location" style="width: 100%; height: 800px; position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -4, -81);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -4, -81);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: -512px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: 116px; top: -225px; z-index: -182;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; opacity: 1;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -4, -81);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8628!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=9106" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8628!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=31271" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8627!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=26450" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8627!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=113191" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8628!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=118012" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8627!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=4285" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8629!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=121439" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8629!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=34698" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8629!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=12533" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8629!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=112396" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8628!4i256!2m3!1e0!2sm!3i423123128!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=76426" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8627!4i256!2m3!1e0!2sm!3i423123128!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=71605" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8626!4i256!2m3!1e0!2sm!3i423123128!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=66784" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8626!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=21629" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8626!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=84811" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8626!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=108370" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8626!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=130535" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8627!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=89632" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8628!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=94453" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8629!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=23736" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8629!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=3490" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8628!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=129740" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8627!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=124919" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8626!4i256!2m3!1e0!2sm!3i423120668!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=19189" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0; transition-duration: 0.8s;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"></div><div style="z-index: 4; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div class="gmnoprint" style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0.01; left: 116px; top: -225px; z-index: -182;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; opacity: 1;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe frameborder="0" src="about:blank" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=-9.542612,-77.541187&amp;z=14&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/google4.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 528px; top: 310px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2018 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 168px; bottom: 0px; width: 120px;"><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2018 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2018 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 96px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><button draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button" style="background: none rgb(255, 255, 255); border: 0px; margin: 10px 14px; padding: 0px; position: absolute; cursor: pointer; user-select: none; width: 25px; height: 25px; overflow: hidden; top: 0px; right: 0px;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/sv9.png" draggable="false" class="gm-fullscreen-control" style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></button><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" href="https://www.google.com/maps/@-9.5426123,-77.5411867,14z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false" controlwidth="28" controlheight="55" style="margin: 10px; user-select: none; position: absolute; bottom: 68px; right: 28px;"><div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 0px;"><div draggable="false" style="user-select: none; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;"><button draggable="false" title="Zoom in" aria-label="Zoom in" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><button draggable="false" title="Zoom out" aria-label="Zoom out" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: -15px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div title="Rotate map 90 degrees" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; display: none;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; top: 0px; cursor: pointer;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint gm-style-mtc" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; text-align: left; width: 85px; left: 0px; top: 0px;"><div role="button" tabindex="0" title="Change map style" aria-label="Change map style" aria-pressed="true" draggable="false" style="direction: ltr; overflow: hidden; text-align: left; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-radius: 2px; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; font-weight: 500;">Map<img alt="" src="http://maps.gstatic.com/mapfiles/arrow-down.png" draggable="false" style="user-select: none; border: 0px; padding: 0px; margin: -2px 0px 0px; position: absolute; right: 6px; top: 50%; width: 7px; height: 4px;"></div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; position: absolute; top: 100%; left: 0px; right: 0px; text-align: left; display: none;"><div draggable="false" title="Show street map" style="color: black; font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px; font-weight: 500;">Map</div><div draggable="false" title="Show satellite imagery" style="color: black; font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px;">Satellite</div><div style="margin: 1px 0px; border-top: 1px solid rgb(235, 235, 235);"></div><div draggable="false" title="Show street map with terrain" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img alt="" src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div><div style="margin: 1px 0px; border-top: 1px solid rgb(235, 235, 235); display: none;"></div><div draggable="false" title="Show imagery with street names" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap; display: none;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img alt="" src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div>
+								</div>
+							</div>	
+						</div>
+					</fieldset>
+				
+					<div class="modal-footer">
+						<button type="submit" id="btn-grabar-direccion" class="btn btn-primary">Grabar</button>
+					</div>
+				
+				</form>
+						
+			</div> 
+			<div class="tab-pane" id="fam_datos-tab">
+	<!-- api/familiar/actualizarDatos -->
+			<div class="panel-body">
+				<table id="familiar_table" class="table">
+				</table>
+				<div class="modal-footer">
+					<button type="button" id="btn-nuevo" class="btn btn-info btn-xs pull-right" onclick="familiarNuevo()"><i class="icon-file-empty"></i>Nuevo</button>
+					<!-- <button type="submit" id="btn-grabar" class="btn btn-success btn-xs"><i class="icon-floppy-disk"></i>Grabar</button> -->
+				</div>
+				<form action="api/familiar/FamiliarGrabar" id="alu_familiar-frm">
+							<div id="frm_datos_familiar">
+							<input type="hidden" id="id" 	name="id" />
+							<input type="hidden" id="id_gpf" 	name="id_gpf" />
+							<input type="hidden" id="ini" 	name="ini" />
+							<input type="hidden" id="est" 	name="est" value="A" />
+							<div class="tabbable">
+								<ul class="nav nav-tabs nav-tabs-highlight">
+									<li class="active">
+										<a id="li-tabs-1" href="#familia_gen-tab" data-toggle="tab"> Generales</a>
+									</li>
+									<li>
+										<a id="li-tabs-2" href="#familia_com-tab" data-toggle="tab"> Comunicaci&oacute;n</a>
+									</li>
+									<!-- <li> 
+										<a id="li-tabs-2" href="#fam_direccion-tab" data-toggle="tab"><i class="fa fa-map-marker"></i> Direcci&oacute;n</a>
+									</li> -->
+									<li> 
+										<a id="li-tabs-3" href="#familia_est-tab" data-toggle="tab"> Estudio</a>
+									</li>
+									<li> 
+										<a id="li-tabs-4" href="#familia_lab-tab" data-toggle="tab">Labolares</a>
+									</li>
+									<li> 
+										<a id="li-tabs-5" href="#familia_otro-tab" data-toggle="tab">Otros</a>
+									</li>
+								</ul>
+								<div class="modal-footer">
+								<!-- <button type="button" id="btn-nuevo" class="btn btn-info btn-xs" onclick="familiarNuevo()"><i class="icon-file-empty"></i>Nuevo</button> -->
+								<button type="submit" id="btn-grabar" class="btn btn-success btn-xs pull-right"><i class="icon-floppy-disk"></i>Grabar</button>
+								</div>
+								<div class="tab-content">
+								<div class="tab-pane active" id="familia_gen-tab">
+									<div class="panel-body">
+									<div class="row">
+									<div class="col-sm-4">
+											<label>Parentesco</label>&nbsp;<font color="red">(*)</font> 
+											<select id="id_par" name="id_par" required placeholder="Seleccione" class="form-control">
+											</select>
+									</div>
+									<div class="col-sm-4">
+										<div class="row">
+											<div class="col-sm-12">
+												<label>Tipo de documento</label>&nbsp;<font color="red">(*)</font>
+												<select id="id_tdc" name="id_tdc" required placeholder="Seleccione" class="form-control" >
+												</select>
+											</div>
+											<div class="col-sm-12">
+												<label>N&uacute;mero de documento</label>&nbsp;<font color="red">(*)</font>
+								                <input type="text" id="nro_doc" name="nro_doc" required class="form-control input-sm " maxlength="50" >
+											</div>		
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<div for="file" id='file-insignia'>
+												<img style="max-width: 150px;max-height: 150px;cursor:pointer" />
+												<input type="file" class='box__file' />
+									</div>
+												<!--<div class="thumb thumb-rounded" style="width:170px !important; margin-top:0px !important">
+													<img id="foto" alt="" height="150px" width="150px"/>
+												</div>-->
+									</div>
+								</div>
+								<!--		
+								<div class="row">
+									<div class="col-sm-6">
+									<label for="name" class="control-label">Posee Apellidos</label>&nbsp;<font color="red">(*)</font>
+									<div class="input-group">
+										<div class="radio radio-info radio-inline">
+											<input id="id_tap1" name="id_tap" value="A" type="radio"  checked="checked"> <label for="id_tap1"> Ambos </label>
+										</div>
+										<div class="radio radio-info radio-inline">
+											<input id="id_tap2" name="id_tap" value="P" type="radio" > <label for="id_tap2"> Solo paterno </label>
+										</div>
+										<div class="radio radio-info radio-inline">
+											<input id="id_tap3" name="id_tap" value="M" type="radio" > <label for="id_tap3"> Solo materno </label>
+										</div>
+									</div>
+									</div>
+									<div class="col-sm-6">
+									</div>
+								</div>	-->
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Apellido paterno </label>
+						                <input type="text" id="ape_pat" name="ape_pat"  class="form-control input-sm " maxlength="30" >
+									</div>
+									<div class="col-sm-4">
+										<label>Apellido materno </label>
+						                <input type="text" id="ape_mat" name="ape_mat"  class="form-control input-sm " maxlength="30" >
+									</div>
+									<div class="col-sm-4">
+										<label>Nombres</label>
+						                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="40" >
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Sexo</label>&nbsp;<font color="red">(*)</font>
+											<div class="input-group">
+										<div class="radio radio-info radio-inline">
+											<input id="id_gen1" name="id_gen" value="1" type="radio" > <label for="id_gen1">Hombre</label>
+										</div>
+										<div class="radio radio-info radio-inline">
+											<input id="id_gen2" name="id_gen" value="0" type="radio"  > <label for="id_gen2">Mujer</label>
+										</div>
+									 
+									</div>
+									</div>
+									<div class="col-sm-4">
+										<label>Estado civil</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_eci" name="id_eci" required placeholder="Seleccione" class="form-control select-search" required>
+										<option value="">SELECCIONE</option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Fecha nacimiento</label>&nbsp;<font color="red">(*)</font>
+						                <input type="text" id="fec_nac" name="fec_nac"  class="form-control daterange-single" maxlength="10" required>
+									</div>
+									
+								</div>
+								<div class="row">
+								<div class="col-sm-4">
+										<label>Vive?</label>&nbsp;<font color="red">(*)</font>
+						                <select id="viv" name="viv" placeholder="Seleccione" class="form-control select-search" required>
+											<option value="1">SI</option>
+											<option value="0">NO</option>
+										</select>
+								</div>
+								<div class="col-sm-4" id="div_defuncion">
+										<label>Fecha de Defunci&oacute;n</label>
+						                <input type="text" id="fec_def" name="fec_def" required class="form-control input-sm daterange-single" maxlength="10" disabled="disabled">
+								</div>
+								<div class="col-sm-4">
+										<label>Vive con el estudiante</label>&nbsp;<font color="red">(*)</font>
+						                <select id="viv_alu" name="viv_alu" placeholder="Seleccione" class="form-control select-search" required="required">
+											<option value="1">SI</option>
+											<option value="0">NO</option>
+										</select>
+								</div>
+								</div>					
+								</div>
+								</div>
+								<div class="tab-pane" id="familia_com-tab">
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Email Personal</label>
+						                <input type="text" id="corr" name="corr"  class="form-control input-sm " maxlength="150" >
+									</div>
+									<div class="col-sm-4">
+										<label>Tel&eacute;fono Fijo</label>
+						                <input type="text" id="tlf" name="tlf"  class="form-control input-sm " maxlength="12" >
+									</div>
+									<div class="col-sm-4">
+										<label>Celular Personal</label>&nbsp;<font color="red">(*)</font>
+						                <input type="text" id="cel" name="cel"  class="form-control input-sm number" maxlength="9" required>
+									</div>
+								</div>
+								<!--
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Pa&iacute;s</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_pais" name="id_pais" required placeholder="Seleccione" class="form-control select-search">
+										<option value="">SELECCIONE</option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Departamento</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_dep" name="id_dep" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Provincia</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_pro" name="id_pro" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Distrito</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_dist" name="id_dist" required placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Direcci&oacute;n</label>&nbsp;<font color="red">(*)</font>
+						                <input type="text" id="dir" name="dir" class="form-control input-sm " maxlength="50">
+									</div>
+									<div class="col-sm-4">
+										<label>Referencia Domiciliaria</label>&nbsp;<font color="red">(*)</font>
+						                <input type="text" id="ref" name="ref" class="form-control input-sm " maxlength="50">
+									</div>
+							   </div>-->
+								</div>
+								<div class="tab-pane" id="familia_est-tab">
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Grado de instrucci&oacute;n</label>&nbsp;<font color="red">(*)</font> 
+										<select id="id_gin" name="id_gin"  placeholder="Seleccione" class="form-control select-search" required="required">
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>&#191;Es un Exalumno?</label>&nbsp;<font color="red">(*)</font> 
+										<select id="flag_alu_ex" name="flag_alu_ex"  placeholder="Seleccione" class="form-control select-search" required="required">
+										<option value="">Seleccione</option>
+										<option value="1">S&iacute;</option>
+										<option value="0">No</option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Profesi&oacute;n</label>&nbsp;<font color="red">(*)</font>  
+										<input type="text" id="prof" name="prof" required class="form-control input-sm " maxlength="50">
+									</div>
+								</div>	
+								</div>
+								<div class="tab-pane" id="familia_lab-tab">
+								<div class="row">
+								<div class="col-sm-4">
+										<label>&#191;Tiene Trabajo Remunerado?</label>&nbsp;<font color="red">(*)</font>
+										<div class="input-group">
+										<div class="radio radio-info radio-inline">
+											<input id="id_tra_rem1" name="id_tra_rem" value="1" type="radio" > <label for="id_tra_rem1">S&iacute;</label>
+										</div>
+										<div class="radio radio-info radio-inline">
+											<input id="id_tra_rem2" name="id_tra_rem" value="0" type="radio"  > <label for="id_tra_rem2">No</label>
+										</div>
+										</div>
+								</div>
+								</div>
+								<div id="div_trabajo">
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Ocupaci&oacute;n</label>&nbsp;<font color="red">(*)</font>  
+										<input type="text" id="ocu"  name="ocu"  class="form-control input-sm " maxlength="50">
+									</div>
+									<div class="col-sm-4">
+										<label>Centro de trabajo</label>
+						                <input type="text" id="cto_tra" name="cto_tra"  class="form-control input-sm " maxlength="50" >
+									</div>
+									<div class="col-sm-4">
+										<label>Direcci&oacute;n de Trabajo</label> 
+										<input type="text" id="dir_tra" name="dir_tra"  class="form-control input-sm " maxlength="50">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Tel&eacute;fono Fijo del Trabajo</label> 
+										<input type="text" id="tlf_tra" name="tlf_tra"  class="form-control input-sm" maxlength="9">
+									</div>
+									<div class="col-sm-4">
+										<label>Celular de Trabajo</label> 
+										<input type="text" id="cel_tra" name="cel_tra"  class="form-control input-sm number" maxlength="50">
+									</div>
+									<div class="col-sm-4">
+										<label>Email de Trabajo</label> 
+										<input type="text" id="email_tra" name="email_tra" class="form-control input-sm " maxlength="50">
+									</div>
+								</div>
+								</div>	
+								</div>
+								<div class="tab-pane" id="familia_otro-tab">
+								<div class="row">
+									<div class="col-sm-4">
+										<label>Religi&oacute;n</label> 
+										<select id="id_rel" name="id_rel"  placeholder="Seleccione" class="form-control select-search">
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<label>Facebook</label> 
+										<input type="text" id="face" name="face" class="form-control input-sm " maxlength="50">
+									</div>
+									<div class="col-sm-4">
+										<label>Instagram</label> 
+										<input type="text" id="inst" name="inst" class="form-control input-sm " maxlength="50">
+									</div>
+								</div>
+								</div>
+							</div>
+							</div>
+							<!--<fieldset class="content-group">
+								<legend class="text-bold">DATOS PERSONALES</legend>
+
+			
+													
+							</fieldset>
+							<fieldset class="content-group">
+								<legend class="text-bold">DATOS DE DOMICILIO</legend>
+								
+							</fieldset>
+							<fieldset class="content-group">
+								<legend class="text-bold">DATOS DE COMUNICACI&Oacute;N</legend>
+								
+							</fieldset>
+							<fieldset class="content-group">
+								<legend class="text-bold">DATOS DE ESTUDIO</legend>
+								
+							</fieldset>
+							<fieldset class="content-group">
+								<legend class="text-bold">DATOS LABOLARES</legend>
+												
+							</fieldset>
+							<fieldset class="content-group">
+								<legend class="text-bold">DATOS COMPLEMENTARIOS</legend>
+											
+							</fieldset>-->
+							</div>
+						</form>
+					</div>		
+			</div>
+			
+			<!--<div class="tab-pane" id="fam_direccion-tab">
+				
+				<form action="api/familiar/actualizarDireccion" id="alu_direccion-frm">
+					<input type="hidden" id="id" 	name="id" />
+	
+					<fieldset class="content-group">
+						<legend class="text-bold">DIRECCION</legend>
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Departamento</label> 
+								<select id="id_dep" name="id_dep" required placeholder="Seleccione" class="form-control">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Provincia</label> 
+								<select id="id_pro" name="id_pro" required placeholder="Seleccione" class="form-control">
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Distrito</label> 
+								<select id="id_dist" name="id_dist" required placeholder="Seleccione" class="form-control">
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Direcci&oacute;n</label>
+				                <input type="text" id="dir" name="dir" required class="form-control input-sm " maxlength="50">
+							</div>
+							<div class="col-sm-4">
+								<label>Referencia</label>
+				                <input type="text" id="referencia" name="referencia" required class="form-control input-sm " maxlength="50">
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset class="content-group">
+						<legend class="text-bold">MAPA</legend>
+						<div class="row">
+							<div class="col-sm-12">
+							
+								<div class="map" style="width:100% !important">
+									<div id="location" style="width: 100%; height: 800px; position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -4, -81);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -4, -81);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: -512px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -768px; top: -512px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: 116px; top: -225px; z-index: -182;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; opacity: 1;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -4, -81);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8628!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=9106" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8628!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=31271" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8627!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=26450" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8627!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=113191" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8628!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=118012" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8627!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=4285" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8629!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=121439" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8629!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=34698" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8629!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=12533" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8629!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=112396" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8628!4i256!2m3!1e0!2sm!3i423123128!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=76426" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8627!4i256!2m3!1e0!2sm!3i423123128!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=71605" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4661!3i8626!4i256!2m3!1e0!2sm!3i423123128!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=66784" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4662!3i8626!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=21629" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8626!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=84811" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4664!3i8626!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=108370" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4663!3i8626!4i256!2m3!1e0!2sm!3i423123872!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=130535" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8627!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=89632" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8628!4i256!2m3!1e0!2sm!3i423123860!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=94453" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4665!3i8629!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=23736" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: 256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8629!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=3490" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8628!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=129740" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8627!4i256!2m3!1e0!2sm!3i423121568!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=124919" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: -512px; width: 256px; height: 256px;"><img draggable="false" alt="" src="http://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i4660!3i8626!4i256!2m3!1e0!2sm!3i423120668!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=19189" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0; transition-duration: 0.8s;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"></div><div style="z-index: 4; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div class="gmnoprint" style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0.01; left: 116px; top: -225px; z-index: -182;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; opacity: 1;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe frameborder="0" src="about:blank" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=-9.542612,-77.541187&amp;z=14&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/google4.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 528px; top: 310px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2018 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 168px; bottom: 0px; width: 120px;"><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2018 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2018 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 96px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><button draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button" style="background: none rgb(255, 255, 255); border: 0px; margin: 10px 14px; padding: 0px; position: absolute; cursor: pointer; user-select: none; width: 25px; height: 25px; overflow: hidden; top: 0px; right: 0px;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/sv9.png" draggable="false" class="gm-fullscreen-control" style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></button><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" href="https://www.google.com/maps/@-9.5426123,-77.5411867,14z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false" controlwidth="28" controlheight="55" style="margin: 10px; user-select: none; position: absolute; bottom: 68px; right: 28px;"><div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 0px;"><div draggable="false" style="user-select: none; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;"><button draggable="false" title="Zoom in" aria-label="Zoom in" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><button draggable="false" title="Zoom out" aria-label="Zoom out" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: -15px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div title="Rotate map 90 degrees" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; display: none;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; top: 0px; cursor: pointer;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint gm-style-mtc" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; text-align: left; width: 85px; left: 0px; top: 0px;"><div role="button" tabindex="0" title="Change map style" aria-label="Change map style" aria-pressed="true" draggable="false" style="direction: ltr; overflow: hidden; text-align: left; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-radius: 2px; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; font-weight: 500;">Map<img alt="" src="http://maps.gstatic.com/mapfiles/arrow-down.png" draggable="false" style="user-select: none; border: 0px; padding: 0px; margin: -2px 0px 0px; position: absolute; right: 6px; top: 50%; width: 7px; height: 4px;"></div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; position: absolute; top: 100%; left: 0px; right: 0px; text-align: left; display: none;"><div draggable="false" title="Show street map" style="color: black; font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px; font-weight: 500;">Map</div><div draggable="false" title="Show satellite imagery" style="color: black; font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px;">Satellite</div><div style="margin: 1px 0px; border-top: 1px solid rgb(235, 235, 235);"></div><div draggable="false" title="Show street map with terrain" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img alt="" src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div><div style="margin: 1px 0px; border-top: 1px solid rgb(235, 235, 235); display: none;"></div><div draggable="false" title="Show imagery with street names" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap; display: none;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img alt="" src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div>
+								</div>
+							</div>	
+						</div>
+					</fieldset>
+				
+					<div class="modal-footer">
+						<button type="submit" id="btn-grabar-direccion" class="btn btn-primary">Grabar</button>
+					</div>
+				
+				</form>
+						
+			</div> -->
+
+			<div class="tab-pane" id="fam_alumnos-tab">
+				
+			</div>
+			
+			
+			<div class="tab-pane" id="fam_otros_familiares-tab">
+				<fieldset class="content-group">
+						<legend class="text-bold">LISTA DE OTROS FAMILIARES</legend>
+						<div class="row" id="familia-row">
+								<div class="familia-div col-sm-12">
+									<table class="table" id="familiar-tabla">
+									</table>
+								</div>
+						</div>
+				</fieldset>		
+			</div>
+		</div>
+	</div>
+		</div>
+</div>		

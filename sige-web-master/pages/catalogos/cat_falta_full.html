@@ -1,0 +1,47 @@
+<form action="api/falta" id="cat_falta_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Falta</label> 
+				<select id="id_ctf" name="id_ctf" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nombre de la Falta</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="300">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="cat_falta-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_reporte_falta-tab" data-toggle="tab"><i class="fa fa-cube"></i> Reporte Falta</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_reporte_falta-tab">
+				<table class="table" id="col_reporte_falta-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

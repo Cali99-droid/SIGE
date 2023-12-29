@@ -1,0 +1,33 @@
+<form  id="mat_matricula_sit-frm" action='api/matricula/actualizarSituacion'>
+	<input type="hidden" id="id_alu" name="id_alu" />
+	<input type="hidden" id="id_mat" name="id_mat" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Alumno</label> 
+				<input id="alumno" name="alumno" readonly class="form-control">
+			</div>
+			 
+		</div>
+		 
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Situacion Matricula</label> 
+				<select id="id_sit" name="id_sit" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			 
+		</div>
+		
+	 
+ 
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" id="btn-cancelar" class="btn btn-link" data-dismiss="modal">Cancelar</button> 
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

@@ -1,0 +1,179 @@
+<script type="text/javascript" src="js/facturacion/fac_conf_pagosAcadVac.js"></script>
+<style>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: red;
+    color: red;
+}
+
+#div1 {
+     overflow:scroll;
+     height:400px;
+     width:400px;
+}
+
+</style>
+
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">Ciclos Académicos</h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+							<div class="row mt-5">
+
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+											<label class="negrita">Giro de Negocio</label>
+                                        </div>
+										<div class="col-sm-6">
+											<select id="id_gir" required name="id_gir" required placeholder="Seleccione"
+                                                class="form-control select-sm select-search">
+                                               <!-- <option selected value="">SELECCIONE</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+
+
+                                    <div class="table-responsive mt-5">
+									
+                                        <table class="table" id="tabla_ciclo">
+                                        </table>
+									
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6" id="div_pagos">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title"><label id="nom_periodo">Configuración de Pagos  </label></h6>
+
+                <!-- <div class="heading-elements ">
+                </div> -->
+            </div>
+
+            <div class="panel-body">
+                <form class="frm-blue" id="frm-mant_confpagosciclo" action="api/confPagosCiclo">
+				<input type="hidden" id="id" name="id"/>
+				<input type="hidden" id="est" name="est" value="A"/>
+                    <div class="row">
+
+                        <div class="panel-body">
+
+                            <fieldset class="content-group text-center">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+											<div class="col-sm-6">
+                                                <label class="negrita">Ciclo</label>
+                                                <select required class="form-control select-search" id="id_cct" name="id_cct">
+                                                    <option value="">SELECCIONE</option>
+                                                </select>
+                                            </div>
+											<div class="col-sm-3">
+											<label class="negrita">Costo</label>
+                                                <input type="text" class="form-control input-sm" id="costo" name="costo"
+                                                    required />
+											</div>
+											<div class="col-sm-3">
+                                                <label class="negrita">Número de Cuotas</label>
+                                                <input type="text" class="form-control input-sm" id="num_cuotas" name="num_cuotas"
+                                                    required />
+                                            </div>
+                                        </div>
+										<div class="row">
+										<table class="table" id="tabla_cuotas">
+										</table>
+										</div>
+                                        <p></p>
+                                        <div class="row text-right">
+
+                                            <p>
+                                                <button type="button" class="btn-lg btn-primary  icon-floppy-disk" id="btn_grabar">
+                                                    Guardar</button>
+                                                <!--<button type="button" class="btn-lg btn-success icon-plus3" id="btn_nuevo">
+                                                    Nuevo</button>-->
+												<!--<button type="button" class="btn-lg btn-danger" id="btn_eliminar">
+                                                        Eliminar
+                                                    </button>-->
+                                            </p>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+
+                    </div>
+                </form>
+				<div class="panel-heading">
+				 <div class="row">
+				 <div class="col-sm-2">
+					<h6 class="panel-title"><label id="nom_periodo">Descuentos</label></h6>
+				 </div>
+				<div class="col-sm-6">
+					<button type="button" class="btn-lg btn-success icon-plus3" id="btn_agregar_descuento" onclick="agregar_descuento()">Agregar</button>
+				</div>
+				</div>
+				</div>
+				<table class="table" id="tabla_descuentos">
+				</table>
+            </div>
+        </div>
+
+    </div>
+
+</div>

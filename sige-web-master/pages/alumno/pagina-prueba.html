@@ -1,0 +1,136 @@
+<script type="text/javascript" src="js/alumno/alu_familiar_buscar.js"></script>
+
+<div class="panel panel-flat">
+
+	<div class="panel-body">
+		<form  class="frm-regalu">
+			<div class="tabbable">
+				<ul class="nav nav-tabs nav-tabs-highlight">
+					<li class="active">
+						<a id="li-tabs-1" href="#fam_datos-tab" data-toggle="tab"><i class="fa fa-credit-card"></i>
+							GENERALES</a>
+					</li>
+
+					<li>
+						<a id="li-tabs-2" href="#fam_familiares-tab" data-toggle="tab"><i
+								class="fa fa-user text-blue"></i>
+							COMUNICACIÓN</a>
+					</li>
+
+					<li>
+						<a id="li-tabs-3" href="#fam_familiares-tab" data-toggle="tab"><i class="fa fa-user"></i>
+							NACIMIENTO</a>
+					</li>
+					<li>
+						<a id="li-tabs-4" href="#fam_familiares-tab" data-toggle="tab"><i class="fa fa-user"></i>
+							DOCUMENTOS</a>
+					</li>
+					<li>
+						<a id="li-tabs-5" href="#fam_familiares-tab" data-toggle="tab"><i class="fa fa-user"></i>
+							OTROS DATOS</a>
+					</li>
+				</ul>
+
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="fam_datos-tab">
+						<input type="hidden" id="type" name="type" />
+
+						<fieldset class="content-group">
+							<div class="row">
+								<div class="col-sm-9">
+									<div class="row">
+										<div class="col-sm-4">
+											<label>Tipo de documento</label>
+
+
+											<select required class="form-control">
+												<option value="DNI">DNI</option>
+												<option value="Otro">Otro</option>
+											</select>
+										</div>
+										<div class="col-sm-4">
+											<label>N° de documento</label>
+											<input type="text" class="form-control input-sm" maxlength="50" required />
+										</div>
+										<div class="col-sm-4">
+											<label>Ap. Paterno</label>
+											<input type="text" class="form-control input-sm" maxlength="50" required />
+										</div>
+
+										<div class="col-sm-4">
+											<label>Ap. Materno</label>
+											<input type="text" class="form-control input-sm" maxlength="50" required />
+										</div>
+
+										<div class="col-sm-4">
+											<label>Nombres</label>
+											<input type="text" class="form-control input-sm" maxlength="50" required />
+										</div>
+										<div class="col-sm-4">
+											<label>Fecha Nacimiento</label>
+											<input type="date" class="form-control input-sm" required />
+										</div>
+
+										<div class="col-sm-4">
+											<label>Genero</label>
+											<select class="form-control select-search">
+												<option value="masc">Masculino</option>
+												<option value="fem">Femenino</option>
+											</select>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="col-sm-3">
+									<img class="user_photo img-circle mt-10" src="../sige-web/images/photo.jpg" alt="">
+									<div class="text-center pt-10">
+
+										<a href="#"><i class="fa fa-upload fa-2x"></i></a>
+									
+									&nbsp;&nbsp;&nbsp;&nbsp; 
+									<a href="#"><i class="fa fa-trash-o fa-2x"></i></a>
+									
+
+								</div>
+								</div>
+
+
+							</div>
+						</fieldset>
+
+
+						
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">
+								Guardar
+							</button>
+						</div>
+					</div>
+
+
+
+					<div class="tab-pane" id="fam_familiares-tab">
+						<fieldset class="content-group">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-12">
+											<label>Apellid tab 2</label>
+											<input type="text" id="apellidosNombres" name="apellidosNombres"
+												class="form-control input-sm" maxlength="50" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+
+
+					</div>
+				</div>
+		</form>
+	</div>
+	
+</div>

@@ -1,0 +1,218 @@
+<script type="text/javascript"
+	src="assets/js/plugins/forms/wizards/steps.min.js"></script>
+<script type="text/javascript" src="js/alumno/alu_familiar_validacion.js"></script>
+<script type="text/javascript" src="js/alumno/alu_familiar_editar.js"></script>
+
+<style>
+.wizard>.steps>ul>li a {
+	margin-top: 2px;
+}
+
+.wizard>.steps>ul>li:before, .wizard>.steps>ul>li:after {
+	top: 23px;
+}
+</style>
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h3 class="panel-title" id="idPasos">Paso 1 de 2</h3>
+	</div>
+
+	<div class="steps-validation" action="#">
+		<h6>Actualizar datos</h6>
+		<fieldset>
+			<form action="api/familiar/actualizarDatosLight" id="alu_familiar-frm">
+				<input type="hidden" id="id" name="id" /> <input type="hidden"
+					id="ini" name="ini" /> <input type="hidden" id="id_gen"
+					name="id_gen" />
+
+
+				<fieldset class="content-group">
+					<legend class="text-bold">DATOS IMPORTANTES</legend>
+
+					<div class="row">
+						<div class="col-sm-2">
+							<label>Parentesco</label>
+							<div class="flechas">
+								<select id="id_par" name="id_par" required
+									placeholder="Seleccione" class="form-control disabled">
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label>Tipo de documento</label>
+							<div class="flechas">
+								<select id="id_tdc" name="id_tdc" required placeholder="Seleccione" class="form-control disabled"></select>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<label>N&uacute;mero de documento</label> 
+							<input type="text" id="nro_doc" name="nro_doc" required	class="form-control input-sm " maxlength="50" readonly>
+						</div>
+						<div class="col-sm-3">
+							<label>Apellido paterno </label> <input type="text" id="ape_pat"
+								name="ape_pat" required class="form-control input-sm "
+								maxlength="30" readonly>
+						</div>
+						<div class="col-sm-2">
+							<label>Apellido materno </label> <input type="text" id="ape_mat"
+								name="ape_mat" class="form-control input-sm " maxlength="30"
+								readonly>
+						</div>
+					</div>
+
+					<div class="row">
+						
+						<div class="col-sm-2">
+							<label>Nombres</label> 
+							<input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="40" readonly>
+						</div>
+						<div class="col-sm-2">
+							<label>Fecha nacimiento</label>
+							<input type="text" id="fec_nac"	name="fec_nac" required	class="form-control input-sm daterange-single" maxlength="10">
+						</div>
+						<div class="col-sm-3">
+							<label>Telefono fijo</label> 
+							<input type="text" id="tlf" name="tlf"  class="form-control input-sm " maxlength="12" >
+						</div>
+						<div class="col-sm-3">
+							<label>Estado civil</label>
+							<div class="flechas">
+								<select id="id_eci" name="id_eci" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label>Vive con el estudiante</label>
+							<div class="flechas">
+								<select id="viv_alu" name="viv_alu" placeholder="Seleccione"
+									class="form-control">
+									<option value="1">SI</option>
+									<option value="0">NO</option>
+								</select>
+							</div>
+						</div>
+						
+					</div>
+
+				</fieldset>
+
+
+
+				<fieldset class="content-group">
+					<legend class="text-bold">DATOS COMPLEMENTARIOS</legend>
+					<div class="row">
+						<div class="col-sm-3">
+
+							<label>Grado de instrucci&oacute;n</label>
+							<div class="flechas">
+								<select id="id_gin" name="id_gin" placeholder="Seleccione"
+									class="form-control select-search">
+								</select>
+							</div>
+
+						</div>
+						<div class="col-sm-3">
+							<label>Religi&oacute;n</label>
+							<div class="flechas">
+								<select id="id_rel" name="id_rel" placeholder="Seleccione"
+									class="form-control select-search">
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<label>Ocupaci&oacute;n</label> <input type="text" id="ocu"
+								name="ocu" required class="form-control input-sm "
+								maxlength="50">
+						</div>
+						<div class="col-sm-3">
+							<label>Centro de trabajo</label> <input type="text" id="cto_tra"
+								name="cto_tra" class="form-control input-sm " maxlength="50">
+						</div>
+					</div>
+
+				</fieldset>
+
+
+			</form>
+		</fieldset>
+
+		<h6>Verificaci&oacute;n de celular y/o correo</h6>
+		<fieldset>
+			<div class="row">
+
+				<fieldset class="content-group">
+					<legend class="text-bold">DATOS DE COMUNICACI&Oacute;N</legend>
+					
+					
+					
+						<div class="panel panel-body login-form">
+						
+							<div class="col-sm-6">	 
+								<form action="api/familiar/validarCelular" id="alu_celular-frm">
+									<div class="form-group has-feedback has-feedback-left">
+										<input type="number" placeholder="ingresar celular" id="cel" name="cel" required class="form-control input-sm " maxlength="11" > 
+									</div>
+									<div class="form-group">
+										<button id="btn-validar-celular" class="btn bg-orange-600 btn-block" type="submit"><i class="fa fa-check iconos-white" aria-hidden="true"></i> <text>Validar celular</text></button>
+									</div>
+								</form>
+							</div>
+
+							<div class="col-sm-6">
+								<form action="api/familiar/validarCorreo" id="alu_correo-frm">		 
+								<div class="form-group has-feedback has-feedback-left">
+									<input type="email" placeholder="ingresar correo" id="corr" name="corr" required class="form-control input-sm " maxlength="150" > 
+								</div>
+								<div class="form-group">
+									<button type="submit"  id="btn-validar-correo" class="btn bg-teal-600 btn-block"><i class="fa fa-check iconos-white" aria-hidden="true"></i> validar correo </button>
+								</div>
+								</form>
+							</div>
+
+
+						</div>
+						
+					
+				</fieldset>
+
+			</div>
+
+		</fieldset>
+<!-- 
+		<h6>Cambio de clave</h6>
+		<fieldset>
+			<div class="row">
+
+				<form class="modal-body" id="frm-change" action="index.html">
+					<input id='id' name='id' type='hidden'/>
+					<input id='id_per' name='id_per' type='hidden'/>
+					<div class="text-center">
+						<div class="icon-object border-warning text-warning"><i class="icon-spinner11"></i></div>
+						<h5 class="content-group"><font color='black'>Cambie su clave</font> </h5>
+					</div>
+	
+					<div class="form-group has-feedback">
+						<input type="password" id="password1" name="password1" class="form-control" placeholder="Ingrese clave nueva" autocomplete="false" >
+						<div class="form-control-feedback">
+							<i class="icon-lock2 text-muted"></i>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<input type="password" id="password2" name="password2" class="form-control" placeholder="Repita su clave" autocomplete="false" >
+						<div class="form-control-feedback">
+							<i class="icon-lock2 text-muted"></i>
+						</div>
+					</div>
+				
+					<button type="submit" class="btn bg-blue btn-block">Actualizar su clave <i class="icon-circle-right2 position-right"></i></button>
+					 
+				</form>			
+
+			</div>
+		</fieldset>
+		-->
+
+	</div>
+</div>
+<!-- /wizard with validation -->
+

@@ -1,0 +1,709 @@
+<script type="text/javascript" src="js/alumno/alu_mantenimiento_persona.js"></script>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: red;
+    color: red;
+}
+
+#div1 {
+     overflow:scroll;
+     height:400px;
+     width:400px;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title">B&uacute;squeda del alumno</h6>
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="row">
+
+
+
+                    <div class="panel-body">
+
+
+                        <fieldset class="content-group">
+
+                            <div class="row mt-5">
+
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+											 <label class="negrita">Servicio</label>
+											 <select id="id_gir" required name="id_gir" required placeholder="Seleccione"
+                                                class="form-control select-sm select-search">
+                                                <option selected value="">TODOS</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+											<label class="negrita">Local</label>
+                                            <select id="id_suc" required name="id_suc" required placeholder="Seleccione"
+                                                class="form-control select-sm input-sm select-search ">
+                                                <option selected value="">TODOS</option>
+                                            </select>  
+
+                                        </div>
+                                        <div class="col-sm-4">
+											<label class="negrita">Nivel</label>
+                                            <select id="id_niv" required name="" required placeholder="Seleccione"
+                                                class="form-control select-sm select-search">
+                                                <option selected value="">TODOS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+
+                                        <div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="T" class="styled" checked="checked">
+                                              Todos
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="A" class="styled" >
+                                               <label class="form-check-label text-bold text-primary-800" for="exampleCheck1">Activos</label>
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="R" class="styled">
+                                               <label class="form-check-label text-bold text-danger" for="exampleCheck1">Retirados</label>
+                                        </label>
+                                        </div>
+										
+										<div class="form-check col-sm-3">
+										<label class="radio-inline">
+                                           <input type="radio" name="tip_busqueda" value="E" class="styled">
+                                               <label class="form-check-label text-bold text-success" for="exampleCheck1">Egresados</label>
+                                        </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="table-responsive mt-5">
+								
+									 <div id="div1">
+										<label class="negrita">Total:</label>&nbsp; <label id="total" name="total"></label>
+                                        <table class="table" id="tabla-personas">
+                                        </table>
+									</div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                    </div>
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-7">
+        <div class="panel panel-flat">
+
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="panel panel-flat">
+
+                        <div class="panel-body">
+                            <form class="frm-regalu form-horizontal" id="frm-alumno_mant" action="api/alumno/alumnoActualizacion">
+							<input type="hidden" id="cod" name="cod">
+							<input type="hidden" id="id_anio" name="id_anio">
+                                <div class="tabbable">
+                                    <ul class="nav nav-tabs nav-tabs-highlight ">
+                                        <li class="active">
+                                            <a id="li-tabs-1" href="#fam_datos-tab" data-toggle="tab"><i
+                                                    class="fa fa-credit-card"></i>
+                                                DATOS PRINCIPALES</a>
+                                        </li>
+
+                                        <li>
+                                            <a id="li-tabs-2" href="#fam_otros-tab" data-toggle="tab"><i
+                                                    class="fa fa-user text-blue"></i>
+                                                HISTORIAL</a>
+                                        </li>
+
+                                        <li>
+                                            <a id="li-tabs-3" href="#fam_usuario-tab" data-toggle="tab"><i
+                                                    class="fa fa-user"></i>
+                                                USUARIO</a>
+                                        </li>
+
+                                    </ul>
+
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="fam_datos-tab">
+                                            <h4 class="text-center text-bold azul_text"><label id="alumno"></label></h4>
+                                            <legend class="text-bold">Datos Generales</legend>
+
+
+                                            <fieldset class="content-group text-center">
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-9">
+                                                        <div class="row">
+															<!--<div class="col-sm-6">
+															<label class="negrita">Buscar Persona</label>
+															<button type="button" id="btn_buscar" class="btn bg-transparent text-indigo-400 border-indigo-400 ml-1" title="Buscar Persona"><i class="icon-search4 mr-2"></i></i></button>
+															</div>
+															<div class="col-sm-6 text-center">
+                                                                    <label class="negrita">Familia</label>
+
+
+                                                                    <select required class="form-control select-search " id="id_gpf" name="id_gpf">
+                                                                        <option value="">Seleccione</option>
+                                                                    </select>
+                                                            </div>-->
+															 <div class="col-sm-4">
+                                                                <label class="negrita">Tipo de Doc</label>
+
+
+                                                                <select  class="form-control select-search" id="id_tdc" name="id_tdc" >
+                                                                    <option value="">Seleccione</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">N° de Doc</label>
+                                                                <input type="text" class="form-control input-sm" id="nro_doc" name="nro_doc" required
+                                                                    maxlength="11"  />
+                                                            </div>
+															<div class="col-sm-4">
+                                                                <label class="negrita">Ubigeo</label>
+                                                                <input type="text" class="form-control input-sm" id="ubigeo" name="ubigeo" required
+                                                                    maxlength="11"  />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Ap. Paterno</label>
+                                                                <input type="text" class="form-control input-sm" id="ape_pat" name="ape_pat"
+                                                                    maxlength="50" required />
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Ap. Materno</label>
+                                                                <input type="text" class="form-control input-sm" id="ape_mat" name="ape_mat"
+                                                                    maxlength="50" required />
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Nombres</label>
+                                                                <input type="text" class="form-control input-sm" id="nom" name="nom"
+                                                                    maxlength="50" required />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Genero</label>
+
+
+                                                                <select  class="form-control select-search" id="id_gen" name="id_gen"> 
+                                                                    <option value="">Seleccione</option>
+																	<option value="1">Másculino</option>
+                                                                    <option value="0">Femenino</option>
+                                                                </select>
+                                                            </div>
+
+
+
+                                                           
+
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Estado Civil</label>
+
+
+                                                                <select  class="form-control select-search" id="id_eci" name="id_eci" required>
+                                                                    <option value="">Seleccione</option>
+                                                                </select>
+                                                            </div>
+													
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">F. Nacimiento</label>
+                                                                <!--<input type="date" class="form-control input-sm " id="fec_nac"
+                                                                    required />-->
+																<input type="text" class="form-control input-sm daterange-single" id="fec_nac" name="fec_nac" required
+                                                                     />
+                                                            </div>
+
+
+                                                        </div>
+                                                       <!-- <fieldset class="content-group mt-10 ml-10 text-left">
+                                                            <div class="row">
+                                                                <div class=" col-sm-4 text-center">
+                                                                    <label class="display-block negrita">¿Difunto?</label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" id="id_viv1" name="viv" value="1"
+                                                                            class="styled" checked>
+                                                                        No
+                                                                    </label>
+        
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" id="id_viv2" name="viv" value="0"
+                                                                            class="styled">
+                                                                        Si
+                                                                    </label>
+                                                                </div>
+																<div id="div_defuncion">
+																<div class="col-sm-3">
+                                                                <label class="negrita">F. Defuncion</label>
+																<input type="text" class="form-control input-sm daterange-single" id="fec_def" name="fec_def" />
+																</div>
+																</div>
+                                                               
+                                                            </div>
+                                                        </fieldset>-->
+                                                    </div>
+
+                                                    <div class="col-sm-3">
+                                                        <label class="text-bold" id="edad" name="edad"></label>
+
+                                                        <img class="user_photo mt-10" src="../sige/images/photo.jpg"
+                                                            alt="">
+                                                        <div class="text-center pt-10">
+
+                                                            <a href="#"><i class="fa fa-upload fa-2x "></i></a>
+
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <a href="#"><i class="fa fa-trash-o fa-2x"></i></a>
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </fieldset>
+                                            <p></p>
+											<fieldset class="content-group mt-10 ml-10 text-center">
+                                                            <div class="row">
+                                                                <div class=" col-sm-4 text-center">
+                                                                    <label class="display-block negrita">¿Difunto?</label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" id="id_vivf1" name="vivf" value="1"
+                                                                            class="styled" checked>
+                                                                        No
+                                                                    </label>
+        
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" id="id_vivf2" name="vivf" value="0"
+                                                                            class="styled">
+                                                                        Si
+                                                                    </label>
+                                                                </div>
+																<div id="div_defuncion">
+																<div class="col-sm-3">
+                                                                <label class="negrita">F. Defuncion</label>
+																<input type="text" class="form-control input-sm daterange-single" id="fec_def" name="fec_def" />
+																</div>
+																</div>
+                                                                <div class="col-sm-3">
+                                                                    <label class="negrita">Profesión</label><span class="text-danger">(*)</span>
+                                                                    <input type="text" class="form-control input-sm" id="prof" name="prof"
+                                                                        maxlength="50" />
+                                                                </div>
+
+
+                                                                <div class=" col-sm-3 text-center">
+                                                                    <label
+                                                                        class="display-block negrita">Remunerado</label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="radio-inline-left" id="id_tra_rem1" name="id_tra_rem" value="1"
+                                                                            class="styled" checked="checked">
+                                                                        S&iacute;
+                                                                    </label>
+
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="radio-inline-left" id="id_tra_rem2" name="id_tra_rem" value="0"
+                                                                            class="styled">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <label class="negrita">Ocupación</label>
+                                                                    <input type="text" class="form-control input-sm" id="ocu" name="ocu" 
+                                                                        maxlength="50" />
+                                                                </div>
+
+
+                                                            </div>
+                                                        </fieldset>
+											<p></p>
+                                            <legend class="text-bold">Datos de comunicación</legend>
+
+
+                                            <fieldset class="content-group text-center">
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Email Personal</label>
+                                                                <input type="text" class="form-control input-sm" id="corr" name="corr"
+                                                                      />
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Email Institucional</label>
+                                                                <input type="text" class="form-control input-sm" id="email_inst" name="email_inst" readonly
+                                                                      />
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Celular</label>
+                                                                <input type="text" class="form-control input-sm" id="cel" name="cel"
+                                                                    maxlength="9"  />
+                                                            </div>
+
+                                                           <!-- <div class="col-sm-3">
+                                                                <label class="negrita">Telf. Fijo</label>
+                                                                <input type="text" class="form-control input-sm" id="tlf" name="tlf"
+                                                                    maxlength="50"  />
+                                                            </div>-->
+
+															<!--<div id="div_familiar_emergencia">
+                                                            <div class="col-sm-3">
+
+                                                                <label class="negrita">Emergencias</label>
+
+                                                                <div class="">
+                                                                
+                                                                    <select  class="form-control select-search" id="id_fam_emer" name="id_fam_emer">
+                                                                    </select>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            <div class="col-sm-4 display-inline-block">
+                                                                <label class="negrita">Nombres</label>
+                                                                <input type="text" class="form-control input-sm" readonly id="familiar_emer" name="familiar_emer"/>
+                                                            </div>
+
+
+                                                            <div class="col-sm-5 display-inline-block">
+                                                                <label class="negrita">Celular</label>
+                                                                <input type="text" class="form-control input-sm" readonly id="celular_emer" name="celular_emer"/>
+                                                            </div>
+															</div>-->
+
+
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </fieldset>
+											<legend class="text-bold text-left">Redes Sociales</legend>
+
+                                            <div class="row">
+                                                <div class="">
+                                                    <div class="row text-center">
+                                                        <div class="col-sm-3">
+                                                            <label class="negrita">Facebook</label>
+                                                            <input type="text" class="form-control input-sm" id="face" name="face"
+                                                                maxlength="50"/>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <label class="negrita">Instagram</label>
+                                                            <input type="text" class="form-control input-sm" id="istrg" name="istrg"
+                                                                maxlength="50"/>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <label class="negrita">Twitter</label>
+                                                            <input type="text" class="form-control input-sm" id="twitter" name="twitter"
+                                                                maxlength="50"/>
+                                                        </div>
+                                                       <!--<div class="col-sm-3">
+                                                            <label class="negrita">Tiktok</label>
+                                                            <input type="text" class="form-control input-sm" id="tik_tok" name="tik_tok"
+                                                                maxlength="50"/>
+                                                        </div>-->
+
+
+
+
+
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </div>
+
+                                            
+
+                                        </div>
+
+
+
+
+                                        <div class="tab-pane " id="fam_otros-tab">
+
+                                            <!--<h4 class="text-center text-bold azul_text"><label id="alumno">ABAD CHAVEZ Anabel<label></h4>-->
+                                            <legend class="text-bold">Datos de Nacimiento</legend>
+
+                                            <fieldset class="content-group text-center">
+
+
+                                                <div class="row">
+                                                    <div class="">
+                                                        <div class="row">
+
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">País</label>
+                                                                <select  class="form-control select-search" id="id_pais_nac" name="id_pais_nac">
+																<option value="">Seleccione</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Departamento</label>
+                                                                <select  class="form-control select-search" id="id_dep_nac" name="id_dep_nac">
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Provincia</label>
+                                                                <select  class="form-control select-search" id="id_pro_nac" name="id_pro_nac">
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <label class="negrita">Distrito</label>
+                                                                <select  class="form-control select-search" id="id_dist_nac" name="id_dist_nac">
+                                                                </select>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                            </fieldset>
+
+
+
+                                            <p></p>
+
+                                            <legend class="text-bold text-left">Otros Datos</legend>
+
+                                            <div class="row">
+                                                <div class="">
+                                                    <div class="row text-center">
+
+                                                        <div class="col-sm-4">
+                                                            <label class="negrita">Religión</label>
+                                                            <select  class="form-control select-search" id="id_rel" name="id_rel">
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <label class="negrita">Lengua Materna</label>
+                                                            <select  class="form-control select-search" id="id_idio1" name="id_idio1">
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label class="negrita">Segunda Lengua</label>
+                                                            <select  class="form-control select-search" id="id_idio2" name="id_idio2">
+                                                            <option value="">SELECCIONE</option>
+															</select>
+                                                        </div>
+                                                    </div>
+													<div class="row text-center">
+														<div class=" col-sm-4">
+                                                            <label class="display-block negrita" >¿Trabaja?</label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="trab" id="trab1" value="1"
+                                                                    class="styled" >
+                                                                Si
+                                                            </label>
+
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="trab" id="trab2" value="0"
+                                                                    class="styled">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label class="negrita">Condición</label>
+                                                            <select  class="form-control select-search" id="id_cond" name="id_cond">
+                                                            </select>
+                                                        </div>
+													</div>
+                                                </div>
+
+
+												<!--
+                                                <div class="modal-footer text-center">
+                                                    <div class="col-sm-6">
+                                                        <button type="submit" class="btn btn-lg btn-primary btn-block">
+                                                            Guardar
+                                                        </button>
+                                                             </div>
+
+                                                         <div class="col-sm-6 pt">
+                                                        <button type="button" class="btn btn-danger btn-lg btn-block">
+                                                            Eliminar
+                                                        </button>
+                                                    
+                                                        </div>
+                                                </div>-->
+
+                                            </div>
+
+
+
+
+
+
+
+                                        </div>
+
+
+
+                                        <div class="tab-pane " id="fam_usuario-tab">
+
+                                            <h4 class="text-center text-bold azul_text"><label id="alumno"></label></h4>
+
+                                            <fieldset class="content-group text-center">
+
+
+                                                <div class="row">
+                                                    <div class="">
+                                                        <div class="row">
+
+
+
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Usuario</label>
+                                                                <input type="text" class="form-control input-sm" id="usuario" name="usuario"
+                                                                    maxlength="50" required readonly />
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Contraseña</label>
+                                                                <input type="text" class="form-control input-sm" id="pass_educando" name="pass_educando"
+                                                                    maxlength="50" required readonly/>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="negrita">Estado</label>
+                                                                <select required class="form-control select-search" id="est" name="est">
+                                                                    <option value="A">Activo</option>
+                                                                    <option value="I">Inactivo</option>
+                                                                </select>
+                                                            </div>
+                                                         
+                                                            
+
+                                                        </div>
+                                                        <p></p>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-bordered" id="tab_matriculas">
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                            </fieldset>
+
+
+
+                                       
+
+                                            <div class="row">
+                                                
+
+												<!--
+                                                <div class="modal-footer text-center">
+                                                        <div class="col-sm-6">
+                                                        <button type="submit" class="btn btn-lg btn-primary btn-block">
+                                                            Guardar
+                                                        </button>
+                                                             </div>
+
+                                                         <div class="col-sm-6 pt">
+                                                        <button type="button" class="btn btn-danger btn-lg btn-block">
+                                                            Eliminar
+                                                        </button>
+                                                    
+                                                        </div>
+                                                    </div>
+													-->
+
+
+                                            </div>
+
+                                        </div>
+
+
+								<div class="modal-footer text-center">
+                                                <div class="col-sm-4">
+                                                   <button type="button" id="btn_nuevo"
+                                                        class="  icon-plus3 btn btn-lg btn-success btn-block">
+                                                        Nuevo
+                                                    </button>
+                                                </div>
+												<div class="col-sm-4">
+                                                    <button type="button" class="btn btn-lg btn-primary btn-block" id="btn_grabar">
+                                                        Guardar
+                                                    </button>
+                                                         </div>
+
+                                                     <div class="col-sm-4 pt">
+                                                    <button type="button" class="btn btn-danger btn-lg btn-block">
+                                                        Eliminar
+                                                    </button>
+                                                
+                                                    </div>
+                                            </div>
+
+
+
+                            </form>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>

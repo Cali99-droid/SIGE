@@ -1,0 +1,40 @@
+<script type="text/javascript" src="pages/js/seg_bloqueos.js"></script>
+<div class="panel panel-flat" id="seg_usuario-panel">
+
+	<div class="panel-body">
+
+		<div class="form-group">
+			<form id="buscar-frm">
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Perfil</label>
+				               	<select id="id_per" name="id_per" required placeholder="Seleccione" class="form-control select-search">
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label>Apellidos y nombres</label>
+				               	<input type='text' id='nom' name='nom' class="form-control">
+							</div>
+							<div class="col-sm-3">
+								<label>Estado</label>
+				               	<select id="est" name="est"  placeholder="Seleccione" class="form-control select-search">
+				               		<option value="">TODOS</option>
+				               		<option value="I" selected="selected">BLOQUEADO</option>
+				               		<option value="A">HABILITADO</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-right">
+								<button type="submit" class="btn btn-primary" id="btn-buscar">Buscar <i class="fa fa-search position-right"></i></button>
+							</div>
+						</div>
+				</form>				
+		</div>
+	</div>
+
+	<table class="table" id="seg_usuario-tabla">
+	</table>
+	
+</div>
+	

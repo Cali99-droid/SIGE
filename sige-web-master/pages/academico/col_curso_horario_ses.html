@@ -1,0 +1,52 @@
+<script type="text/javascript" src="js/academico/col_curso_horario_ses.js?v=1"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js" rel="stylesheet" type="text/css">
+<style>
+.fc .fc-axis{
+padding:1px;
+}
+.fc-time{
+text-align: center
+}
+.fc-title{
+font-size:11px
+}
+</style>
+
+<div class="panel panel-flat" id="col_semna_sesiones-panel">
+	<div class="panel-body">
+		<form action="" id="col_semana_sesiones">
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Nivel</label>
+					<div class="flechas">
+						<select class="form-control input-xs" id="id_niv" name="id_niv">
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<label>Unidad</label>
+					<div class="flechas">
+						<select id="unidad" name="unidad" placeholder="Seleccione" class="form-control">
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<label>Semana</label>
+					<div class="flechas">
+						<select id="id_sem" name="id_sem" placeholder="Seleccione" class="form-control">
+							<option value="1">Semana1</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+
+	<div class="col-md-12">
+		<div class="fullcalendar-external"></div>
+	</div>
+
+
+</div>
+

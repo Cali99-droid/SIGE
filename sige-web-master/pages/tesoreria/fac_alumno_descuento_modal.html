@@ -1,0 +1,74 @@
+<form action="api/alumnoDescuento" id='alumno_descuento-form'>
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="est" name="est" value="A" />
+	<input type="hidden" id="id_mat" name="id_mat" />
+	<input type="hidden" id="monto" name="monto" />
+	<input type="hidden" id="descuento" name="descuento" />
+	
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Alumno</label> 
+				  <div class="form-group has-feedback has-feedback-left">
+						<input type="text" class="form-control"
+						onkeypress="onkeyAlumno()" 
+						placeholder="Busca alumno (Ingrese por lo menos 2 letras)" id="alumno" required>
+						<div class="form-control-feedback">
+							<i class="icon-search4 text-size-base"></i>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="row detalle_alumno" >
+			<div class="col-sm-4">
+				<label>Nivel</label>
+					<input type="text" id="nivel" class="form-control input-sm" value="" readonly>
+			</div>			
+			<div class="col-sm-4">
+				<label>Grado</label>
+					<input type="text" id="grado" class="form-control input-sm" value="" readonly>
+			</div>			
+			<div class="col-sm-4">
+				<label>Seccion</label>
+					<input type="text" id="seccion" class="form-control input-sm" value="" readonly>
+			</div>		
+		</div>
+		<div class="row detalle_alumno">	
+			<div class="col-sm-12">
+				<label id="ldbMonto">Monto a pagar secretaria (Original S/.290.00)</label>
+                
+                <div class="input-group">
+                	<span class="input-group-addon">S/.</span>
+					<input type="text" id="mensualidad" name="mensualidad"  required class="form-control input-sm number" min="1" onkeyup='onkeypressMensualidad(this)' maxlength="6" >
+					<span class="input-group-addon" id="span_desc_secre">Descuento S/.0.00</span>
+				</div>
+			</div>
+		</div>
+		<div class="row detalle_alumno">	
+			<div class="col-sm-12">
+				<label>Monto a pagar banco </label>
+                
+                <div class="input-group">
+                	<span class="input-group-addon">S/.</span>
+					<input type="text" id="mensualidad_bco" name="mensualidad_bco"  required class="form-control input-sm number" min="1" onkeyup='onkeypressMensualidadBco(this)' maxlength="6" >
+					<span class="input-group-addon" id="span_desc_banco">Descuento S/.0.00</span>
+				</div>
+			</div>
+		</div>	
+		<div class="row detalle_alumno">	
+			<div class="col-sm-12">
+				<label>Motivo</label>
+				<input type="text" id="motivo" name="motivo" class="form-control input-sm" value="">
+			</div>			
+		</div>
+	</div>
+	
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="submit" id="btnModalAlumnoDesc" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

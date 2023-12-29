@@ -1,0 +1,30 @@
+<form action="api/perUni" id="mat_alumno_usr_modal-frm">
+	<input type="hidden" id="id" name="id" />
+	<input type="hidden" id="id_anio" name="id_anio" />
+	<input type="hidden" id="id_alu" name="id_alu" />
+	<input type="hidden" id="est" name="est" value="A" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-12">
+			<label id="lbl_alumno"></label> 
+			</div>
+			<div class="col-sm-12">
+				<label>Usuario:</label>&nbsp;<label id="lbl_usuario"></label> 
+			</div>
+			<div class="col-sm-2">
+				<label>Contrase&ntilde;a</label>
+			</div>
+			<div class="col-sm-6">
+                <input type="text" id="pass_educando" name="pass_educando" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		
+		<button type="button" id="btn-grabar" class="btn btn-primary">Editar</button>
+	</div>
+</form>
+
+

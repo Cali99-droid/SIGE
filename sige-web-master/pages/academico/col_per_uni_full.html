@@ -1,0 +1,51 @@
+<form action="api/perUni" id="col_per_uni_full-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Periodo Acad&eacute;mico Nivel</label> 
+				<select id="id_cpa" name="id_cpa" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Numero de Periodo</label>
+                <input type="text" id="nump" name="nump" required class="form-control input-sm number" maxlength="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>N&uacute;mero de Unidad</label>
+                <input type="text" id="numu" name="numu" required class="form-control input-sm number" maxlength="10">
+			</div>
+
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+		
+<div id="col_per_uni-panel">
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs nav-tabs-highlight">
+			<li class="active">
+				<a href="#col_curso_unidad-tab" data-toggle="tab"><i class="fa fa-cube"></i> Unidad</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="col_curso_unidad-tab">
+				<table class="table" id="col_curso_unidad-tabla">
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+

@@ -1,0 +1,124 @@
+<form action="api/alumno" id="alu_alumno-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo de documento</label> 
+				<select id="id_tdc" name="id_tdc" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Lengua primaria</label> 
+				<select id="id_idio1" name="id_idio1" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Lengua secundaria</label> 
+				<select id="id_idio2" name="id_idio2"  placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Estado civil</label> 
+				<select id="id_eci" name="id_eci" required placeholder="Seleccione" class="form-control select-search">
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Tipo Apellido</label>
+				<select id="id_tap" name="id_tap" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>G&eacute;nero</label>
+				<select id="id_gen" name="id_gen" placeholder="Seleccione" class="form-control" >
+					<option value="0">NO</option>
+					<option value="1">SI</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Codigo Alumno</label>
+                <input type="text" id="cod" name="cod" required class="form-control input-sm " maxlength="14">
+			</div>
+			<div class="col-sm-6">
+				<label>Numero de documento</label>
+                <input type="text" id="nro_doc" name="nro_doc" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Nombres</label>
+                <input type="text" id="nom" name="nom" required class="form-control input-sm " maxlength="50">
+			</div>
+			<div class="col-sm-6">
+				<label>Apellido paterno</label>
+                <input type="text" id="ape_pat" name="ape_pat" required class="form-control input-sm " maxlength="30">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Apellido materno</label>
+                <input type="text" id="ape_mat" name="ape_mat" required class="form-control input-sm " maxlength="30">
+			</div>
+			<div class="col-sm-6">
+				<label>Fecha de nacimiento</label>
+                <input type="text" id="fec_nac" name="fec_nac" required class="form-control input-sm " maxlength="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>N&uacute;mero de hijo</label>
+                <input type="text" id="num_hij" name="num_hij" required class="form-control input-sm number" maxlength="11">
+			</div>
+			<div class="col-sm-6">
+				<label>direccion</label>
+                <input type="text" id="direccion" name="direccion"  class="form-control input-sm " maxlength="250">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Telefono</label>
+                <input type="text" id="telf" name="telf"  class="form-control input-sm " maxlength="150">
+			</div>
+			<div class="col-sm-6">
+				<label>Celular</label>
+                <input type="text" id="celular" name="celular"  class="form-control input-sm " maxlength="32">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Pasword</label>
+                <input type="text" id="pass_educando" name="pass_educando" required class="form-control input-sm " maxlength="32">
+			</div>
+			<div class="col-sm-6">
+				<label>Foto</label>
+                <input type="text" id="foto" name="foto" required class="form-control input-sm " maxlength="50">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Estado</label> 
+				<select id="est" name="est" placeholder="Seleccione" class="form-control" >
+					<option value="A">Activo</option>
+					<option value="I">Inactivo</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+

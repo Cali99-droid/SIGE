@@ -1,0 +1,59 @@
+<form action="api/aulaEspecial" id="col_aula_especial-frm">
+	<input type="hidden" id="id" name="id" />
+	<div class="form-group">
+
+		<div class="row">
+	
+			<div class="col-sm-6">
+				<label>Local</label> <select class="form-control input-xs"
+					id="id_suc" name="id_suc">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Nivel</label> <select class="form-control input-xs"
+					id="id_niv" name="id_niv">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+		</div>	
+	
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Grado</label> 
+				<select id="id_gra_ori" name="id_gra_ori" required class="form-control select-search">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Aula</label> 
+				<select id="id_au" name="id_au" class="form-control input-xs">
+				</select>
+			</div>
+		</div>	
+
+		<div class="row">
+			<div class="col-sm-6">
+				<label>Salon Especial</label> 
+				<select id="id_gra" name="id_gra" required class="form-control select-search">
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label>Alumno</label> 
+				<select id="id_mat" name="id_mat" required class="form-control select-search">
+					<option value=''>SELECCIONAR</option>
+				</select>
+			</div>
+		</div>	
+	
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+		<button type="button" id="btn-agregar" class="btn btn-primary">Agregar</button>
+		<button type="submit" id="btn-grabar" class="btn btn-primary">Grabar</button>
+	</div>
+
+</form>
+
+
